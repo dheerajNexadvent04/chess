@@ -6,7 +6,7 @@ export const contactDetails = {
 
 export const navLinks = [
   { label: 'HOME', to: '/' },
-  { label: 'ABOUT US', to: '/#about' },
+  { label: 'ABOUT US', to: '/about-us' },
   { label: 'PROGRAMS', to: '/#programs' },
   { label: 'ACHIEVEMENTS', to: '/#achievements' },
   { label: 'EVENTS', to: '/#events' },

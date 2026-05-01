@@ -87,7 +87,7 @@ const marqueeItems = [
 
 const navItems = [
   { href: '/', label: 'Home' },
-  { href: '#about', label: 'About us' },
+  { href: '/about-us', label: 'About us' },
   { href: '#programs', label: 'Programs' },
   { href: '#achievements', label: 'Achievements' },
   { href: '#events', label: 'Events' },
@@ -109,6 +109,7 @@ export function HomePage() {
   const featureCountStartedRef = useRef(false)
   const metricsSectionRef = useRef(null)
   const metricsCountStartedRef = useRef(false)
+  const reviewGridRef = useRef(null)
 
   useEffect(() => {
     if (!mobileMenuOpen) return undefined
@@ -222,6 +223,23 @@ export function HomePage() {
   }, [])
 
   const closeMobileMenu = () => setMobileMenuOpen(false)
+
+  const scrollReviews = (direction) => {
+    const grid = reviewGridRef.current
+    if (!grid) return
+
+    const firstCard = grid.querySelector('.review-card')
+    if (!firstCard) return
+
+    const cardWidth = firstCard.getBoundingClientRect().width
+    const gap = parseFloat(window.getComputedStyle(grid).columnGap || '0')
+    const scrollAmount = cardWidth + gap
+
+    grid.scrollBy({
+      left: direction === 'next' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth',
+    })
+  }
 
   return (
     <div className="figma-home">
@@ -567,10 +585,14 @@ export function HomePage() {
           natoque urna risus.
         </p>
         <div className="review-row">
-          <button className="review-nav review-nav-left" aria-label="Previous reviews">
+          <button
+            className="review-nav review-nav-left"
+            aria-label="Previous reviews"
+            onClick={() => scrollReviews('prev')}
+          >
             ‹
           </button>
-          <div className="review-grid">
+          <div className="review-grid" ref={reviewGridRef}>
             <article className="review-card">
               <span className="stars">★★★★★</span>
               <h4>Good Style of Edu</h4>
@@ -602,7 +624,11 @@ export function HomePage() {
               <b>– Jessie</b>
             </article>
           </div>
-          <button className="review-nav review-nav-right" aria-label="Next reviews">
+          <button
+            className="review-nav review-nav-right"
+            aria-label="Next reviews"
+            onClick={() => scrollReviews('next')}
+          >
             ›
           </button>
         </div>
@@ -655,7 +681,7 @@ export function HomePage() {
           <div className="footer-col footer-col-nav">
             <h4>EXPLORE PAGES</h4>
             <a href="/">Home</a>
-            <a href="#about">About Us</a>
+            <a href="/about-us">About Us</a>
             <a href="#programs">Programs</a>
             <a href="#achievements">Achievements</a>
             <a href="#events">Events</a>
