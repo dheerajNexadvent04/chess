@@ -39,10 +39,11 @@ const figmaAssets = {
 }
 
 const students = [
-  figmaAssets.studentA,
-  figmaAssets.studentB,
-  figmaAssets.studentA,
-  figmaAssets.studentB,
+  { src: '/v1.mp4' },
+  { src: '/v2.mov', fallbackSrc: '/v4.mov' },
+  { src: '/v3.mov', fallbackSrc: '/v5.mp4' },
+  { src: '/v4.mov' },
+  { src: '/v5.mp4' },
 ]
 
 const whyCards = [
@@ -110,6 +111,13 @@ export function HomePage() {
   const metricsSectionRef = useRef(null)
   const metricsCountStartedRef = useRef(false)
   const reviewGridRef = useRef(null)
+  const studentScrollRef = useRef(null)
+  const dragStateRef = useRef({
+    isDown: false,
+    startX: 0,
+    scrollLeft: 0,
+    moved: false,
+  })
 
   useEffect(() => {
     if (!mobileMenuOpen) return undefined
@@ -241,6 +249,51 @@ export function HomePage() {
     })
   }
 
+  const onStudentPointerDown = (event) => {
+    const node = studentScrollRef.current
+    if (!node) return
+
+    dragStateRef.current = {
+      isDown: true,
+      startX: event.clientX,
+      scrollLeft: node.scrollLeft,
+      moved: false,
+    }
+
+    node.setPointerCapture(event.pointerId)
+    node.classList.add('is-dragging')
+  }
+
+  const onStudentPointerMove = (event) => {
+    const node = studentScrollRef.current
+    const drag = dragStateRef.current
+    if (!node || !drag.isDown) return
+
+    const delta = event.clientX - drag.startX
+    if (Math.abs(delta) > 4) {
+      dragStateRef.current.moved = true
+    }
+    node.scrollLeft = drag.scrollLeft - delta
+  }
+
+  const endStudentDrag = (pointerId) => {
+    const node = studentScrollRef.current
+    if (!node) return
+    dragStateRef.current.isDown = false
+    node.classList.remove('is-dragging')
+    if (pointerId !== undefined && node.hasPointerCapture(pointerId)) {
+      node.releasePointerCapture(pointerId)
+    }
+  }
+
+  const onStudentPointerUp = (event) => {
+    endStudentDrag(event.pointerId)
+  }
+
+  const onStudentPointerCancel = (event) => {
+    endStudentDrag(event.pointerId)
+  }
+
   return (
     <div className="figma-home">
       <section className="figma-hero">
@@ -272,7 +325,7 @@ export function HomePage() {
             <a className="figma-support-link" href="#support">
               Support
             </a>
-            <a className="figma-contact-btn" href="tel:+918447992702">
+            <a className="figma-contact-btn" href="/contact-us">
               Contact
             </a>
           </div>
@@ -298,7 +351,7 @@ export function HomePage() {
             <a href="#support" onClick={closeMobileMenu}>
               Support
             </a>
-            <a href="tel:+918447992702" onClick={closeMobileMenu}>
+            <a href="/contact-us" onClick={closeMobileMenu}>
               Contact
             </a>
           </nav>
@@ -356,11 +409,21 @@ export function HomePage() {
           aria-hidden="true"
         />
         <h2>Listen From Our Students</h2>
-        <div className="student-scroll" role="region" aria-label="Student stories">
+        <div
+          ref={studentScrollRef}
+          className="student-scroll"
+          role="region"
+          aria-label="Student stories"
+          onPointerDown={onStudentPointerDown}
+          onPointerMove={onStudentPointerMove}
+          onPointerUp={onStudentPointerUp}
+          onPointerCancel={onStudentPointerCancel}
+          onPointerLeave={onStudentPointerCancel}
+        >
           <div className="student-grid">
-            {students.map((src, idx) => (
-              <article key={`${src}-${idx}`}>
-                <img src={src} alt="Student" />
+            {students.map((student, idx) => (
+              <article key={`${student.src}-${idx}`}>
+                <StudentVideoCard src={student.src} fallbackSrc={student.fallbackSrc} />
               </article>
             ))}
           </div>
@@ -725,6 +788,78 @@ export function HomePage() {
           <p>© 2026 All Rights Reserved</p>
         </div>
       </footer>
+    </div>
+  )
+}
+
+function StudentVideoCard({ src, fallbackSrc }) {
+  const videoRef = useRef(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [activeSrc, setActiveSrc] = useState(src)
+
+  const handleLoadedMetadata = () => {
+    const video = videoRef.current
+    if (!video || !Number.isFinite(video.duration) || video.duration <= 1) return
+
+    const randomPoint = Math.random() * (video.duration * 0.8)
+    video.currentTime = randomPoint
+  }
+
+  const togglePlayback = async () => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (video.paused) {
+      try {
+        await video.play()
+      } catch {
+        return
+      }
+      setIsPlaying(true)
+      return
+    }
+
+    video.pause()
+    setIsPlaying(false)
+  }
+
+  const handleVideoError = () => {
+    if (!fallbackSrc || activeSrc === fallbackSrc) return
+    setActiveSrc(fallbackSrc)
+    setIsPlaying(false)
+  }
+
+  return (
+    <div className="student-video-card">
+      <video
+        ref={videoRef}
+        className="student-video"
+        src={activeSrc}
+        preload="metadata"
+        playsInline
+        onLoadedMetadata={handleLoadedMetadata}
+        onError={handleVideoError}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+      />
+      <button
+        type="button"
+        className="student-video-toggle"
+        onClick={togglePlayback}
+        aria-label={isPlaying ? 'Pause video' : 'Play video'}
+      >
+        {isPlaying ? (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="6" y="5" width="4" height="14" rx="1" />
+            <rect x="14" y="5" width="4" height="14" rx="1" />
+          </svg>
+        ) : (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        )}
+      </button>
     </div>
   )
 }
