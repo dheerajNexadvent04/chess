@@ -2,7 +2,7 @@ import { coaches } from '../data/siteContent'
 
 export function CoachesPage() {
   return (
-    <div className="inner-page">
+    <div className="inner-page coaches-page">
       <header className="inner-header">
         <h1>Our Coaches</h1>
         <p>

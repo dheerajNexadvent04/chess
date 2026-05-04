@@ -1,5 +1,5 @@
 import { ChevronDown, Clock, Home, Phone } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { contactDetails } from '../data/siteContent'
 
 const contactHeroImage = '/im1.png'
@@ -23,22 +23,11 @@ const contactInfo = [
   },
 ]
 
-const statTargets = {
-  studentsTrained: 4200,
-  ratingImproved: 98,
-  gmInstructors: 150,
-  totalStudents: 5000,
-  schools: 100,
-  years: 15,
-}
-
 const contactStats = [
-  { key: 'studentsTrained', suffix: '+', label: 'Students trained' },
-  { key: 'ratingImproved', suffix: '%', label: 'Rating improved' },
-  { key: 'gmInstructors', suffix: '+', label: 'GM instructors' },
-  { key: 'totalStudents', suffix: '+', label: 'Number of Students' },
-  { key: 'schools', suffix: '+', label: 'Number of Schools' },
-  { key: 'years', suffix: '+', label: 'Number of Years' },
+  { value: '4,200+', label: 'Students trained' },
+  { value: '98%', label: 'Rating improved' },
+  { value: '100+', label: 'Number of Schools' },
+  { value: '15+', label: 'Number of Years' },
 ]
 
 const faqs = [
@@ -70,64 +59,6 @@ const faqs = [
 
 export function ContactPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0)
-  const [statCounts, setStatCounts] = useState({
-    studentsTrained: 0,
-    ratingImproved: 0,
-    gmInstructors: 0,
-    totalStudents: 0,
-    schools: 0,
-    years: 0,
-  })
-  const statsSectionRef = useRef(null)
-  const statsStartedRef = useRef(false)
-
-  useEffect(() => {
-    const node = statsSectionRef.current
-    if (!node) return undefined
-
-    const durationMs = 1400
-    let rafId = 0
-
-    const animate = () => {
-      const start = performance.now()
-      const tick = (now) => {
-        const progress = Math.min((now - start) / durationMs, 1)
-        const eased = 1 - Math.pow(1 - progress, 3)
-
-        setStatCounts({
-          studentsTrained: Math.round(statTargets.studentsTrained * eased),
-          ratingImproved: Math.round(statTargets.ratingImproved * eased),
-          gmInstructors: Math.round(statTargets.gmInstructors * eased),
-          totalStudents: Math.round(statTargets.totalStudents * eased),
-          schools: Math.round(statTargets.schools * eased),
-          years: Math.round(statTargets.years * eased),
-        })
-
-        if (progress < 1) {
-          rafId = window.requestAnimationFrame(tick)
-        }
-      }
-
-      rafId = window.requestAnimationFrame(tick)
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0]?.isIntersecting || statsStartedRef.current) return
-        statsStartedRef.current = true
-        animate()
-        observer.disconnect()
-      },
-      { threshold: 0.32 },
-    )
-
-    observer.observe(node)
-
-    return () => {
-      observer.disconnect()
-      if (rafId) window.cancelAnimationFrame(rafId)
-    }
-  }, [])
 
   return (
     <div className="contact-page">
@@ -201,7 +132,7 @@ export function ContactPage() {
         </form>
       </section>
 
-      <section className="contact-stats-section" ref={statsSectionRef} aria-labelledby="contact-stats-title">
+      <section className="contact-stats-section" aria-labelledby="contact-stats-title">
         <div className="contact-stats-media">
           <img src="/im2.png" alt="Students learning chess strategy" />
         </div>
@@ -219,11 +150,8 @@ export function ContactPage() {
 
           <div className="contact-stats-grid">
             {contactStats.map((stat) => (
-              <div className="contact-stat" key={stat.key}>
-                <strong>
-                  {statCounts[stat.key].toLocaleString()}
-                  {stat.suffix}
-                </strong>
+              <div className="contact-stat" key={stat.label}>
+                <strong>{stat.value}</strong>
                 <span>{stat.label}</span>
               </div>
             ))}

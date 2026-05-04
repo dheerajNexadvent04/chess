@@ -39,11 +39,15 @@ const figmaAssets = {
 }
 
 const students = [
-  { src: '/v1.mp4' },
-  { src: '/v2.mov', fallbackSrc: '/v4.mov' },
-  { src: '/v3.mov', fallbackSrc: '/v5.mp4' },
-  { src: '/v4.mov' },
-  { src: '/v5.mp4' },
+  { src: '/ig1.mp4' },
+  { src: '/ig2.mp4' },
+  { src: '/ig3.mp4' },
+  { src: '/ig4.mp4' },
+  { src: '/ig5.mp4' },
+  { src: '/ig6.mp4' },
+  { src: '/ig7.mp4' },
+  { src: '/ig8.mp4' },
+  { src: '/ig9.mp4' },
 ]
 
 const whyCards = [
@@ -89,6 +93,8 @@ const marqueeItems = [
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about-us', label: 'About us' },
+  { href: '/partners', label: 'Partners' },
+  { href: '/coaches', label: 'Coaches' },
   { href: '#programs', label: 'Programs' },
   { href: '#achievements', label: 'Achievements' },
   { href: '#events', label: 'Events' },
@@ -252,6 +258,8 @@ export function HomePage() {
   const onStudentPointerDown = (event) => {
     const node = studentScrollRef.current
     if (!node) return
+    const target = event.target
+    if (target instanceof Element && target.closest('.student-video-toggle')) return
 
     dragStateRef.current = {
       isDown: true,
@@ -846,6 +854,7 @@ function StudentVideoCard({ src, fallbackSrc }) {
       <button
         type="button"
         className="student-video-toggle"
+        onPointerDown={(event) => event.stopPropagation()}
         onClick={togglePlayback}
         aria-label={isPlaying ? 'Pause video' : 'Play video'}
       >

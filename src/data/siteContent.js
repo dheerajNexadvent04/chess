@@ -7,6 +7,8 @@ export const contactDetails = {
 export const navLinks = [
   { label: 'HOME', to: '/' },
   { label: 'ABOUT US', to: '/about-us' },
+  { label: 'PARTNERS', to: '/partners' },
+  { label: 'COACHES', to: '/coaches' },
   { label: 'PROGRAMS', to: '/#programs' },
   { label: 'ACHIEVEMENTS', to: '/#achievements' },
   { label: 'EVENTS', to: '/#events' },
@@ -140,25 +142,40 @@ export const courses = [
 
 export const coaches = [
   {
-    name: 'Coach Arjun Mehra',
-    title: 'FIDE Rated Trainer',
-    image:
-      'https://images.unsplash.com/photo-1606326608690-4e0281b1e588?auto=format&fit=crop&w=900&q=80',
-    bio: 'Specialized in opening preparation and tournament mindset for school-level and district-level events.',
+    name: 'Anil Shivpuri',
+    title: 'Senior Coach',
+    image: '/c1.jpg',
+    bio: 'He is senior coach highest FiDE rating 1967.',
   },
   {
-    name: 'Coach Shreya Malhotra',
-    title: 'AICF Certified Coach',
-    image:
-      'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=80',
-    bio: 'Focuses on child-friendly foundational training, puzzle solving, and tactical pattern recognition.',
+    name: 'Hamid Hasan',
+    title: 'Former Delhi State Champion',
+    image: '/c2.jpg',
+    bio: 'He is former Delhi state champion.',
   },
   {
-    name: 'Coach Vikram Sethi',
-    title: 'DCA League Mentor',
-    image:
-      'https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=900&q=80',
-    bio: 'Leads advanced batches with practical endgame sessions and game review clinics.',
+    name: 'Manohar Lal',
+    title: 'Former Haryana State Champion',
+    image: '/c3.jpg',
+    bio: 'He is former haryana state champion current FIDE rating is 1909.',
+  },
+  {
+    name: 'Love Jindal',
+    title: 'Former Punjab State Champion',
+    image: '/c4.jpg',
+    bio: 'He is former Punjab state champion highest FIDE rating is 1668.',
+  },
+  {
+    name: 'Lakshmi Narayan',
+    title: 'Online Coach',
+    image: '/c5.jpg',
+    bio: 'Highest ELO to 2225. He is available only for the online classes.',
+  },
+  {
+    name: 'Vaibhav Singh Verma',
+    title: 'Coach',
+    image: '/c6.jpeg',
+    bio: 'Highest ELO rating 1791',
   },
 ]
 
