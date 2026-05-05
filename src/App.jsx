@@ -4,6 +4,7 @@ import { AboutPage } from './pages/AboutPage'
 import { CoachesPage } from './pages/CoachesPage'
 import { ContactPage } from './pages/ContactPage'
 import { CoursesPage } from './pages/CoursesPage'
+import { CareerPage } from './pages/CareerPage'
 import { HomePage } from './pages/HomePage'
 import { PartnerSchoolsPage } from './pages/PartnerSchoolsPage'
 import './App.css'
@@ -17,6 +18,7 @@ function App() {
         <Route path="/partners" element={<PartnerSchoolsPage />} />
         <Route path="/partnered-schools" element={<PartnerSchoolsPage />} />
         <Route path="/coaches" element={<CoachesPage />} />
+        <Route path="/career" element={<CareerPage />} />
         <Route path="/courses-offered" element={<CoursesPage />} />
         <Route path="/contact-us" element={<ContactPage />} />
       </Route>

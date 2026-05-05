@@ -9,6 +9,7 @@ export const navLinks = [
   { label: 'ABOUT US', to: '/about-us' },
   { label: 'PARTNERS', to: '/partners' },
   { label: 'COACHES', to: '/coaches' },
+  { label: 'CAREER', to: '/career' },
   { label: 'PROGRAMS', to: '/#programs' },
   { label: 'ACHIEVEMENTS', to: '/#achievements' },
   { label: 'EVENTS', to: '/#events' },
