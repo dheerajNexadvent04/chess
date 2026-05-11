@@ -48,8 +48,8 @@ export function PartnerSchoolsPage() {
     { src: '/sc1.png', alt: 'Apeejay Education' },
     { src: '/sc2.png', alt: 'Valedra' },
     { src: '/sc3.png', alt: 'The Vasant School' },
-    { src: '/logo.png', alt: 'Rohini Chess Academy' },
-    { src: '/sc1.png', alt: 'Apeejay Education' },
+    { src: '/sc4.png', alt: 'Partner School' },
+    { src: '/sc5.png', alt: 'Partner School' },
   ]
 
   return (

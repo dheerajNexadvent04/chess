@@ -2,40 +2,23 @@ import { Menu, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
 const figmaAssets = {
-  heroBg:
-    'https://www.figma.com/api/mcp/asset/2a5580e7-9da5-4e92-95f1-cbae69296834',
-  logoIcon:
-    'https://www.figma.com/api/mcp/asset/1b6951ad-2515-47b1-9428-61631ba0e8aa',
-  studentA:
-    'https://www.figma.com/api/mcp/asset/cf6cba4f-f8e0-4fe6-bbc8-b552ddedaf91',
-  studentB:
-    'https://www.figma.com/api/mcp/asset/dc1be1bc-355c-44ef-be3c-9b4f15320794',
-  whyA:
-    'https://www.figma.com/api/mcp/asset/0a2009e4-3b43-4830-b543-b4a51965cca4',
-  whyB:
-    'https://www.figma.com/api/mcp/asset/9b23ff18-dc2f-47b2-bab1-1bbd6c3f0c84',
-  whyC:
-    'https://www.figma.com/api/mcp/asset/087c9be2-a837-470b-8185-96c0e82036c6',
-  whyD:
-    'https://www.figma.com/api/mcp/asset/575b8cd9-cc1a-47a6-af24-7e51592eaa24',
-  featureImageTop:
-    'https://www.figma.com/api/mcp/asset/dc1be1bc-355c-44ef-be3c-9b4f15320794',
-  featureImageBottom:
-    'https://www.figma.com/api/mcp/asset/cf6cba4f-f8e0-4fe6-bbc8-b552ddedaf91',
-  testimonial:
-    'https://www.figma.com/api/mcp/asset/f76873c9-ba3e-475e-b5b1-2103cbcb11fa',
-  school1:
-    'https://www.figma.com/api/mcp/asset/090c1beb-bb4b-4a8d-93d7-0464dde068b0',
-  school2:
-    'https://www.figma.com/api/mcp/asset/ba82b41c-7105-4187-becb-1d353ceabdd1',
-  school3:
-    'https://www.figma.com/api/mcp/asset/9b62b7ad-342d-4ac0-9f15-456529b18838',
-  school4:
-    'https://www.figma.com/api/mcp/asset/2836b325-68da-45ad-a273-e68df51512b8',
-  school5:
-    'https://www.figma.com/api/mcp/asset/5d84b0e1-5739-4a77-820b-3ef31c50a9cb',
-  galleryChess:
-    'https://www.figma.com/api/mcp/asset/9b6052df-f8e0-4a74-ad55-6880cb51a6dd',
+  heroBg: '/herobanner.png',
+  logoIcon: '/logo1.png',
+  studentA: '/im1.png',
+  studentB: '/im2.png',
+  whyA: '/ssss1.png',
+  whyB: '/ssss2.png',
+  whyC: '/ssss3.png',
+  whyD: '/im3.png',
+  featureImageTop: '/im2.png',
+  featureImageBottom: '/im1.png',
+  testimonial: '/im3.png',
+  school1: '/sc1.png',
+  school2: '/sc2.png',
+  school3: '/sc3.png',
+  school4: '/logo.png',
+  school5: '/logo1.png',
+  galleryChess: '/home.png',
 }
 
 const students = [
@@ -51,37 +34,45 @@ const students = [
 ]
 
 const whyCards = [
-  { image: figmaAssets.whyA, title: 'Creativity' },
-  { image: figmaAssets.studentA, title: 'Logical Thinking' },
-  { image: figmaAssets.whyC, title: 'Patience' },
-  { image: figmaAssets.whyD, title: 'Concentration' },
+  { image: '/im1.png', title: 'Creativity' },
+  { image: '/im2.png', title: 'Logical Thinking' },
+  { image: '/im1.png', title: 'Patience' },
+  { image: '/im2.png', title: 'Concentration' },
 ]
 
 const solutionCards = [
-  { image: figmaAssets.galleryChess, title: 'Regular School Sessions' },
-  { image: figmaAssets.studentA, title: 'Chess in School(CIS)' },
-  { image: figmaAssets.whyA, title: 'Expert Training Programs' },
-  { image: figmaAssets.whyD, title: 'Franchise' },
+  { image: '/im1.png', title: 'Regular School Sessions' },
+  { image: '/im2.png', title: 'Chess in School(CIS)' },
+  { image: '/im1.png', title: 'Expert Training Programs' },
+  { image: '/im2.png', title: 'Franchise' },
 ]
 
 const schoolLogos = [
-  { src: figmaAssets.school1, alt: 'Apeejay School', className: 'logo-square-sm' },
-  { src: figmaAssets.school2, alt: 'Shri Ram Global School', className: 'logo-square' },
-  { src: '/sc1.png', alt: 'Kingdom of Kids', className: 'logo-square' },
-  { src: '/sc2.png', alt: 'Arlington Christian School', className: 'logo-wide' },
-  { src: '/sc3.png', alt: 'Partner school', className: 'logo-wide-sm' },
+  { src: '/sc1.png', alt: 'Apeejay School', className: 'logo-square-sm' },
+  { src: '/sc2.png', alt: 'Shri Ram Global School', className: 'logo-square' },
+  { src: '/sc3.png', alt: 'Kingdom of Kids', className: 'logo-square' },
+  { src: '/sc4.png', alt: 'Arlington Christian School', className: 'logo-wide' },
+  { src: '/sc5.png', alt: 'Partner school', className: 'logo-wide-sm' },
 ]
 
 const gallery = [
-  figmaAssets.studentA,
-  figmaAssets.studentB,
-  figmaAssets.whyA,
-  figmaAssets.heroBg,
-  figmaAssets.studentB,
-  figmaAssets.heroBg,
-  figmaAssets.whyA,
-  figmaAssets.studentA,
-  figmaAssets.galleryChess,
+  '/g1.jpeg',
+  '/g2.jpeg',
+  '/g3.jpeg',
+  '/g4.jpeg',
+  '/g5.jpeg',
+  '/g6.jpeg',
+  '/g7.jpeg',
+  '/g8.jpeg',
+  '/g9.jpeg',
+  '/g10.jpeg',
+  '/g11.jpeg',
+  '/g12.jpeg',
+  '/g13.jpeg',
+  '/g14.jpeg',
+  '/g15.jpeg',
+  '/g16.jpeg',
+  '/g17.jpeg',
 ]
 
 const marqueeItems = [
@@ -96,6 +87,7 @@ const navItems = [
   { href: '/partners', label: 'Partners' },
   { href: '/coaches', label: 'Coaches' },
   { href: '/career', label: 'Career' },
+  { href: '/curriculum', label: 'Curriculum' },
   { href: '#programs', label: 'Programs' },
   { href: '#achievements', label: 'Achievements' },
   { href: '#events', label: 'Events' },
@@ -727,7 +719,7 @@ export function HomePage() {
         <img className="testimonial-banner-bg" src="/chess background.png" alt="" aria-hidden="true" />
         <div className="testimonial-card">
           <div className="testimonial-card-left">
-            <img src={figmaAssets.testimonial} alt="Student testimonial" />
+            <img src="/lastsecond.png" alt="Student testimonial" />
           </div>
           <div className="testimonial-card-right">
             <div className="testimonial-stars">★★★★★</div>

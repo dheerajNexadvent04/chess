@@ -1,13 +1,10 @@
 import { ArrowUpRight, FileText } from 'lucide-react'
 
-const aboutHeroImage =
-  'https://www.figma.com/api/mcp/asset/2a5580e7-9da5-4e92-95f1-cbae69296834'
+const aboutHeroImage = '/im2.png'
 const coachingImage =
   'https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?auto=format&fit=crop&w=1200&q=80'
-const missionBoardImage =
-  'https://images.unsplash.com/photo-1575300806297-4dbf7f81d95f?auto=format&fit=crop&w=1400&q=80'
-const visionKidImage =
-  'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1400&q=80'
+const missionBoardImage = '/im1.png'
+const visionKidImage = '/im2.png'
 
 const memoryCards = [
   { id: 1, variant: 'dark', arrow: 'plain' },

@@ -10,7 +10,7 @@ export function Layout() {
   const isHomePage = location.pathname === '/'
   const isAboutPage = location.pathname === '/about-us'
   const usesLightHeader =
-    isAboutPage || location.pathname === '/contact-us' || location.pathname === '/partners' || location.pathname === '/partnered-schools' || location.pathname === '/coaches' || location.pathname === '/career'
+    isAboutPage || location.pathname === '/contact-us' || location.pathname === '/partners' || location.pathname === '/partnered-schools' || location.pathname === '/coaches' || location.pathname === '/career' || location.pathname === '/curriculum'
   const supportLink = navLinks.find((link) => link.label === 'SUPPORT')
   const primaryNavLinks = navLinks.filter((link) => link.label !== 'SUPPORT')
 
