@@ -1,39 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Award, BookOpen, Brain, CalendarDays, CheckCircle2, ChevronLeft, ChevronRight, Clock, GraduationCap, Lightbulb, LayoutGrid, Phone, Plus, Scale, ShieldCheck, Star, Target, TrendingUp, Trophy, Building2, User, Users, Wallet, Zap } from 'lucide-react'
 
-/* ── Animated stick figure ── */
-function WalkFigure({ speed = 'walk' }) {
-  return (
-    <svg
-      className={`wf wf-${speed}`}
-      viewBox="0 0 44 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Head */}
-      <circle cx="22" cy="7" r="5.5" fill="currentColor" />
-      {/* Torso */}
-      <line x1="22" y1="13" x2="22" y2="34" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      {/* Left arm — pivot at shoulder (22, 19) */}
-      <g className="wf-larm">
-        <line x1="22" y1="19" x2="9" y2="31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      </g>
-      {/* Right arm — pivot at shoulder (22, 19) */}
-      <g className="wf-rarm">
-        <line x1="22" y1="19" x2="35" y2="31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      </g>
-      {/* Left leg — pivot at hip (22, 34) */}
-      <g className="wf-lleg">
-        <line x1="22" y1="34" x2="11" y2="56" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      </g>
-      {/* Right leg — pivot at hip (22, 34) */}
-      <g className="wf-rleg">
-        <line x1="22" y1="34" x2="33" y2="56" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      </g>
-    </svg>
-  )
-}
 
 const heroCards = [
   { title: '100+', subtitle: 'Students Trained', Icon: Users },
@@ -140,45 +107,49 @@ const pathwayLevels = [
     id: 'walkers',
     label: 'Level 1',
     name: 'Walkers',
-    color: '#16a34a',
-    speed: 'walk',
+    color: '#22c55e',
     desc: 'Learn fundamentals, basic tactics & simple gameplay strategies.',
     duration: 'Duration: 3 Months',
+    tag: 'Beginner Friendly',
+    icon: 'fa-chess-pawn'
   },
   {
     id: 'joggers',
     label: 'Level 2',
     name: 'Joggers',
-    color: '#2563eb',
-    speed: 'jog',
+    color: '#3b82f6',
     desc: 'Improve openings, tactics, endgames & tournament readiness.',
     duration: 'Duration: 6 Months',
+    tag: 'Skill Building',
+    icon: 'fa-chess-knight'
   },
   {
     id: 'runner',
     label: 'Level 3',
     name: 'Runner',
-    color: '#9333ea',
-    speed: 'run',
+    color: '#a855f7',
     desc: 'Advanced strategy, FIDE preparation & competitive training.',
     duration: 'Ongoing Training',
+    tag: 'Competitive Edge',
+    icon: 'fa-chess-rook'
   },
   {
-    id: 'crash',
-    label: '⚡ Fast Track Option',
+    id: 'coach',
+    label: 'Fast Track Option',
     name: 'Crash Course',
     color: '#f97316',
-    speed: 'zap',
     desc: 'Accelerated learning for fast progress in shorter time.',
     duration: 'Duration: 3 Months',
+    tag: 'Excellence & Mentorship',
+    icon: 'fa-bolt'
   },
 ]
 
 const curriculumTabs = [
-  { id: 'walkers', name: 'Walkers',      color: '#16a34a' },
-  { id: 'joggers', name: 'Joggers',      color: '#2563eb' },
-  { id: 'runner',  name: 'Runner',       color: '#9333ea' },
-  { id: 'crash',   name: 'Crash Course', color: '#f97316' },
+  { id: 'walkers', label: 'Walkers', color: '#22c55e', icon: 'fa-person-walking' },
+  { id: 'joggers', label: 'Joggers', color: '#3b82f6', icon: 'fa-person-running' },
+  { id: 'runner', label: 'Runner', color: '#a855f7', icon: 'fa-person-running' },
+  { id: 'crash', label: 'Crash Course', color: '#f97316', icon: 'fa-rocket' },
 ]
 
 const detailedCurriculum = {
@@ -553,7 +524,7 @@ export function CurriculumPage() {
       {/* ── Why Parents Choose ── */}
       <div className="curriculum-why">
         <div className="curriculum-why-image">
-          <img src="/im1.png" alt="Chess coaching session at Rohini Chess Academy" />
+          <img src="/n1.jpg" alt="Chess coaching session at Rohini Chess Academy" />
         </div>
 
         <div className="curriculum-why-content">
@@ -666,52 +637,73 @@ export function CurriculumPage() {
       <div className="curriculum-pathway">
         <div className="curriculum-pathway-left">
           <p className="curriculum-pathway-kicker">
-            <span className="kicker-dot" />
-            Learning Pathway
+            <Trophy size={14} style={{ marginRight: 6 }} />
+            LEARN & GROW
           </p>
           <h2>Your Child's Chess<br />Journey Roadmap</h2>
           <p className="curriculum-pathway-desc">
-            A carefully structured progression from first moves to tournament podium.
-            Each level builds on the last, so your child always knows exactly where they're headed.
+            A carefully structured learning path from first moves to tournament readiness.
+            Each level builds skills, confidence, and a love for chess.
           </p>
           <a href="tel:+918447992702" className="curriculum-pathway-cta">
-            <CalendarDays size={18} strokeWidth={2} />
+            <CalendarDays size={20} strokeWidth={2} style={{ marginRight: 10 }} />
             Book Free Trial
           </a>
+
+          <div className="pathway-social-proof">
+            <div className="pathway-avatars">
+              <img src="/n2.jpg" alt="" />
+              <img src="/n3.jpg" alt="" />
+              <img src="/n4.jpg" alt="" />
+            </div>
+            <div className="pathway-rating">
+              <div className="pathway-stars">
+                <Star size={16} fill="#f59e0b" color="#f59e0b" />
+                <strong>4.9/5</strong>
+              </div>
+              <span>Trusted by 1,000+ parents</span>
+            </div>
+          </div>
         </div>
 
-        <div className="curriculum-pathway-right">
-          {pathwayLevels.map((level, idx) => (
-            <div key={level.id} className="pathway-step">
-              {/* Card */}
-              <div className="pathway-card" style={{ '--pw-color': level.color }}>
-                <div className="pathway-circle" style={{ borderColor: level.color }}>
-                  {level.speed === 'zap'
-                    ? <Zap size={30} strokeWidth={2.2} color={level.color} />
-                    : <WalkFigure speed={level.speed} />
-                  }
+        <div className="curriculum-pathway-right-wrapper">
+          <div className="curriculum-pathway-right">
+            {pathwayLevels.map((level, idx) => (
+              <div key={level.id} className="pathway-step">
+                {/* Number indicator */}
+                <div className="pathway-number" style={{ color: level.color }}>
+                  {String(idx + 1).padStart(2, '0')}
                 </div>
-                <p className="pathway-level-label" style={{ color: level.color }}>{level.label}</p>
-                <h3 className="pathway-level-name">{level.name}</h3>
-                <p className="pathway-level-desc">{level.desc}</p>
-                <p className="pathway-level-duration">{level.duration}</p>
-              </div>
 
-              {/* Arrow connector (not after last card) */}
-              {idx < pathwayLevels.length - 1 && (
-                <div className="pathway-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 36 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 7 H28" stroke="#93c5fd" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M24 2 L34 7 L24 12" stroke="#93c5fd" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                {/* Card */}
+                <div className="pathway-card" style={{ '--pw-color': level.color }}>
+                  <div className="pathway-circle" style={{ borderColor: `${level.color}40`, background: `${level.color}08` }}>
+                    <i className={`fa-solid ${level.icon}`} style={{ fontSize: '32px', color: level.color }}></i>
+                  </div>
+
+                  <p className="pathway-level-label" style={{ color: level.color }}>{level.label}</p>
+                  <h3 className="pathway-level-name">{level.name}</h3>
+                  <p className="pathway-level-desc">{level.desc}</p>
+
+                  <div className="pathway-duration-pill" style={{ background: `${level.color}12`, color: level.color }}>
+                    <Clock size={14} style={{ marginRight: 6 }} />
+                    {level.duration}
+                  </div>
+
+                  <div className="pathway-card-footer" style={{ background: `${level.color}08`, borderTop: `1px solid ${level.color}15` }}>
+                    {level.icon === 'crown' ? <Star size={14} color={level.color} /> : <TrendingUp size={14} color={level.color} />}
+                    <span style={{ color: level.color }}>{level.tag}</span>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+
+
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* ── Detailed Curriculum ── */}
+       {/* ── Detailed Curriculum ── */}
       <div
         className="curriculum-detailed"
         style={{ '--dc-accent': curriculumTabs.find(t => t.id === activeTab).color }}
@@ -722,37 +714,47 @@ export function CurriculumPage() {
               <span className="kicker-dot" />
               Detailed Curriculum
             </p>
-            <h2>What Your Child Will Learn</h2>
+            <h2>What Your Child<br /><span>Will Learn</span></h2>
+            <p className="dc-desc">
+              Step-by-step curriculum designed to build strong chess fundamentals and advanced thinking.
+            </p>
           </div>
 
-          <div className="dc-tabs" role="tablist">
-            {curriculumTabs.map((tab) => (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                className={`dc-tab${activeTab === tab.id ? ' dc-tab--active' : ''}`}
-                style={{ '--tab-color': tab.color }}
-                onClick={() => handleTab(tab.id)}
-              >
-                <span className="dc-tab-name">{tab.name}</span>
-              </button>
-            ))}
+          <div className="curriculum-tabs-container">
+            <nav className="curriculum-tabs" role="tablist">
+              {curriculumTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`dc-tab${activeTab === tab.id ? ' active' : ''}`}
+                  onClick={() => handleTab(tab.id)}
+                  style={{ '--tab-color': tab.color }}
+                >
+                  <div className="tab-icon-circle">
+                    <i className={`fa-solid ${tab.icon}`}></i>
+                  </div>
+                  <span>{tab.label}</span>
+                  {activeTab === tab.id && <div className="tab-pointer" />}
+                </button>
+              ))}
+            </nav>
           </div>
         </div>
 
-        <div key={tabKey} className="dc-content-card">
-          <div className="dc-columns">
-            {detailedCurriculum[activeTab].map((col) => (
-              <div key={col.title} className="dc-col">
-                <div className="dc-col-head">
-                  <col.Icon size={26} strokeWidth={1.8} className="dc-col-icon" />
-                  <h3 className="dc-col-title">{col.title}</h3>
+        <div className="curriculum-detailed-main">
+          <div className="dc-grid">
+            {detailedCurriculum[activeTab].map((section, sIdx) => (
+              <div key={section.title} className="dc-col">
+                <div className="dc-col-header">
+                  <div className="dc-col-icon">
+                    <section.Icon size={32} />
+                  </div>
+                  <h3>{section.title}</h3>
+                  <p className="dc-col-desc">Comprehensive learning path for this stage.</p>
                 </div>
-                <ul className="dc-col-list">
-                  {col.items.map((item) => (
+                <ul className="dc-items">
+                  {section.items.map((item) => (
                     <li key={item}>
-                      <CheckCircle2 size={13} strokeWidth={2.5} className="dc-check-icon" />
+                      <i className="fa-solid fa-circle-check"></i>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -760,7 +762,7 @@ export function CurriculumPage() {
               </div>
             ))}
           </div>
-          <p className="dc-footnote">Each section is designed for strong understanding &amp; practical gameplay.</p>
+
         </div>
       </div>
 
@@ -771,15 +773,19 @@ export function CurriculumPage() {
           Benefits of Learning Chess
         </p>
         <h2 className="curriculum-benefits-h2">Chess Builds Skills That Last a Lifetime</h2>
-        <div className="benefits-grid">
-          {benefits.map((b) => (
-            <div key={b.label} className="benefit-card">
-              <div className="benefit-icon-wrap">
-                <b.Icon size={30} strokeWidth={1.6} />
+        
+        <div className="benefits-marquee-container">
+          <div className="benefits-marquee-track">
+            {/* Double the items for seamless looping */}
+            {[...benefits, ...benefits].map((b, idx) => (
+              <div key={`${b.label}-${idx}`} className="benefit-card">
+                <div className="benefit-icon-wrap">
+                  <b.Icon size={30} strokeWidth={1.6} />
+                </div>
+                <p className="benefit-label">{b.label}</p>
               </div>
-              <p className="benefit-label">{b.label}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -788,14 +794,14 @@ export function CurriculumPage() {
         {/* Left: 3 images — 1 tall + 2 stacked */}
         <div className="tournament-images">
           <div className="tournament-img-large">
-            <img src="/im2.png" alt="Student focused on chess" />
+            <img src="/n5.jpg" alt="Student focused on chess" />
           </div>
           <div className="tournament-img-stack">
             <div className="tournament-img-top">
-              <img src="/im1.png" alt="Students winning trophy" />
+              <img src="/n1.jpg" alt="Students winning trophy" />
             </div>
             <div className="tournament-img-bottom">
-              <img src="/im3.png" alt="Chess classroom session" />
+              <img src="/n2.jpg" alt="Chess classroom session" />
             </div>
           </div>
         </div>
@@ -882,25 +888,9 @@ export function CurriculumPage() {
           </div>
         </div>
 
-        {/* Right: Blue banner card */}
-        <div className="faq-banner">
-          <div className="faq-banner-inner">
-            <img src="/im3.png" alt="Chess king" className="faq-banner-img" />
-            <div className="faq-banner-content">
-              <p className="faq-banner-tag">Start Your Journey</p>
-              <h3 className="faq-banner-heading">Ready to Begin Your Chess Adventure?</h3>
-              <p className="faq-banner-sub">Join Rohini Chess Academy and unlock your potential with expert coaching, structured curriculum, and tournament exposure.</p>
-              <div className="faq-banner-actions">
-                <a href="tel:+919999999999" className="faq-btn faq-btn--gold">
-                  Book Free Trial
-                </a>
-                <a href="tel:+919999999999" className="faq-btn faq-btn--outline">
-                  <Phone size={15} strokeWidth={2.5} />
-                  Call Now
-                </a>
-              </div>
-            </div>
-          </div>
+        {/* Right: Landscape Banner */}
+        <div className="faq-right-banner">
+          <img src="/n3.jpg" alt="Students practicing chess" className="faq-landscape-image" />
         </div>
       </div>
 
