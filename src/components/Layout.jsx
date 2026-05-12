@@ -169,9 +169,8 @@ export function Layout() {
             <h4>EXPLORE PAGES</h4>
             <a href="/">Home</a>
             <a href="/about-us">About Us</a>
-            <a href="/#programs">Programs</a>
             <a href="/#achievements">Achievements</a>
-            <a href="/#events">Events</a>
+            <a href="/career">Career</a>
             <a href="/contact-us">Contact Us</a>
           </div>
           <div className="footer-col footer-col-contact">

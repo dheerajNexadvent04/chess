@@ -6,9 +6,9 @@ const figmaAssets = {
   logoIcon: '/logo1.png',
   studentA: '/im1.png',
   studentB: '/im2.png',
-  whyA: '/ssss1.png',
-  whyB: '/ssss2.png',
-  whyC: '/ssss3.png',
+  whyA: '/im1.png',
+  whyB: '/im2.png',
+  whyC: '/im1.png',
   whyD: '/im3.png',
   featureImageTop: '/im2.png',
   featureImageBottom: '/im1.png',
@@ -18,7 +18,7 @@ const figmaAssets = {
   school3: '/sc3.png',
   school4: '/logo.png',
   school5: '/logo1.png',
-  galleryChess: '/home.png',
+  galleryChess: '/im2.png',
 }
 
 const students = [
@@ -86,11 +86,8 @@ const navItems = [
   { href: '/about-us', label: 'About us' },
   { href: '/partners', label: 'Partners' },
   { href: '/coaches', label: 'Coaches' },
-  { href: '/career', label: 'Career' },
   { href: '/curriculum', label: 'Curriculum' },
-  { href: '#programs', label: 'Programs' },
   { href: '#achievements', label: 'Achievements' },
-  { href: '#events', label: 'Events' },
 ]
 
 export function HomePage() {
@@ -763,9 +760,8 @@ export function HomePage() {
             <h4>EXPLORE PAGES</h4>
             <a href="/">Home</a>
             <a href="/about-us">About Us</a>
-            <a href="#programs">Programs</a>
             <a href="#achievements">Achievements</a>
-            <a href="#events">Events</a>
+            <a href="/career">Career</a>
           </div>
           <div className="footer-col footer-col-contact">
             <h4>CONTACT US</h4>
