@@ -63,8 +63,7 @@ export function ContactPage() {
   return (
     <div className="contact-page">
       <section className="contact-hero" aria-labelledby="contact-title">
-        <img className="contact-hero-image" src={contactHeroImage} alt="Chess academy classroom" />
-        <div className="contact-hero-overlay" />
+
         <div className="contact-hero-content">
           <h1 id="contact-title">Contact Us</h1>
           <div className="contact-hero-rule" aria-hidden="true" />

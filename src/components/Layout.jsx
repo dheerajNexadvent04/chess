@@ -60,14 +60,14 @@ export function Layout() {
 
           <nav className={`nav ${menuOpen ? 'open' : ''} ${usesLightHeader ? 'about-desktop-nav' : ''}`}>
             {primaryNavLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.label}
-                className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
-                href={link.to}
+                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                to={link.to}
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
             {usesLightHeader && supportLink ? (
               <a
@@ -127,18 +127,31 @@ export function Layout() {
             </div>
             <nav className="about-mobile-drawer-links">
               {primaryNavLinks.map((link) => (
-                <a key={`about-drawer-${link.label}`} href={link.to} onClick={() => setMenuOpen(false)}>
+                <NavLink 
+                  key={`about-drawer-${link.label}`} 
+                  to={link.to} 
+                  onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) => isActive ? 'active' : ''}
+                >
                   {link.label}
-                </a>
+                </NavLink>
               ))}
               {supportLink ? (
-                <a href={supportLink.to} onClick={() => setMenuOpen(false)}>
+                <NavLink 
+                  to={supportLink.to} 
+                  onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) => isActive ? 'active' : ''}
+                >
                   {supportLink.label}
-                </a>
+                </NavLink>
               ) : null}
-              <a href="/contact-us" onClick={() => setMenuOpen(false)}>
+              <NavLink 
+                to="/contact-us" 
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => isActive ? 'active' : ''}
+              >
                 CONTACT
-              </a>
+              </NavLink>
             </nav>
           </aside>
         </>

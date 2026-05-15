@@ -41,6 +41,29 @@ const partnerSchools = [
     description:
       "Apeejay School Kharghar reflects the Apeejay Education Society's commitment to quality education with global outlook and strong values. The school emphasizes integrated personality development, leadership, and lifelong learning through a student-first academic environment.",
   },
+  {
+    name: 'Apeejay School Pitampura',
+    images: [
+      '/pitam1.png',
+      '/pitam2.jpg',
+      '/pitam3.jpg',
+      '/pitam4.jpg',
+      '/pitam5.jpg',
+    ],
+    description:
+      'Apeejay School, Pitampura, established in 1990, has consistently ranked among the top schools in Delhi. The institution is dedicated to creating a nurturing environment where students excel in both academics and sports, with a special emphasis on developing strategic thinking through its advanced chess programs.',
+  },
+  {
+    name: 'Apeejay School Saket',
+    images: [
+      '/pitams1.jpg',
+      '/pitams2.jpg',
+      '/pitams3.jpg',
+      '/pitams4.jpg',
+    ],
+    description:
+      'Apeejay School, Saket, is a premier institution in South Delhi known for its commitment to holistic excellence. The school provides a vibrant learning platform that balances traditional values with modern educational techniques, fostering a community of critical thinkers and future leaders.',
+  },
 ]
 
 export function PartnerSchoolsPage() {

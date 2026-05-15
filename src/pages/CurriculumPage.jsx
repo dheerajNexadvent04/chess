@@ -493,32 +493,32 @@ const curriculumDetails = [
     title: "Fundamentals",
     description: "Students begin by understanding the chessboard, piece movement, rules, and essential gameplay concepts required to build a strong foundation.",
     topics: ["Chess board & pieces", "Rules of the game", "Check, checkmate & stalemate", "Castling, promotion & en passant", "Basic gameplay understanding", "Opening principles"],
-    image: "/c1.jpg"
+    image: "/fundamentals.jpg"
   },
   {
     title: "Openings",
     description: "Students learn practical opening systems, positional development, and safe opening habits that help create strong early-game positions.",
     topics: ["Basic opening ideas", "Center control concepts", "Piece development", "Common opening traps", "Italian Game introduction", "Ruy Lopez introduction"],
-    image: "/c2.jpg"
+    image: "/opening.jpg"
   },
   {
     title: "Tactics",
     description: "The curriculum focuses heavily on tactical pattern recognition and practical combinations that improve real match performance.",
     topics: ["Forks", "Pins", "Skewers", "Discovered attacks", "Double attacks", "Back rank checkmates", "Puzzle solving practice"],
-    image: "/c3.jpg"
+    image: "/tactics.jpg"
   },
   {
     title: "Endgames",
     description: "Students develop the ability to convert winning positions confidently through structured endgame training.",
     topics: ["King & Queen checkmate", "King & Rook checkmate", "Basic pawn endgames", "Opposition concepts", "Practical endgame strategies"],
-    image: "/c4.jpg"
+    image: "/endgame.jpg"
   },
   {
     title: "Tournament Activities",
     description: "Students regularly participate in practice games, puzzle contests, and mini tournaments to build confidence and competitive exposure.",
     topics: ["Practice matches", "Puzzle competitions", "Match analysis", "Friendly tournaments", "Competitive preparation"],
     label: "Activities Included",
-    image: "/c5.jpg"
+    image: "/tournament.jpg"
   }
 ];
 
@@ -828,7 +828,7 @@ export function CurriculumPage() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
       section.removeEventListener('wheel', handleWheel);
-      clearTimeout(scrollTimeout);
+
     };
   }, []);
 
@@ -990,17 +990,10 @@ export function CurriculumPage() {
           <div className="impact-v5__grid">
             <div className="impact-v5__content">
               <span className="impact-v5__badge">PROVEN EXCELLENCE</span>
-              <h2 className="impact-v5__heading">Elevating Potential Through Strategic Mastery</h2>
+              <h2 className="impact-v5__heading">What Your Child Will Learn</h2>
               <p className="impact-v5__subtext">
-                Join thousands of students who have transformed their cognitive abilities and competitive rankings through our specialized curriculum and expert coaching.
+                A structured curriculum designed to develop strong chess fundamentals, tactical awareness, strategic thinking, and competitive confidence.
               </p>
-              
-              <button className="impact-v5__btn">
-                Join the Academy
-                <span className="impact-v5__btn-arrow">
-                  <ArrowRight size={22} />
-                </span>
-              </button>
 
               <div className="impact-v5__stats">
                 <StatBox number={15000} suffix="+" label="Enrolled Students" />
