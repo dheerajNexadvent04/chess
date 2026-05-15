@@ -152,12 +152,7 @@ export const coaches = [
     image: '/c2.jpg',
     bio: 'He is former Delhi state champion.',
   },
-  {
-    name: 'Manohar Lal',
-    title: 'Former Haryana State Champion',
-    image: '/c3.jpg',
-    bio: 'He is former haryana state champion current FIDE rating is 1909.',
-  },
+
   {
     name: 'Love Jindal',
     title: 'Former Punjab State Champion',

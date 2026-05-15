@@ -1,25 +1,13 @@
-import { useState, useEffect, useCallback } from 'react'
-import { Award, BookOpen, Brain, CalendarDays, CheckCircle2, ChevronLeft, ChevronRight, Clock, GraduationCap, Lightbulb, LayoutGrid, Phone, Plus, Scale, ShieldCheck, Star, Target, TrendingUp, Trophy, Building2, User, Users, Wallet, Zap } from 'lucide-react'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { Award, BookOpen, Brain, CalendarDays, CheckCircle2, ChevronLeft, ChevronRight, Clock, GraduationCap, Lightbulb, LayoutGrid, Phone, Plus, Scale, ShieldCheck, Star, Target, TrendingUp, Trophy, Building2, User, Users, Wallet, Zap, ArrowUpRight, PlayCircle, FolderCheck, Globe, ArrowRight } from 'lucide-react'
 
 
-const heroCards = [
-  { title: '100+', subtitle: 'Students Trained', Icon: Users },
-  { title: 'Expert', subtitle: 'Chess Coaches', Icon: GraduationCap },
-  { title: 'Tournament', subtitle: 'Ready Training', Icon: ShieldCheck },
-]
 
-const heroStats = [
-  { value: '4', label: 'Structured\nCourses', Icon: LayoutGrid },
-  { value: 'FIDE', label: 'Preparation', Icon: Trophy },
-  { value: 'Delhi Chess', label: 'Association\nAffiliated', Icon: Building2 },
-  { value: '5 – 15', label: 'Years\nAge Group', Icon: Users },
-]
 
 const heroBadges = [
   { label: 'Delhi Chess Association Affiliated', Icon: Award },
   { label: 'Online & Offline Classes', Icon: BookOpen },
   { label: 'Tournament Preparation', Icon: Award },
-  { label: 'Expert Coaches', Icon: GraduationCap },
   { label: '100+ Students Trained', Icon: Users },
 ]
 
@@ -38,9 +26,9 @@ const courses = [
     ],
     details: [
       { Icon: CalendarDays, label: 'Duration: 3 Months' },
-      { Icon: Clock,        label: 'Classes: 24 (1 Hr Each)' },
-      { Icon: Users,        label: 'Age Group: 5–12 Years' },
-      { Icon: Wallet,       label: 'Fees: ₹9,000' },
+      { Icon: Clock, label: 'Classes: 24 (1 Hr Each)' },
+      { Icon: Users, label: 'Age Group: 5–12 Years' },
+      { Icon: Wallet, label: 'Fees: ₹9,000' },
     ],
   },
   {
@@ -57,9 +45,9 @@ const courses = [
     ],
     details: [
       { Icon: CalendarDays, label: 'Duration: 6 Months' },
-      { Icon: Clock,        label: 'Classes: 48 (1 Hr Each)' },
-      { Icon: Users,        label: 'Age Group: 8–12 Years' },
-      { Icon: Wallet,       label: 'Fees: ₹21,000' },
+      { Icon: Clock, label: 'Classes: 48 (1 Hr Each)' },
+      { Icon: Users, label: 'Age Group: 8–12 Years' },
+      { Icon: Wallet, label: 'Fees: ₹21,000' },
     ],
   },
   {
@@ -75,10 +63,10 @@ const courses = [
       'Competitive match analysis',
     ],
     details: [
-      { Icon: BookOpen,     label: '20 Coaching Classes' },
-      { Icon: Target,       label: '20 Practice Sessions' },
-      { Icon: Users,        label: 'Age Group: Up to 15 Years' },
-      { Icon: Star,         label: 'For 1500+ Chess.com Rating' },
+      { Icon: BookOpen, label: '20 Coaching Classes' },
+      { Icon: Target, label: '20 Practice Sessions' },
+      { Icon: Users, label: 'Age Group: Up to 15 Years' },
+      { Icon: Star, label: 'For 1500+ Chess.com Rating' },
     ],
   },
   {
@@ -95,9 +83,9 @@ const courses = [
     ],
     details: [
       { Icon: CalendarDays, label: 'Duration: 3 Months' },
-      { Icon: Clock,        label: 'Classes: 24 (1 Hr Each)' },
-      { Icon: Users,        label: 'Age Group: 5–12 Years' },
-      { Icon: Wallet,       label: 'Fees: ₹11,000' },
+      { Icon: Clock, label: 'Classes: 24 (1 Hr Each)' },
+      { Icon: Users, label: 'Age Group: 5–12 Years' },
+      { Icon: Wallet, label: 'Fees: ₹11,000' },
     ],
   },
 ]
@@ -341,11 +329,11 @@ const tournamentFeatures = [
 ]
 
 const benefits = [
-  { Icon: Target,     label: 'Improves\nConcentration' },
-  { Icon: Brain,      label: 'Develops\nLogical Thinking' },
-  { Icon: Scale,      label: 'Better\nDecision Making' },
-  { Icon: Clock,      label: 'Improves\nPatience' },
-  { Icon: Lightbulb,  label: 'Enhances\nMemory' },
+  { Icon: Target, label: 'Improves\nConcentration' },
+  { Icon: Brain, label: 'Develops\nLogical Thinking' },
+  { Icon: Scale, label: 'Better\nDecision Making' },
+  { Icon: Clock, label: 'Improves\nPatience' },
+  { Icon: Lightbulb, label: 'Enhances\nMemory' },
   { Icon: TrendingUp, label: 'Builds\nConfidence' },
 ]
 
@@ -385,6 +373,208 @@ const faqs = [
   },
 ]
 
+function AnimatedNumber({ end, suffix = '+', duration = 2000 }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setCount(Math.floor(easeProgress * end));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(end);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [end, duration]);
+
+  return <>{count}{suffix}</>;
+}
+
+const journeySteps = [
+  {
+    id: 1,
+    title: "Level 1 — Walkers",
+    subtitle: "Beginner Foundation Program",
+    desc: "Children learn chess fundamentals, board understanding, movement rules, and basic tactical thinking in an engaging and beginner-friendly environment.",
+    highlights: ["Learn chess fundamentals", "Basic tactics & gameplay", "Confidence building", "Beginner-friendly learning"],
+    details: ["Duration: 3 Months", "Classes: 24 Sessions", "Age Group: 5–12 Years"],
+    label: "Level 1",
+    name: "Walkers",
+    piece: "♟",
+    icon: Star
+  },
+  {
+    id: 2,
+    title: "Level 2 — Joggers",
+    subtitle: "Intermediate Skill Development",
+    desc: "Students begin understanding openings, tactics, strategy, and practical gameplay while preparing for competitive chess environments.",
+    highlights: ["Opening principles", "Tactical improvement", "Endgame concepts", "Tournament preparation"],
+    details: ["Duration: 6 Months", "Classes: 48 Sessions", "Age Group: 8–12 Years"],
+    label: "Level 2",
+    name: "Joggers",
+    piece: "♞",
+    icon: FolderCheck
+  },
+  {
+    id: 3,
+    title: "Level 3 — Runner",
+    subtitle: "Advanced Tournament Training",
+    desc: "Advanced students receive high-level chess coaching focused on competitive tournaments, deep positional understanding, and FIDE-level preparation.",
+    highlights: ["Advanced openings & strategy", "Competitive match analysis", "FIDE tournament preparation", "Performance-focused coaching"],
+    details: ["Ongoing Training", "Practice + Coaching Sessions", "For 1500+ Chess.com Rating", "Age Group: Up to 15 Years"],
+    label: "Level 3",
+    name: "Runner",
+    piece: "♜",
+    icon: Globe
+  },
+  {
+    id: 4,
+    title: "Fast Track Program",
+    subtitle: "Accelerated Chess Learning",
+    desc: "An intensive learning program designed for faster improvement, tournament preparation, and rapid skill development.",
+    highlights: ["Fast-track learning", "Essential openings & tactics", "Quick tournament preparation", "Intensive practical sessions"],
+    details: ["Duration: 3 Months", "Classes: 24 Sessions", "Age Group: 5–12 Years"],
+    label: "Crash Course",
+    piece: "♛",
+    icon: Zap
+  }
+];
+
+const coursePrograms = [
+  {
+    name: "Walkers",
+    level: "Beginner Level",
+    desc: "Perfect for children starting their chess journey and learning the game step-by-step.",
+    points: ["24 Classes", "1 Hour Each", "Basic Tactics", "Foundation Building"],
+    fees: "9,000",
+    bgImage: "/n1.jpg"
+  },
+  {
+    name: "Joggers",
+    level: "Intermediate Level",
+    desc: "Designed for students ready to improve tactical understanding and tournament gameplay.",
+    points: ["48 Classes", "Opening & Endgame", "Tournament Prep", "Tactical Improvement"],
+    fees: "21,000",
+    bgImage: "/n2.jpg"
+  },
+  {
+    name: "Runner",
+    level: "Advanced Level",
+    desc: "For students aiming to compete seriously and improve advanced strategic understanding.",
+    points: ["Advanced Strategy", "FIDE Preparation", "Match Analysis", "Competitive Training"],
+    fees: "25,000",
+    bgImage: "/n3.jpg"
+  },
+  {
+    name: "Crash Course",
+    level: "Fast Track Learning",
+    desc: "An accelerated program for rapid improvement and tournament-focused preparation.",
+    points: ["24 Classes", "Intensive Learning", "Tactical Training", "Fast Progression"],
+    fees: "11,000",
+    bgImage: "/n4.jpg"
+  }
+];
+
+const schoolLogos = [
+  { src: '/sc1.png', alt: 'Apeejay School', className: 'logo-square-sm' },
+  { src: '/sc2.png', alt: 'Shri Ram Global School', className: 'logo-square' },
+  { src: '/sc3.png', alt: 'Kingdom of Kids', className: 'logo-square' },
+  { src: '/sc4.png', alt: 'Arlington Christian School', className: 'logo-wide' },
+  { src: '/sc5.png', alt: 'Partner school', className: 'logo-wide-sm' },
+];
+
+const curriculumDetails = [
+  {
+    title: "Fundamentals",
+    description: "Students begin by understanding the chessboard, piece movement, rules, and essential gameplay concepts required to build a strong foundation.",
+    topics: ["Chess board & pieces", "Rules of the game", "Check, checkmate & stalemate", "Castling, promotion & en passant", "Basic gameplay understanding", "Opening principles"],
+    image: "/c1.jpg"
+  },
+  {
+    title: "Openings",
+    description: "Students learn practical opening systems, positional development, and safe opening habits that help create strong early-game positions.",
+    topics: ["Basic opening ideas", "Center control concepts", "Piece development", "Common opening traps", "Italian Game introduction", "Ruy Lopez introduction"],
+    image: "/c2.jpg"
+  },
+  {
+    title: "Tactics",
+    description: "The curriculum focuses heavily on tactical pattern recognition and practical combinations that improve real match performance.",
+    topics: ["Forks", "Pins", "Skewers", "Discovered attacks", "Double attacks", "Back rank checkmates", "Puzzle solving practice"],
+    image: "/c3.jpg"
+  },
+  {
+    title: "Endgames",
+    description: "Students develop the ability to convert winning positions confidently through structured endgame training.",
+    topics: ["King & Queen checkmate", "King & Rook checkmate", "Basic pawn endgames", "Opposition concepts", "Practical endgame strategies"],
+    image: "/c4.jpg"
+  },
+  {
+    title: "Tournament Activities",
+    description: "Students regularly participate in practice games, puzzle contests, and mini tournaments to build confidence and competitive exposure.",
+    topics: ["Practice matches", "Puzzle competitions", "Match analysis", "Friendly tournaments", "Competitive preparation"],
+    label: "Activities Included",
+    image: "/c5.jpg"
+  }
+];
+
+const StatBox = ({ number, suffix, label }) => {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted) {
+          setHasStarted(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    let start = 0;
+    const end = number;
+    const duration = 2000;
+    const increment = end / (duration / 16);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [hasStarted, number]);
+
+  return (
+    <div className="stat-box" ref={elementRef}>
+      <span className="stat-box__number">
+        {count.toLocaleString()}{suffix}
+      </span>
+      <span className="stat-box__label">{label}</span>
+    </div>
+  );
+};
+
 export function CurriculumPage() {
   const [activeFeature, setActiveFeature] = useState(0)
   const [slideDir, setSlideDir] = useState('next')
@@ -394,6 +584,25 @@ export function CurriculumPage() {
   const [openFaq, setOpenFaq] = useState(null)
   const [activeTournament, setActiveTournament] = useState(0)
   const [tournamentKey, setTournamentKey] = useState(0)
+  const timelineItemsRef = useRef([])
+  const reviewGridRef = useRef(null)
+
+  const scrollReviews = (direction) => {
+    const grid = reviewGridRef.current
+    if (!grid) return
+
+    const firstCard = grid.querySelector('.review-card')
+    if (!firstCard) return
+
+    const cardWidth = firstCard.getBoundingClientRect().width
+    const gap = parseFloat(window.getComputedStyle(grid).columnGap || '0')
+    const scrollAmount = cardWidth + gap
+
+    grid.scrollBy({
+      left: direction === 'next' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth',
+    })
+  }
 
   const handleTab = useCallback((id) => {
     setActiveTab(id)
@@ -450,449 +659,536 @@ export function CurriculumPage() {
     return () => clearInterval(t)
   }, [])
 
+  // Journey Timeline Scroll Logic
+  useEffect(() => {
+    const section = document.getElementById('journey-v5');
+    if (!section) return;
+
+    const trackFill = section.querySelector('.journey-v5__track-fill');
+    const steps = section.querySelectorAll('.journey-v5__step');
+    const nodeWrappers = section.querySelectorAll('.journey-v5__node-wrapper');
+    const nodes = section.querySelectorAll('.journey-v5__node');
+
+    function updateTimeline() {
+      const windowHeight = window.innerHeight;
+      const headerHeight = 86;
+      // Use 50% of the AVAILABLE screen (below header) so the line exactly meets the dot
+      const activationY = headerHeight + (windowHeight - headerHeight) / 2;
+
+      const track = section.querySelector('.journey-v5__track');
+      if (!track) return;
+
+      const trackRect = track.getBoundingClientRect();
+      
+      // Pin the track bottom physically to the last node center
+      if (nodeWrappers.length > 0) {
+        const lastNodeRect = nodeWrappers[nodeWrappers.length - 1].getBoundingClientRect();
+        const lastNodeCenterY = lastNodeRect.top + lastNodeRect.height / 2;
+        
+        // Calculate how far the node center is from the bottom of its parent container (the timeline)
+        // This ensures the offset is accurate regardless of section padding or headers.
+        const parentRect = track.parentElement.getBoundingClientRect();
+        const offsetFromBottom = parentRect.bottom - lastNodeCenterY - 10;
+        
+        track.style.bottom = `${offsetFromBottom}px`;
+        track.style.height = 'auto'; // Let it stretch from CSS top to this bottom
+      }
+      
+      const finalTrackRect = track.getBoundingClientRect();
+      const trackHeight = finalTrackRect.height || 1;
+      
+      let fillPixels = activationY - finalTrackRect.top;
+      let fillProgress = Math.max(0, Math.min(1, fillPixels / trackHeight));
+
+      if (trackFill) {
+        trackFill.style.transform = `scaleY(${fillProgress})`;
+      }
+
+      steps.forEach((step, index) => {
+        const node = nodes[index];
+        const wrapper = nodeWrappers[index];
+        if (!wrapper) return;
+
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const nodeCenterY = wrapperRect.top + wrapperRect.height / 2;
+
+        // Node is reached if the activation point has passed its center
+        // Add 10px tolerance for floating point scroll math
+        const isReached = (activationY + 10) >= nodeCenterY;
+
+        if (isReached) {
+          if (node) node.setAttribute('data-reached', 'true');
+          step.setAttribute('data-reached', 'true');
+        } else {
+          if (node) node.setAttribute('data-reached', 'false');
+          step.setAttribute('data-reached', 'false');
+        }
+      });
+    }
+
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateTimeline();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    updateTimeline();
+
+    // Wheel intercepter for precise step-by-step scrolling
+    let isAnimating = false;
+    let lastWheelTime = 0;
+
+    const handleWheel = (e) => {
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const scrollingDown = e.deltaY > 0;
+      const scrollingUp = e.deltaY < 0;
+
+      // 1. Boundary Checks: If we are at the top of the section and scrolling up, 
+      // or at the bottom and scrolling down, let native scroll take over immediately.
+      const isAtTop = rect.top >= -50; 
+      const isAtBottom = rect.bottom <= windowHeight + 50;
+
+      if ((isAtTop && scrollingUp) || (isAtBottom && scrollingDown)) {
+        return; 
+      }
+
+      // 2. Proximity Check: Only intercept if the section is occupying most of the viewport.
+      // This prevents the "sticky" feeling when just passing by the section.
+      if (rect.top > windowHeight * 0.15 || rect.bottom < windowHeight * 0.85) {
+        return;
+      }
+
+      // 3. Rate Limiting & Delta Check
+      if (isAnimating || Math.abs(e.deltaY) < 20) return;
+      
+      const now = Date.now();
+      if (now - lastWheelTime < 600) return; // Prevent rapid-fire scrolls
+
+      const nodeWrappers = section.querySelectorAll('.journey-v5__node-wrapper');
+      if (nodeWrappers.length === 0) return;
+
+      const headerHeight = 86;
+      const viewportCenterY = headerHeight + (windowHeight - headerHeight) / 2;
+      let targetIdx = -1;
+
+      if (scrollingDown) {
+        for (let i = 0; i < nodeWrappers.length; i++) {
+          const wr = nodeWrappers[i].getBoundingClientRect();
+          const wrCenter = wr.top + wr.height / 2;
+          if (wrCenter > viewportCenterY + 20) {
+            targetIdx = i;
+            break;
+          }
+        }
+      } else {
+        for (let i = nodeWrappers.length - 1; i >= 0; i--) {
+          const wr = nodeWrappers[i].getBoundingClientRect();
+          const wrCenter = wr.top + wr.height / 2;
+          if (wrCenter < viewportCenterY - 20) {
+            targetIdx = i;
+            break;
+          }
+        }
+      }
+
+      // 4. Actively Snap or Passthrough
+      if (targetIdx !== -1) {
+        e.preventDefault(); // Only prevent default if we found a valid snap target
+        isAnimating = true;
+        lastWheelTime = now;
+
+        const targetNode = nodeWrappers[targetIdx];
+        const targetRect = targetNode.getBoundingClientRect();
+        const targetCenterY = targetRect.top + targetRect.height / 2;
+        const scrollAmount = targetCenterY - viewportCenterY;
+
+        window.scrollBy({
+          top: scrollAmount,
+          behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+          isAnimating = false;
+        }, 800);
+      }
+      // If targetIdx is -1, we don't prevent default, allowing native exit
+    };
+
+    section.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      section.removeEventListener('wheel', handleWheel);
+      clearTimeout(scrollTimeout);
+    };
+  }, []);
+
   return (
     <section className="curriculum-page" aria-label="Curriculum page">
 
-      {/* ── Hero ── */}
-      <div className="curriculum-hero">
-        <img className="curriculum-hero-bg" src="/herobanner.png" alt="" aria-hidden="true" />
-        <div className="curriculum-hero-overlay" />
-
-        <div className="curriculum-hero-main">
-          <div className="curriculum-hero-left">
-            <p className="curriculum-kicker">Structured chess coaching for kids</p>
+      {/* ── New Hero ── */}
+      <div className="new-curriculum-hero">
+        <div className="nch-container">
+          <div className="nch-left">
+            <p className="nch-eyebrow">Structured Chess Coaching for Kids</p>
             <h1>
-              Chess Courses
-              <br />
-              Designed to
-              <br />
-              Build <span>Champions</span>
+              Structured Chess Curriculum Designed to Build Future Champions
             </h1>
             <p>
-              Structured chess coaching for children aged 5 to 15 years from beginner
-              learning to tournament level preparation.
+              A carefully designed chess learning program for children aged 5 to 15 years that develops strategic thinking, tournament confidence, and competitive skills through structured progression.
             </p>
-            <div className="curriculum-hero-actions">
-              <a href="tel:+918447992702">
-                <CalendarDays size={35} strokeWidth={2} style={{ marginRight: 8 }} />
-                Book Free Trial
-              </a>
-              <a className="ghost" href="/courses-offered">
-                View Courses →
-              </a>
+            <div className="nch-actions">
+              <a href="tel:+918447992702" className="nch-btn-primary">Book Free Trial</a>
+              <a href="#about" className="nch-btn-secondary">View Courses</a>
+            </div>
+          </div>
+
+          <div className="nch-right">
+            <div className="nch-image-wrapper">
+              <svg className="nch-rotating-dashed-circle" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="49" fill="none" stroke="#ffd04d" strokeWidth="1" strokeDasharray="5 4" />
+              </svg>
+              <div className="nch-solid-circle"></div>
+              <img src="/student2.png" alt="Student playing chess" className="nch-main-img" />
+
+              {/* Floating cards */}
+              <div className="nch-floating-card fc-1">
+                <div className="fc-icon"><ArrowUpRight size={20} strokeWidth={3} /></div>
+                <div className="fc-text">
+                  <strong><AnimatedNumber end={50} suffix="+" /></strong>
+                  <span>Online Courses</span>
+                </div>
+              </div>
+
+              <div className="nch-floating-card fc-2">
+                <div className="fc-text">
+                  <strong><AnimatedNumber end={10} suffix="k+" /></strong>
+                  <span>Online Students</span>
+                </div>
+                <div className="fc-avatars">
+                  <img src="/c1.jpg" alt="student" />
+                  <img src="/c2.jpg" alt="student" />
+                  <img src="/c3.jpg" alt="student" />
+                  <img src="/c4.jpg" alt="student" />
+                </div>
+              </div>
+
+              <div className="nch-floating-card fc-3">
+                <img src="/c6.jpeg" alt="coach" className="fc-coach-img" />
+                <div className="fc-text">
+                  <strong>Chess Masterclass</strong>
+                  <span>Today at 02:00 Pm</span>
+                  <button className="fc-btn">Join now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      {/* ── Animated Journey Timeline Section ── */}
+      <section id="journey-v5" className="journey-v5">
+
+        {/* Floating Background Pieces */}
+        <div className="journey-bg-pieces">
+          <span className="bg-piece p-1">♞</span>
+          <span className="bg-piece p-2">♜</span>
+          <span className="bg-piece p-3">♟</span>
+          <span className="bg-piece p-4">♛</span>
+          <span className="bg-piece p-5">♝</span>
+          <span className="bg-piece p-6">♚</span>
+        </div>
+
+        <div className="journey-v5__container">
+          <div className="journey-v5__header">
+            <h2 className="journey-v5__heading">What Your Child Will Learn</h2>
+            <p className="journey-v5__subheading">A structured curriculum designed to develop strong chess fundamentals, tactical awareness, strategic thinking, and competitive confidence.</p>
+          </div>
+
+          <div className="journey-v5__body">
+            <div className="journey-v5__timeline">
+              <div className="journey-v5__track">
+                <div className="journey-v5__track-bg"></div>
+                <div className="journey-v5__track-fill"></div>
+              </div>
             </div>
 
-            <div className="curriculum-hero-stats">
-              {heroStats.map((stat) => (
-                <div key={stat.value + stat.label} className="curriculum-hero-stat">
-                  <stat.Icon size={35} strokeWidth={1.8} />
-                  <div>
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
+            {/* Steps Content */}
+            <div className="journey-v5__steps">
+              {journeySteps.map((step, idx) => {
+                const isEven = idx % 2 === 1; // 0-index based, so index 1 is even step
+                return (
+                  <div key={step.id} className={`journey-v5__step ${isEven ? 'journey-v5__step--even' : 'journey-v5__step--odd'}`}>
+                    <div className="journey-v5__content">
+                      <div className="journey-v5__card-side">
+                        <div className="jv5-card">
+                          <div className="jv5-card-header">
+                            <step.icon size={22} className="jv5-card-icon" strokeWidth={2} />
+                            <h4>{step.title}</h4>
+                          </div>
+                          <h5 className="jv5-card-subtitle">{step.subtitle}</h5>
+                          <p>{step.desc}</p>
+
+                          <div className="jv5-card-lists">
+                            <div className="jv5-card-list-group">
+                              <h6>Highlights</h6>
+                              <ul>
+                                {step.highlights.map((h, i) => <li key={i}>{h}</li>)}
+                              </ul>
+                            </div>
+                            <div className="jv5-card-list-group">
+                              <h6>Details</h6>
+                              <ul>
+                                {step.details.map((d, i) => <li key={i}>{d}</li>)}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Center Node */}
+                      <div className="journey-v5__node-wrapper">
+                        <div className="journey-v5__node">
+                          <div className="journey-v5__node-ring">
+                            <div className="journey-v5__node-dot"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="journey-v5__label-side">
+                        <span className="jv5-label">
+                          <span className="jv5-label-piece">{step.piece}</span>
+                          <span className="jv5-label-main">
+                            {step.label}
+                            {step.name && <span className="jv5-label-sub">{step.name}</span>}
+                          </span>
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
-
-          <div className="curriculum-hero-right" aria-label="Key highlights">
-            {heroCards.map((card, index) => (
-              <article key={card.title} className={`curriculum-floating-card card-${index + 1}`}>
-                <div className="curriculum-card-icon">
-                  <card.Icon size={24} strokeWidth={2} />
-                </div>
-                <div className="curriculum-card-text">
-                  <h3>{card.title}</h3>
-                  <p>{card.subtitle}</p>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
-      </div>
+      </section>
 
-      {/* ── Badge bar ── */}
-      <div className="curriculum-badge-row">
-        {heroBadges.map((badge) => (
-          <article key={badge.label}>
-            <badge.Icon size={35} strokeWidth={2} />
-            <span>{badge.label}</span>
-          </article>
-        ))}
-      </div>
-
-      {/* ── Why Parents Choose ── */}
-      <div className="curriculum-why">
-        <div className="curriculum-why-image">
-          <img src="/n1.jpg" alt="Chess coaching session at Rohini Chess Academy" />
-        </div>
-
-        <div className="curriculum-why-content">
-          <p className="curriculum-why-kicker">
-            <span className="kicker-dot" />
-            About Rohini Chess Academy
-          </p>
-          <h2>Why Parents Choose<br />Rohini Chess Academy</h2>
-          <p className="curriculum-why-desc">
-            Professional chess coaching designed to improve strategic thinking,
-            concentration, and tournament performance.
-          </p>
-
-          {/* Carousel */}
-          <div className="curriculum-feature-carousel">
-            <div className="carousel-row">
-              <button className="carousel-arrow" onClick={goPrev} aria-label="Previous feature">
-                <ChevronLeft size={16} strokeWidth={2.5} />
+      {/* ── Impact Section ── */}
+      <section className="impact-v5">
+        <div className="impact-v5__container">
+          <div className="impact-v5__grid">
+            <div className="impact-v5__content">
+              <span className="impact-v5__badge">PROVEN EXCELLENCE</span>
+              <h2 className="impact-v5__heading">Elevating Potential Through Strategic Mastery</h2>
+              <p className="impact-v5__subtext">
+                Join thousands of students who have transformed their cognitive abilities and competitive rankings through our specialized curriculum and expert coaching.
+              </p>
+              
+              <button className="impact-v5__btn">
+                Join the Academy
+                <span className="impact-v5__btn-arrow">
+                  <ArrowRight size={22} />
+                </span>
               </button>
 
-              <div className="carousel-body">
-                <div key={animKey} className="carousel-slide">
-                  <div className="carousel-check">
-                    <CheckCircle2 size={20} strokeWidth={2.5} />
-                  </div>
-                  <p className="carousel-feature-text">
-                    {whyFeatures[activeFeature]}
-                  </p>
-                </div>
-
-                <div className="carousel-dots" role="tablist">
-                  {whyFeatures.map((_, i) => (
-                    <button
-                      key={i}
-                      role="tab"
-                      aria-selected={i === activeFeature}
-                      className={`carousel-dot${i === activeFeature ? ' active' : ''}`}
-                      onClick={() => goTo(i)}
-                      aria-label={`Feature ${i + 1}`}
-                    />
-                  ))}
-                </div>
+              <div className="impact-v5__stats">
+                <StatBox number={15000} suffix="+" label="Enrolled Students" />
+                <StatBox number={500} suffix="+" label="Tournaments Won" />
+                <StatBox number={95} suffix="%" label="Success Rate" />
               </div>
+            </div>
 
-              <button className="carousel-arrow" onClick={goNext} aria-label="Next feature">
-                <ChevronRight size={16} strokeWidth={2.5} />
-              </button>
+            <div className="impact-v5__image-wrap">
+              <img 
+                src="/n2.jpg" 
+                alt="Professional chess coaching session" 
+                className="impact-v5__image"
+              />
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ── Courses Section ── */}
-      <div className="curriculum-courses">
-        <div className="curriculum-courses-header">
-          <p className="curriculum-courses-kicker">Our Courses</p>
-          <h2>Chess Courses for Every Level</h2>
-          <p>Choose the perfect program for your child's chess journey.</p>
-        </div>
-
-        <div className="curriculum-courses-grid">
-          {courses.map((course) => (
-            <div
-              key={course.id}
-              className={`course-card${course.popular ? ' course-card--popular' : ''}`}
-            >
-              {course.popular && (
-                <span className="course-popular-badge">Most Popular</span>
-              )}
-
-              <div className="course-card-header">
-                <div className="course-icon-circle" style={{ background: course.color }}>
-                  <course.Icon size={28} strokeWidth={2.2} />
+      {/* ── Curriculum Detail Sections ── */}
+      <section className="curriculum-detail-v5">
+        <div className="curriculum-detail-v5__container">
+          {curriculumDetails.map((detail, idx) => {
+            const isReverse = idx % 2 === 0;
+            return (
+              <div 
+                key={detail.title} 
+                className={`curriculum-detail-v5__row ${isReverse ? 'curriculum-detail-v5__row--reverse' : ''}`}
+              >
+                <div className="curriculum-detail-v5__content">
+                  <h3 className="curriculum-detail-v5__title">{detail.title}</h3>
+                  <div className="curriculum-detail-v5__desc-wrap">
+                    <p className="curriculum-detail-v5__desc-label">Description</p>
+                    <p className="curriculum-detail-v5__description">{detail.description}</p>
+                  </div>
+                  <div className="curriculum-detail-v5__topics-wrap">
+                    <p className="curriculum-detail-v5__topics-label">{detail.label || "Topics Covered"}</p>
+                    <ul className="curriculum-detail-v5__list">
+                      {detail.topics.map((topic, tIdx) => (
+                        <li key={tIdx}>{topic}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div>
-                  <h3 style={{ color: course.color }}>{course.name}</h3>
-                  <p>{course.level}</p>
+                <div className="curriculum-detail-v5__image-wrap">
+                  <img src={detail.image} alt={detail.title} className="curriculum-detail-v5__image" />
                 </div>
               </div>
-
-              <ul className="course-features">
-                {course.features.map((f) => (
-                  <li key={f}>
-                    <CheckCircle2 size={15} strokeWidth={2.2} style={{ color: course.color, flexShrink: 0 }} />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="course-divider" />
-
-              <ul className="course-details">
-                {course.details.map((d) => (
-                  <li key={d.label}>
-                    <d.Icon size={15} strokeWidth={2} style={{ color: course.color, flexShrink: 0 }} />
-                    {d.label}
-                  </li>
-                ))}
-              </ul>
-
-              <a href="/contact" className="course-btn" style={{ background: course.color }}>
-                View Details
-              </a>
-            </div>
-          ))}
+            );
+          })}
         </div>
-      </div>
+      </section>
 
-      {/* ── Learning Pathway ── */}
-      <div className="curriculum-pathway">
-        <div className="curriculum-pathway-left">
-          <p className="curriculum-pathway-kicker">
-            <Trophy size={14} style={{ marginRight: 6 }} />
-            LEARN & GROW
-          </p>
-          <h2>Your Child's Chess<br />Journey Roadmap</h2>
-          <p className="curriculum-pathway-desc">
-            A carefully structured learning path from first moves to tournament readiness.
-            Each level builds skills, confidence, and a love for chess.
-          </p>
-          <a href="tel:+918447992702" className="curriculum-pathway-cta">
-            <CalendarDays size={20} strokeWidth={2} style={{ marginRight: 10 }} />
-            Book Free Trial
-          </a>
-
-          <div className="pathway-social-proof">
-            <div className="pathway-avatars">
-              <img src="/n2.jpg" alt="" />
-              <img src="/n3.jpg" alt="" />
-              <img src="/n4.jpg" alt="" />
-            </div>
-            <div className="pathway-rating">
-              <div className="pathway-stars">
-                <Star size={16} fill="#f59e0b" color="#f59e0b" />
-                <strong>4.9/5</strong>
-              </div>
-              <span>Trusted by 1,000+ parents</span>
-            </div>
+      {/* ── Course Programs Section ── */}
+      <section className="course-programs-v5">
+        <div className="cp-v5__container">
+          <div className="cp-v5__header">
+            <p className="cp-v5__kicker">Our Programs</p>
+            <h2 className="cp-v5__heading">Chess Programs for Every Skill Level</h2>
+            <p className="cp-v5__subheading">Whether your child is just starting or preparing for competitive tournaments, we offer structured programs for every stage of growth.</p>
           </div>
-        </div>
 
-        <div className="curriculum-pathway-right-wrapper">
-          <div className="curriculum-pathway-right">
-            {pathwayLevels.map((level, idx) => (
-              <div key={level.id} className="pathway-step">
-                {/* Number indicator */}
-                <div className="pathway-number" style={{ color: level.color }}>
-                  {String(idx + 1).padStart(2, '0')}
-                </div>
-
-                {/* Card */}
-                <div className="pathway-card" style={{ '--pw-color': level.color }}>
-                  <div className="pathway-circle" style={{ borderColor: `${level.color}40`, background: `${level.color}08` }}>
-                    <i className={`fa-solid ${level.icon}`} style={{ fontSize: '32px', color: level.color }}></i>
+          <div className="cp-v5__carousel">
+            {coursePrograms.map((course, idx) => (
+              <div key={idx} className="cp-v5__card">
+                {/* Floating Boy Image */}
+                <img src="/student2.png" alt="Student" className="cp-v5__floating-img" />
+                
+                <div className="cp-v5__card-main">
+                  <div className="cp-v5__card-bg">
+                    <img src={course.bgImage} alt={course.name} />
                   </div>
-
-                  <p className="pathway-level-label" style={{ color: level.color }}>{level.label}</p>
-                  <h3 className="pathway-level-name">{level.name}</h3>
-                  <p className="pathway-level-desc">{level.desc}</p>
-
-                  <div className="pathway-duration-pill" style={{ background: `${level.color}12`, color: level.color }}>
-                    <Clock size={14} style={{ marginRight: 6 }} />
-                    {level.duration}
-                  </div>
-
-                  <div className="pathway-card-footer" style={{ background: `${level.color}08`, borderTop: `1px solid ${level.color}15` }}>
-                    {level.icon === 'crown' ? <Star size={14} color={level.color} /> : <TrendingUp size={14} color={level.color} />}
-                    <span style={{ color: level.color }}>{level.tag}</span>
+                  <div className="cp-v5__card-overlay"></div>
+                  
+                  <div className="cp-v5__card-content">
+                    <h3 className="cp-v5__card-title">{course.name}</h3>
+                    <p className="cp-v5__card-desc">{course.desc}</p>
+                    <div className="cp-v5__capsules">
+                      {course.points.map((p, pIdx) => (
+                        <span key={pIdx} className="cp-v5__capsule">{p}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-
+                <div className="cp-v5__footer">
+                  <div className="cp-v5__price">₹{course.fees}</div>
+                  <button className="cp-v5__book-btn">BOOK TRIAL</button>
+                </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-       {/* ── Detailed Curriculum ── */}
-      <div
-        className="curriculum-detailed"
-        style={{ '--dc-accent': curriculumTabs.find(t => t.id === activeTab).color }}
-      >
-        <div className="curriculum-detailed-top">
-          <div className="curriculum-detailed-header">
-            <p className="curriculum-detailed-kicker">
-              <span className="kicker-dot" />
-              Detailed Curriculum
-            </p>
-            <h2>What Your Child<br /><span>Will Learn</span></h2>
-            <p className="dc-desc">
-              Step-by-step curriculum designed to build strong chess fundamentals and advanced thinking.
-            </p>
-          </div>
-
-          <div className="curriculum-tabs-container">
-            <nav className="curriculum-tabs" role="tablist">
-              {curriculumTabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  className={`dc-tab${activeTab === tab.id ? ' active' : ''}`}
-                  onClick={() => handleTab(tab.id)}
-                  style={{ '--tab-color': tab.color }}
-                >
-                  <div className="tab-icon-circle">
-                    <i className={`fa-solid ${tab.icon}`}></i>
-                  </div>
-                  <span>{tab.label}</span>
-                  {activeTab === tab.id && <div className="tab-pointer" />}
-                </button>
-              ))}
-            </nav>
-          </div>
-        </div>
-
-        <div className="curriculum-detailed-main">
-          <div className="dc-grid">
-            {detailedCurriculum[activeTab].map((section, sIdx) => (
-              <div key={section.title} className="dc-col">
-                <div className="dc-col-header">
-                  <div className="dc-col-icon">
-                    <section.Icon size={32} />
-                  </div>
-                  <h3>{section.title}</h3>
-                  <p className="dc-col-desc">Comprehensive learning path for this stage.</p>
-                </div>
-                <ul className="dc-items">
-                  {section.items.map((item) => (
-                    <li key={item}>
-                      <i className="fa-solid fa-circle-check"></i>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+      {/* ── Schools Section (from Home) ── */}
+      <section className="figma-section school-row">
+        <h3>School Associated With Us</h3>
+        <div className="school-logo-marquee" aria-label="Associated schools">
+          <div className="school-logo-track">
+            {[...schoolLogos, ...schoolLogos].map((logo, idx) => (
+              <img
+                className={logo.className}
+                key={`${logo.src}-${idx}`}
+                src={logo.src}
+                alt={logo.alt}
+              />
             ))}
           </div>
-
+          <div className="school-logo-track" aria-hidden="true">
+            {[...schoolLogos, ...schoolLogos].map((logo, idx) => (
+              <img
+                className={logo.className}
+                key={`${logo.src}-copy-${idx}`}
+                src={logo.src}
+                alt=""
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* ── Benefits of Learning Chess ── */}
-      <div className="curriculum-benefits">
-        <p className="curriculum-benefits-kicker">
-          <span className="kicker-dot" />
-          Benefits of Learning Chess
+      {/* ── Customer Reviews (from Home) ── */}
+      <section className="figma-section reviews" id="support">
+        <h2>Customer Reviews</h2>
+        <p className="sub">
+          Our students and parents share their experiences learning chess with us.
         </p>
-        <h2 className="curriculum-benefits-h2">Chess Builds Skills That Last a Lifetime</h2>
-        
-        <div className="benefits-marquee-container">
-          <div className="benefits-marquee-track">
-            {/* Double the items for seamless looping */}
-            {[...benefits, ...benefits].map((b, idx) => (
-              <div key={`${b.label}-${idx}`} className="benefit-card">
-                <div className="benefit-icon-wrap">
-                  <b.Icon size={30} strokeWidth={1.6} />
-                </div>
-                <p className="benefit-label">{b.label}</p>
-              </div>
-            ))}
+        <div className="review-row">
+          <button
+            className="review-nav review-nav-left"
+            aria-label="Previous reviews"
+            onClick={() => scrollReviews('prev')}
+          >
+            ‹
+          </button>
+          <div className="review-grid" ref={reviewGridRef}>
+            <article className="review-card">
+              <span className="stars">★★★★★</span>
+              <h4>Good Style of Edu</h4>
+              <p>
+                Honored to be featured in Voyage L A for their Inspiring Stories series.
+                We talked about how Goldenbird Marketing came to be what it is today
+                through a little Q and A.
+              </p>
+              <b>– Joanna A.</b>
+            </article>
+            <article className="review-card">
+              <span className="stars">★★★★★</span>
+              <h4>Loved It!</h4>
+              <p>
+                Honored to be featured in Voyage L A for their Inspiring Stories series.
+                We talked about how Goldenbird Marketing came to be what it is today
+                through a little Q and A.
+              </p>
+              <b>– Brenda</b>
+            </article>
+            <article className="review-card">
+              <span className="stars">★★★★★</span>
+              <h4>Highly Recommend</h4>
+              <p>
+                Honored to be featured in Voyage L A for their Inspiring Stories series.
+                We talked about how Goldenbird Marketing came to be what it is today
+                through a little Q and A.
+              </p>
+              <b>– Jessie</b>
+            </article>
           </div>
+          <button
+            className="review-nav review-nav-right"
+            aria-label="Next reviews"
+            onClick={() => scrollReviews('next')}
+          >
+            ›
+          </button>
         </div>
-      </div>
+      </section>
 
-      {/* ── Tournament Ready Training ── */}
-      <div className="curriculum-tournament">
-        {/* Left: 3 images — 1 tall + 2 stacked */}
-        <div className="tournament-images">
-          <div className="tournament-img-large">
-            <img src="/n5.jpg" alt="Student focused on chess" />
-          </div>
-          <div className="tournament-img-stack">
-            <div className="tournament-img-top">
-              <img src="/n1.jpg" alt="Students winning trophy" />
-            </div>
-            <div className="tournament-img-bottom">
-              <img src="/n2.jpg" alt="Chess classroom session" />
-            </div>
-          </div>
+      {/* ── Landscape Banner ── */}
+      <section className="curriculum-banner-v5">
+        <div className="curriculum-banner-v5__container">
+          <img 
+            src="/n5.jpg" 
+            alt="Chess Banner" 
+            className="curriculum-banner-v5__image" 
+          />
         </div>
-
-        {/* Right: text content */}
-        <div className="tournament-content">
-          <p className="tournament-kicker">
-            <span className="kicker-dot" />
-            Tournament Ready Training
-          </p>
-          <h2>Preparing Students for<br />Real World Competitions</h2>
-          <p className="tournament-desc">
-            We provide complete exposure to national and international chess tournaments
-            to help students grow and achieve.
-          </p>
-
-          <div className="curriculum-feature-carousel">
-            <div className="carousel-row">
-              <button className="carousel-arrow" onClick={tPrev} aria-label="Previous feature">
-                <ChevronLeft size={16} strokeWidth={2.5} />
-              </button>
-
-              <div className="carousel-body">
-                <div key={tournamentKey} className="carousel-slide">
-                  <div className="carousel-check">
-                    <CheckCircle2 size={20} strokeWidth={2.5} />
-                  </div>
-                  <p className="carousel-feature-text">
-                    {tournamentFeatures[activeTournament]}
-                  </p>
-                </div>
-
-                <div className="carousel-dots" role="tablist">
-                  {tournamentFeatures.map((_, i) => (
-                    <button
-                      key={i}
-                      role="tab"
-                      aria-selected={i === activeTournament}
-                      className={`carousel-dot${i === activeTournament ? ' active' : ''}`}
-                      onClick={() => tGoTo(i)}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <button className="carousel-arrow" onClick={tNext} aria-label="Next feature">
-                <ChevronRight size={16} strokeWidth={2.5} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── FAQ + Banner ── */}
-      <div className="curriculum-faq-section">
-        {/* Left: FAQ accordion */}
-        <div className="faq-left">
-          <p className="faq-kicker">
-            <span className="kicker-dot" />
-            Frequently Asked Questions
-          </p>
-          <h2 className="faq-heading">Got Questions?<br />We Have Answers.</h2>
-          <div className="faq-list">
-            {faqs.map((faq, i) => {
-              const isOpen = openFaq === i
-              return (
-                <div key={i} className={`faq-item${isOpen ? ' faq-item--open' : ''}`}>
-                  <button
-                    className="faq-trigger"
-                    onClick={() => setOpenFaq(isOpen ? null : i)}
-                    aria-expanded={isOpen}
-                  >
-                    <span className="faq-q">{faq.q}</span>
-                    <span className="faq-icon">
-                      <Plus size={18} strokeWidth={2.5} />
-                    </span>
-                  </button>
-                  <div className="faq-body">
-                    <p className="faq-answer">{faq.a}</p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Right: Landscape Banner */}
-        <div className="faq-right-banner">
-          <img src="/n3.jpg" alt="Students practicing chess" className="faq-landscape-image" />
-        </div>
-      </div>
+      </section>
 
     </section>
   )
