@@ -62,17 +62,6 @@ export function ContactPage() {
 
   return (
     <div className="contact-page">
-      <section className="contact-hero" aria-labelledby="contact-title">
-
-        <div className="contact-hero-content">
-          <h1 id="contact-title">Contact Us</h1>
-          <div className="contact-hero-rule" aria-hidden="true" />
-          <p>
-            Have a question about batches, school programs, or trial classes? Reach out
-            and our team will help you choose the right chess path.
-          </p>
-        </div>
-      </section>
 
       <section className="contact-form-section" aria-labelledby="contact-form-title">
         <div className="contact-form-copy">
