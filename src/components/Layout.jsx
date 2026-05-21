@@ -9,8 +9,7 @@ export function Layout() {
   const location = useLocation()
   const isHomePage = location.pathname === '/'
   const isAboutPage = location.pathname === '/about-us'
-  const usesLightHeader =
-    isAboutPage || location.pathname === '/contact-us' || location.pathname === '/partners' || location.pathname === '/partnered-schools' || location.pathname === '/coaches' || location.pathname === '/career' || location.pathname === '/curriculum'
+  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements'].includes(location.pathname)
   const supportLink = navLinks.find((link) => link.label === 'SUPPORT')
   const primaryNavLinks = navLinks.filter((link) => link.label !== 'SUPPORT')
 
@@ -45,7 +44,7 @@ export function Layout() {
       <header className={`header ${usesLightHeader ? 'about-header' : ''} ${headerScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-main">
           <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
-            <img src="/logo1.png" alt="Rohini Chess Academy logo" />
+            <img src="/updated%20logo%20header.png" alt="Rohini Chess Academy logo" />
           </NavLink>
 
           <button
@@ -89,27 +88,30 @@ export function Layout() {
             ) : null}
           </nav>
 
-          <div className="header-actions">
-            {usesLightHeader && supportLink ? (
-              <a
-                className="about-support-link"
-                href={supportLink.to}
-                onClick={() => setMenuOpen(false)}
-              >
-                {supportLink.label}
+          <div className="header-actions-wrapper">
+            <div className="header-actions">
+              {usesLightHeader && supportLink ? (
+                <a
+                  className="about-support-link"
+                  href={supportLink.to}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {supportLink.label}
+                </a>
+              ) : null}
+              <a className="contact-btn" href="/contact-us">
+                CONTACT
               </a>
-            ) : null}
-            <a className="contact-btn" href="/contact-us">
-              CONTACT
-            </a>
-            <a
-              href="https://www.sckoolchess.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Sckool Chess website"
-            >
-              <img className="header-side-logo" src="/logonew.png" alt="Sckool Chess logo" />
-            </a>
+              <a
+                href="https://www.sckoolchess.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Sckool Chess website"
+              >
+                <img className="header-side-logo" src="/logonew.png" alt="Sckool Chess logo" />
+              </a>
+            </div>
+
           </div>
         </div>
       </header>
@@ -165,7 +167,7 @@ export function Layout() {
         <div className="figma-footer-inner">
           <div className="footer-col footer-col-brand">
             <div className="footer-brand-row">
-              <img src="/logo.png" alt="Rohini Chess Academy logo" />
+              <img src="/updated%20logo%20footer.png" alt="Rohini Chess Academy logo" />
               <span className="footer-brand-name">
                 Rohini Chess
                 <br />
@@ -181,8 +183,8 @@ export function Layout() {
           <div className="footer-col footer-col-nav">
             <h4>EXPLORE PAGES</h4>
             <a href="/">Home</a>
-            <a href="/about-us">About Us</a>
-            <a href="/#achievements">Achievements</a>
+            <a href="/about-us">Company Profile</a>
+            <a href="/achievements">Achievements</a>
             <a href="/career">Career</a>
             <a href="/contact-us">Contact Us</a>
           </div>

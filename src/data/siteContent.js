@@ -6,11 +6,12 @@ export const contactDetails = {
 
 export const navLinks = [
   { label: 'HOME', to: '/' },
-  { label: 'ABOUT US', to: '/about-us' },
-  { label: 'PARTNERS', to: '/partners' },
+  { label: 'COMPANY PROFILE', to: '/about-us' },
+  { label: 'PARTNERED SCHOOLS', to: '/partners' },
   { label: 'COACHES', to: '/coaches' },
   { label: 'CURRICULUM', to: '/curriculum' },
-  { label: 'ACHIEVEMENTS', to: '/#achievements' },
+  { label: 'ACHIEVEMENTS', to: '/achievements' },
+  { label: 'BOOK ONLINE CLASS', to: '/book-class' },
   { label: 'SUPPORT', to: '/#support' },
 ]
 
@@ -196,7 +197,7 @@ export const coaches = [
   },
   {
     name: 'Lakshmi Narayan',
-    title: 'Online Coach',
+    title: 'Online Specialist',
     image: '/c5.jpg',
     bio: 'With a highest ELO of 2225, Lakshmi Narayan is a master of theory. He is dedicated to our online students, providing high-level analysis and structured growth plans.',
     socials: {
@@ -228,6 +229,24 @@ export const coaches = [
       rating: '1791 FIDE',
       language: 'English, Hindi',
       specialty: 'Foundation Building',
+    },
+  },
+  {
+    name: 'Jitender Rawat',
+    title: 'Coach',
+    image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80',
+    bio: 'Jitender Rawat is a skilled instructor with a passion for helping students unlock their full potential on the chessboard. His engaging teaching style makes learning both fun and highly effective.',
+    socials: {
+      phone: '+91-8447992702',
+      instagram: '#',
+      facebook: '#',
+      twitter: '#',
+    },
+    info: {
+      experience: '5+ Years',
+      rating: '1800 FIDE',
+      language: 'English, Hindi',
+      specialty: 'Tactical Play',
     },
   },
 ]

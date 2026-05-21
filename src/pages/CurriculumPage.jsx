@@ -467,7 +467,7 @@ const coursePrograms = [
     level: "Advanced Level",
     desc: "For students aiming to compete seriously and improve advanced strategic understanding.",
     points: ["Advanced Strategy", "FIDE Preparation", "Match Analysis", "Competitive Training"],
-    fees: "25,000",
+    fees: "Price on request",
     bgImage: "/n3.jpg"
   },
   {
@@ -1080,7 +1080,9 @@ export function CurriculumPage() {
                 </div>
 
                 <div className="cp-v5__footer">
-                  <div className="cp-v5__price">₹{course.fees}</div>
+                  <div className="cp-v5__price">
+                    {course.fees.toLowerCase().includes('price') ? course.fees : `₹${course.fees}`}
+                  </div>
                   <button className="cp-v5__book-btn">BOOK TRIAL</button>
                 </div>
               </div>

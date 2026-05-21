@@ -35,13 +35,6 @@ export function CoachesPage() {
                       <h2>{coach.name}</h2>
                       <p className="coach-v3-role">{coach.title}</p>
                     </div>
-                    <div className="coach-v3-socials">
-                      <a href={`tel:${coach.socials.phone}`} className="social-pill"><Phone size={14} /> <span>Call</span></a>
-                      <div className="social-icons">
-                        <a href={coach.socials.instagram} aria-label="Instagram"><Instagram size={18} /></a>
-                        <a href={coach.socials.facebook} aria-label="Facebook"><Facebook size={18} /></a>
-                      </div>
-                    </div>
                   </div>
 
                   <div className="coach-v3-body">

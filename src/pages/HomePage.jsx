@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const figmaAssets = {
   heroBg: '/herobanner.png',
-  logoIcon: '/logo1.png',
+  logoIcon: '/updated%20logo%20footer.png',
   studentA: '/im1.png',
   studentB: '/im2.png',
   whyA: '/im1.png',
@@ -27,7 +27,6 @@ const students = [
   { src: '/ig2.mp4' },
   { src: '/ig3.mp4' },
   { src: '/ig4.mp4' },
-  { src: '/ig5.mp4' },
   { src: '/ig6.mp4' },
   { src: '/ig7.mp4' },
   { src: '/ig8.mp4' },
@@ -35,17 +34,49 @@ const students = [
 ]
 
 const whyCards = [
-  { image: '/im1.png', title: 'Creativity' },
-  { image: '/im2.png', title: 'Logical Thinking' },
-  { image: '/im1.png', title: 'Patience' },
-  { image: '/im2.png', title: 'Concentration' },
+  { 
+    image: '/s1.jpeg', 
+    title: 'Creativity',
+    desc: 'Chess encourages children to imagine multiple scenarios and find unique solutions to complex problems.'
+  },
+  { 
+    image: '/s2.jpeg', 
+    title: 'Logical Thinking',
+    desc: 'Analyzing positions and planning ahead builds strong deductive reasoning and strategic thinking skills.'
+  },
+  { 
+    image: '/s3.jpeg', 
+    title: 'Patience',
+    desc: 'Waiting for the right moment to strike and thinking through every move teaches valuable emotional control.'
+  },
+  { 
+    image: '/s4.jpeg', 
+    title: 'Imagination',
+    desc: 'The focus required for a game of chess translates directly to improved academic performance and attention span.'
+  },
 ]
 
 const solutionCards = [
-  { image: '/im1.png', title: 'Regular School Sessions' },
-  { image: '/im2.png', title: 'Chess in School(CIS)' },
-  { image: '/im1.png', title: 'Expert Training Programs' },
-  { image: '/im2.png', title: 'Franchise' },
+  { 
+    image: '/special%20div1.png', 
+    title: 'Specialised Curriculum for Walker',
+    desc: 'Specially designed chess curriculum grading and certification'
+  },
+  { 
+    image: '/school%20training%20div2.png', 
+    title: 'Chess in School(CIS)',
+    desc: 'We partner with leading educational institutions to integrate chess into the school day, enhancing cognitive development.'
+  },
+  { 
+    image: '/expert%20trainig%20%20program%20div3.png', 
+    title: 'Expert Training Programs',
+    desc: 'High-intensity workshops and personalized coaching for competitive players aiming for state and national titles.'
+  },
+  { 
+    image: '/touranement%20div4.png', 
+    title: 'Tournament',
+    desc: 'Join our growing network and bring our proven teaching methods and business model to your local community.'
+  },
 ]
 
 const schoolLogos = [
@@ -84,11 +115,12 @@ const marqueeItems = [
 
 const navItems = [
   { href: '/', label: 'Home' },
-  { href: '/about-us', label: 'About us' },
-  { href: '/partners', label: 'Partners' },
+  { href: '/about-us', label: 'Company Profile' },
+  { href: '/partners', label: 'School Partners' },
   { href: '/coaches', label: 'Coaches' },
   { href: '/curriculum', label: 'Curriculum' },
-  { href: '#achievements', label: 'Achievements' },
+  { href: '/achievements', label: 'Achievements' },
+  { href: '/book-class', label: 'Book Online Class' },
 ]
 
 export function HomePage() {
@@ -97,7 +129,7 @@ export function HomePage() {
   const [featureCounts, setFeatureCounts] = useState({
     students: 0,
     rating: 0,
-    instructors: 0,
+    retention: 0,
   })
   const [puzzleModalOpen, setPuzzleModalOpen] = useState(false)
   const [puzzleSubmitted, setPuzzleSubmitted] = useState(false)
@@ -158,9 +190,9 @@ export function HomePage() {
     if (!node) return undefined
 
     const targets = {
-      students: 4200,
+      students: 5000,
       rating: 98,
-      instructors: 150,
+      retention: 80,
     }
     const durationMs = 1400
     let rafId = 0
@@ -174,7 +206,7 @@ export function HomePage() {
         setFeatureCounts({
           students: Math.round(targets.students * eased),
           rating: Math.round(targets.rating * eased),
-          instructors: Math.round(targets.instructors * eased),
+          retention: Math.round(targets.retention * eased),
         })
 
         if (progress < 1) {
@@ -209,8 +241,8 @@ export function HomePage() {
 
     const targets = {
       students: 5000,
-      schools: 100,
-      years: 15,
+      schools: 22,
+      years: 10,
     }
     const durationMs = 1400
     let rafId = 0
@@ -336,7 +368,7 @@ export function HomePage() {
             {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
           <div className="figma-brand">
-            <img src="/logo.png" alt="Rohini Chess Academy logo" />
+            <img src="/updated%20logo%20header.png" alt="Rohini Chess Academy logo" />
           </div>
           <nav>
             {navItems.map((item) => (
@@ -345,21 +377,24 @@ export function HomePage() {
               </Link>
             ))}
           </nav>
-          <div className="figma-nav-right">
-            <a className="figma-support-link" href="#support">
-              Support
-            </a>
-            <a className="figma-contact-btn" href="/contact-us">
-              Contact
-            </a>
-            <a
-              href="https://www.sckoolchess.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Sckool Chess website"
-            >
-              <img className="header-side-logo" src="/logonew-removebg.png" alt="Sckool Chess logo" />
-            </a>
+          <div className="header-actions-wrapper figma-header-actions-wrapper">
+            <div className="figma-nav-right">
+              <a className="figma-support-link" href="#support">
+                Support
+              </a>
+              <a className="figma-contact-btn" href="/contact-us">
+                Contact
+              </a>
+              <a
+                href="https://www.sckoolchess.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Sckool Chess website"
+              >
+                <img className="header-side-logo" src="/logonew-removebg.png" alt="Sckool Chess logo" />
+              </a>
+            </div>
+
           </div>
         </header>
 
@@ -468,7 +503,7 @@ export function HomePage() {
           alt=""
           aria-hidden="true"
         />
-        <h2>Why Chess For Your Child?</h2>
+        <h2>Give Your Child Best Gift Of Their Life</h2>
         <p className="sub">One Board. Six Skills Your Child Carries for Life.</p>
         <div className="why-scroll" role="region" aria-label="Chess benefits">
           <div className="why-grid">
@@ -481,10 +516,7 @@ export function HomePage() {
                     <img src="/bulb.png" alt="" />
                   </span>
                   <h3>{card.title}</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur. Pellentesque eget et sed
-                    nunc netus faucibus.
-                  </p>
+                  <p>{card.desc}</p>
                 </div>
               </article>
             ))}
@@ -533,18 +565,13 @@ export function HomePage() {
           <a className="start-btn" href="/courses-offered">Start Your Free Trial</a>
           <div className="nums" ref={featureNumsRef}>
             <div className="num-block">
-              <strong>{featureCounts.students.toLocaleString()}+</strong>
+              <strong>{featureCounts.students >= 5000 ? '5k' : featureCounts.students.toLocaleString()}+</strong>
               <span>Students trained</span>
             </div>
             <div className="num-divider" />
             <div className="num-block">
-              <strong>{featureCounts.rating}%</strong>
-              <span>Rating improved</span>
-            </div>
-            <div className="num-divider" />
-            <div className="num-block">
-              <strong>{featureCounts.instructors}+</strong>
-              <span>GM instructors</span>
+              <strong>{featureCounts.retention}%</strong>
+              <span>Student retention</span>
             </div>
           </div>
         </div>
@@ -605,10 +632,7 @@ export function HomePage() {
                     <img src="/bulb.png" alt="" />
                   </span>
                   <h3>{card.title}</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur. Pellentesque eget et sed
-                    nunc netus faucibus.
-                  </p>
+                  <p>{card.desc}</p>
                 </div>
               </article>
             ))}
@@ -775,8 +799,8 @@ export function HomePage() {
           <div className="footer-col footer-col-nav">
             <h4>EXPLORE PAGES</h4>
             <a href="/">Home</a>
-            <a href="/about-us">About Us</a>
-            <a href="#achievements">Achievements</a>
+            <a href="/about-us">Company Profile</a>
+            <a href="/achievements">Achievements</a>
             <a href="/career">Career</a>
           </div>
           <div className="footer-col footer-col-contact">

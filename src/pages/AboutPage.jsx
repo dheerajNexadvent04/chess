@@ -1,4 +1,5 @@
 import { ArrowUpRight, FileText } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const aboutHeroImage = '/im2.png'
 const coachingImage =
@@ -6,21 +7,48 @@ const coachingImage =
 const missionBoardImage = '/im1.png'
 const visionKidImage = '/im2.png'
 
-const memoryCards = [
-  { id: 1, variant: 'dark', arrow: 'plain' },
-  { id: 2, variant: 'dark', arrow: 'circle' },
-  { id: 3, variant: 'dark', arrow: 'circle' },
-  { id: 4, variant: 'dark', arrow: 'circle' },
-  { id: 5, variant: 'light', arrow: 'circle' },
-  { id: 6, variant: 'dark', arrow: 'plain' },
-]
+const curriculumDetails = [
+  {
+    title: "Fundamentals",
+    description: "Students begin by understanding the chessboard, piece movement, rules, and essential gameplay concepts required to build a strong foundation.",
+    topics: ["Chess board & pieces", "Rules of the game", "Check, checkmate & stalemate", "Castling, promotion & en passant", "Basic gameplay understanding", "Opening principles"],
+    image: "/fundamentals.jpg"
+  },
+  {
+    title: "Openings",
+    description: "Students learn practical opening systems, positional development, and safe opening habits that help create strong early-game positions.",
+    topics: ["Basic opening ideas", "Center control concepts", "Piece development", "Common opening traps", "Italian Game introduction", "Ruy Lopez introduction"],
+    image: "/opening.jpg"
+  },
+  {
+    title: "Tactics",
+    description: "The curriculum focuses heavily on tactical pattern recognition and practical combinations that improve real match performance.",
+    topics: ["Forks", "Pins", "Skewers", "Discovered attacks", "Double attacks", "Back rank checkmates", "Puzzle solving practice"],
+    image: "/tactics.jpg"
+  },
+  {
+    title: "Endgames",
+    description: "Students develop the ability to convert winning positions confidently through structured endgame training.",
+    topics: ["King & Queen checkmate", "King & Rook checkmate", "Basic pawn endgames", "Opposition concepts", "Practical endgame strategies"],
+    image: "/endgame.jpg"
+  },
+  {
+    title: "Tournament Activities",
+    description: "Students regularly participate in practice games, puzzle contests, and mini tournaments to build confidence and competitive exposure.",
+    topics: ["Practice matches", "Puzzle competitions", "Match analysis", "Friendly tournaments", "Competitive preparation"],
+    label: "Activities Included",
+    image: "/tournament.jpg"
+  }
+];
 
 export function AboutPage() {
+  useScrollReveal();
+
   return (
     <div className="about-page">
-      <p className="about-page-kicker">About us</p>
+      <p className="about-page-kicker reveal fade-up">About us</p>
 
-      <section className="about-hero-first">
+      <section className="about-hero-first reveal fade-up">
         <div className="about-hero-first-head">
           <h1>
             Where Champions
@@ -44,64 +72,55 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="about-memory-section" aria-label="Key memory benefits">
-        <div className="about-memory-grid">
-          {memoryCards.map((card) => (
-            <article
-              key={card.id}
-              className={`about-memory-card ${card.variant === 'light' ? 'light' : ''}`}
-            >
-              <h3>Chess-trained Memory</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Vestibulum commodo nunc at sit.
-                Aenean aliquam posuere hac sem turpis lorem iaculis turpis.
-              </p>
-
-              <div className="about-memory-card-footer">
-                {card.arrow === 'circle' ? (
-                  <a className={`about-memory-cta ${card.variant === 'light' ? 'light' : ''}`} href="/courses-offered" aria-label="Open course details">
-                    <ArrowUpRight size={26} strokeWidth={2.2} />
-                  </a>
-                ) : (
-                  <a className="about-memory-cta plain" href="/courses-offered" aria-label="Open course details">
-                    <ArrowUpRight size={24} strokeWidth={2.2} />
-                  </a>
-                )}
-
-                <FileText
-                  className="about-memory-doc"
-                  size={56}
-                  strokeWidth={1.8}
-                  aria-hidden="true"
-                />
+      <section className="curriculum-detail-v5" aria-label="Curriculum Details">
+        <div className="curriculum-detail-v5__container">
+          {curriculumDetails.map((detail, idx) => {
+            const isReverse = idx % 2 === 0;
+            return (
+              <div 
+                key={detail.title} 
+                className={`curriculum-detail-v5__row ${isReverse ? 'curriculum-detail-v5__row--reverse' : ''}`}
+              >
+                <div className="curriculum-detail-v5__content">
+                  <h3 className="curriculum-detail-v5__title">{detail.title}</h3>
+                  <div className="curriculum-detail-v5__desc-wrap">
+                    <p className="curriculum-detail-v5__desc-label">Description</p>
+                    <p className="curriculum-detail-v5__description">{detail.description}</p>
+                  </div>
+                  <div className="curriculum-detail-v5__topics-wrap">
+                    <p className="curriculum-detail-v5__topics-label">{detail.label || "Topics Covered"}</p>
+                    <ul className="curriculum-detail-v5__list">
+                      {detail.topics.map((topic, tIdx) => (
+                        <li key={tIdx}>{topic}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="curriculum-detail-v5__image-wrap">
+                  <img src={detail.image} alt={detail.title} className="curriculum-detail-v5__image" />
+                </div>
               </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
-      <section className="about-coaching-section" aria-label="Master chess coaching">
+      <section className="about-coaching-section reveal fade-up" aria-label="Master chess coaching" id="about-details">
         <div className="about-coaching-copy">
           <h2>
-            Master Chess
+            Affiliated to
             <br />
-            With <span>Rohni Chess</span>
+            <span>Delhi Chess</span>
             <br />
-            Coaching.
+            Association.
           </h2>
 
           <p className="about-coaching-subtext">
-            Accelerate your game with structured lessons, live analysis, and personalized
-            training plans designed for every skill level.personalized training plans
-            designed for every skill level.
+            Rohini Chess Academy is providing chess classes online or offline in various schools in Delhi, NCR and other places in India and Abroad.
           </p>
 
           <p className="about-coaching-body">
-            Lorem ipsum dolor sit amet consectetur. Massa feugiat tempor felis massa.
-            Nunc varius faucibus eget aliquam adipiscing sed et ultrices laoreet. Aliquam
-            erat facilisi purus nec scelerisque arcu nulla nulla. Et eget enim turpis
-            augue eu convallis turpis quis egestas. Dictum condimentum pellentesque
-            consequat in.
+            Rohini Chess Academy takes the fundamental principles of Chess education and applies them to today's young and bright children. With experienced coaches and a scientific training program (chess openings, chess endgames, etc.), we are confident in educating tomorrow's Chess wizards.
           </p>
 
           <a className="about-coaching-btn" href="/courses-offered">
@@ -115,16 +134,17 @@ export function AboutPage() {
       </section>
 
       <section className="about-duo-section" aria-label="Mission and vision">
-        <article className="about-duo-row">
+        <article className="about-duo-row reveal fade-up">
           <div className="about-duo-copy">
-            <span className="about-duo-kicker">OUR MISSION</span>
-            <h3>Empowering Every Move</h3>
+            <span className="about-duo-kicker">TOURNAMENTS</span>
+            <h3>Career opportunities</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sit pretium integer sed diam
-              tincidunt lobortis eu. Diam magna lobortis vehicula commodo et proin
-              tellus. Volutpat enim at laoreet consectetur bibendum vel pulvinar. Diam
-              magna lobortis vehicula commodo et proin tellus. Volutpat enim at laoreet
-              consectetur bibendum vel pulvinar.
+              <strong>FIDE / AICF / DCA Tournaments</strong><br />
+              There are several FIDE/AICF rated chess tournaments which happens regularly across India and special Delhi Chess Association tournaments in Delhi. Prize money is INR &gt;10 Lacs and individual highest prizes are as high as INR 1.25 lacs.
+            </p>
+            <p>
+              <strong>School Tournaments</strong><br />
+              Every year there are AICF (All India Chess Federation) and Delhi Chess Association (DCA) special School team tournaments.
             </p>
             <a className="about-duo-btn" href="/courses-offered">
               LEARN MORE
@@ -135,22 +155,23 @@ export function AboutPage() {
           </div>
         </article>
 
-        <article className="about-duo-row reverse">
+        <article className="about-duo-row reverse reveal fade-up">
           <div className="about-duo-image-wrap">
             <img src={visionKidImage} alt="Student focusing on a chess move" />
           </div>
           <div className="about-duo-copy">
-            <span className="about-duo-kicker">OUR VISION</span>
-            <h3>Vision Beyond The Board</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Sit pretium integer sed diam
-              tincidunt lobortis eu. Diam magna lobortis vehicula commodo et proin
-              tellus. Volutpat enim at laoreet consectetur bibendum vel pulvinar. Diam
-              magna lobortis vehicula commodo et proin tellus. Volutpat enim at laoreet
-              consectetur bibendum vel pulvinar.
-            </p>
-            <a className="about-duo-btn" href="/courses-offered">
+            <span className="about-duo-kicker">PARTNERSHIPS</span>
+            <h3>Our Partnership with Leading Schools & Learning Institutes:</h3>
+            <ol style={{ paddingLeft: '20px', color: '#4f4f4f', lineHeight: '1.6', marginTop: '16px' }}>
+              <li>Apeejay School, Pitampura, Saket, Sheikh Sarai, Noida, Faridabad, Mumbai and Jalandhar.</li>
+              <li>Shri Ram Global Pre-School(s) in Delhi</li>
+              <li>Kingdom of Kids, Delhi & Gurgaon</li>
+              <li>GD Goenka La Petite, Delhi</li>
+              <li>The Vasant Pre-School, Delhi</li>
+            </ol>
+            <a className="about-duo-btn" style={{ marginTop: '24px' }} href="/courses-offered">
               LEARN MORE
+
             </a>
           </div>
         </article>
