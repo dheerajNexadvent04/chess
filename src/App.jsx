@@ -10,7 +10,10 @@ import { HomePage } from './pages/HomePage'
 import { PartnerSchoolsPage } from './pages/PartnerSchoolsPage'
 import { BookClassPage } from './pages/BookClassPage'
 import { AchievementPage } from './pages/AchievementPage'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { TermsPage } from './pages/TermsPage'
 import { AnnouncementBar } from './components/AnnouncementBar'
+import { Preloader } from './components/Preloader'
 import './App.css'
 
 function App() {
@@ -30,8 +33,11 @@ function App() {
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/book-class" element={<BookClassPage />} />
         <Route path="/achievements" element={<AchievementPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPage />} />
+        <Route path="/terms-conditions" element={<TermsPage />} />
       </Route>
       </Routes>
+      <Preloader />
     </>
   )
 }

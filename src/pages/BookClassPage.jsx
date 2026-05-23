@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Clock, Calendar, CheckCircle, Crown, Users, Brain, Trophy, Star, ChevronDown, ChevronUp } from 'lucide-react'
 
 // TODO: Replace this with the deployed Google Apps Script Web App URL
@@ -8,6 +8,25 @@ export function BookClassPage() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [openFaq, setOpenFaq] = useState(null)
+
+  const [selectedDate, setSelectedDate] = useState('')
+  const [selectedTime, setSelectedTime] = useState('')
+  const [customDate, setCustomDate] = useState('')
+  const [customTime, setCustomTime] = useState('')
+
+  const getNext14Days = () => {
+    const dates = []
+    const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }
+    for (let i = 1; i <= 14; i++) {
+      const d = new Date()
+      d.setDate(d.getDate() + i)
+      dates.push({
+        value: d.toISOString().split('T')[0],
+        label: d.toLocaleDateString('en-US', options)
+      })
+    }
+    return dates
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -24,6 +43,10 @@ export function BookClassPage() {
       .then(() => {
         setLoading(false)
         setSuccess(true)
+        setSelectedDate('')
+        setSelectedTime('')
+        setCustomDate('')
+        setCustomTime('')
         e.target.reset()
       })
       .catch((error) => {
@@ -56,13 +79,17 @@ export function BookClassPage() {
     {
       question: "What happens if I need to reschedule?",
       answer: "We offer flexible scheduling. As long as you notify your coach at least 24 hours in advance, you can easily reschedule your session for another time at no extra cost."
+    },
+    {
+      question: "Is there a free trial class available?",
+      answer: "Yes! We offer a complimentary 30-minute trial session for new students. This gives your child a chance to meet the coach, experience our teaching style, and decide if it's the right fit — with absolutely no commitment."
     }
   ]
 
   return (
     <div className="book-class-page-wrapper">
       <div className="book-class-banner">
-        <p>⭐ Special Offer: Get an exclusive Grandmaster chess puzzle free when you book your first class!</p>
+        <p>⭐ Special Offer: Get an exclusive Grandmaster chess puzzle free when you book your first class! ⭐</p>
       </div>
 
       {/* Main Booking Section */}
@@ -75,11 +102,13 @@ export function BookClassPage() {
           <h2 id="book-class-title">Schedule Your Online Class</h2>
           <p className="premium-intro">
             Step onto the board with grandmaster strategies. 
-            Fill out the form below to secure your spot in our highly sought-after online sessions.
+            Fill out the form to secure your spot in our highly sought-after online sessions.
           </p>
 
-          <div className="premium-info-list" style={{ marginTop: '2.5rem' }}>
-             <div className="premium-info-row">
+
+          <div className="premium-benefits-wrapper">
+            <div className="premium-info-list">
+              <div className="premium-info-row">
                 <span className="premium-info-icon" aria-hidden="true">
                   <Calendar size={22} strokeWidth={2.3} />
                 </span>
@@ -87,8 +116,8 @@ export function BookClassPage() {
                   <strong>Flexible Scheduling</strong>
                   <small>Pick a date and time that fits your lifestyle perfectly.</small>
                 </span>
-             </div>
-             <div className="premium-info-row">
+              </div>
+              <div className="premium-info-row">
                 <span className="premium-info-icon" aria-hidden="true">
                   <Clock size={22} strokeWidth={2.3} />
                 </span>
@@ -96,7 +125,22 @@ export function BookClassPage() {
                   <strong>Live Interactive Sessions</strong>
                   <small>Real-time game analysis and tailored guidance from the masters.</small>
                 </span>
-             </div>
+              </div>
+              <div className="premium-info-row">
+                <span className="premium-info-icon" aria-hidden="true">
+                  <Crown size={22} strokeWidth={2.3} />
+                </span>
+                <span>
+                  <strong>Expert FIDE Coaches</strong>
+                  <small>Learn from titled players with decades of competitive experience.</small>
+                </span>
+              </div>
+
+            </div>
+
+            <div className="premium-booking-image-wrap">
+              <img src="/student2.png" alt="Student chess training session" className="premium-booking-image" />
+            </div>
           </div>
         </div>
 
@@ -112,6 +156,7 @@ export function BookClassPage() {
             </div>
           ) : (
             <form className="premium-form-card" onSubmit={handleSubmit}>
+
               <div className="premium-form-row">
                 <label>
                   Your Name*
@@ -134,32 +179,51 @@ export function BookClassPage() {
                 </label>
               </div>
               
-              <div className="premium-form-row">
-                 <label>
-                  Preferred Date*
-                  <input type="date" name="date" required />
-                </label>
-                <label>
-                  Preferred Time*
-                  <input type="time" name="time" required />
-                </label>
+              <div className="premium-form-row dropdowns-row">
+                <CustomDropdown
+                  label="Preferred Date*"
+                  options={getNext14Days()}
+                  selectedValue={selectedDate}
+                  onChange={setSelectedDate}
+                  placeholder="Select preferred date"
+                  icon={Calendar}
+                  hasCustom={true}
+                  customPlaceholder="e.g. May 30, 2026 or Next Sunday"
+                  customValue={customDate}
+                  onCustomChange={setCustomDate}
+                  name="date"
+                />
+                <CustomDropdown
+                  label="Preferred Time Slot*"
+                  options={[
+                    { value: "10:00 AM", label: "10:00 AM - 11:00 AM" },
+                    { value: "11:30 AM", label: "11:30 AM - 12:30 PM" },
+                    { value: "02:00 PM", label: "02:00 PM - 03:00 PM" },
+                    { value: "03:30 PM", label: "03:30 PM - 04:30 PM" },
+                    { value: "05:00 PM", label: "05:00 PM - 06:00 PM" },
+                    { value: "06:30 PM", label: "06:30 PM - 07:30 PM" },
+                    { value: "08:00 PM", label: "08:00 PM - 09:00 PM" }
+                  ]}
+                  selectedValue={selectedTime}
+                  onChange={setSelectedTime}
+                  placeholder="Select preferred time slot"
+                  icon={Clock}
+                  hasCustom={true}
+                  customPlaceholder="e.g. 09:00 AM or Evening after 7 PM"
+                  customValue={customTime}
+                  onCustomChange={setCustomTime}
+                  name="time"
+                />
               </div>
-
-              <label className="textarea-label">
-                Your Message*
-                <textarea name="message" placeholder="Tell us about your chess experience and goals..." rows="4" required />
-              </label>
 
               <button type="submit" className="premium-submit-btn" disabled={loading} style={{ opacity: loading ? 0.7 : 1 }}>
                 {loading ? 'Submitting Request...' : 'Book Class Now'}
-                {!loading && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: '8px'}}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                )}
               </button>
             </form>
           )}
         </div>
       </section>
+
 
       {/* Why Choose Us Section */}
       <section className="premium-features-section">
@@ -240,24 +304,168 @@ export function BookClassPage() {
           <h2>Frequently Asked Questions</h2>
           <p>Everything you need to know about our online chess classes.</p>
         </div>
-        <div className="faq-list">
-          {faqs.map((faq, index) => (
-            <div 
-              key={index} 
-              className={`faq-item ${openFaq === index ? 'open' : ''}`}
-              onClick={() => toggleFaq(index)}
-            >
-              <div className="faq-question">
-                <h3>{faq.question}</h3>
-                {openFaq === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+        <div className="faq-split-container">
+          <div className="faq-image-wrapper">
+            <img src="/im1.png" alt="Students studying chess" className="faq-section-image" />
+          </div>
+          <div className="faq-list">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`faq-item ${openFaq === index ? 'open' : ''}`}
+                onClick={() => toggleFaq(index)}
+              >
+                <div className="faq-question">
+                  <h3>{faq.question}</h3>
+                  {openFaq === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </div>
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
               </div>
-              <div className="faq-answer">
-                <p>{faq.answer}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
+    </div>
+  )
+}
+
+function CustomDropdown({
+  label,
+  options,
+  selectedValue,
+  onChange,
+  placeholder,
+  icon: Icon,
+  hasCustom,
+  customPlaceholder,
+  customValue,
+  onCustomChange,
+  name
+}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+    
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("keydown", handleKeyDown)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [])
+
+  const handleSelect = (val) => {
+    onChange(val)
+    setIsOpen(false)
+  }
+
+  const isCustomSelected = selectedValue === "custom"
+  const currentOption = options.find(o => o.value === selectedValue)
+  
+  let displayText = placeholder
+  if (selectedValue) {
+    if (selectedValue === "custom") {
+      displayText = "Custom (Write your own)"
+    } else if (currentOption) {
+      displayText = currentOption.label
+    }
+  }
+
+  return (
+    <div className="custom-dropdown-container" ref={dropdownRef}>
+      <label className="select-label">
+        {label}
+        <div 
+          className={`custom-select-trigger ${isOpen ? 'active' : ''} ${selectedValue ? 'has-value' : ''}`} 
+          onClick={() => setIsOpen(!isOpen)}
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              setIsOpen(!isOpen)
+            }
+          }}
+          role="button"
+          aria-haspopup="listbox"
+          aria-expanded={isOpen}
+        >
+          <div className="trigger-text-wrapper">
+            {Icon && <Icon size={16} className="trigger-icon" />}
+            <span className="trigger-text">{displayText}</span>
+          </div>
+          <ChevronDown size={18} className={`chevron-icon ${isOpen ? 'rotate' : ''}`} />
+        </div>
+      </label>
+
+      {isOpen && (
+        <ul className="custom-dropdown-menu" role="listbox">
+          {hasCustom && (
+            <li
+              className={`custom-dropdown-item custom-option-item ${selectedValue === "custom" ? 'selected' : ''}`}
+              onClick={() => handleSelect("custom")}
+              role="option"
+              aria-selected={selectedValue === "custom"}
+            >
+              Custom (Write your own)
+            </li>
+          )}
+          {options.map((opt) => (
+            <li
+              key={opt.value}
+              className={`custom-dropdown-item ${selectedValue === opt.value ? 'selected' : ''}`}
+              onClick={() => handleSelect(opt.value)}
+              role="option"
+              aria-selected={selectedValue === opt.value}
+            >
+              {opt.label}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Visually hidden required input for native form validation */}
+      <input
+        type="text"
+        tabIndex={-1}
+        required
+        value={isCustomSelected ? customValue : selectedValue}
+        onChange={() => {}}
+        style={{
+          opacity: 0,
+          position: 'absolute',
+          width: 0,
+          height: 0,
+          pointerEvents: 'none'
+        }}
+        name={name}
+      />
+
+      {isCustomSelected && (
+        <div className="custom-write-input-container">
+          <input
+            type="text"
+            placeholder={customPlaceholder}
+            value={customValue}
+            onChange={(e) => onCustomChange(e.target.value)}
+            required
+            className="custom-write-input"
+          />
+        </div>
+      )}
     </div>
   )
 }

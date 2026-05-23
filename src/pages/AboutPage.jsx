@@ -49,6 +49,10 @@ export function AboutPage() {
       <p className="about-page-kicker reveal fade-up">About us</p>
 
       <section className="about-hero-first reveal fade-up">
+        <div className="about-hero-first-image">
+          <img src={aboutHeroImage} alt="Chess training session" />
+        </div>
+
         <div className="about-hero-first-head">
           <h1>
             Where Champions
@@ -63,12 +67,8 @@ export function AboutPage() {
           </p>
 
           <a className="about-hero-first-btn" href="#about-details">
-            GET TO KNOW US
+            GET IN TOUCH
           </a>
-        </div>
-
-        <div className="about-hero-first-image">
-          <img src={aboutHeroImage} alt="Chess training session" />
         </div>
       </section>
 
@@ -84,7 +84,6 @@ export function AboutPage() {
                 <div className="curriculum-detail-v5__content">
                   <h3 className="curriculum-detail-v5__title">{detail.title}</h3>
                   <div className="curriculum-detail-v5__desc-wrap">
-                    <p className="curriculum-detail-v5__desc-label">Description</p>
                     <p className="curriculum-detail-v5__description">{detail.description}</p>
                   </div>
                   <div className="curriculum-detail-v5__topics-wrap">
@@ -146,7 +145,7 @@ export function AboutPage() {
               <strong>School Tournaments</strong><br />
               Every year there are AICF (All India Chess Federation) and Delhi Chess Association (DCA) special School team tournaments.
             </p>
-            <a className="about-duo-btn" href="/courses-offered">
+            <a className="about-duo-btn" href="/career">
               LEARN MORE
             </a>
           </div>
@@ -162,13 +161,43 @@ export function AboutPage() {
           <div className="about-duo-copy">
             <span className="about-duo-kicker">PARTNERSHIPS</span>
             <h3>Our Partnership with Leading Schools & Learning Institutes:</h3>
-            <ol style={{ paddingLeft: '20px', color: '#4f4f4f', lineHeight: '1.6', marginTop: '16px' }}>
-              <li>Apeejay School, Pitampura, Saket, Sheikh Sarai, Noida, Faridabad, Mumbai and Jalandhar.</li>
-              <li>Shri Ram Global Pre-School(s) in Delhi</li>
-              <li>Kingdom of Kids, Delhi & Gurgaon</li>
-              <li>GD Goenka La Petite, Delhi</li>
-              <li>The Vasant Pre-School, Delhi</li>
-            </ol>
+            <div className="partners-grid-inline">
+              <div className="partner-inline-card">
+                <img src="/updated logo.png" alt="Apeejay Logo Placeholder" style={{ width: '40px', height: '40px' }} />
+                <div className="partner-inline-info">
+                  <strong>Apeejay School</strong>
+                  <span>Pitampura, Saket, Sheikh Sarai, Noida, Faridabad, Mumbai & Jalandhar</span>
+                </div>
+              </div>
+              <div className="partner-inline-card">
+                <img src="/updated logo.png" alt="Shri Ram Logo Placeholder" style={{ width: '40px', height: '40px' }} />
+                <div className="partner-inline-info">
+                  <strong>Shri Ram Global</strong>
+                  <span>Pre-School(s) in Delhi</span>
+                </div>
+              </div>
+              <div className="partner-inline-card">
+                <img src="/updated logo.png" alt="Kingdom of Kids Logo Placeholder" style={{ width: '40px', height: '40px' }} />
+                <div className="partner-inline-info">
+                  <strong>Kingdom of Kids</strong>
+                  <span>Delhi & Gurgaon</span>
+                </div>
+              </div>
+              <div className="partner-inline-card">
+                <img src="/updated logo.png" alt="GD Goenka Logo Placeholder" style={{ width: '40px', height: '40px' }} />
+                <div className="partner-inline-info">
+                  <strong>GD Goenka La Petite</strong>
+                  <span>Delhi</span>
+                </div>
+              </div>
+              <div className="partner-inline-card">
+                <img src="/updated logo.png" alt="The Vasant Logo Placeholder" style={{ width: '40px', height: '40px' }} />
+                <div className="partner-inline-info">
+                  <strong>The Vasant Pre-School</strong>
+                  <span>Delhi</span>
+                </div>
+              </div>
+            </div>
             <a className="about-duo-btn" style={{ marginTop: '24px' }} href="/courses-offered">
               LEARN MORE
 
