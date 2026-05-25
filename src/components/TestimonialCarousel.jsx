@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 const reviewsData = [
   {
     id: 1,
-    image: "/s1.jpeg",
+    image: "/r1.png",
     rating: "4.9/5",
     title: "The coaching sessions are engaging and effective—they've really improved my game!",
     body: "My coach explained strategies clearly and helped me sharpen my skills. Now I'm winning more games!",
@@ -11,7 +11,7 @@ const reviewsData = [
   },
   {
     id: 2,
-    image: "/s2.jpeg",
+    image: "/r2.png",
     rating: "5.0/5",
     title: "A phenomenal learning experience for kids!",
     body: "The instructors are patient and know exactly how to keep the children engaged. Highly recommended.",
@@ -19,7 +19,7 @@ const reviewsData = [
   },
   {
     id: 3,
-    image: "/s3.jpeg",
+    image: "/r3.png",
     rating: "4.8/5",
     title: "Best chess academy we've found online.",
     body: "The structured curriculum and interactive puzzles have made a huge difference in my son's logical thinking.",
@@ -27,11 +27,19 @@ const reviewsData = [
   },
   {
     id: 4,
-    image: "/s4.jpeg",
+    image: "/r4.png",
     rating: "5.0/5",
     title: "Incredible growth in just a few months!",
     body: "The personalized training plans designed for every skill level are truly outstanding.",
     name: "Anita R"
+  },
+  {
+    id: 5,
+    image: "/r5.png",
+    rating: "4.9/5",
+    title: "Highly engaging coaches and superb lessons!",
+    body: "The interactive classes have built immense confidence in my daughter's tournament play.",
+    name: "Vikram S"
   }
 ];
 
@@ -81,11 +89,11 @@ export const TestimonialCarousel = () => {
                   <h3>{review.title}</h3>
                   <p className="testimonial-body">{review.body}</p>
                   <div className="testimonial-avatars">
-                    <img src="/im1.png" alt="Reviewer" />
-                    <img src="/im2.png" alt="Reviewer" />
-                    <img src="/im3.png" alt="Reviewer" />
-                    <img src="/im1.png" alt="Reviewer" />
-                    <img src="/im2.png" alt="Reviewer" />
+                    <img src="/r1.png" alt="Reviewer" />
+                    <img src="/r2.png" alt="Reviewer" />
+                    <img src="/r3.png" alt="Reviewer" />
+                    <img src="/r4.png" alt="Reviewer" />
+                    <img src="/r5.png" alt="Reviewer" />
                   </div>
                 </div>
               </div>
