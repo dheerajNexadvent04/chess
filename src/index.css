@@ -1,145 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Urbanist:wght@400;500;600;700&display=swap');
+/* ── Single font: Urbanist for everything ── */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
+/* ── Design tokens ── */
 :root {
-  --primary-color: #0f3d8a;
-  --secondary-color: #ffd04d;
-  --bg-color: #f9fafb;
-  --text-color: #111827;
-  
-  --font-heading: 'Be Vietnam Pro', sans-serif;
-  --font-body: 'Urbanist', sans-serif;
+  --clr-primary:  #E8750A;
+  --clr-accent:   #F5A623;
+  --clr-dark:     #0d1b2e;
+  --clr-text:     #1a1a1a;
+  --clr-muted:    #6b7a99;
+  --clr-bg:       #ffffff;
+
+  --font-main: 'Urbanist', sans-serif;
+
+  /* Typography scale */
+  --h1: 52px;
+  --h2: 40px;
+  --h3: 28px;
+  --h4: 18px;
+  --body: 15px;
+  --small: 13px;
+
+  /* Section vertical padding (creates equal visual gaps) */
+  --sec-pad: 72px;
 }
 
+/* ── Base reset ── */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: var(--font-body);
-  line-height: 1.5;
+  font-family: var(--font-main);
+  font-size: var(--body);
   font-weight: 400;
-  font-size: 15px; /* Slightly smaller base font size */
-  color: var(--text-color);
-  background-color: var(--bg-color);
+  line-height: 1.6;
+  color: var(--clr-text);
+  background: #f3f5f9;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* All headings use the same font */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
+  font-family: var(--font-main);
   margin: 0;
-  min-height: 100%;
 }
-
-body {
-  min-height: 100svh;
-  background: #f3f5f9;
-  color: #111827;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-/* Global Font Weights */
 h1 { font-weight: 800; }
 h2 { font-weight: 700; }
-h3, h4, h5, h6 { font-weight: 600; }
-p, span, div { font-weight: 400; }
+h3, h4 { font-weight: 600; }
+h5, h6 { font-weight: 500; }
 
-/* Uniform Section Spacing & Responsiveness */
-section, .section {
-  padding: 60px 0;
-  margin: 0;
-}
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; }
 
-@media (max-width: 768px) {
-  section, .section {
-    padding: 40px 0;
-  }
-  
-  h1 { font-size: 2.2rem !important; }
-  h2 { font-size: 1.8rem !important; }
-  h3 { font-size: 1.5rem !important; }
-  p, span, div { font-size: 14px !important; }
-}
-
-/* Preloader */
+/* ── Preloader ── */
 .preloader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--bg-color);
+  inset: 0;
+  background: #fff;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 9999;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
-
-.preloader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
+.preloader.hidden { opacity: 0; visibility: hidden; }
 
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid rgba(15, 61, 138, 0.2);
-  border-top-color: var(--primary-color);
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(232, 117, 10, 0.2);
+  border-top-color: var(--clr-primary);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.9s linear infinite;
 }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Animations */
+/* ── Scroll-reveal animations ── */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
-
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Hover effects for buttons and cards */
-button, .btn, .card, .hover-anim {
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+/* ── Responsive typography (no !important, scoped to small screens) ── */
+@media (max-width: 768px) {
+  :root {
+    --h1: 38px;
+    --h2: 32px;
+    --h3: 22px;
+    --h4: 16px;
+    --body: 14px;
+    --sec-pad: 48px;
+  }
 }
 
-button:hover, .btn:hover, .hover-anim:hover {
-  transform: translateY(-2px);
+@media (max-width: 480px) {
+  :root {
+    --h1: 30px;
+    --h2: 26px;
+    --h3: 20px;
+    --h4: 15px;
+    --sec-pad: 36px;
+  }
 }
