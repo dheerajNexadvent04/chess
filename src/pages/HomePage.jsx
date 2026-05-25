@@ -428,6 +428,9 @@ export function HomePage() {
         <div className="figma-overlay" />
 
         <header className={`figma-nav ${headerScrolled ? 'is-scrolled' : ''}`}>
+          <Link to="/book-class" className="header-mobile-book-btn" onClick={closeMobileMenu}>
+            Book Now
+          </Link>
           <button
             type="button"
             className="figma-mobile-toggle"
@@ -474,12 +477,11 @@ export function HomePage() {
             </button>
           </div>
           <nav className="figma-mobile-drawer-links">
-            {navItems.map((item) => (
+            {navItems.filter((item) => item.href !== '/book-class').map((item) => (
               <Link 
                 key={`drawer-${item.href}`} 
                 to={item.href} 
                 onClick={closeMobileMenu}
-                className={item.href === '/book-class' ? 'book-class-highlight' : ''}
               >
                 {item.label}
               </Link>

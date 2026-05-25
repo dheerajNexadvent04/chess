@@ -1,6 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { contactDetails, navLinks } from '../data/siteContent'
 import { Footer } from './Footer'
 
@@ -44,6 +44,9 @@ export function Layout() {
     <div className="site">
       <header className={`header ${usesLightHeader ? 'about-header' : ''} ${headerScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-main">
+          <Link to="/book-class" className="header-mobile-book-btn" onClick={() => setMenuOpen(false)}>
+            Book Now
+          </Link>
           <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
             <img src="/logonew-removebg.png" alt="Sckool Chess logo" />
           </NavLink>
@@ -120,12 +123,12 @@ export function Layout() {
               </button>
             </div>
             <nav className="about-mobile-drawer-links">
-              {primaryNavLinks.map((link) => (
+              {primaryNavLinks.filter((link) => link.to !== '/book-class').map((link) => (
                 <NavLink 
                   key={`about-drawer-${link.label}`} 
                   to={link.to} 
                   onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) => `${isActive ? 'active' : ''} ${link.to === '/book-class' ? 'book-class-highlight' : ''}`.trim()}
+                  className={({ isActive }) => isActive ? 'active' : ''}
                 >
                   {link.label}
                 </NavLink>
