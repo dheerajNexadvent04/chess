@@ -38,7 +38,7 @@ export function Footer() {
       <div className="figma-footer-inner">
         <div className="footer-col footer-col-brand">
           <div className="footer-brand-row">
-            <img src="/updated%20logo%20footer.png" alt="Rohini Chess Academy logo" />
+            <img src="/logonew-removebg.png" alt="Sckool Chess logo" />
             <span className="footer-brand-name">
               Rohini Chess
               <br />

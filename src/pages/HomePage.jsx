@@ -438,7 +438,7 @@ export function HomePage() {
             {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
           <div className="figma-brand">
-            <img src="/final-logo.png" alt="Rohini Chess Academy logo" />
+            <img src="/logonew-removebg.png" alt="Sckool Chess logo" />
           </div>
           <nav>
             {navItems.map((item) => (
@@ -459,16 +459,7 @@ export function HomePage() {
               <a className="figma-contact-btn" href="/contact-us">
                 Contact
               </a>
-              <a
-                href="https://www.sckoolchess.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit Sckool Chess website"
-              >
-                <img className="header-side-logo" src="/logonew-removebg.png" alt="Sckool Chess logo" />
-              </a>
             </div>
-
           </div>
         </header>
 

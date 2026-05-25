@@ -45,7 +45,7 @@ export function Layout() {
       <header className={`header ${usesLightHeader ? 'about-header' : ''} ${headerScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-main">
           <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
-            <img src="/updated%20logo%20header.png" alt="Rohini Chess Academy logo" />
+            <img src="/logonew-removebg.png" alt="Sckool Chess logo" />
           </NavLink>
 
           <button
@@ -103,16 +103,7 @@ export function Layout() {
               <a className="contact-btn" href="/contact-us">
                 CONTACT
               </a>
-              <a
-                href="https://www.sckoolchess.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit Sckool Chess website"
-              >
-                <img className="header-side-logo" src="/logonew.png" alt="Sckool Chess logo" />
-              </a>
             </div>
-
           </div>
         </div>
       </header>

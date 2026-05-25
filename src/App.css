@@ -1,4 +1,4 @@
-﻿.site {
+.site {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,7 @@ html {
 }
 
 .header {
-  background: #0b1018;
+  background: #0D1B2E;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   position: sticky;
   top: 40px;
@@ -3246,7 +3246,7 @@ html {
   text-transform: uppercase;
   cursor: pointer;
   box-shadow:
-    inset 0 1px 0 rgba(93, 198, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
     0 14px 24px rgba(232, 117, 10, 0.24);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -3255,7 +3255,7 @@ html {
   background: #E8750A;
   transform: translateY(-1px);
   box-shadow:
-    inset 0 1px 0 rgba(93, 198, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
     0 17px 28px rgba(232, 117, 10, 0.3);
 }
 
@@ -5577,7 +5577,7 @@ p .feature-tag {
 .about-coaching-btn,
 .about-duo-btn {
   border: 1px solid #E8750A;
-  box-shadow: inset 0 1px 0 rgba(93, 198, 255, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .about-duo-image-wrap {
@@ -5872,7 +5872,7 @@ p .feature-tag {
   .about-header .nav.open .about-mobile-contact {
     color: #E8750A;
     border: 1px solid #E8750A;
-    box-shadow: inset 0 1px 0 rgba(93, 198, 255, 0.9);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
     border-radius: 999px;
     font-weight: 700;
     background: #ffffff;
@@ -6158,7 +6158,7 @@ p .feature-tag {
 
 .figma-nav.is-scrolled {
   top: 40px;
-  background: rgba(8, 19, 40, 0.8);
+  background: rgba(13, 27, 46, 0.95);
   border-bottom-color: rgba(255, 255, 255, 0.22);
   box-shadow: 0 12px 30px rgba(1, 8, 23, 0.3);
   backdrop-filter: blur(10px);
@@ -7255,7 +7255,7 @@ p .feature-tag {
   line-height: 1;
   letter-spacing: 0;
   border: 1px solid #E8750A;
-  box-shadow: inset 0 2px 0 rgba(93, 198, 255, 0.9);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.4);
   transition: background 0.2s, box-shadow 0.2s;
 }
 .feature-main .start-btn:hover {
@@ -7973,11 +7973,14 @@ p .feature-tag {
 }
 
 .footer-brand-row img {
-  width: clamp(44px, 4vw, 56px);
-  height: clamp(44px, 4vw, 56px);
+  width: auto;
+  max-width: 140px;
+  height: 42px;
   flex-shrink: 0;
-  object-fit: cover;
-  object-position: left center;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
 }
 
 .footer-brand-name {
@@ -8117,6 +8120,24 @@ p .feature-tag {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.3px;
+}
+
+.footer-policies {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.footer-policies a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.footer-policies a:hover {
+  color: #FF9840;
 }
 
 @media (max-width: 1200px) {
@@ -9720,7 +9741,7 @@ img.header-side-logo {
   line-height: 1;
   cursor: pointer;
   box-shadow:
-    inset 0 1px 0 rgba(93, 198, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
     0 10px 22px rgba(232, 117, 10, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
@@ -9729,7 +9750,7 @@ img.header-side-logo {
   background: #E8750A;
   transform: translateY(-1px);
   box-shadow:
-    inset 0 1px 0 rgba(93, 198, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
     0 14px 24px rgba(232, 117, 10, 0.28);
 }
 
