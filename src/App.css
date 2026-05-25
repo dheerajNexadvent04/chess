@@ -4798,31 +4798,45 @@ html {
   .partner-school-card,
   .partner-school-card.is-odd,
   .partner-school-card.is-even {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "node"
-      "info"
-      "img";
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+    align-items: start;
   }
 
   .partner-node-wrapper {
-    justify-content: flex-start;
+    justify-content: center;
+    padding-top: 24px;
   }
 
-  .partner-image-side {
+  .partner-card-content,
+  .partner-school-card.is-even .partner-card-content {
+    grid-template-columns: 1fr;
+  }
+
+  /* Image always on top, info below */
+  .partner-image-side,
+  .partner-school-card.is-even .partner-image-side {
+    order: 1;
     height: 220px;
+    min-height: unset;
   }
 
+  .partner-info-side,
+  .partner-school-card.is-even .partner-info-side {
+    order: 2;
+  }
+
+  /* Timeline line centered on the 48px node column */
   .pt-timeline {
-    left: 20px;
-  }
-
-  .partner-timeline-track {
-    left: 20px;
+    left: calc(24px + 40px + 24px);
   }
 
   .pt-container {
-    padding: 0 24px 0 56px;
+    padding: 0 16px 0 16px;
+  }
+
+  .pt-steps {
+    padding-left: 0;
   }
 
   .partners-combined-container {
@@ -4836,12 +4850,48 @@ html {
     padding: 36px 16px;
   }
 
-  .pt-container {
-    padding: 0 16px 0 48px;
+  /* Center the timeline line at: container-padding(16) + node-col-half(24) = 40px */
+  .pt-timeline {
+    left: 40px;
   }
 
-  .partner-info-side {
-    padding: 22px 18px;
+  .pt-container {
+    padding: 0 12px;
+  }
+
+  .pt-steps {
+    padding-left: 0;
+    gap: 24px;
+  }
+
+  .partner-school-card,
+  .partner-school-card.is-odd,
+  .partner-school-card.is-even {
+    grid-template-columns: 56px 1fr;
+    gap: 12px;
+  }
+
+  .partner-node-wrapper {
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .partner-card-content,
+  .partner-school-card.is-even .partner-card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-image-side,
+  .partner-school-card.is-even .partner-image-side {
+    order: 1;
+    height: 200px;
+    min-height: unset;
+  }
+
+  .partner-info-side,
+  .partner-school-card.is-even .partner-info-side {
+    order: 2;
+    padding: 20px 16px;
   }
 
   .partner-hero-metrics {
@@ -5480,7 +5530,6 @@ p .feature-tag {
 
 .about-coaching-copy h2 {
   margin: 0;
-  max-width: 439px;
   font-size: clamp(28px, 4vw, 52px);
   line-height: 1.1;
   font-weight: 700;
@@ -5570,7 +5619,7 @@ p .feature-tag {
 .about-duo-copy h3 {
   margin: 4px 0 0;
   color: #202329;
-  font-size: clamp(24px, 3.6vw, 48px);
+  font-size: 40px;
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: 0;
@@ -5865,22 +5914,64 @@ p .feature-tag {
   }
 
   .about-header .header-main {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto 1fr;
     grid-template-areas:
-      'brand . toggle';
+      'book brand toggle';
     align-items: center;
-    padding: 0.75rem 0;
+    padding: 0.75rem 1rem;
+    min-height: 72px;
     row-gap: 0;
+    width: calc(100% - 0px);
+  }
+
+  .about-header .header-mobile-book-btn {
+    grid-area: book;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #E8750A;
+    color: #ffffff !important;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    justify-self: start;
+    align-self: center;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(232, 117, 10, 0.35);
+  }
+
+  .about-header .header-mobile-book-btn:hover {
+    background: #FF9840;
+    color: #ffffff !important;
   }
 
   .about-header .brand {
     grid-area: brand;
+    justify-self: center;
+    align-self: center;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-header .brand img {
+    width: 118px;
+    height: auto;
+    display: block;
   }
 
   .about-header .menu-toggle {
     grid-area: toggle;
     display: inline-flex;
     justify-self: end;
+    background: transparent;
+    border-color: #d5dbe4;
+    color: #1f2937;
   }
 
   .about-header .nav {
@@ -5903,10 +5994,6 @@ p .feature-tag {
     border-radius: 999px;
     font-weight: 700;
     background: #ffffff;
-  }
-
-  .about-header .header-main {
-    min-height: 72px;
   }
 
   .about-page-kicker {
@@ -6010,7 +6097,7 @@ p .feature-tag {
   }
 
   .about-duo-copy h3 {
-    font-size: 42px;
+    font-size: 30px;
   }
 
   .about-duo-copy p {
@@ -8974,7 +9061,7 @@ p .feature-tag {
   }
 
   .about-duo-copy h3 {
-    font-size: 42px;
+    font-size: 26px;
     line-height: 1.04;
   }
 
@@ -10455,21 +10542,64 @@ img.header-side-logo {
 @media (max-width: 1024px) {
   .impact-v5 {
     min-height: auto;
-    padding: 100px 0;
+    padding: 64px 0;
   }
 
   .impact-v5__grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 36px;
   }
 
   .impact-v5__heading {
-    font-size: 38px;
+    font-size: 32px;
+    max-width: 100%;
   }
 
   .impact-v5__image-wrap {
     order: -1;
     aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-v5 {
+    padding: 48px 0;
+  }
+
+  .impact-v5__container {
+    padding: 0 20px;
+  }
+
+  .impact-v5__heading {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .impact-v5__subtext {
+    font-size: 15px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .impact-v5__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 20px;
+  }
+
+  .stat-box__number {
+    font-size: 28px;
+  }
+
+  .stat-box__label {
+    font-size: 10px;
+  }
+
+  .impact-v5__image-wrap {
+    border-radius: 20px;
+    aspect-ratio: 4/3;
   }
 }
 
@@ -10511,7 +10641,7 @@ img.header-side-logo {
 }
 
 .curriculum-detail-v5__title {
-  font-size: clamp(26px, 3vw, 40px);
+  font-size: 40px;
   font-weight: 800;
   color: #0D1B2E;
   margin-bottom: 24px;
@@ -11376,13 +11506,61 @@ img.header-side-logo {
 }
 
 @media (max-width: 640px) {
-  .coach-v3-card__content {
-    padding: 32px 24px;
+  .coach-v3-card {
+    margin-bottom: 28px;
+    border-radius: 16px;
   }
-  
+
+  .coach-v3-card__image-wrap {
+    flex: 0 0 240px;
+  }
+
+  .coach-v3-card__content {
+    padding: 20px 18px 24px;
+  }
+
+  .coach-v3-header {
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .coach-v3-tag {
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    font-size: 9px;
+  }
+
+  .coach-v3-header__main h2 {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+
+  .coach-v3-role {
+    font-size: 14px;
+  }
+
+  .coach-v3-bio {
+    margin-bottom: 16px;
+  }
+
+  .coach-v3-bio p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
   .coach-v3-stats {
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    column-gap: 24px;
+  }
+
+  .stat-text label {
+    font-size: 9px;
+  }
+
+  .stat-text span {
+    font-size: 14px;
   }
 }
 

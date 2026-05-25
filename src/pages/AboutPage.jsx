@@ -107,11 +107,7 @@ export function AboutPage() {
       <section className="about-coaching-section reveal fade-up" aria-label="Master chess coaching" id="about-details">
         <div className="about-coaching-copy">
           <h2>
-            Affiliated to
-            <br />
-            <span>Delhi Chess</span>
-            <br />
-            Association.
+            Affiliated to <span>Delhi Chess</span> Association.
           </h2>
 
           <p className="about-coaching-subtext">
