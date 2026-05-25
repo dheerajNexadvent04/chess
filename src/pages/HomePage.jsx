@@ -595,7 +595,7 @@ export function HomePage() {
       </section>
 
       <section className="figma-section school-row">
-        <h3>School Associated With Us</h3>
+        <h2>School Associated With Us</h2>
         <div className="school-logo-marquee" aria-label="Associated schools">
           <div className="school-logo-track">
             {[...schoolLogos, ...schoolLogos].map((logo, idx) => (
@@ -622,11 +622,11 @@ export function HomePage() {
 
       <section className="figma-section feature" id="about">
         <div className="feature-main">
-          <h3>
+          <h2>
             Master Chess<br />
             With <span className="text-primary">Rohini Chess</span><br />
             Academy.
-          </h3>
+          </h2>
           <p>
             Accelerate your game with structured lessons, live analysis,
             and personalized training plans designed for every skill

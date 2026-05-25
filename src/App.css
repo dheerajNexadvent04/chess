@@ -6683,8 +6683,6 @@ p .feature-tag {
   width: min(1440px, 100%);
   max-width: 1440px;
   min-height: 480px;
-  padding-top: 0;
-  padding-bottom: 0;
   overflow: visible;
   isolation: isolate;
   margin: auto;
@@ -6834,7 +6832,6 @@ p .feature-tag {
 
 .why-section {
   position: relative;
-  padding: 0;
   overflow: visible;
   isolation: isolate;
   margin: auto;
@@ -6977,7 +6974,6 @@ p .feature-tag {
 
 .solutions-section {
   position: relative;
-  padding: 0;
   overflow: visible;
   isolation: isolate;
   margin: auto;
@@ -7217,7 +7213,7 @@ p .feature-tag {
   height: 100%;
 }
 
-.feature-main h3 {
+.feature-main h2 {
   text-align: left;
   font-size: 40px;
   line-height: 44px;
@@ -7914,7 +7910,8 @@ p .feature-tag {
 }
 
 .gallery-section {
-  padding: 0 80px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .gallery-grid {
@@ -8346,9 +8343,9 @@ p .feature-tag {
     border-radius: 20px;
   }
 
-  .feature-main h3 {
-    font-size: 48px;
-    line-height: 1.04;
+  .feature-main h2 {
+    font-size: var(--h2, 32px);
+    line-height: 1.18;
   }
 
   .feature-main p {
@@ -8573,9 +8570,9 @@ p .feature-tag {
     gap: 24px;
   }
 
-  .feature-main h3 {
-    font-size: 42px;
-    line-height: 1.06;
+  .feature-main h2 {
+    font-size: var(--h2, 32px);
+    line-height: 1.18;
   }
 
   .feature-main p {
@@ -9192,9 +9189,9 @@ p .feature-tag {
     border-radius: 16px;
   }
 
-  .feature-main h3 {
-    font-size: clamp(36px, 8.8vw, 44px);
-    line-height: 1.06;
+  .feature-main h2 {
+    font-size: var(--h2, 26px);
+    line-height: 1.18;
   }
 
   .feature-main p {
