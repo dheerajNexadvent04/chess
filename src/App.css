@@ -1,4 +1,4 @@
-.site {
+﻿.site {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -11146,7 +11146,7 @@ img.header-side-logo {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: #ffffff;
-  background: #0f172a;
+  background: #e8750a;
   padding: 6px 14px;
   border-radius: 4px;
   margin-bottom: 16px;
