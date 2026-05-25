@@ -1,4 +1,4 @@
-﻿.site {
+.site {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -6063,15 +6063,26 @@ p .feature-tag {
 
 @media (max-width: 640px) {
   .header-main {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr auto 1fr;
     grid-template-areas:
-      'brand toggle'
-      'nav nav';
+      '. brand toggle'
+      'nav nav nav';
+  }
+
+  .brand {
+    grid-area: brand;
+    justify-self: center;
+    margin: 0 auto;
   }
 
   .brand img {
     width: 118px;
     height: auto;
+  }
+
+  .menu-toggle {
+    grid-area: toggle;
+    justify-self: end;
   }
 
   .header-actions {
@@ -9463,7 +9474,7 @@ p .feature-tag {
 
 @media (max-width: 650px) {
   .figma-nav {
-    top: 0px;
+    top: 42px;
     margin-top: 0;
   }
 }
@@ -12253,6 +12264,86 @@ img.header-side-logo {
 
 .announcement-phone:hover {
   text-decoration: underline;
+}
+
+.announcement-name {
+  display: inline;
+}
+.announcement-name::after {
+  content: " ";
+}
+.announcement-num {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .announcement-bar {
+    height: 42px;
+    padding: 0 10px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .announcement-marquee-container {
+    flex: 0 0 71%;
+    width: 71%;
+  }
+  .announcement-contact {
+    flex: 0 0 27%;
+    width: 27%;
+    margin-left: 4px;
+    padding-left: 6px;
+    border-left: 1px solid rgba(255,255,255,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    white-space: nowrap;
+    background: #E8750A;
+  }
+  .announcement-name {
+    display: block;
+    line-height: 1.2;
+  }
+  .announcement-name::after {
+    content: "";
+  }
+  .announcement-num {
+    display: block;
+    line-height: 1.2;
+    margin-top: 1px;
+  }
+  .header {
+    top: 42px;
+  }
+
+  /* Mobile-only Header Centering & Sizing */
+  .figma-nav {
+    top: 42px;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  .figma-nav.is-scrolled {
+    top: 42px;
+  }
+  .figma-mobile-toggle {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    order: unset;
+  }
+  .figma-brand {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    margin: 0 auto;
+    width: 116px;
+    order: unset;
+  }
+  .figma-brand img {
+    width: 116px;
+    height: auto;
+  }
 }
 
 /* ══════════════════════════════════════════════

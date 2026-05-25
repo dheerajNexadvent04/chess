@@ -19,7 +19,8 @@ export function AnnouncementBar() {
           }}
           title="Click to copy"
         >
-          Dr. Shilpi Jain +91-8447992702
+          <span className="announcement-name">Dr. Shilpi Jain</span>
+          <span className="announcement-num">+91-8447992702</span>
         </span>
       </div>
     </div>
