@@ -13,8 +13,8 @@ const figmaAssets = {
   whyB: '/im2.png',
   whyC: '/im1.png',
   whyD: '/im3.png',
-  featureImageTop: '/im2.png',
-  featureImageBottom: '/im1.png',
+  featureImageTop: '/master class banner 2.png',
+  featureImageBottom: '/master class banner image 1.png',
   testimonial: '/im3.png',
   school1: '/sc1.png',
   school2: '/sc2.png',
@@ -25,14 +25,14 @@ const figmaAssets = {
 }
 
 const students = [
-  { src: '/ig1.mp4' },
-  { src: '/ig2.mp4' },
-  { src: '/ig3.mp4' },
-  { src: '/ig4.mp4' },
-  { src: '/ig6.mp4' },
-  { src: '/ig7.mp4' },
-  { src: '/ig8.mp4' },
-  { src: '/ig9.mp4' },
+  { src: '/ig1.mp4', poster: '/t1.png' },
+  { src: '/ig2.mp4', poster: '/t2.png' },
+  { src: '/ig3.mp4', poster: '/t3.png' },
+  { src: '/ig4.mp4', poster: '/t4.png' },
+  { src: '/ig6.mp4', poster: '/t5.png' },
+  { src: '/ig7.mp4', poster: '/t6.png' },
+  { src: '/ig8.mp4', poster: '/t1.png' },
+  { src: '/ig9.mp4', poster: '/t2.png' },
 ]
 
 const whyCards = [
@@ -561,7 +561,7 @@ export function HomePage() {
           <div className="student-grid">
             {students.map((student, idx) => (
               <article key={`${student.src}-${idx}`}>
-                <StudentVideoCard src={student.src} fallbackSrc={student.fallbackSrc} />
+                <StudentVideoCard src={student.src} fallbackSrc={student.fallbackSrc} poster={student.poster} />
               </article>
             ))}
           </div>
@@ -938,7 +938,7 @@ export function HomePage() {
   )
 }
 
-function StudentVideoCard({ src, fallbackSrc }) {
+function StudentVideoCard({ src, fallbackSrc, poster }) {
   const videoRef = useRef(null)
   const containerRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -958,14 +958,6 @@ function StudentVideoCard({ src, fallbackSrc }) {
     if (containerRef.current) observer.observe(containerRef.current)
     return () => observer.disconnect()
   }, [])
-
-  const handleLoadedMetadata = () => {
-    const video = videoRef.current
-    if (!video || !Number.isFinite(video.duration) || video.duration <= 1) return
-
-    const randomPoint = Math.random() * (video.duration * 0.8)
-    video.currentTime = randomPoint
-  }
 
   const togglePlayback = async () => {
     const video = videoRef.current
@@ -997,9 +989,9 @@ function StudentVideoCard({ src, fallbackSrc }) {
         ref={videoRef}
         className="student-video"
         src={inView ? activeSrc : undefined}
+        poster={poster}
         preload="none"
         playsInline
-        onLoadedMetadata={handleLoadedMetadata}
         onError={handleVideoError}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}

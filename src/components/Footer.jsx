@@ -38,12 +38,7 @@ export function Footer() {
       <div className="figma-footer-inner">
         <div className="footer-col footer-col-brand">
           <div className="footer-brand-row">
-            <img src="/logonew-removebg.png" alt="Sckool Chess logo" />
-            <span className="footer-brand-name">
-              Rohini Chess
-              <br />
-              Academy
-            </span>
+            <img src="/revised logo footer.png" alt="Sckool Chess logo" />
           </div>
           <p className="footer-brand-desc">
             We teach children in Rohini to think three moves ahead - on the board and in life. From first piece to first trophy, we train it all.

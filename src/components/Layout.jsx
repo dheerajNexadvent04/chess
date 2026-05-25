@@ -48,7 +48,7 @@ export function Layout() {
             Book Now
           </Link>
           <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
-            <img src="/logonew-removebg.png" alt="Sckool Chess logo" />
+            <img src="/revised logo footer.png" alt="Sckool Chess logo" />
           </NavLink>
 
           <button
