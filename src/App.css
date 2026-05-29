@@ -13288,6 +13288,7 @@ img.header-side-logo {
   letter-spacing: 0.02em;
   transition: border-color 0.25s, background 0.25s, color 0.25s;
   white-space: nowrap;
+  background: none;
 }
 
 .ach-view-all-btn:hover {
