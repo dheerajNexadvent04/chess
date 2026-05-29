@@ -3,43 +3,35 @@ import React, { useState, useEffect, useCallback } from 'react';
 const reviewsData = [
   {
     id: 1,
-    image: "/r1.png",
-    rating: "4.9/5",
-    title: "The coaching sessions are engaging and effective—they've really improved my game!",
-    body: "My coach explained strategies clearly and helped me sharpen my skills. Now I'm winning more games!",
-    name: "Tyler G"
+    image: "/A4.jpeg",
+    rating: "5.0/5",
+    title: "Excellent Coaching & Management",
+    body: "When Vatsal joined Rohini Chess Academy in 2018 he even didn't know how to play chess. Within a short span of 1 year, he demonstrated great skill and temperament. Recently, he got 3rd position in Delhi State under 9 championship! Really thank full to coaching and management team and wish them future success.",
+    name: "Raj Singla (Vatsal's Father)"
   },
   {
     id: 2,
-    image: "/r2.png",
+    image: "/A2.jpeg",
     rating: "5.0/5",
-    title: "A phenomenal learning experience for kids!",
-    body: "The instructors are patient and know exactly how to keep the children engaged. Highly recommended.",
-    name: "Sarah M"
+    title: "Selection at the Nationals for SGFI",
+    body: "My son Arnav started his chess journey on a strong note. When his interest level declined during Covid, RCA coaches spent a good amount of time to understand his level. Within 6 months, Arnav's confidence improved, leading to his selection at the Nationals for SGFI in Tamil Nadu in 2023. Highly recommended!",
+    name: "Neeti Kakkar (Arnav's Mother)"
   },
   {
     id: 3,
-    image: "/r3.png",
-    rating: "4.8/5",
-    title: "Best chess academy we've found online.",
-    body: "The structured curriculum and interactive puzzles have made a huge difference in my son's logical thinking.",
-    name: "David K"
+    image: "/A3.jpeg",
+    rating: "5.0/5",
+    title: "Exceptional Learning Experience",
+    body: "I had the pleasure of being a student here at Rohini Chess Academy for more than 3 years now and it has been an exceptional experience that has greatly enhanced my chess skills and made me confident. RCA surely has the perfect environment for growth with coaches providing a friendly and knowledgeable ambiance.",
+    name: "Bhavya Sharma"
   },
   {
     id: 4,
-    image: "/r4.png",
+    image: "/A1.jpeg",
     rating: "5.0/5",
-    title: "Incredible growth in just a few months!",
-    body: "The personalized training plans designed for every skill level are truly outstanding.",
-    name: "Anita R"
-  },
-  {
-    id: 5,
-    image: "/r5.png",
-    rating: "4.9/5",
-    title: "Highly engaging coaches and superb lessons!",
-    body: "The interactive classes have built immense confidence in my daughter's tournament play.",
-    name: "Vikram S"
+    title: "Awesome Coach & Great Environment",
+    body: "I have very good experience with the Rohini Chess Academy. It's a very beautiful and good atmosphere for students. I really thank Sachin sir, he is an awesome coach with a nice personality and cheerful attitude! I've learned a lot of great opening traps and mid-game strategies which I use to crush my opponents.",
+    name: "Kenisha Dem"
   }
 ];
 
@@ -89,11 +81,10 @@ export const TestimonialCarousel = () => {
                   <h3>{review.title}</h3>
                   <p className="testimonial-body">{review.body}</p>
                   <div className="testimonial-avatars">
-                    <img src="/r1.png" alt="Reviewer" />
-                    <img src="/r2.png" alt="Reviewer" />
-                    <img src="/r3.png" alt="Reviewer" />
-                    <img src="/r4.png" alt="Reviewer" />
-                    <img src="/r5.png" alt="Reviewer" />
+                    <img src="/A4.jpeg" alt="Reviewer" style={{ objectFit: 'cover' }} />
+                    <img src="/A2.jpeg" alt="Reviewer" style={{ objectFit: 'cover' }} />
+                    <img src="/A3.jpeg" alt="Reviewer" style={{ objectFit: 'cover' }} />
+                    <img src="/A1.jpeg" alt="Reviewer" style={{ objectFit: 'cover' }} />
                   </div>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { achievers } from '../data/siteContent';
 
 const ALL_GALLERY_IMAGES = [
   '/gal1.jpg', '/gal2.jpg', '/gal3.jpg', '/gal4.jpg',
@@ -49,53 +50,42 @@ export function AchievementPage() {
             </button>
           </div>
 
-          {/* Main Grid: left hero + right 2 stacked cards */}
+          {/* Main Grid: left hero (1 student) + right 3 stacked cards (3 students) */}
           <div className="ach-showcase-grid">
 
-            {/* Left — Large Hero Card */}
-            <div className="ach-hero-card" onClick={() => openGallery(1)} style={{ cursor: 'pointer' }}>
-              <img src="/gal2.jpg" alt="DCA Below 1600 FIDE Rated Chess Tournament 2017" className="ach-hero-card-img" />
-              <div className="ach-hero-card-overlay">
-                <div className="ach-hero-card-badge">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                </div>
-                <div className="ach-hero-card-text">
-                  <h3>DCA Below 1600 FIDE Rated Chess Tournament 2017</h3>
-                  <p className="ach-hero-card-award">Team Excellence Award</p>
-                  <p className="ach-hero-card-desc">Outstanding performance by RCA students in the tournament.</p>
+            {/* Left — Large Hero Card (Vatsal Singla) */}
+            {achievers[3] && (
+              <div className="ach-hero-card" onClick={() => openGallery(3)} style={{ cursor: 'pointer' }}>
+                <img src={achievers[3].image} alt={achievers[3].name} className="ach-hero-card-img" />
+                <div className="ach-hero-card-overlay">
+                  <div className="ach-hero-card-badge">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                  </div>
+                  <div className="ach-hero-card-text">
+                    <p className="ach-hero-card-award">Father: Raj Singla</p>
+                    <h3>{achievers[3].name}</h3>
+                    <p className="ach-hero-card-desc">{achievers[3].achievement}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            {/* Right — Two Stacked Info Cards */}
+            {/* Right — Three Stacked Info Cards */}
             <div className="ach-side-cards">
-
-              <div className="ach-side-card" onClick={() => openGallery(2)} style={{ cursor: 'pointer' }}>
-                <img src="/gal3.jpg" alt="2nd DCA Below 1600 Rated Chess Tournament" className="ach-side-card-img" />
-                <div className="ach-side-card-body">
-                  <div className="ach-side-card-text">
-                    <h4>2nd DCA Below 1600 Rated Chess Tournament</h4>
-                    <p>RCA players showcased excellent strategy and secured top positions.</p>
-                  </div>
-                  <div className="ach-side-card-icon ach-icon-gold">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="ach-side-card" onClick={() => openGallery(4)} style={{ cursor: 'pointer' }}>
-                <img src="/gal5.jpeg" alt="Chess Excellence Award" className="ach-side-card-img" />
-                <div className="ach-side-card-body">
-                  <div className="ach-side-card-text">
-                    <h4>Chess Excellence Award</h4>
-                    <p>Honored for contribution and promotion of chess among young minds.</p>
-                  </div>
-                  <div className="ach-side-card-icon ach-icon-bronze">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              {achievers.slice(0, 3).map((student, idx) => (
+                <div key={student.name} className="ach-side-card" onClick={() => openGallery(idx)} style={{ cursor: 'pointer' }}>
+                  <img src={student.image} alt={student.name} className="ach-side-card-img" />
+                  <div className="ach-side-card-body">
+                    <div className="ach-side-card-text">
+                      <h4>{student.name}</h4>
+                      <p>{student.achievement}</p>
+                    </div>
+                    <div className={`ach-side-card-icon ${idx === 0 ? 'ach-icon-gold' : idx === 1 ? 'ach-icon-silver' : 'ach-icon-bronze'}`}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-
+              ))}
             </div>
 
           </div>
@@ -145,6 +135,8 @@ export function AchievementPage() {
 
         </div>
       </section>
+
+
 
       {/* ── Learning Moments Collage Section ── */}
       <section className="lm-section" id="gallery">

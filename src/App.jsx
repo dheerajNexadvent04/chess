@@ -12,6 +12,8 @@ import { BookClassPage } from './pages/BookClassPage'
 import { AchievementPage } from './pages/AchievementPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { TermsPage } from './pages/TermsPage'
+import { BlogPage } from './pages/BlogPage'
+import { BlogDetailPage } from './pages/BlogDetailPage'
 import { AnnouncementBar } from './components/AnnouncementBar'
 import { Preloader } from './components/Preloader'
 import './App.css'
@@ -35,6 +37,8 @@ function App() {
         <Route path="/achievements" element={<AchievementPage />} />
         <Route path="/privacy-policy" element={<PrivacyPage />} />
         <Route path="/terms-conditions" element={<TermsPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogDetailPage />} />
       </Route>
       </Routes>
       <Preloader />

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Award, BookOpen, Brain, CalendarDays, CheckCircle2, ChevronLeft, ChevronRight, Clock, GraduationCap, Lightbulb, LayoutGrid, Phone, Plus, Scale, ShieldCheck, Star, Target, TrendingUp, Trophy, Building2, User, Users, Wallet, Zap, ArrowUpRight, PlayCircle, FolderCheck, Globe, ArrowRight } from 'lucide-react'
+import { googleReviews } from '../data/siteContent'
 
 
 
@@ -575,6 +576,47 @@ const StatBox = ({ number, suffix, label }) => {
   );
 };
 
+const ReviewCard = ({ review }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const isLongText = review.text.length > 180;
+
+  return (
+    <article className="review-card" style={{ display: 'flex', flexDirection: 'column', minHeight: '380px', boxSizing: 'border-box' }}>
+      <span className="stars">{'★'.repeat(review.rating)}</span>
+      <h4 style={{ minHeight: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{review.title}</h4>
+      <p 
+        className={(!isExpanded && isLongText) ? "review-text-clamp" : ""} 
+        style={{ flex: '1 0 auto', margin: '11px auto 0', minHeight: 'unset', textAlign: 'center' }}
+      >
+        {review.text}
+      </p>
+      {isLongText && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: '#E8750A',
+            fontWeight: '700',
+            cursor: 'pointer',
+            padding: '4px 0',
+            fontSize: '13px',
+            textDecoration: 'underline',
+            marginTop: '8px',
+            marginBottom: '8px',
+            display: 'block',
+            textAlign: 'center',
+            width: '100%'
+          }}
+        >
+          {isExpanded ? 'Read Less' : 'Read More'}
+        </button>
+      )}
+      <b style={{ marginTop: 'auto' }}>– {review.name}</b>
+    </article>
+  );
+};
+
 export function CurriculumPage() {
   const [activeFeature, setActiveFeature] = useState(0)
   const [slideDir, setSlideDir] = useState('next')
@@ -1133,36 +1175,9 @@ export function CurriculumPage() {
             ‹
           </button>
           <div className="review-grid" ref={reviewGridRef}>
-            <article className="review-card">
-              <span className="stars">★★★★★</span>
-              <h4>Good Style of Edu</h4>
-              <p>
-                Honored to be featured in Voyage L A for their Inspiring Stories series.
-                We talked about how Goldenbird Marketing came to be what it is today
-                through a little Q and A.
-              </p>
-              <b>– Joanna A.</b>
-            </article>
-            <article className="review-card">
-              <span className="stars">★★★★★</span>
-              <h4>Loved It!</h4>
-              <p>
-                Honored to be featured in Voyage L A for their Inspiring Stories series.
-                We talked about how Goldenbird Marketing came to be what it is today
-                through a little Q and A.
-              </p>
-              <b>– Brenda</b>
-            </article>
-            <article className="review-card">
-              <span className="stars">★★★★★</span>
-              <h4>Highly Recommend</h4>
-              <p>
-                Honored to be featured in Voyage L A for their Inspiring Stories series.
-                We talked about how Goldenbird Marketing came to be what it is today
-                through a little Q and A.
-              </p>
-              <b>– Jessie</b>
-            </article>
+            {googleReviews.map((review, idx) => (
+              <ReviewCard key={idx} review={review} />
+            ))}
           </div>
           <button
             className="review-nav review-nav-right"

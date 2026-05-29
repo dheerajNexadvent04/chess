@@ -259,23 +259,25 @@ export const studentGallery = [
 
 export const achievers = [
   {
-    name: 'Riya Sharma',
-    achievement: 'DCA Under-11 Bronze Medal',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
+    name: 'Kenisha Dem',
+    achievement: 'Nationals SGFI qualifier. FIDE International player (Top 10 Delhi females). Mother: Geetika Dem.',
+    image: '/A1.jpeg',
   },
   {
-    name: 'Kabir Gupta',
-    achievement: 'Inter-school Chess Champion',
-    image:
-      'https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=900&q=80',
+    name: 'Arnav Kakkar',
+    achievement: 'Nationals SGFI qualifier. FIDE rated international player. Mother: Neeti Kakkar.',
+    image: '/A2.jpeg',
   },
   {
-    name: 'Mehak Arora',
-    achievement: 'FIDE Rapid Rating Milestone',
-    image:
-      'https://images.unsplash.com/photo-1485206412256-701ccc5b93ca?auto=format&fit=crop&w=900&q=80',
+    name: 'Bhavya Sharma',
+    achievement: '2nd in U14 CBSE Oman tournament. Top RCA student performer.',
+    image: '/A3.jpeg',
   },
+  {
+    name: 'Vatsal Singla',
+    achievement: 'Nationals qualifier & Delhi State U-17 Champion (2026). FIDE International player. Father: Raj Singla. Joined RCA in 2017 as beginner.',
+    image: '/A4.jpeg',
+  }
 ]
 
 export const youtubeVideos = [
@@ -290,18 +292,27 @@ export const instagramVideos = [
 
 export const googleReviews = [
   {
-    name: 'Pooja Arora',
+    name: "Raj Singla (Vatsal's Father)",
     rating: 5,
-    text: 'Excellent academy for kids. Structured classes, regular tournaments, and visible confidence growth.',
+    title: "Excellent Coaching & Management",
+    text: "When Vatsal joined Rohini Chess Academy in 2018 he even didn't know how to play chess. Within a short span of 1 year, he demonstrated great skill and temperament..!! Recently, he got 3rd position in Delhi State under 9 championship..!! Really thank full to coaching and management team and wish them future success..!!"
   },
   {
-    name: 'Nitin Verma',
+    name: "Neeti Kakkar (Arnav's Mother)",
     rating: 5,
-    text: 'Best chess academy in Rohini. Coaches are supportive and classes are very engaging.',
+    title: "Selection at the Nationals for SGFI",
+    text: "I'm mother of Arnav Kakkar. He started Chess journey with a strong note, however during Covid19 his interest level declined. We approached Rohini Chess Academy Pvt. Ltd. Coaches team spent good amount of time to understand his current level, game play, position understanding, tactical strength, etc... and a complete diagnosis to make good strives forward were in place. In 6 months time, Arnav's confidence in the game was improved. He participated in many open tournaments and got achievements. The big occasion was his selection at the Nationals for SGFI tournament in Tamil Nadu in 2023. Full praise and highly recommended! Special thanks to SACHIN SIR and ANIL SIR."
   },
   {
-    name: 'Rashmi Jain',
+    name: "Bhavya Sharma",
     rating: 5,
-    text: 'My child improved in focus and analytical thinking. Great environment and discipline.',
+    title: "Exceptional Experience",
+    text: "I had the pleasure of being a student here at Rohini Chess Academy for more than 3years now and it has been an exceptional experience that has greatly enhanced my chess skills and made me confident.. RCA surely has the perfect environment for growth with the coaches providing a friendly and knowledgeable ambiance."
   },
+  {
+    name: "Kenisha Dem",
+    rating: 5,
+    title: "Awesome Coach & Great Environment",
+    text: "I have very good experience with the Rohini Chess Academy. it's very beautiful and good atmosphere for students.i really thank Sachin sir is an awesome coach with a nice personality and cheerful attitude! I've learned a lot of great opening traps and mid-game strategies which I have used to crush my opponents both online and over the board."
+  }
 ]

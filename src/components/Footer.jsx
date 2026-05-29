@@ -54,6 +54,7 @@ export function Footer() {
           <Link to="/achievements">Achievements</Link>
           <Link to="/career">Careers</Link>
           <Link to="/book-class">Book Online Class</Link>
+          <Link to="/blog">Blog</Link>
         </div>
         <div className="footer-col footer-col-contact">
           <h4>CONTACT US</h4>
