@@ -45,7 +45,7 @@ export function AchievementPage() {
               <p className="ach-showcase-kicker">Highlights</p>
               <h2 className="ach-showcase-title">Our Achievements</h2>
             </div>
-            <button className="ach-view-all-btn" onClick={() => openGallery(0)}>
+            <button className="ach-view-all-btn ach-view-all-desktop" onClick={() => openGallery(0)}>
               View All Achievements <span>→</span>
             </button>
           </div>
@@ -132,6 +132,10 @@ export function AchievementPage() {
               </div>
             </div>
           </div>
+
+          <button className="ach-view-all-btn ach-view-all-mobile" onClick={() => openGallery(0)}>
+            View All Achievements <span>→</span>
+          </button>
 
         </div>
       </section>

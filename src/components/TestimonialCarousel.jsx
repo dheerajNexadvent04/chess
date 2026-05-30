@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const reviewsData = [
   {
@@ -55,9 +56,13 @@ export const TestimonialCarousel = () => {
     <section className="figma-section testimonial-banner testimonial-carousel-container" id="events" aria-label="Customer Reviews Carousel">
       <img className="testimonial-banner-bg" src="/chess background.png" alt="" aria-hidden="true" />
 
-      <div style={{ position: 'relative', width: '100%', maxWidth: '1080px' }}>
-        <button className="testimonial-nav testimonial-nav-prev" onClick={prev} aria-label="Previous review">&#8249;</button>
-        <button className="testimonial-nav testimonial-nav-next" onClick={next} aria-label="Next review">&#8250;</button>
+      <div className="testimonial-carousel-inner" style={{ position: 'relative', width: '100%', maxWidth: '1080px' }}>
+        <button className="testimonial-nav testimonial-nav-prev" onClick={prev} aria-label="Previous review">
+          <ChevronLeft size={20} strokeWidth={2.5} />
+        </button>
+        <button className="testimonial-nav testimonial-nav-next" onClick={next} aria-label="Next review">
+          <ChevronRight size={20} strokeWidth={2.5} />
+        </button>
 
         <div className="testimonial-3d-wrapper">
           {reviewsData.map((review, index) => {

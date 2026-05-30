@@ -120,6 +120,104 @@ export function ContactPage() {
         </form>
       </section>
 
+      {/* ── Our Branches Section ── */}
+      <section className="contact-branches-section" aria-labelledby="contact-branches-title">
+        <div className="contact-branches-header">
+          <h2 id="contact-branches-title">Our Academy Branches</h2>
+          <p className="contact-branches-intro">
+            We conduct structured offline coaching classes at our main branches. Drop by for a trial or session during availability hours.
+          </p>
+        </div>
+
+        <div className="contact-branches-list">
+          <div className="branch-card">
+            <div className="branch-card-details">
+              <h3>Delhi (Rohini)</h3>
+              <div className="branch-info">
+                <p>
+                  <strong>Location:</strong>
+                  140, 2nd Floor, Pocket-21, Sector-24, Rohini, Delhi-110085
+                </p>
+                <p>
+                  <strong>Telephone:</strong>
+                  +91 95821 35221, +91 84479 92702
+                </p>
+                <p>
+                  <strong>Email:</strong>
+                  sckoolchess@gmail.com
+                </p>
+                <p>
+                  <strong>Availability Hours:</strong>
+                  Wed & Fri 4-6 pm | Sat & Sun 2-7 pm
+                </p>
+              </div>
+              <a 
+                href="https://maps.google.com/?q=140,+Pocket+21,+Sector+24,+Rohini,+Delhi,+110085" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="branch-maps-link"
+              >
+                Get Directions on Google Maps ↗
+              </a>
+            </div>
+            <div className="branch-card-map">
+              <iframe
+                title="Google Maps - Rohini Branch"
+                src="https://maps.google.com/maps?q=140,%20Pocket%2021,%20Sector%2024,%20Rohini,%20Delhi%20110085&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <div className="branch-card">
+            <div className="branch-card-details">
+              <h3>Indirapuram Center</h3>
+              <div className="branch-info">
+                <p>
+                  <strong>Location:</strong>
+                  FSSF Rd, Nyay Khand I, Indirapuram, Ghaziabad, Uttar Pradesh 201014
+                </p>
+                <p>
+                  <strong>Telephone:</strong>
+                  +91 95821 35221, +91 84479 92702
+                </p>
+                <p>
+                  <strong>Email:</strong>
+                  sckoolchess@gmail.com
+                </p>
+                <p>
+                  <strong>Availability Hours:</strong>
+                  Mon to Fri 4pm to 7pm
+                </p>
+              </div>
+              <a 
+                href="https://maps.google.com/?q=FSSF+Rd,+Nyay+Khand+I,+Indirapuram,+Ghaziabad,+Uttar+Pradesh+201014" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="branch-maps-link"
+              >
+                Get Directions on Google Maps ↗
+              </a>
+            </div>
+            <div className="branch-card-map">
+              <iframe
+                title="Google Maps - Indirapuram Branch"
+                src="https://maps.google.com/maps?q=FSSF%20Rd,%20Nyay%20Khand%20I,%20Indirapuram,%20Ghaziabad%20201014&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="contact-stats-section" aria-labelledby="contact-stats-title">
         <div className="contact-stats-media">
           <img src="/im2.png" alt="Students learning chess strategy" />

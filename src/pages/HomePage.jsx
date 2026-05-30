@@ -486,9 +486,7 @@ export function HomePage() {
                 {item.label}
               </Link>
             ))}
-            <a href="#support" onClick={closeMobileMenu}>
-              Support
-            </a>
+
             <a href="/contact-us" onClick={closeMobileMenu}>
               Contact
             </a>

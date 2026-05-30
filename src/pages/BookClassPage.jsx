@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Clock, Calendar, CheckCircle, Crown, Users, Brain, Trophy, Star, ChevronDown, ChevronUp } from 'lucide-react'
+import { TestimonialCarousel } from '../components/TestimonialCarousel'
 
 // TODO: Replace this with the deployed Google Apps Script Web App URL
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec'
@@ -89,7 +90,10 @@ export function BookClassPage() {
   return (
     <div className="book-class-page-wrapper">
       <div className="book-class-banner">
-        <p>⭐ Special Offer: Get an exclusive Grandmaster chess puzzle free when you book your first class! ⭐</p>
+        <p>
+          <span>⭐ Special Offer: Get an exclusive Grandmaster</span>
+          <span>chess puzzle free when you book your first class! ⭐</span>
+        </p>
       </div>
 
       {/* Main Booking Section */}
@@ -255,48 +259,7 @@ export function BookClassPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="premium-testimonials-section">
-        <div className="section-header">
-          <h2>Student Success Stories</h2>
-          <p>Don't just take our word for it. See what our students have to say.</p>
-        </div>
-        <div className="testimonials-grid">
-          <div className="testimonial-card">
-            <div className="stars">
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-            </div>
-            <p className="quote">"My daughter's Elo rating jumped 300 points in just 3 months! The coaches are incredible and make complex tactics easy to understand."</p>
-            <div className="author">- Sarah M. (Parent)</div>
-          </div>
-          <div className="testimonial-card">
-            <div className="stars">
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-            </div>
-            <p className="quote">"I was stuck at 1200 for over a year. After taking online classes here, I finally broke 1500 and I'm still climbing. Highly recommend!"</p>
-            <div className="author">- David K. (Adult Improver)</div>
-          </div>
-          <div className="testimonial-card">
-            <div className="stars">
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-              <Star fill="#ffd04d" color="#ffd04d" size={18} />
-            </div>
-            <p className="quote">"The post-game analysis is eye-opening. My coach spots brilliant moves and blunders I would have never noticed on my own."</p>
-            <div className="author">- Michael T. (Tournament Player)</div>
-          </div>
-        </div>
-      </section>
+      <TestimonialCarousel />
 
       {/* FAQ Section */}
       <section className="premium-faq-section">

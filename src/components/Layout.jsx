@@ -48,7 +48,7 @@ export function Layout() {
             Book Now
           </Link>
           <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
-            <img src="/revised logo footer.png" alt="Sckool Chess logo" />
+            <img src="/version2.png" alt="Sckool Chess logo" />
           </NavLink>
 
           <button
@@ -133,15 +133,7 @@ export function Layout() {
                   {link.label}
                 </NavLink>
               ))}
-              {supportLink ? (
-                <NavLink 
-                  to={supportLink.to} 
-                  onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) => isActive ? 'active' : ''}
-                >
-                  {supportLink.label}
-                </NavLink>
-              ) : null}
+
               <NavLink 
                 to="/contact-us" 
                 onClick={() => setMenuOpen(false)}
