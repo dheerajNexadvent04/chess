@@ -407,7 +407,8 @@ const journeySteps = [
     label: "Level 1",
     name: "Walkers",
     piece: "♟",
-    icon: Star
+    icon: Star,
+    image: "/fundamentals.jpg"
   },
   {
     id: 2,
@@ -419,7 +420,8 @@ const journeySteps = [
     label: "Level 2",
     name: "Joggers",
     piece: "♞",
-    icon: FolderCheck
+    icon: FolderCheck,
+    image: "/opening.jpg"
   },
   {
     id: 3,
@@ -431,7 +433,8 @@ const journeySteps = [
     label: "Level 3",
     name: "Runner",
     piece: "♜",
-    icon: Globe
+    icon: Globe,
+    image: "/tactics.jpg"
   },
   {
     id: 4,
@@ -442,7 +445,8 @@ const journeySteps = [
     details: ["Duration: 3 Months", "Classes: 24 Sessions", "Age Group: 5–12 Years"],
     label: "Crash Course",
     piece: "♛",
-    icon: Zap
+    icon: Zap,
+    image: "/tournament.jpg"
   }
 ];
 
@@ -722,18 +726,21 @@ export function CurriculumPage() {
 
       const trackRect = track.getBoundingClientRect();
       
-      // Pin the track bottom physically to the last node center
+      // Pin the track top and bottom physically to the first and last node centers
       if (nodeWrappers.length > 0) {
+        const parentRect = track.parentElement.getBoundingClientRect();
+        
+        const firstNodeRect = nodeWrappers[0].getBoundingClientRect();
+        const firstNodeCenterY = firstNodeRect.top + firstNodeRect.height / 2;
+        const offsetFromTop = firstNodeCenterY - parentRect.top;
+
         const lastNodeRect = nodeWrappers[nodeWrappers.length - 1].getBoundingClientRect();
         const lastNodeCenterY = lastNodeRect.top + lastNodeRect.height / 2;
-        
-        // Calculate how far the node center is from the bottom of its parent container (the timeline)
-        // This ensures the offset is accurate regardless of section padding or headers.
-        const parentRect = track.parentElement.getBoundingClientRect();
-        const offsetFromBottom = parentRect.bottom - lastNodeCenterY - 10;
-        
+        const offsetFromBottom = parentRect.bottom - lastNodeCenterY;
+
+        track.style.top = `${offsetFromTop}px`;
         track.style.bottom = `${offsetFromBottom}px`;
-        track.style.height = 'auto'; // Let it stretch from CSS top to this bottom
+        track.style.height = 'auto'; // Let it stretch between top and bottom offsets
       }
       
       const finalTrackRect = track.getBoundingClientRect();
@@ -788,6 +795,9 @@ export function CurriculumPage() {
     let lastWheelTime = 0;
 
     const handleWheel = (e) => {
+      // Disable wheel snap scroll on mobile/tablet viewports and touch devices
+      if (window.innerWidth <= 1024 || 'ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
       const rect = section.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       const scrollingDown = e.deltaY > 0;
@@ -973,30 +983,49 @@ export function CurriculumPage() {
                 return (
                   <div key={step.id} className={`journey-v5__step ${isEven ? 'journey-v5__step--even' : 'journey-v5__step--odd'}`}>
                     <div className="journey-v5__content">
-                      <div className="journey-v5__card-side">
-                        <div className="jv5-card">
-                          <div className="jv5-card-header">
-                            <step.icon size={22} className="jv5-card-icon" strokeWidth={2} />
-                            <h4>{step.title}</h4>
-                          </div>
-                          <h5 className="jv5-card-subtitle">{step.subtitle}</h5>
-                          <p>{step.desc}</p>
-
-                          <div className="jv5-card-lists">
-                            <div className="jv5-card-list-group">
-                              <h6>Highlights</h6>
-                              <ul>
-                                {step.highlights.map((h, i) => <li key={i}>{h}</li>)}
-                              </ul>
+                      
+                      {/* Left Side */}
+                      <div className="journey-v5__left-side">
+                        {isEven ? (
+                          /* Info Card on Left */
+                          <div className="jv5-card jv5-info-card">
+                            <div className="jv5-info-text">
+                              <div className="jv5-info-header">
+                                <span className="jv5-badge-piece">{step.piece}</span>
+                                <h4>{step.title}</h4>
+                              </div>
+                              <h5 className="jv5-subtitle">{step.subtitle}</h5>
+                              <p className="jv5-desc">{step.desc}</p>
                             </div>
-                            <div className="jv5-card-list-group">
-                              <h6>Details</h6>
-                              <ul>
-                                {step.details.map((d, i) => <li key={i}>{d}</li>)}
-                              </ul>
+                            {step.image && (
+                              <div className="jv5-info-image">
+                                <img src={step.image} alt={step.title} />
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          /* Points Card on Left */
+                          <div className="jv5-card jv5-points-card">
+                            <div className="jv5-card-lists">
+                              <div className="jv5-card-list-group">
+                                <h6 className="jv5-points-col-title title-highlights">
+                                  <Star size={15} className="jv5-points-icon" fill="currentColor" /> Highlights
+                                </h6>
+                                <ul>
+                                  {step.highlights.map((h, i) => <li key={i}>{h}</li>)}
+                                </ul>
+                              </div>
+                              <div className="jv5-card-list-group details-group">
+                                <h6 className="jv5-points-col-title title-details">
+                                  <GraduationCap size={16} className="jv5-points-icon" /> Details
+                                </h6>
+                                <ul>
+                                  {step.details.map((d, i) => <li key={i}>{d}</li>)}
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        )}
                       </div>
 
                       {/* Center Node */}
@@ -1008,15 +1037,50 @@ export function CurriculumPage() {
                         </div>
                       </div>
 
-                      <div className="journey-v5__label-side">
-                        <span className="jv5-label">
-                          <span className="jv5-label-piece">{step.piece}</span>
-                          <span className="jv5-label-main">
-                            {step.label}
-                            {step.name && <span className="jv5-label-sub">{step.name}</span>}
-                          </span>
-                        </span>
+                      {/* Right Side */}
+                      <div className="journey-v5__right-side">
+                        {isEven ? (
+                          /* Points Card on Right */
+                          <div className="jv5-card jv5-points-card">
+                            <div className="jv5-card-lists">
+                              <div className="jv5-card-list-group">
+                                <h6 className="jv5-points-col-title title-highlights">
+                                  <Star size={15} className="jv5-points-icon" fill="currentColor" /> Highlights
+                                </h6>
+                                <ul>
+                                  {step.highlights.map((h, i) => <li key={i}>{h}</li>)}
+                                </ul>
+                              </div>
+                              <div className="jv5-card-list-group details-group">
+                                <h6 className="jv5-points-col-title title-details">
+                                  <GraduationCap size={16} className="jv5-points-icon" /> Details
+                                </h6>
+                                <ul>
+                                  {step.details.map((d, i) => <li key={i}>{d}</li>)}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          /* Info Card on Right */
+                          <div className="jv5-card jv5-info-card">
+                            <div className="jv5-info-text">
+                              <div className="jv5-info-header">
+                                <span className="jv5-badge-piece">{step.piece}</span>
+                                <h4>{step.title}</h4>
+                              </div>
+                              <h5 className="jv5-subtitle">{step.subtitle}</h5>
+                              <p className="jv5-desc">{step.desc}</p>
+                            </div>
+                            {step.image && (
+                              <div className="jv5-info-image">
+                                <img src={step.image} alt={step.title} />
+                              </div>
+                            )}
+                          </div>
+                        )}
                       </div>
+
                     </div>
                   </div>
                 );

@@ -162,7 +162,7 @@ const navItems = [
   { href: '/coaches', label: 'Coaches' },
   { href: '/curriculum', label: 'Curriculum' },
   { href: '/achievements', label: 'Achievements' },
-  { href: '/book-class', label: 'Book Online Class' },
+  { href: '/contact-us', label: 'Contact' },
 ]
 
 export function HomePage() {
@@ -448,7 +448,6 @@ export function HomePage() {
               <Link 
                 key={item.href} 
                 to={item.href}
-                className={item.href === '/book-class' ? 'book-class-highlight' : ''}
               >
                 {item.label}
               </Link>
@@ -459,9 +458,9 @@ export function HomePage() {
               <a className="figma-support-link" href="#support">
                 Support
               </a>
-              <a className="figma-contact-btn" href="/contact-us">
-                Contact
-              </a>
+              <Link className="book-class-highlight" to="/book-class">
+                Book Online Class
+              </Link>
             </div>
           </div>
         </header>
@@ -477,7 +476,7 @@ export function HomePage() {
             </button>
           </div>
           <nav className="figma-mobile-drawer-links">
-            {navItems.filter((item) => item.href !== '/book-class').map((item) => (
+            {navItems.filter((item) => item.href !== '/contact-us').map((item) => (
               <Link 
                 key={`drawer-${item.href}`} 
                 to={item.href} 

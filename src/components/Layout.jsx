@@ -103,9 +103,9 @@ export function Layout() {
                   {supportLink.label}
                 </a>
               ) : null}
-              <a className="contact-btn" href="/contact-us">
-                CONTACT
-              </a>
+              <NavLink className="nav-link book-class-highlight" to="/book-class" onClick={() => setMenuOpen(false)}>
+                BOOK ONLINE CLASS
+              </NavLink>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@ export function Layout() {
               </button>
             </div>
             <nav className="about-mobile-drawer-links">
-              {primaryNavLinks.filter((link) => link.to !== '/book-class').map((link) => (
+              {primaryNavLinks.filter((link) => link.to !== '/contact-us').map((link) => (
                 <NavLink 
                   key={`about-drawer-${link.label}`} 
                   to={link.to} 

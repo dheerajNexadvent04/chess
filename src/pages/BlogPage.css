@@ -1,6 +1,6 @@
 /* --- Global Blog Styles --- */
 .blog-inner-page {
-  padding: 3rem 0 var(--sec-pad, 72px);
+  padding: 3rem 0 24px;
   background-color: #ffffff; /* Premium clean white background */
   min-height: 100vh;
   font-family: var(--font-main), sans-serif;
@@ -256,7 +256,7 @@
 
 /* --- Blog Detail Page (Floating card with extremely rounded corners) --- */
 .blog-detail-container {
-  padding: 3rem 0 var(--sec-pad, 72px);
+  padding: 3rem 0 24px;
   background-color: #f1f5f9; /* Contrast background for floating card */
   min-height: 100vh;
 }
@@ -502,7 +502,7 @@
 
 @media (max-width: 768px) {
   .blog-inner-page {
-    padding: 2rem 0 var(--sec-pad, 48px);
+    padding: 2rem 0 24px;
   }
   .blog-hero {
     margin-bottom: 1.5rem;
@@ -518,7 +518,7 @@
     gap: 2rem;
   }
   .blog-detail-container {
-    padding: 2rem 0 var(--sec-pad, 48px);
+    padding: 2rem 0 24px;
   }
   .blog-detail-card {
     padding: 2rem 1.5rem;

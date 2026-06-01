@@ -11,7 +11,7 @@ export const navLinks = [
   { label: 'COACHES', to: '/coaches' },
   { label: 'CURRICULUM', to: '/curriculum' },
   { label: 'ACHIEVEMENTS', to: '/achievements' },
-  { label: 'BOOK ONLINE CLASS', to: '/book-class' },
+  { label: 'CONTACT', to: '/contact-us' },
   { label: 'SUPPORT', to: '/#support' },
 ]
 
