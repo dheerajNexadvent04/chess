@@ -7857,7 +7857,7 @@ p .feature-tag {
 .feature-main .nums {
   position: absolute;
   left: 9px;
-  bottom: 36px;
+  bottom: -45px;
   width: min(597.94px, 100%);
   height: 78.73px;
   margin: 0;
@@ -8401,24 +8401,28 @@ p .feature-tag {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-  width: 40px;
-  height: 40px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0D1B2E;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  backdrop-filter: blur(4px);
-  transition: background 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
   font-size: 18px;
   line-height: 1;
 }
 
 .testimonial-nav:hover {
-  background: rgba(255,255,255,0.28);
+  background: #E8750A;
+  color: #ffffff;
+  border-color: #E8750A;
+  box-shadow: 0 6px 16px rgba(232, 117, 10, 0.25);
+  transform: translateY(-50%) scale(1.05);
 }
 
 .testimonial-nav-prev { left: -56px; }
@@ -14936,19 +14940,21 @@ img.header-side-logo {
 
   /* Nav arrows inside the container */
   .testimonial-nav {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 15px !important;
-    color: #000000 !important;
-    border: 1px solid rgba(84, 81, 81, 0.3) !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 16px !important;
+    color: #ffffff !important;
+    background: #0D1B2E !important;
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
   }
 
   .testimonial-nav-prev {
-    left: -10px !important;
+    left: -12px !important;
   }
 
   .testimonial-nav-next {
-    right: -9px !important;
+    right: -12px !important;
   }
 
   /* Unified Mobile Card/Image Border Radius & Spacing Overrides */
