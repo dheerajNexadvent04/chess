@@ -158,7 +158,7 @@ export function BookClassPage() {
             </div>
 
             <div className="premium-booking-image-wrap">
-              <img src="/student2.png" alt="Student chess training session" className="premium-booking-image" />
+              <img src="/student1.png" alt="Student chess training session" className="premium-booking-image" />
             </div>
           </div>
         </div>

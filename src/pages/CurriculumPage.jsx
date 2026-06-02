@@ -925,7 +925,7 @@ export function CurriculumPage() {
                 <circle cx="50" cy="50" r="49" fill="none" stroke="#ffd04d" strokeWidth="1" strokeDasharray="5 4" />
               </svg>
               <div className="nch-solid-circle"></div>
-              <img src="/student2.png" alt="Student playing chess" className="nch-main-img" />
+              <img src="/student1.png" alt="Student playing chess" className="nch-main-img" />
 
               {/* Floating cards */}
               <div className="nch-floating-card fc-1">
@@ -1181,7 +1181,7 @@ export function CurriculumPage() {
             {coursePrograms.map((course, idx) => (
               <div key={idx} className="cp-v5__card">
                 {/* Floating Boy Image */}
-                <img src="/student2.png" alt="Student" className="cp-v5__floating-img" />
+                <img src="/student1.png" alt="Student" className="cp-v5__floating-img" />
                 
                 <div className="cp-v5__card-main">
                   <div className="cp-v5__card-bg">
