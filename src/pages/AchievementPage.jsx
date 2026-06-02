@@ -13,6 +13,17 @@ const ALL_GALLERY_IMAGES = [
 export function AchievementPage() {
   useScrollReveal();
 
+  useEffect(() => {
+    document.title = 'SckoolChess Achievements | Chess Awards and Milestones Delhi NCR'
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Explore the achievements of SckoolChess students across Rohini, Pitampura and Delhi NCR. 90% parent satisfaction, 15+ medals won, 500+ matches played.'
+      )
+    }
+  }, []);
+
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
 
@@ -97,7 +108,7 @@ export function AchievementPage() {
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="20" width="4" height="4"/><rect x="10" y="12" width="4" height="12"/><rect x="18" y="4" width="4" height="20"/></svg>
               </div>
               <div>
-                <span className="ach-stat-num">5000+</span>
+                <span className="ach-stat-num">500+</span>
                 <span className="ach-stat-label">Matches Played</span>
               </div>
             </div>
@@ -107,7 +118,7 @@ export function AchievementPage() {
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
               </div>
               <div>
-                <span className="ach-stat-num">120+</span>
+                <span className="ach-stat-num">15+</span>
                 <span className="ach-stat-label">Medals Won</span>
               </div>
             </div>
@@ -117,8 +128,8 @@ export function AchievementPage() {
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               </div>
               <div>
-                <span className="ach-stat-num">22+</span>
-                <span className="ach-stat-label">Partner Schools</span>
+                <span className="ach-stat-num">12</span>
+                <span className="ach-stat-label">Partnered Schools</span>
               </div>
             </div>
             <div className="ach-stat-divider" />
@@ -127,7 +138,7 @@ export function AchievementPage() {
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               </div>
               <div>
-                <span className="ach-stat-num">95%</span>
+                <span className="ach-stat-num">90%</span>
                 <span className="ach-stat-label">Parent Satisfaction</span>
               </div>
             </div>
@@ -261,9 +272,9 @@ const LEARN_FEATURES = [
 ];
 
 const ACH_TESTIMONIALS = [
-  { text: "Rohini Chess Academy has played a huge role in my child's growth. The training, guidance, and tournaments have boosted his confidence and sharpened his thinking.", author: "~ Parent of Aarav, Grade 5 Student" },
-  { text: "My daughter started as a complete beginner and now participates in district-level tournaments. The coaches are incredibly patient and inspiring.", author: "~ Parent of Priya, Grade 6 Student" },
-  { text: "The academy's structured approach to chess has improved my son's concentration and academic performance remarkably.", author: "~ Parent of Rohan, Grade 4 Student" },
+  { text: "SckoolChess has played a huge role in my child's growth. The training, guidance, and tournaments have boosted his confidence and sharpened his thinking. Best chess classes in Rohini — I highly recommend SckoolChess to every parent across Delhi NCR.", author: "~ Parent of Aarav, Grade 5 Student" },
+  { text: "My daughter started as a complete beginner and now participates in district-level tournaments. The coaches at SckoolChess are incredibly patient and inspiring.", author: "~ Parent of Priya, Grade 6 Student" },
+  { text: "The structured approach to chess at SckoolChess has improved my son's concentration and academic performance remarkably. Highly recommended for students in Rohini, Pitampura and across Delhi NCR.", author: "~ Parent of Rohan, Grade 4 Student" },
 ];
 
 function AchLearnSection() {
@@ -336,7 +347,7 @@ function AchLearnSection() {
             </div>
             <div>
               <h3 className="ach-cta-title">Ready to Begin Your Chess Journey?</h3>
-              <p className="ach-cta-sub">Join thousands of young minds learning, growing and winning with us.</p>
+              <p className="ach-cta-sub">Join thousands of young minds learning, growing and winning with SckoolChess across Rohini, Pitampura and Delhi NCR.</p>
             </div>
           </div>
           <a href="/book-class" className="ach-cta-btn">Book Online Class →</a>

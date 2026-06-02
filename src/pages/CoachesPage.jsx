@@ -1,14 +1,25 @@
+import { useEffect } from 'react'
 import { coaches } from '../data/siteContent'
 import { Phone, Instagram, Facebook, Twitter, Award, Clock, Languages, Target } from 'lucide-react'
 
 export function CoachesPage() {
+  useEffect(() => {
+    document.title = 'SckoolChess Coaches | Top Chess Coaches in Delhi'
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Meet the top chess coaches in Delhi at SckoolChess. Expert mentors with FIDE ratings, state titles and 5–20+ years of experience teaching chess in Delhi NCR.'
+      )
+    }
+  }, [])
+
   return (
     <div className="inner-page coaches-page">
       <header className="inner-header">
         <h1>Our Coaches</h1>
         <p>
-          Experienced and student-focused mentors for every stage of chess
-          learning.
+          Experienced and student-focused mentors for every stage of chess learning.
         </p>
       </header>
 
@@ -71,6 +82,21 @@ export function CoachesPage() {
               </article>
             );
           })}
+        </div>
+      </section>
+
+      {/* ── Coaches Bottom CTA Section ── */}
+      <section className="coaches-cta-section">
+        <div className="coaches-cta-card">
+          <div className="coaches-cta-content">
+            <h2>Ready to Raise Your Game?</h2>
+            <p>Book a session with one of our master coaches and start your personalized chess journey today.</p>
+          </div>
+          <div className="coaches-cta-actions">
+            <a href="/book-class" className="coaches-cta-btn">
+              Book Your Online Class
+            </a>
+          </div>
         </div>
       </section>
     </div>

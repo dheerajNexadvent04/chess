@@ -10,7 +10,7 @@ export const TermsPage = () => {
         <div ref={ref} className={`animate-on-scroll ${isVisible ? 'is-visible' : ''}`}>
           <h1 style={{ marginBottom: '24px' }}>Terms & Conditions</h1>
           <p style={{ marginBottom: '16px' }}>
-            Welcome to Rohini Chess Academy. By accessing or using our website and services, you agree to be bound by these terms and conditions.
+            Welcome to SckoolChess. By accessing or using our website and services, you agree to be bound by these terms and conditions.
           </p>
           <h2 style={{ marginTop: '32px', marginBottom: '16px' }}>Enrollment & Payment</h2>
           <p style={{ marginBottom: '16px' }}>
@@ -22,7 +22,7 @@ export const TermsPage = () => {
           </p>
           <h2 style={{ marginTop: '32px', marginBottom: '16px' }}>Intellectual Property</h2>
           <p style={{ marginBottom: '16px' }}>
-            All materials provided during classes are the intellectual property of Rohini Chess Academy and may not be reproduced or distributed without permission.
+            All materials provided during classes are the intellectual property of SckoolChess and may not be reproduced or distributed without permission.
           </p>
           <p style={{ marginTop: '40px', fontSize: '14px', color: '#666' }}>Last updated: {new Date().toLocaleDateString()}</p>
         </div>

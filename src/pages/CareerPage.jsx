@@ -1,5 +1,5 @@
 import { BriefcaseBusiness, MapPin, Send, Sparkles, Target, Users, Zap } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const openings = [
   'Chess Coach (Beginner Program)',
@@ -18,6 +18,17 @@ export function CareerPage() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+
+  useEffect(() => {
+    document.title = 'Careers at SckoolChess | Chess Coaching Jobs Delhi NCR'
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Join the SckoolChess coaching team. Apply for chess coaching, curriculum and school program roles in Rohini, Pitampura and across Delhi NCR.'
+      )
+    }
+  }, [])
 
   const onChange = (event) => {
     const { name, value } = event.target
@@ -49,7 +60,7 @@ export function CareerPage() {
         <div className="career-hero-form-wrap">
           <p className="career-kicker">
             <BriefcaseBusiness size={16} strokeWidth={2.2} />
-            Careers At Rohini Chess Academy
+            Careers At SckoolChess
           </p>
           <h1 id="career-title">Build Young Minds Through Chess</h1>
           <p className="career-intro">

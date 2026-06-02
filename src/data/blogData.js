@@ -46,11 +46,11 @@ export const blogPosts = [
         body: 'Schools across Delhi NCR are increasingly adopting structured chess programs because chess improves academic performance, enhances discipline, supports NEP-based skill education, and promotes intellectual development.'
       },
       {
-        title: 'Sckoolchess – Chess Program for Schools in Delhi NCR',
-        body: 'Sckoolchess provides professional chess training programs for schools and students aged 5–15 years through online and offline classes, inter-school tournaments, and curriculum integration across Rohini, Indirapuram, Noida, Dwarka, Gurgaon, and Faridabad.'
+        title: 'SckoolChess – Chess Program for Schools in Delhi NCR',
+        body: 'SckoolChess provides professional chess training programs for schools and students aged 5–15 years through online and offline classes, inter-school tournaments, and curriculum integration across Rohini, Indirapuram, Noida, Vaishali, Dwarka, Gurgaon, and Faridabad.'
       }
     ],
-    conclusion: 'Chess is no longer just a board game — it is a powerful educational tool that helps students become smarter, more focused, disciplined, and future-ready. Sckoolchess is committed to bringing quality chess education to schools and students across Delhi NCR.',
+    conclusion: 'Chess is no longer just a board game — it is a powerful educational tool that helps students become smarter, more focused, disciplined, and future-ready. SckoolChess is committed to bringing quality chess education to schools and students across Delhi NCR.',
     website: 'www.sckoolchess.com'
   },
   {
@@ -92,14 +92,14 @@ export const blogPosts = [
     sections: [
       {
         title: 'Why Delhi NCR Schools Prefer Chess Programs',
-        body: 'Schools across Rohini, Indirapuram, Noida, Dwarka, Gurgaon, and Faridabad are increasingly adopting chess programs because chess supports holistic child development, improves concentration, and enhances classroom discipline.'
+        body: 'Schools across Rohini, Indirapuram, Noida, Vaishali, Dwarka, Gurgaon, and Faridabad are increasingly adopting chess programs because chess supports holistic child development, improves concentration, and enhances classroom discipline.'
       },
       {
-        title: 'Sckoolchess – Chess Program for Schools in Delhi NCR',
-        body: 'Sckoolchess offers professional chess coaching programs for schools and students aged 5–15 years through online and offline classes, inter-school tournaments, and structured chess curriculum integration.'
+        title: 'SckoolChess – Chess Program for Schools in Delhi NCR',
+        body: 'SckoolChess offers professional chess coaching programs for schools and students aged 5–15 years through online and offline classes, inter-school tournaments, and structured chess curriculum integration.'
       }
     ],
-    conclusion: 'Chess is one of the best educational activities for improving concentration in kids. It helps children become more focused, disciplined, patient, and academically stronger. Sckoolchess is committed to helping students unlock their full intellectual potential through structured chess education programs.',
+    conclusion: 'Chess is one of the best educational activities for improving concentration in kids. It helps children become more focused, disciplined, patient, and academically stronger. SckoolChess is committed to helping students unlock their full intellectual potential through structured chess education programs.',
     website: 'www.sckoolchess.com'
   },
   {
@@ -142,14 +142,14 @@ export const blogPosts = [
     sections: [
       {
         title: 'Why Schools in Delhi NCR Prefer Chess Programs',
-        body: 'Schools across Rohini, Indirapuram, Noida, Dwarka, Gurgaon, and Faridabad are increasingly introducing chess programs because chess improves concentration, classroom discipline, and logical thinking skills.'
+        body: 'Schools across Rohini, Indirapuram, Noida, Vaishali, Dwarka, Gurgaon, and Faridabad are increasingly introducing chess programs because chess improves concentration, classroom discipline, and logical thinking skills.'
       },
       {
-        title: 'Sckoolchess – Chess Program for Schools in Delhi NCR',
-        body: 'Sckoolchess offers online and offline chess coaching programs for students aged 5–15 years, including school chess curriculum, tournaments, and structured chess training.'
+        title: 'SckoolChess – Chess Program for Schools in Delhi NCR',
+        body: 'SckoolChess offers online and offline chess coaching programs for students aged 5–15 years, including school chess curriculum, tournaments, and structured chess training.'
       }
     ],
-    conclusion: 'While mobile gaming may provide temporary entertainment, chess builds long-term intelligence, concentration, discipline, and confidence in children. Sckoolchess is committed to helping children move from screen addiction to intelligent learning through structured chess education.',
+    conclusion: 'While mobile gaming may provide temporary entertainment, chess builds long-term intelligence, concentration, discipline, and confidence in children. SckoolChess is committed to helping children move from screen addiction to intelligent learning through structured chess education.',
     website: 'www.sckoolchess.com'
   },
   {
@@ -186,14 +186,14 @@ export const blogPosts = [
       },
       {
         title: 'Why Schools in Delhi NCR Prefer Chess Programs',
-        body: 'Schools across Rohini, Indirapuram, Noida, Dwarka, Gurgaon, and Faridabad are increasingly introducing chess programs because chess improves concentration, discipline, logical thinking, and academic confidence.'
+        body: 'Schools across Rohini, Indirapuram, Noida, Vaishali, Dwarka, Gurgaon, and Faridabad are increasingly introducing chess programs because chess improves concentration, discipline, logical thinking, and academic confidence.'
       },
       {
-        title: 'Sckoolchess – Online & Offline Chess Classes in Delhi NCR',
-        body: 'Sckoolchess offers professional online and offline chess coaching programs for students aged 5–15 years, including school chess curriculum, tournaments, and structured chess training.'
+        title: 'SckoolChess – Online & Offline Chess Classes in Delhi NCR',
+        body: 'SckoolChess offers professional online and offline chess coaching programs for students aged 5–15 years, including school chess curriculum, tournaments, and structured chess training.'
       }
     ],
-    conclusion: 'Both online and offline chess classes provide excellent opportunities for children to improve intelligence, concentration, confidence, and strategic thinking. Sckoolchess is committed to helping students become smarter and future-ready through structured chess education.',
+    conclusion: 'Both online and offline chess classes provide excellent opportunities for children to improve intelligence, concentration, confidence, and strategic thinking. SckoolChess is committed to helping students become smarter and future-ready through structured chess education.',
     website: 'www.sckoolchess.com'
   }
 ];

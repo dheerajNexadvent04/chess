@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 const partnerSchools = [
   {
-    name: 'Apeejay Sheikh Sarai',
+    name: 'Apeejay School Sheikh Sarai',
     location: 'New Delhi',
     students: '1,500+',
     partnerSince: '2014',
@@ -12,7 +12,7 @@ const partnerSchools = [
       '/s3.webp',
     ],
     description:
-      'Apeejay School, Sheikh Sarai, New Delhi, was established in 1975 to cater to the educational needs of children in South Delhi. The school blends value-based learning with strong academics, broad co-curricular exposure, and technology-enabled teaching to support complete personality development.',
+      'Apeejay School, Sheikh Sarai, New Delhi, was established in 1973 to cater to the educational needs of children in South Delhi. SckoolChess partners with this institution to bring structured, NEP-aligned chess classes that build strategic thinking and complete personality development.',
   },
   {
     name: 'Apeejay School Noida',
@@ -25,7 +25,7 @@ const partnerSchools = [
       '/ss3.jpg',
     ],
     description:
-      'Apeejay School, Noida, founded in 1981 under Apeejay Education Society, is set across a spacious green campus in Sector 16A. Known for high academic standards and excellence in co-curricular activities, it has nurtured generations of confident learners with strong CBSE outcomes.',
+      'Apeejay School, Noida, founded in 1981 under Apeejay Education Society, is set across a spacious green campus in Sector 16A. SckoolChess brings its Chess in School program here, nurturing confident learners with strong critical thinking and CBSE-aligned outcomes through expert chess coaching.',
   },
   {
     name: 'Apeejay School Nerul',
@@ -38,12 +38,12 @@ const partnerSchools = [
       '/ssss3.png',
     ],
     description:
-      'Apeejay School, Nerul, Navi Mumbai, established in 1986, has built a long-standing reputation for holistic education from Nursery to XII. The institution is recognized for balancing academic excellence with physical, emotional, and social growth, preparing students for success at every level.',
+      'Apeejay School Nerul, Navi Mumbai, established in 1986, has built a long-standing reputation for holistic education from Nursery to XII. SckoolChess partners with this institution to deliver structured chess training that balances academic excellence with physical, emotional, and social growth at every level.',
   },
   {
     name: 'Apeejay School Kharghar',
     location: 'Kharghar',
-    students: '1,000+',
+    students: '1,100+',
     partnerSince: '2017',
     images: [
       '/sss1.jpg',
@@ -51,13 +51,13 @@ const partnerSchools = [
       '/sss3.jpeg',
     ],
     description:
-      "Apeejay School Kharghar reflects the Apeejay Education Society's commitment to quality education with global outlook and strong values. The school emphasizes integrated personality development, leadership, and lifelong learning through a student-first academic environment.",
+      "Apeejay School Kharghar reflects the Apeejay Education Society's commitment to quality education with a global outlook and strong values. SckoolChess delivers its Chess in School program here, emphasising integrated personality development, leadership, and lifelong learning through a student-first academic environment.",
   },
   {
     name: 'Apeejay School Pitampura',
     location: 'Pitampura',
     students: '2,000+',
-    partnerSince: '2013',
+    partnerSince: '2018',
     images: [
       '/pitam1.png',
       '/pitam2.jpg',
@@ -66,13 +66,13 @@ const partnerSchools = [
       '/pitam5.jpg',
     ],
     description:
-      'Apeejay School, Pitampura, established in 1990, has consistently ranked among the top schools in Delhi. The institution is dedicated to creating a nurturing environment where students excel in both academics and sports, with a special emphasis on developing strategic thinking through its advanced chess programs.',
+      'Apeejay School Pitampura, established in 1992, has consistently ranked among the top schools in Delhi. SckoolChess is the dedicated chess partner for this institution, creating a nurturing environment where students excel in both academics and sports — with a special emphasis on developing strategic thinking through its advanced chess programs.',
   },
   {
     name: 'Apeejay School Saket',
     location: 'New Delhi',
     students: '1,400+',
-    partnerSince: '2018',
+    partnerSince: '2016',
     images: [
       '/pitams1.jpg',
       '/pitams2.jpg',
@@ -81,33 +81,43 @@ const partnerSchools = [
       '/pitams5.jpg',
     ],
     description:
-      'Apeejay School, Saket, is a premier institution in South Delhi known for its commitment to holistic excellence. The school provides a vibrant learning platform that balances traditional values with modern educational techniques, fostering a community of critical thinkers and future leaders.',
+      'Apeejay School Saket is a premier institution in South Delhi, known for its commitment to holistic excellence. SckoolChess partners with this school to deliver a future-ready chess learning platform that balances traditional values with modern educational techniques, fostering a community of critical thinkers and future leaders.',
   },
 ]
 
 export function PartnerSchoolsPage() {
+  useEffect(() => {
+    document.title = 'SckoolChess | Chess Partner for Schools in Delhi NCR'
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'SckoolChess is the trusted chess partner for 20+ leading schools in Delhi, Noida & Navi Mumbai. NEP-aligned chess in school programs for every student.'
+      )
+    }
+  }, [])
+
   const partnerLogos = [
-    { src: '/sc1.png', alt: 'Apeejay Education' },
-    { src: '/sc2.png', alt: 'Valedra' },
-    { src: '/sc3.png', alt: 'The Vasant School' },
-    { src: '/sc4.png', alt: 'Partner School' },
-    { src: '/sc5.png', alt: 'Partner School' },
+    { src: '/apeejay.jpg', alt: 'Apeejay Education' },
+    { src: '/shri ram global.jpg', alt: 'Shri Ram Global School' },
+    { src: '/the vasant international.png', alt: 'The Vasant School' },
   ]
 
   const [modalOpen, setModalOpen] = useState(false)
   const [activeSchool, setActiveSchool] = useState(null)
+  const [collabModalOpen, setCollabModalOpen] = useState(false)
 
   const reviews = [
     {
-      text: "Rohini Chess Academy has been an incredible partner in nurturing our students' strategic thinking and confidence. Their structured programs and expert coaches make a real difference.",
+      text: "SckoolChess has been an incredible partner in nurturing our students' strategic thinking and confidence. Their structured chess programs and expert coaches have made a real difference to our school community.",
       author: "— Principal, Apeejay School, Sheikh Sarai"
     },
     {
-      text: "The chess curriculum introduced by Rohini Chess Academy has received amazing feedback from parents. It has significantly enhanced our students' concentration and cognitive skills.",
+      text: "The Chess in School program introduced by SckoolChess has received amazing feedback from parents. It has significantly enhanced our students' concentration and cognitive skills across all year groups.",
       author: "— Principal, Apeejay School, Noida"
     },
     {
-      text: "Their coaches are highly professional, patient, and skilled. The academy's structured tournament preparation has helped our school win multiple inter-school chess championships.",
+      text: "Their coaches are highly professional, patient, and skilled. SckoolChess's structured tournament preparation has helped our school win multiple inter-school chess championships across Delhi NCR.",
       author: "— Activity Coordinator, Apeejay School, Nerul"
     }
   ]
@@ -229,7 +239,7 @@ export function PartnerSchoolsPage() {
 
   return (
     <div className="partners-page">
-      <PartnerSchoolsHero />
+      <PartnerSchoolsHero onCollabClick={() => setCollabModalOpen(true)} />
       
       <section id="partner-timeline-v2" className="partner-timeline-v2">
         <div className="pt-container">
@@ -379,6 +389,10 @@ export function PartnerSchoolsPage() {
       {modalOpen && activeSchool && (
         <PartnerGalleryModal school={activeSchool} onClose={closeModal} />
       )}
+
+      {collabModalOpen && (
+        <PartnerCollabModal isOpen={collabModalOpen} onClose={() => setCollabModalOpen(false)} />
+      )}
     </div>
   )
 }
@@ -443,19 +457,34 @@ function PartnerGalleryModal({ school, onClose }) {
   )
 }
 
-function PartnerSchoolsHero() {
+function PartnerSchoolsHero({ onCollabClick }) {
   return (
     <div className="partner-hero-wrapper">
       <section className="partner-hero-section">
         <div className="partner-hero-content">
-        <p className="partner-hero-kicker">
-          <span className="dot" aria-hidden="true"></span>
-          SCHOOL PARTNERS
-        </p>
+        <div className="partner-hero-header-row">
+          <p className="partner-hero-kicker">
+            <span className="dot" aria-hidden="true"></span>
+            SCHOOL PARTNERS
+          </p>
+          <div className="partner-hero-socials">
+            <a href="https://www.linkedin.com/company/sckoolchess/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="partner-social-link" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+            </a>
+            <a href="https://www.instagram.com/sckoolchess?igsh=bzMwaTB0YWw2d2Iz" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="partner-social-link" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z" /></svg>
+            </a>
+          </div>
+        </div>
         <h1>Our Partnered Schools</h1>
         <p className="partner-hero-desc">
-          We are proud to collaborate with leading schools across Delhi NCR to promote chess education, creativity, critical thinking and holistic development.
+          We are proud to collaborate with leading schools across Delhi NCR to promote chess education, creativity, critical thinking and holistic development through our NEP-aligned Chess in School program.
         </p>
+        <div className="partner-hero-cta-wrapper">
+          <button className="partner-hero-cta-btn" onClick={onCollabClick}>
+            Contact Us to Collaborate
+          </button>
+        </div>
         <div className="partner-hero-metrics">
           <div className="partner-metric-card">
             <div className="partner-metric-icon">
@@ -497,6 +526,125 @@ function PartnerSchoolsHero() {
         </div>
       </div>
     </section>
+    </div>
+  )
+}
+
+function PartnerCollabModal({ isOpen, onClose }) {
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+
+  if (!isOpen) return null
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setSuccess(false)
+
+    const formData = new FormData(e.target)
+    formData.append('Form Name', 'School Collaboration Form')
+    formData.append('type', 'school_collab')
+
+    // Extract values safely to match sheet columns used by the BookClass form
+    const schoolNameVal = e.target.elements['School Name'] ? e.target.elements['School Name'].value : ''
+    const contactNameVal = e.target.elements['Contact Name'] ? e.target.elements['Contact Name'].value : ''
+    const designationVal = e.target.elements['Designation'] ? e.target.elements['Designation'].value : ''
+    const emailVal = e.target.elements['Email'] ? e.target.elements['Email'].value : ''
+    const phoneVal = e.target.elements['Phone'] ? e.target.elements['Phone'].value : ''
+    const messageVal = e.target.elements['Message'] ? e.target.elements['Message'].value : ''
+
+    formData.append('name', contactNameVal)
+    formData.append('email', emailVal)
+    formData.append('phone', phoneVal)
+    formData.append('location', schoolNameVal)
+    formData.append('date', designationVal)
+    formData.append('time', messageVal || 'No message details')
+
+    fetch('https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec', {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    })
+      .then(() => {
+        setLoading(false)
+        setSuccess(true)
+        e.target.reset()
+      })
+      .catch((error) => {
+        console.error('Error!', error.message)
+        setLoading(false)
+      })
+  }
+
+  return (
+    <div className="collab-modal-overlay" onClick={onClose}>
+      <div className="collab-modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="collab-modal-close" onClick={onClose} aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        {success ? (
+          <div className="collab-success-state">
+            <div className="collab-success-icon-wrap">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#E8750A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h2>Collaboration Request Sent!</h2>
+            <p>Thank you for reaching out. Our team will get back to you shortly to discuss collaboration opportunities.</p>
+            <button onClick={onClose} className="collab-success-close-btn">Close</button>
+          </div>
+        ) : (
+          <div className="collab-form-wrapper">
+            <div className="collab-form-header">
+              <h2>Collaborate With Us</h2>
+              <p>Partner with SckoolChess to introduce NEP-aligned chess education and tournaments to your school.</p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="collab-form">
+              <div className="collab-form-grid">
+                <div className="collab-form-group">
+                  <label htmlFor="schoolName">School Name *</label>
+                  <input type="text" id="schoolName" name="School Name" placeholder="Enter school name" required />
+                </div>
+
+                <div className="collab-form-group">
+                  <label htmlFor="contactName">Contact Name *</label>
+                  <input type="text" id="contactName" name="Contact Name" placeholder="Enter contact name" required />
+                </div>
+
+                <div className="collab-form-group">
+                  <label htmlFor="designation">Designation / Role *</label>
+                  <input type="text" id="designation" name="Designation" placeholder="e.g. Principal, Coordinator" required />
+                </div>
+
+                <div className="collab-form-group">
+                  <label htmlFor="collabEmail">Email Address *</label>
+                  <input type="email" id="collabEmail" name="Email" placeholder="Enter email address" required />
+                </div>
+
+                <div className="collab-form-group">
+                  <label htmlFor="collabPhone">Phone Number *</label>
+                  <input type="tel" id="collabPhone" name="Phone" placeholder="Enter phone number" required />
+                </div>
+
+                <div className="collab-form-group collab-full-width">
+                  <label htmlFor="collabMessage">Message / Collaboration Details</label>
+                  <textarea id="collabMessage" name="Message" placeholder="Write your requirements or details here..." rows="4"></textarea>
+                </div>
+              </div>
+
+              <button type="submit" className="collab-submit-btn" disabled={loading}>
+                {loading ? 'Sending Request...' : 'Send Collaboration Request'}
+              </button>
+            </form>
+          </div>
+        )}
+      </div>
     </div>
   )
 }

@@ -38,20 +38,22 @@ export function Footer() {
       <div className="figma-footer-inner">
         <div className="footer-col footer-col-brand">
           <div className="footer-brand-row">
-            <img src="/revised logo footer.png" alt="Sckool Chess logo" />
+            <img src="/revised logo footer.png" alt="SckoolChess logo" />
           </div>
           <p className="footer-brand-desc">
-            We teach children in Rohini to think three moves ahead - on the board and in life. From first piece to first trophy, we train it all.
+            We teach children in Rohini, Dwarka, Gurgaon, Vaishali, and across Delhi NCR to think three moves ahead - on the board and in life. From first piece to first trophy, we train it all.
           </p>
         </div>
         <div className="footer-col footer-col-nav">
           <h4>EXPLORE PAGES</h4>
           <Link to="/">Home</Link>
           <Link to="/about-us">Company Profile</Link>
-          <Link to="/partners">School Partners</Link>
+          <Link to="/partners">Partner School</Link>
           <Link to="/coaches">Coaches</Link>
           <Link to="/curriculum">Curriculum</Link>
           <Link to="/achievements">Achievements</Link>
+          <Link to="/tournaments">Tournaments</Link>
+          <Link to="/market-area">Market Area</Link>
           <Link to="/career">Careers</Link>
           <Link to="/book-class">Book Online Class</Link>
           <Link to="/blog">Blog</Link>

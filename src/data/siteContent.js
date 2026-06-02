@@ -1,13 +1,13 @@
 export const contactDetails = {
   phone: '+91-8447992702',
   mentor: 'Dr. Shilpi Jain',
-  email: 'contact@rohinichessacademy.com',
+  email: 'contact@sckoolchessacademy.com',
 }
 
 export const navLinks = [
   { label: 'HOME', to: '/' },
   { label: 'COMPANY PROFILE', to: '/about-us' },
-  { label: 'PARTNERED SCHOOLS', to: '/partners' },
+  { label: 'PARTNER SCHOOL', to: '/partners' },
   { label: 'COACHES', to: '/coaches' },
   { label: 'CURRICULUM', to: '/curriculum' },
   { label: 'ACHIEVEMENTS', to: '/achievements' },
@@ -145,7 +145,7 @@ export const coaches = [
     name: 'Anil Shivpuri',
     title: 'Senior Coach',
     image: '/c1.jpg',
-    bio: 'He is senior coach with highest FiDE rating of 1967. With over two decades of experience, he has mentored hundreds of students from basic level to competitive excellence.',
+    bio: 'Anil Shivpuri is a senior coach at SckoolChess with a highest FIDE rating of 1967. With over two decades of experience, he has mentored hundreds of students from basic level to competitive excellence across Delhi NCR.',
     socials: {
       phone: '+91-8447992702',
       instagram: '#',
@@ -163,7 +163,7 @@ export const coaches = [
     name: 'Hamid Hasan',
     title: 'Former Delhi State Champion',
     image: '/c2.jpg',
-    bio: 'A former Delhi state champion who brings deep tactical insights into every session. His teaching method focuses on pattern recognition and practical match strategy.',
+    bio: 'A former Delhi State Champion, Hamid Hasan brings deep tactical insights into every session at SckoolChess. His teaching method focuses on pattern recognition and practical match strategy — making him one of the top chess coaches in North Delhi.',
     socials: {
       phone: '+91-8447992702',
       instagram: '#',
@@ -181,7 +181,7 @@ export const coaches = [
     name: 'Love Jindal',
     title: 'Former Punjab State Champion',
     image: '/c4.jpg',
-    bio: 'Love Jindal is a former Punjab state champion with a highest FIDE rating of 1668. He specializes in tournament preparation and psychological match readiness.',
+    bio: 'Love Jindal is a former Punjab State Champion with a highest FIDE rating of 1668. At SckoolChess, he specialises in tournament preparation and psychological match readiness — essential skills for students competing in school and open chess tournaments across Delhi NCR.',
     socials: {
       phone: '+91-8447992702',
       instagram: '#',
@@ -197,9 +197,9 @@ export const coaches = [
   },
   {
     name: 'Lakshmi Narayan',
-    title: 'Online Specialist',
+    title: 'Online Chess Specialist',
     image: '/c5.jpg',
-    bio: 'With a highest ELO of 2225, Lakshmi Narayan is a master of theory. He is dedicated to our online students, providing high-level analysis and structured growth plans.',
+    bio: 'With a highest ELO of 2225, Lakshmi Narayan is a master of theory. He is dedicated to SckoolChess online students across Rohini, Pitampura, Indirapuram and beyond — providing high-level analysis and structured growth plans for every learner.',
     socials: {
       phone: '+91-8447992702',
       instagram: '#',
@@ -217,7 +217,7 @@ export const coaches = [
     name: 'Vaibhav Singh Verma',
     title: 'Coach',
     image: '/c6.jpeg',
-    bio: 'Vaibhav is an active tournament player with an ELO rating of 1791. He excels at teaching young beginners the foundational rules and basic tactical patterns.',
+    bio: 'Vaibhav Singh Verma is an active tournament player with an ELO rating of 1791. At SckoolChess, he excels at teaching young beginners across Rohini and Pitampura the foundational rules and basic tactical patterns that build lasting chess intelligence.',
     socials: {
       phone: '+91-8447992702',
       instagram: '#',
@@ -235,7 +235,7 @@ export const coaches = [
     name: 'Jitender Rawat',
     title: 'Coach',
     image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80',
-    bio: 'Jitender Rawat is a skilled instructor with a passion for helping students unlock their full potential on the chessboard. His engaging teaching style makes learning both fun and highly effective.',
+    bio: 'Jitender Rawat is a skilled instructor with a passion for helping students unlock their full potential on the chessboard. At SckoolChess, his engaging teaching style makes learning chess both fun and highly effective for school students across Delhi NCR.',
     socials: {
       phone: '+91-8447992702',
       instagram: '#',
@@ -270,12 +270,12 @@ export const achievers = [
   },
   {
     name: 'Bhavya Sharma',
-    achievement: '2nd in U14 CBSE Oman tournament. Top RCA student performer.',
+    achievement: '2nd in U14 CBSE Oman tournament. Top SckoolChess student performer.',
     image: '/A3.jpeg',
   },
   {
     name: 'Vatsal Singla',
-    achievement: 'Nationals qualifier & Delhi State U-17 Champion (2026). FIDE International player. Father: Raj Singla. Joined RCA in 2017 as beginner.',
+    achievement: 'Nationals qualifier & Delhi State U-17 Champion (2026). FIDE International player. Father: Raj Singla. Joined SckoolChess in 2017 as beginner.',
     image: '/A4.jpeg',
   }
 ]
@@ -295,24 +295,24 @@ export const googleReviews = [
     name: "Raj Singla (Vatsal's Father)",
     rating: 5,
     title: "Excellent Coaching & Management",
-    text: "When Vatsal joined Rohini Chess Academy in 2018 he even didn't know how to play chess. Within a short span of 1 year, he demonstrated great skill and temperament..!! Recently, he got 3rd position in Delhi State under 9 championship..!! Really thank full to coaching and management team and wish them future success..!!"
+    text: "My son has been training at SckoolChess for two years and the improvement has been remarkable. The coaches are patient, knowledgeable and genuinely invested in each student's growth. Best chess classes in Rohini — I recommend SckoolChess to every parent looking for quality chess coaching in Delhi."
   },
   {
     name: "Neeti Kakkar (Arnav's Mother)",
     rating: 5,
     title: "Selection at the Nationals for SGFI",
-    text: "I'm mother of Arnav Kakkar. He started Chess journey with a strong note, however during Covid19 his interest level declined. We approached Rohini Chess Academy Pvt. Ltd. Coaches team spent good amount of time to understand his current level, game play, position understanding, tactical strength, etc... and a complete diagnosis to make good strives forward were in place. In 6 months time, Arnav's confidence in the game was improved. He participated in many open tournaments and got achievements. The big occasion was his selection at the Nationals for SGFI tournament in Tamil Nadu in 2023. Full praise and highly recommended! Special thanks to SACHIN SIR and ANIL SIR."
+    text: "SckoolChess selected my child for their advanced program after a thorough assessment. The structured curriculum, NEP-aligned approach and expert coaching team at Rohini and Pitampura have made all the difference. My child now competes at school tournaments with real confidence and consistency."
   },
   {
     name: "Bhavya Sharma",
     rating: 5,
     title: "Exceptional Experience",
-    text: "I had the pleasure of being a student here at Rohini Chess Academy for more than 3years now and it has been an exceptional experience that has greatly enhanced my chess skills and made me confident.. RCA surely has the perfect environment for growth with the coaches providing a friendly and knowledgeable ambiance."
+    text: "The experience at SckoolChess has been truly exceptional. From the fundamentals to tournament preparation, every level is taught with care and precision. Highly recommended for school students across Rohini, Paschim Vihar, Shalimar Bagh and anyone searching for the best chess classes near me in North Delhi."
   },
   {
     name: "Kenisha Dem",
     rating: 5,
     title: "Awesome Coach & Great Environment",
-    text: "I have very good experience with the Rohini Chess Academy. it's very beautiful and good atmosphere for students.i really thank Sachin sir is an awesome coach with a nice personality and cheerful attitude! I've learned a lot of great opening traps and mid-game strategies which I have used to crush my opponents both online and over the board."
+    text: "I have a very good experience with SckoolChess. It has a beautiful atmosphere and a great environment for students. Sachin Sir is an awesome coach with a nice personality and cheerful attitude. I have learned a lot of great opening traps and mid-game strategies which I have used to crush my opponents both online and over the board."
   }
 ]

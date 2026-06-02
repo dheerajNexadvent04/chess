@@ -16,11 +16,11 @@ const figmaAssets = {
   featureImageTop: '/master class banner 2.png',
   featureImageBottom: '/master class banner image 1.png',
   testimonial: '/im3.png',
-  school1: '/sc1.png',
-  school2: '/sc2.png',
+  school1: '/apeejay.jpg',
+  school2: '/shri ram global.jpg',
   school3: '/sc3.png',
-  school4: '/logo.png',
-  school5: '/logo1.png',
+  school4: '/sc4.png',
+  school5: '/the vasant international.png',
   galleryChess: '/im2.png',
 }
 
@@ -39,7 +39,7 @@ const whyCards = [
   {
     image: '/s1.jpeg',
     title: 'Creativity',
-    desc: 'Chess encourages children to imagine multiple scenarios and find unique solutions to complex problems.',
+    desc: 'Chess builds creative thinking by training young minds to imagine bold, unconventional moves and strategies.',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9.5 20.5h5M12 20.5V15"/><path d="M8.5 13.5C7.3 12.6 6 11 6 9a6 6 0 1 1 12 0c0 2-1.3 3.6-2.5 4.5H8.5z"/>
@@ -49,7 +49,7 @@ const whyCards = [
   {
     image: '/s2.jpeg',
     title: 'Logical Thinking',
-    desc: 'Analyzing positions and planning ahead builds strong deductive reasoning and strategic thinking skills.',
+    desc: 'Our NEP-aligned chess curriculum sharpens analytical skills and decision-making, essential tools for 21st-century learners.',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
@@ -59,7 +59,7 @@ const whyCards = [
   {
     image: '/s3.jpeg',
     title: 'Patience',
-    desc: 'Waiting for the right moment to strike and thinking through every move teaches valuable emotional control.',
+    desc: 'Every game of chess teaches students to stay calm, think ahead, and never rush a decision.',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
@@ -69,7 +69,7 @@ const whyCards = [
   {
     image: '/s4.jpeg',
     title: 'Imagination',
-    desc: 'The focus required for a game of chess translates directly to improved academic performance and attention span.',
+    desc: 'SckoolChess sparks creative imagination, helping students visualise multiple outcomes and develop a strategic mindset early.',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l2.9 6.5 6.6 1-4.75 4.64 1.12 6.57L12 17.77l-5.87 2.94 1.12-6.57L2.5 9.5l6.6-1L12 2z"/>
@@ -82,7 +82,7 @@ const solutionCards = [
   {
     image: '/special%20div1.png',
     title: 'Specialised Curriculum',
-    desc: 'Specially designed chess curriculum with grading and certification.',
+    desc: 'A structured, NEP-aligned chess curriculum covering openings, tactics and endgames built for school students at every level.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
@@ -92,7 +92,7 @@ const solutionCards = [
   {
     image: '/school%20training%20div2.png',
     title: 'Chess in School (CIS)',
-    desc: 'We partner with leading schools to integrate chess into the school day.',
+    desc: 'Our flagship Chess in School Program brings expert-led chess coaching into classrooms across Rohini, Pitampura, Noida, Ghaziabad and Navi Mumbai.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
@@ -102,7 +102,7 @@ const solutionCards = [
   {
     image: '/expert%20trainig%20%20program%20div3.png',
     title: 'Expert Training Programs',
-    desc: 'High-intensity coaching for competitive players aiming for national titles.',
+    desc: 'Learn from top chess coaches in Rohini, Pitampura, Gurgaon and Ghaziabad with proven training methodologies for competitive and recreational players.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
@@ -112,7 +112,7 @@ const solutionCards = [
   {
     image: '/touranement%20div4.png',
     title: 'Tournament Preparation',
-    desc: 'Structured match practice and analysis to build competitive confidence.',
+    desc: 'From local school tournaments to national championships, SckoolChess prepares every student to compete with confidence and strategy.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
@@ -122,11 +122,9 @@ const solutionCards = [
 ]
 
 const schoolLogos = [
-  { src: '/sc1.png', alt: 'Apeejay School', className: 'logo-square-sm' },
-  { src: '/sc2.png', alt: 'Shri Ram Global School', className: 'logo-square' },
-  { src: '/sc3.png', alt: 'Kingdom of Kids', className: 'logo-square' },
-  { src: '/sc4.png', alt: 'Arlington Christian School', className: 'logo-wide' },
-  { src: '/sc5.png', alt: 'Partner school', className: 'logo-wide-sm' },
+  { src: '/apeejay.jpg', alt: 'Apeejay School', className: 'logo-square-sm' },
+  { src: '/shri ram global.jpg', alt: 'Shri Ram Global School', className: 'logo-wide-sm' },
+  { src: '/the vasant international.png', alt: 'The Vasant International Pre-School', className: 'logo-square-sm' },
 ]
 
 const gallery = [
@@ -150,15 +148,17 @@ const gallery = [
 ]
 
 const marqueeItems = [
-  'WORLD BLITZ CHAMPIONSHIPS LIVE',
-  'SICILIAN NAJDORF - NEW VIDEO SERIES',
-  '1,200 PUZZLES ADDED',
+  'SckoolChess | Best Chess Classes in Rohini and Indirapuram',
+  'Top Chess Coaches in North Delhi and Gurgaon',
+  'NEP-Aligned Chess Training for Schools',
+  'Chess in School Program | Rohini, Pitampura, Noida and Navi Mumbai',
+  'Best Online Chess Classes in Rohini, Pitampura, Paschim Vihar, Vaishali, Indirapuram, Vasundhara and Dwarka',
 ]
 
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about-us', label: 'Company Profile' },
-  { href: '/partners', label: 'School Partners' },
+  { href: '/partners', label: 'Partner School' },
   { href: '/coaches', label: 'Coaches' },
   { href: '/curriculum', label: 'Curriculum' },
   { href: '/achievements', label: 'Achievements' },
@@ -166,6 +166,14 @@ const navItems = [
 ]
 
 export function HomePage() {
+  useEffect(() => {
+    document.title = "SckoolChess | Best Chess Academy in Rohini, Delhi NCR"
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "SckoolChess — India's top NEP-aligned chess academy. Best chess classes in Rohini, Pitampura, Paschim Vihar, Dwarka, Vaishali, Indirapuram, Vasundhara, Gurgaon and online pan-India. 5,000+ students trained.")
+    }
+  }, [])
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [headerScrolled, setHeaderScrolled] = useState(false)
   const [featureCounts, setFeatureCounts] = useState({
@@ -173,21 +181,7 @@ export function HomePage() {
     rating: 0,
     retention: 0,
   })
-  const [puzzleModalOpen, setPuzzleModalOpen] = useState(false)
-  const [puzzleSubmitted, setPuzzleSubmitted] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  // Auto-trigger popup on page load
-  useEffect(() => {
-    const hasSeenPopup = sessionStorage.getItem('hasSeenPuzzlePopup');
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
-        setPuzzleModalOpen(true);
-        sessionStorage.setItem('hasSeenPuzzlePopup', 'true');
-      }, 3000); // 3 second delay for better UX
-      return () => clearTimeout(timer);
-    }
-  }, []);
   const [metricsCounts, setMetricsCounts] = useState({
     students: 0,
     schools: 0,
@@ -284,7 +278,7 @@ export function HomePage() {
 
     const targets = {
       students: 5000,
-      schools: 22,
+      schools: 12,
       years: 10,
     }
     const durationMs = 1400
@@ -441,7 +435,7 @@ export function HomePage() {
             {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
           <div className="figma-brand">
-            <img src="/logonew-removebg.png" alt="Sckool Chess logo" />
+            <img src="/logonewbg.png" alt="SckoolChess logo" />
           </div>
           <nav>
             {navItems.map((item) => (
@@ -458,6 +452,7 @@ export function HomePage() {
               <a className="figma-support-link" href="#support">
                 Support
               </a>
+              <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
               <Link className="book-class-highlight" to="/book-class">
                 Book Online Class
               </Link>
@@ -493,21 +488,25 @@ export function HomePage() {
         </aside>
 
         <div className="figma-hero-content">
-          <p className="trust-chip">
-            <span className="trust-chip-icon" aria-hidden="true">
-              <img src="/flash.png" alt="" />
-            </span>
-            Trusted by 5,000+ Businesses
+          <p className="hero-kicker-label" style={{ fontSize: '13px', fontWeight: '800', color: '#F5A623', textTransform: 'uppercase', letterSpacing: '0.14em', margin: '0' }}>
+            STRUCTURED CHESS COACHING FOR KIDS
           </p>
-          <h1>Every Chess Master Was Once a Beginner.</h1>
+          <h1>The Best Investment You Can Make Is in Your Child's Mind</h1>
           <p>
-            We teach children in Rohini to think three moves ahead - on the board and
-            in life. From first piece to first trophy, we train it all.
+            <strong>India's #1 NEP-Aligned Chess Academy for Schools and Students</strong>
+            <br /><br />
+            We help students discover their inner champion through structured chess training. Join SckoolChess, the best chess academy in Rohini, Pitampura, Paschim Vihar, Dwarka, Vaishali, Indirapuram, Vasundhara and Gurgaon to start your child’s winning journey today.
+          </p>
+          <p className="trust-chip" style={{ background: 'rgba(255, 255, 255, 0.07)', border: '1px solid rgba(255, 255, 255, 0.12)', padding: '8px 16px', borderRadius: '24px', fontSize: '13.5px', color: 'rgba(255,255,255,0.85)', display: 'inline-flex', alignItems: 'center', gap: '8px', alignSelf: 'flex-start' }}>
+            <span className="trust-chip-icon" aria-hidden="true" style={{ display: 'inline-flex' }}>
+              <img src="/flash.png" alt="" style={{ width: '14px', height: '14px' }} />
+            </span>
+            Trusted by 5,000+ students across Rohini, Pitampura, Noida and Navi Mumbai
           </p>
           <div className="figma-hero-actions">
-            <a href="tel:+918447992702">Book a Free Trial Class</a>
-            <a className="ghost" href="/courses-offered">
-              See Our Chess Programs
+            <a href="/book-class">Start a Free Trial</a>
+            <a className="ghost" href="/curriculum">
+              Explore Chess Programs
             </a>
           </div>
         </div>
@@ -543,7 +542,10 @@ export function HomePage() {
           alt=""
           aria-hidden="true"
         />
-        <h2>Listen From Our Students</h2>
+        <h2>What Our Students Say</h2>
+        <p className="sub" style={{ textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '16px', maxWidth: '640px', margin: '10px auto 30px' }}>
+          Real stories from young champions trained at SckoolChess across Rohini, Pitampura, Noida and Ghaziabad.
+        </p>
         <div
           ref={studentScrollRef}
           className="student-scroll"
@@ -594,7 +596,10 @@ export function HomePage() {
       </section>
 
       <section className="figma-section school-row">
-        <h2>School Associated With Us</h2>
+        <h2>Schools Associated With Us</h2>
+        <p className="sub" style={{ textAlign: 'center', color: '#6c6c6c', fontSize: '15px', maxWidth: '640px', margin: '-10px auto 24px' }}>
+          Proud chess partner for leading schools in Rohini, Pitampura, Noida, Navi Mumbai and across NCR.
+        </p>
         <div className="school-logo-marquee" aria-label="Associated schools">
           <div className="school-logo-track">
             {[...schoolLogos, ...schoolLogos].map((logo, idx) => (
@@ -623,24 +628,21 @@ export function HomePage() {
         <div className="feature-main">
           <h2>
             Master Chess<br />
-            With <span className="text-primary">Rohini Chess</span><br />
-            Academy.
+            With <span className="text-primary">SckoolChess</span>
           </h2>
           <p>
-            Accelerate your game with structured lessons, live analysis,
-            and personalized training plans designed for every skill
-            level.
+            Accelerate your game with structured lessons by top coaches in Rohini, Pitampura, Paschim Vihar, Shalimar Bagh, Dwarka, Vaishali and Gurgaon. Our future-ready, NEP-aligned learning programs are designed to build champions at every school level.
           </p>
-          <a className="start-btn" href="/courses-offered">Start Your Free Trial</a>
+          <a className="start-btn" href="/book-class">Start Your Free Trial</a>
           <div className="nums" ref={featureNumsRef}>
             <div className="num-block">
               <strong>{featureCounts.students >= 5000 ? '5K' : featureCounts.students.toLocaleString()}+</strong>
-              <span>Students trained</span>
+              <span>Students Trained</span>
             </div>
             <div className="num-divider" />
             <div className="num-block">
               <strong>{featureCounts.retention}%</strong>
-              <span>Student retention</span>
+              <span>Student Win Rate</span>
             </div>
           </div>
         </div>
@@ -682,7 +684,10 @@ export function HomePage() {
           </article>
           <article className="feature-image-card has-overlay">
             <img src={figmaAssets.featureImageTop} alt="Student analyzing board" />
-            <div className="image-overlay-text">Tactical puzzles · 10,000+</div>
+            <div className="image-overlay-text" style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '4px', justifyContent: 'center' }}>
+              <strong>Winning Edge Gainer</strong>
+              <span style={{ fontSize: '12px', opacity: 0.9 }}>"SckoolChess gave my child the competitive edge I was always looking for."</span>
+            </div>
           </article>
         </div>
       </section>
@@ -717,28 +722,28 @@ export function HomePage() {
           aria-hidden="true"
         />
         <h2>Key Metrics</h2>
-        <p className="sub">One Board. Six Skills Your Child Carries for Life.</p>
+        <p className="sub">Numbers That Reflect Our Commitment to Chess Excellence</p>
         <div className="metric-grid">
           <article className="metric-card metric-card-left">
             <div className="metric-icon-wrap">
               <img src="/student.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.students.toLocaleString()}+</strong>
-            <span>Number of Students</span>
+            <span>Students Trained</span>
           </article>
           <article className="metric-card metric-card-center">
             <div className="metric-icon-wrap">
               <img src="/home.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.schools}+</strong>
-            <span>Number of Schools</span>
+            <span>Partner Schools</span>
           </article>
           <article className="metric-card metric-card-right">
             <div className="metric-icon-wrap">
               <img src="/calander.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.years}+</strong>
-            <span>Number of Years</span>
+            <span>Titles Won</span>
           </article>
         </div>
         <div className="metrics-marquee" aria-label="Achievements ticker">
@@ -834,103 +839,7 @@ export function HomePage() {
 
       <Footer />
 
-      {/* ── Floating Puzzle CTA ── */}
-      <button 
-        className="puzzle-floating-cta"
-        onClick={() => setPuzzleModalOpen(true)}
-      >
-        <span className="cta-icon">🎁</span>
-        <span className="cta-text">Free Puzzle</span>
-      </button>
 
-      {/* ── Puzzle Lead Modal ── */}
-      {puzzleModalOpen && (
-        <div className="puzzle-modal-overlay">
-          <div className="puzzle-modal-card">
-            <button 
-              className="puzzle-modal-close" 
-              onClick={() => {
-                setPuzzleModalOpen(false)
-                setPuzzleSubmitted(false)
-              }}
-            >
-              <X size={24} />
-            </button>
-
-            {!puzzleSubmitted ? (
-              <div className="puzzle-modal-content">
-                <div className="puzzle-modal-header">
-                  <div className="puzzle-icon-wrap">🧩</div>
-                  <h2>Get Your Free Chess Puzzle!</h2>
-                  <p>Master the board with our hand-picked collection of championship-level puzzles. Enter your details to download the PDF instantly.</p>
-                </div>
-
-                <form 
-                  className="puzzle-modal-form"
-                  action="https://formspree.io/f/YOUR_FORM_ID" // Replace YOUR_FORM_ID with your actual ID from Formspree
-                  method="POST"
-                  onSubmit={async (e) => {
-                    e.preventDefault();
-                    setIsSubmitting(true);
-                    
-                    const form = e.target;
-                    const data = new FormData(form);
-                    
-                    try {
-                      const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: data,
-                        headers: { 'Accept': 'application/json' }
-                      });
-                      
-                      if (response.ok) {
-                        setIsSubmitting(false);
-                        setPuzzleSubmitted(true);
-                      } else {
-                        throw new Error('Submission failed');
-                      }
-                    } catch (err) {
-                      // Fallback for demo purposes if ID is not set
-                      setTimeout(() => {
-                        setIsSubmitting(false);
-                        setPuzzleSubmitted(true);
-                      }, 1000);
-                    }
-                  }}
-                >
-                  <div className="puzzle-input-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" placeholder="alex@example.com" required />
-                  </div>
-                  <div className="puzzle-input-group">
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" placeholder="+91 00000 00000" required />
-                  </div>
-                  <button type="submit" className="puzzle-submit-btn" disabled={isSubmitting}>
-                    {isSubmitting ? 'Processing...' : 'Send Me the PDF'}
-                  </button>
-                </form>
-              </div>
-            ) : (
-              <div className="puzzle-success-content">
-                <div className="success-icon">✅</div>
-                <h2>Success!</h2>
-                <p>Your chess puzzle PDF is ready for download. Challenge your mind!</p>
-                <a 
-                  href="/chess-puzzles.pdf" 
-                  download 
-                  className="puzzle-download-btn"
-                  onClick={() => {
-                    // Reset after some time if needed
-                  }}
-                >
-                  Download PDF Now
-                </a>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   )
 }

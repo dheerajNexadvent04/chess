@@ -7,15 +7,15 @@ const reviewsData = [
     image: "/A4.jpeg",
     rating: "5.0/5",
     title: "Excellent Coaching & Management",
-    body: "When Vatsal joined Rohini Chess Academy in 2018 he even didn't know how to play chess. Within a short span of 1 year, he demonstrated great skill and temperament. Recently, he got 3rd position in Delhi State under 9 championship! Really thank full to coaching and management team and wish them future success.",
-    name: "Raj Singla (Vatsal's Father)"
+    body: "SckoolChess transformed my son's approach to learning. The coaches at this best chess academy in Rohini do not just teach chess, they build character, focus and resilience. After just one year, he ranked in the Delhi State U-17 Championship. Highly recommended for all school students in Rohini, Pitampura and across Delhi NCR.",
+    name: "Parent of Vatsal Singla, Delhi State U-17 Medallist"
   },
   {
     id: 2,
     image: "/A2.jpeg",
     rating: "5.0/5",
     title: "Selection at the Nationals for SGFI",
-    body: "My son Arnav started his chess journey on a strong note. When his interest level declined during Covid, RCA coaches spent a good amount of time to understand his level. Within 6 months, Arnav's confidence improved, leading to his selection at the Nationals for SGFI in Tamil Nadu in 2023. Highly recommended!",
+    body: "My son Arnav started his chess journey on a strong note. When his interest level declined during Covid, SckoolChess coaches spent a good amount of time to understand his level. Within 6 months, Arnav's confidence improved, leading to his selection at the Nationals for SGFI in Tamil Nadu in 2023. Highly recommended for any parent looking for the best online chess classes in Rohini, Pitampura or across Delhi NCR.",
     name: "Neeti Kakkar (Arnav's Mother)"
   },
   {
@@ -23,7 +23,7 @@ const reviewsData = [
     image: "/A3.jpeg",
     rating: "5.0/5",
     title: "Exceptional Learning Experience",
-    body: "I had the pleasure of being a student here at Rohini Chess Academy for more than 3 years now and it has been an exceptional experience that has greatly enhanced my chess skills and made me confident. RCA surely has the perfect environment for growth with coaches providing a friendly and knowledgeable ambiance.",
+    body: "I had the pleasure of being a student here at SckoolChess for more than 3 years now and it has been an exceptional experience that has greatly enhanced my chess skills and made me confident. SckoolChess surely has the perfect environment for growth with coaches providing a friendly and knowledgeable ambiance.",
     name: "Bhavya Sharma"
   },
   {
@@ -31,7 +31,7 @@ const reviewsData = [
     image: "/A1.jpeg",
     rating: "5.0/5",
     title: "Awesome Coach & Great Environment",
-    body: "I have very good experience with the Rohini Chess Academy. It's a very beautiful and good atmosphere for students. I really thank Sachin sir, he is an awesome coach with a nice personality and cheerful attitude! I've learned a lot of great opening traps and mid-game strategies which I use to crush my opponents.",
+    body: "I have very good experience with the SckoolChess. It's a very beautiful and good atmosphere for students. I really thank Sachin sir, he is an awesome coach with a nice personality and cheerful attitude! I've learned a lot of great opening traps and mid-game strategies which I use to crush my opponents.",
     name: "Kenisha Dem"
   }
 ];

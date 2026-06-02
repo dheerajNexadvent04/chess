@@ -10,7 +10,7 @@ export function Layout() {
   const location = useLocation()
   const isHomePage = location.pathname === '/'
   const isAboutPage = location.pathname === '/about-us'
-  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements', '/blog'].includes(location.pathname) || location.pathname.startsWith('/blog/')
+  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements', '/tournaments', '/blog'].includes(location.pathname) || location.pathname.startsWith('/blog/')
   const supportLink = navLinks.find((link) => link.label === 'SUPPORT')
   const primaryNavLinks = navLinks.filter((link) => link.label !== 'SUPPORT')
 
@@ -48,7 +48,7 @@ export function Layout() {
             Book Now
           </Link>
           <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
-            <img src="/version2.png" alt="Sckool Chess logo" />
+            <img src="/logonewbg.png" alt="SckoolChess logo" />
           </NavLink>
 
           <button
@@ -103,6 +103,7 @@ export function Layout() {
                   {supportLink.label}
                 </a>
               ) : null}
+              <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
               <NavLink className="nav-link book-class-highlight" to="/book-class" onClick={() => setMenuOpen(false)}>
                 BOOK ONLINE CLASS
               </NavLink>

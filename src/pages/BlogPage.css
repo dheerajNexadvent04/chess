@@ -6,6 +6,24 @@
   font-family: var(--font-main), sans-serif;
 }
 
+.post-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--clr-muted, #6b7a99);
+  margin-bottom: 1rem;
+}
+
+.meta-dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--clr-muted, #6b7a99);
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.8;
+}
+
 /* --- Filter Navigation Bar --- */
 .blog-filter-bar {
   display: flex;

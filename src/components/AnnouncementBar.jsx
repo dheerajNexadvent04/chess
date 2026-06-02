@@ -6,8 +6,8 @@ export function AnnouncementBar() {
     <div className="announcement-bar">
       <div className="announcement-marquee-container">
         <div className="announcement-marquee-track">
-          <p>Admissions Open! Book your online class today and take the first step towards becoming a chess champion.</p>
-          <p>Admissions Open! Book your online class today and take the first step towards becoming a chess champion.</p>
+          <p>Admissions Open! Book your online chess class today and take the first step towards becoming a chess champion.</p>
+          <p>Admissions Open! Book your online chess class today and take the first step towards becoming a chess champion.</p>
         </div>
       </div>
       <div className="announcement-contact">

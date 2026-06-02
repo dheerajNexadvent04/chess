@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { ArrowUpRight, FileText } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
@@ -10,32 +11,32 @@ const visionKidImage = '/im2.png'
 const curriculumDetails = [
   {
     title: "Fundamentals",
-    description: "Students begin by understanding the chessboard, piece movement, rules, and essential gameplay concepts required to build a strong foundation.",
-    topics: ["Chess board & pieces", "Rules of the game", "Check, checkmate & stalemate", "Castling, promotion & en passant", "Basic gameplay understanding", "Opening principles"],
+    description: "Students begin by understanding the chessboard, piece movement, rules and essential gameplay concepts required to build a strong foundation for competitive play.",
+    topics: ["Chess board and pieces", "Check, checkmate and stalemate", "Basic gameplay understanding", "Rules of the game", "Castling, promotion and en passant", "Opening principles", "Chess notation basics", "Time management in games"],
     image: "/fundamentals.jpg"
   },
   {
     title: "Openings",
-    description: "Students learn practical opening systems, positional development, and safe opening habits that help create strong early-game positions.",
-    topics: ["Basic opening ideas", "Center control concepts", "Piece development", "Common opening traps", "Italian Game introduction", "Ruy Lopez introduction"],
+    description: "Students learn critical opening systems, positional development and safe opening habits that help create strong early-game positions in both school and competitive chess tournaments.",
+    topics: ["Basic opening ideas", "Pawn development", "Indian Game introduction", "Central control concepts", "Common opening traps", "Top-rated opening moves"],
     image: "/opening.jpg"
   },
   {
     title: "Tactics",
-    description: "The curriculum focuses heavily on tactical pattern recognition and practical combinations that improve real match performance.",
-    topics: ["Forks", "Pins", "Skewers", "Discovered attacks", "Double attacks", "Back rank checkmates", "Puzzle solving practice"],
+    description: "Our curriculum focuses heavily on tactical pattern recognition and practical combinations that improve real match performance for students at every level.",
+    topics: ["Forks", "Skewers", "Double attacks", "Puzzle-solving practice", "Pins", "Discovered attacks", "Back-rank checkmates", "Zwischenzug concepts"],
     image: "/tactics.jpg"
   },
   {
     title: "Endgames",
-    description: "Students develop the ability to convert winning positions confidently through structured endgame training.",
-    topics: ["King & Queen checkmate", "King & Rook checkmate", "Basic pawn endgames", "Opposition concepts", "Practical endgame strategies"],
+    description: "Students develop the ability to convert winning positions confidently through structured endgame training — a critical skill for every tournament-ready chess player across Rohini, Pitampura, Dwarka and Delhi NCR.",
+    topics: ["King and Queen checkmates", "Rook pawn endgames", "Practical endgame strategies", "King and Rook checkmates", "Opposition concepts", "Pawn promotion technique"],
     image: "/endgame.jpg"
   },
   {
     title: "Tournament Activities",
-    description: "Students regularly participate in practice games, puzzle contests, and mini tournaments to build confidence and competitive exposure.",
-    topics: ["Practice matches", "Puzzle competitions", "Match analysis", "Friendly tournaments", "Competitive preparation"],
+    description: "Students regularly participate in practice games, puzzle contests and mini-tournaments to build confidence and competitive exposure across Rohini, Pitampura, Noida and NCR.",
+    topics: ["Practice matches", "Result analysis", "Competitive preparation", "Puzzle competitions", "Friendly tournaments", "Post-game debriefs"],
     label: "Activities Included",
     image: "/tournament.jpg"
   }
@@ -43,6 +44,14 @@ const curriculumDetails = [
 
 export function AboutPage() {
   useScrollReveal();
+
+  useEffect(() => {
+    document.title = "About SckoolChess | Best Chess Academy in Noida, Ghaziabad, Indirapuram, Delhi and Navi Mumbai"
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Learn about SckoolChess, a NEP-aligned chess academy offering the best chess classes in Rohini, Pitampura, Dwarka, Vaishali and across Delhi NCR. Affiliated to Delhi Chess Association.")
+    }
+  }, [])
 
   return (
     <div className="about-page">
@@ -61,9 +70,7 @@ export function AboutPage() {
           </h1>
 
           <p>
-            Since 2009, Rohini Chess Academy Has Been Turning Curious Beginners Into
-            Confident Players — One Move At A Time. We Believe Chess Is The Greatest
-            Classroom On Earth.
+            Since 2022, SckoolChess has been turning curious beginners into confident players. As the best chess academy in Rohini and across Delhi NCR, we believe chess is the greatest classroom on earth.
           </p>
 
           <a className="about-hero-first-btn" href="#about-details">
@@ -111,14 +118,14 @@ export function AboutPage() {
           </h2>
 
           <p className="about-coaching-subtext">
-            Rohini Chess Academy is providing chess classes online or offline in various schools in Delhi, NCR and other places in India and Abroad.
+            SckoolChess provides top chess classes online or offline in various schools in Delhi NCR and other places in India and abroad, backed by the credibility of the Delhi Chess Association.
           </p>
 
           <p className="about-coaching-body">
-            Rohini Chess Academy takes the fundamental principles of Chess education and applies them to today's young and bright children. With experienced coaches and a scientific training program (chess openings, chess endgames, etc.), we are confident in educating tomorrow's Chess wizards.
+            SckoolChess applies the fundamental principles of chess education to today's young and bright children. With experienced coaches and a NEP-aligned, scientific approach to chess openings, tactics and endgames, we are confident in educating tomorrow's chess champions across Rohini, Pitampura, Paschim Vihar, Shalimar Bagh, Dwarka, Vaishali and Gurgaon.
           </p>
 
-          <a className="about-coaching-btn" href="/courses-offered">
+          <a className="about-coaching-btn" href="/book-class">
             Start Your Free Trial
           </a>
         </div>
@@ -135,11 +142,11 @@ export function AboutPage() {
             <h3>Career opportunities</h3>
             <p>
               <strong>FIDE / AICF / DCA Tournaments</strong><br />
-              There are several FIDE/AICF rated chess tournaments which happens regularly across India and special Delhi Chess Association tournaments in Delhi. Prize money is INR &gt;10 Lacs and individual highest prizes are as high as INR 1.25 lacs.
+              There are several FIDE and AICF-rated chess tournaments that happen regularly across India, and special Delhi Chess Association tournaments in Delhi. Prize money is Rs. 40,000 to Rs. 1 Lakh and individual top prizes can be as high as Rs. 25 Lakh. SckoolChess prepares every student to compete at this level.
             </p>
             <p>
               <strong>School Tournaments</strong><br />
-              Every year there are AICF (All India Chess Federation) and Delhi Chess Association (DCA) special School team tournaments.
+              Every year, there are AICF, All India Chess Federation and Delhi Chess Association (DCA) special school-level tournaments. SckoolChess students consistently rank and win at these events across Rohini, Pitampura, Noida and Delhi NCR.
             </p>
             <a className="about-duo-btn" href="/career">
               LEARN MORE
@@ -155,48 +162,36 @@ export function AboutPage() {
             <img src={visionKidImage} alt="Student focusing on a chess move" />
           </div>
           <div className="about-duo-copy">
-            <span className="about-duo-kicker">PARTNERSHIPS</span>
-            <h3>Our Partnership with Leading Schools & Learning Institutes:</h3>
+            <span className="about-duo-kicker">PARTNERS</span>
+            <h3>Our Partnership with Leading Schools and Learning Institutes</h3>
+            <p style={{ fontSize: '15px', color: '#6c6c6c', lineHeight: '1.6', margin: '12px 0 24px' }}>
+              SckoolChess is the trusted chess-in-school partner for Apeejay Schools, Nepzo and 12+ leading institutions across Rohini, Pitampura, Noida and Navi Mumbai.
+            </p>
             <div className="partners-grid-inline">
               <div className="partner-inline-card">
-                <img src="/updated logo.png" alt="Apeejay Logo Placeholder" style={{ width: '40px', height: '40px' }} />
+                <img src="/apeejay.jpg" alt="Apeejay Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
                 <div className="partner-inline-info">
                   <strong>Apeejay School</strong>
                   <span>Pitampura, Saket, Sheikh Sarai, Noida, Faridabad, Mumbai & Jalandhar</span>
                 </div>
               </div>
               <div className="partner-inline-card">
-                <img src="/updated logo.png" alt="Shri Ram Logo Placeholder" style={{ width: '40px', height: '40px' }} />
+                <img src="/shri ram global.jpg" alt="Shri Ram Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
                 <div className="partner-inline-info">
                   <strong>Shri Ram Global</strong>
                   <span>Pre-School(s) in Delhi</span>
                 </div>
               </div>
               <div className="partner-inline-card">
-                <img src="/updated logo.png" alt="Kingdom of Kids Logo Placeholder" style={{ width: '40px', height: '40px' }} />
-                <div className="partner-inline-info">
-                  <strong>Kingdom of Kids</strong>
-                  <span>Delhi & Gurgaon</span>
-                </div>
-              </div>
-              <div className="partner-inline-card">
-                <img src="/updated logo.png" alt="GD Goenka Logo Placeholder" style={{ width: '40px', height: '40px' }} />
-                <div className="partner-inline-info">
-                  <strong>GD Goenka La Petite</strong>
-                  <span>Delhi</span>
-                </div>
-              </div>
-              <div className="partner-inline-card">
-                <img src="/updated logo.png" alt="The Vasant Logo Placeholder" style={{ width: '40px', height: '40px' }} />
+                <img src="/the vasant international.png" alt="The Vasant Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
                 <div className="partner-inline-info">
                   <strong>The Vasant Pre-School</strong>
                   <span>Delhi</span>
                 </div>
               </div>
             </div>
-            <a className="about-duo-btn" style={{ marginTop: '24px' }} href="/courses-offered">
+            <a className="about-duo-btn" style={{ marginTop: '24px' }} href="/partners">
               LEARN MORE
-
             </a>
           </div>
         </article>

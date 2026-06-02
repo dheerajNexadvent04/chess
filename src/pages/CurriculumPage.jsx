@@ -401,9 +401,9 @@ const journeySteps = [
     id: 1,
     title: "Level 1 — Walkers",
     subtitle: "Beginner Foundation Program",
-    desc: "Children learn chess fundamentals, board understanding, movement rules, and basic tactical thinking in an engaging and beginner-friendly environment.",
-    highlights: ["Learn chess fundamentals", "Basic tactics & gameplay", "Confidence building", "Beginner-friendly learning"],
-    details: ["Duration: 3 Months", "Classes: 24 Sessions", "Age Group: 5–12 Years"],
+    desc: "Students start by learning the rules, piece movements, board setup, and basic tactics to build a confident foundation in chess.",
+    highlights: ["Basic rules of the game", "Understanding board positions", "Beginner tactical training", "Confidence building"],
+    details: ["Duration: 3 Months", "Classes: 24 Sessions", "Age Group: 6–10 Years"],
     label: "Level 1",
     name: "Walkers",
     piece: "♟",
@@ -414,9 +414,9 @@ const journeySteps = [
     id: 2,
     title: "Level 2 — Joggers",
     subtitle: "Intermediate Skill Development",
-    desc: "Students begin understanding openings, tactics, strategy, and practical gameplay while preparing for competitive chess environments.",
-    highlights: ["Opening principles", "Tactical improvement", "Endgame concepts", "Tournament preparation"],
-    details: ["Duration: 6 Months", "Classes: 48 Sessions", "Age Group: 8–12 Years"],
+    desc: "Students develop positional understanding, opening theory, and endgame techniques to sharpen their competitive edge in school and club chess.",
+    highlights: ["Positional strategy & setup", "Core opening principles", "FIDE-ranked chess rating", "Tournament preparation"],
+    details: ["Duration: 6 Months", "Classes: 48 Sessions", "Age Group: 8–13 Years"],
     label: "Level 2",
     name: "Joggers",
     piece: "♞",
@@ -427,9 +427,9 @@ const journeySteps = [
     id: 3,
     title: "Level 3 — Runner",
     subtitle: "Advanced Tournament Training",
-    desc: "Advanced students receive high-level chess coaching focused on competitive tournaments, deep positional understanding, and FIDE-level preparation.",
-    highlights: ["Advanced openings & strategy", "Competitive match analysis", "FIDE tournament preparation", "Performance-focused coaching"],
-    details: ["Ongoing Training", "Practice + Coaching Sessions", "For 1500+ Chess.com Rating", "Age Group: Up to 15 Years"],
+    desc: "Students compete confidently in school-level and open tournaments, developing deep tactical vision, game preparation and psychological match readiness.",
+    highlights: ["Advanced Tournament Training", "Tactical pattern mastery", "Competitive preparation sessions", "Performance-focused coaching"],
+    details: ["Ongoing Training", "Practice + Coaching Sessions", "For 1500+ Chess.com Rating", "Age Group: 10–15 Years"],
     label: "Level 3",
     name: "Runner",
     piece: "♜",
@@ -440,9 +440,9 @@ const journeySteps = [
     id: 4,
     title: "Fast Track Program",
     subtitle: "Accelerated Chess Learning",
-    desc: "An intensive learning program designed for faster improvement, tournament preparation, and rapid skill development.",
-    highlights: ["Fast-track learning", "Essential openings & tactics", "Quick tournament preparation", "Intensive practical sessions"],
-    details: ["Duration: 3 Months", "Classes: 24 Sessions", "Age Group: 5–12 Years"],
+    desc: "An intensive learning program designed for talented students who need rapid chess development with focused guidance from expert SckoolChess coaches.",
+    highlights: ["Learning openings by strategy", "Building endgame precision", "Result analysis & review", "Intensive practical sessions"],
+    details: ["Duration: 3 Months", "Classes: 24 Sessions", "Age Group: All levels welcome"],
     label: "Crash Course",
     piece: "♛",
     icon: Zap,
@@ -486,42 +486,40 @@ const coursePrograms = [
 ];
 
 const schoolLogos = [
-  { src: '/sc1.png', alt: 'Apeejay School', className: 'logo-square-sm' },
-  { src: '/sc2.png', alt: 'Shri Ram Global School', className: 'logo-square' },
-  { src: '/sc3.png', alt: 'Kingdom of Kids', className: 'logo-square' },
-  { src: '/sc4.png', alt: 'Arlington Christian School', className: 'logo-wide' },
-  { src: '/sc5.png', alt: 'Partner school', className: 'logo-wide-sm' },
+  { src: '/apeejay.jpg', alt: 'Apeejay School', className: 'logo-square-sm' },
+  { src: '/shri ram global.jpg', alt: 'Shri Ram Global School', className: 'logo-wide-sm' },
+  { src: '/the vasant international.png', alt: 'The Vasant International Pre-School', className: 'logo-square-sm' },
 ];
 
 const curriculumDetails = [
   {
     title: "Fundamentals",
-    description: "Students begin by understanding the chessboard, piece movement, rules, and essential gameplay concepts required to build a strong foundation.",
-    topics: ["Chess board & pieces", "Rules of the game", "Check, checkmate & stalemate", "Castling, promotion & en passant", "Basic gameplay understanding", "Opening principles"],
+    description: "Students begin by understanding the chessboard, piece movement rules, and essential gameplay concepts required to build a strong foundation for competitive chess at every level.",
+    topics: ["Chess board & pieces", "Check, checkmate & stalemate", "Basic gameplay understanding", "Rules of the game", "Castling, promotion & en passant", "Opening principles"],
     image: "/fundamentals.jpg"
   },
   {
     title: "Openings",
-    description: "Students learn practical opening systems, positional development, and safe opening habits that help create strong early-game positions.",
-    topics: ["Basic opening ideas", "Center control concepts", "Piece development", "Common opening traps", "Italian Game introduction", "Ruy Lopez introduction"],
+    description: "Students learn practical opening systems, positional development, and safe opening habits that help create strong early-game positions in both school and competitive chess.",
+    topics: ["Basic opening ideas", "Pawn development", "Indian Game introduction", "Central control concepts", "Common opening traps", "Top-rated opening moves"],
     image: "/opening.jpg"
   },
   {
     title: "Tactics",
-    description: "The curriculum focuses heavily on tactical pattern recognition and practical combinations that improve real match performance.",
-    topics: ["Forks", "Pins", "Skewers", "Discovered attacks", "Double attacks", "Back rank checkmates", "Puzzle solving practice"],
+    description: "The curriculum focuses heavily on tactical pattern recognition and practical combinations that improve real match performance for students competing across Delhi NCR.",
+    topics: ["Forks", "Pins", "Skewers", "Discovered attacks", "Double attacks", "Back-rank checkmates", "Puzzle-solving practice", "Zwischenzug concepts"],
     image: "/tactics.jpg"
   },
   {
     title: "Endgames",
-    description: "Students develop the ability to convert winning positions confidently through structured endgame training.",
-    topics: ["King & Queen checkmate", "King & Rook checkmate", "Basic pawn endgames", "Opposition concepts", "Practical endgame strategies"],
+    description: "Students develop the ability to convert winning positions confidently through structured endgame training — a critical skill for every tournament-ready chess player in Delhi NCR.",
+    topics: ["King & Queen checkmates", "Rook pawn endgames", "Practical endgame strategies", "King & Rook checkmates", "Opposition concepts", "Pawn promotion technique"],
     image: "/endgame.jpg"
   },
   {
     title: "Tournament Activities",
-    description: "Students regularly participate in practice games, puzzle contests, and mini tournaments to build confidence and competitive exposure.",
-    topics: ["Practice matches", "Puzzle competitions", "Match analysis", "Friendly tournaments", "Competitive preparation"],
+    description: "Train your child to participate in practice games, puzzle contests, and mini-tournaments that build confidence and competitive exposure across Delhi, Noida and NCR.",
+    topics: ["Practice matches", "Result analysis", "Competitive preparation", "Puzzle competitions", "Friendly tournaments", "Post-game debriefs"],
     label: "Activities Included",
     image: "/tournament.jpg"
   }
@@ -622,6 +620,17 @@ const ReviewCard = ({ review }) => {
 };
 
 export function CurriculumPage() {
+  useEffect(() => {
+    document.title = 'SckoolChess Curriculum | NEP-Aligned Chess Courses Delhi'
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        "Explore SckoolChess's structured, NEP-aligned chess curriculum for all skill levels. Best chess courses in Rohini, Pitampura & online across Delhi NCR."
+      )
+    }
+  }, [])
+
   const [activeFeature, setActiveFeature] = useState(0)
   const [slideDir, setSlideDir] = useState('next')
   const [animKey, setAnimKey] = useState(0)
@@ -896,11 +905,17 @@ export function CurriculumPage() {
               Structured Chess Curriculum Designed to Build Future Champions
             </h1>
             <p>
-              A carefully designed chess learning program for children aged 5 to 15 years that develops strategic thinking, tournament confidence, and competitive skills through structured progression.
+              A structured and progressive learning program for students of all ages. Shape their decisions, strategy, thinking, tournament confidence and life skills through SckoolChess — the best chess academy in Rohini and across Delhi NCR.
             </p>
             <div className="nch-actions">
               <a href="tel:+918447992702" className="nch-btn-primary">Book Free Trial</a>
               <a href="#about" className="nch-btn-secondary">View Courses</a>
+              <a href="https://www.youtube.com/@sckoolchess" target="_blank" rel="noopener noreferrer" className="nch-btn-youtube">
+                <span className="nch-yt-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.53 3.5 12 3.5 12 3.5s-7.53 0-9.388.555A3.002 3.002 0 0 0 .502 6.163C0 8.07 0 12 0 12s0 3.93.502 5.837a3.003 3.003 0 0 0 2.11 2.108C4.47 20.5 12 20.5 12 20.5s7.53 0 9.388-.555a3.002 3.002 0 0 0 2.11-2.108C24 15.93 24 12 24 12s0-3.93-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </span>
+                Check Out Free Study Material on YouTube
+              </a>
             </div>
           </div>
 
@@ -916,7 +931,7 @@ export function CurriculumPage() {
               <div className="nch-floating-card fc-1">
                 <div className="fc-icon"><ArrowUpRight size={20} strokeWidth={3} /></div>
                 <div className="fc-text">
-                  <strong><AnimatedNumber end={50} suffix="+" /></strong>
+                  <strong><AnimatedNumber end={5} suffix="+" /></strong>
                   <span>Online Courses</span>
                 </div>
               </div>
@@ -965,7 +980,7 @@ export function CurriculumPage() {
         <div className="journey-v5__container">
           <div className="journey-v5__header">
             <h2 className="journey-v5__heading">What Your Child Will Learn</h2>
-            <p className="journey-v5__subheading">A structured curriculum designed to develop strong chess fundamentals, tactical awareness, strategic thinking, and competitive confidence.</p>
+            <p className="journey-v5__subheading">A progressive, stage-by-stage journey to chess mastery and beyond.</p>
           </div>
 
           <div className="journey-v5__body">
@@ -1098,7 +1113,7 @@ export function CurriculumPage() {
               <span className="impact-v5__badge">PROVEN EXCELLENCE</span>
               <h2 className="impact-v5__heading">What Your Child Will Learn</h2>
               <p className="impact-v5__subtext">
-                A structured curriculum designed to develop strong chess fundamentals, tactical awareness, strategic thinking, and competitive confidence.
+                A structured curriculum for every chess learner at every level.
               </p>
 
               <div className="impact-v5__stats">
@@ -1159,7 +1174,7 @@ export function CurriculumPage() {
           <div className="cp-v5__header">
             <p className="cp-v5__kicker">Our Programs</p>
             <h2 className="cp-v5__heading">Chess Programs for Every Skill Level</h2>
-            <p className="cp-v5__subheading">Whether your child is just starting or preparing for competitive tournaments, we offer structured programs for every stage of growth.</p>
+            <p className="cp-v5__subheading">Find the right program for your child's current chess level.</p>
           </div>
 
           <div className="cp-v5__carousel">
@@ -1228,7 +1243,7 @@ export function CurriculumPage() {
       <section className="figma-section reviews" id="support">
         <h2>Customer Reviews</h2>
         <p className="sub">
-          Our students and parents share their experiences learning chess with us.
+          See what parents and students are saying about learning chess with SckoolChess.
         </p>
         <div className="review-row">
           <button

@@ -10,7 +10,7 @@ export const PrivacyPage = () => {
         <div ref={ref} className={`animate-on-scroll ${isVisible ? 'is-visible' : ''}`}>
           <h1 style={{ marginBottom: '24px' }}>Privacy Policy</h1>
           <p style={{ marginBottom: '16px' }}>
-            At Rohini Chess Academy, we value your privacy. This policy outlines how we collect, use, and protect your personal information when you use our website or enroll in our programs.
+            At SckoolChess, we value your privacy. This policy outlines how we collect, use, and protect your personal information when you use our website or enroll in our programs.
           </p>
           <h2 style={{ marginTop: '32px', marginBottom: '16px' }}>Information We Collect</h2>
           <p style={{ marginBottom: '16px' }}>

@@ -11,12 +11,15 @@ import { HomePage } from './pages/HomePage'
 import { PartnerSchoolsPage } from './pages/PartnerSchoolsPage'
 import { BookClassPage } from './pages/BookClassPage'
 import { AchievementPage } from './pages/AchievementPage'
+import { TournamentPage } from './pages/TournamentPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { TermsPage } from './pages/TermsPage'
 import { BlogPage } from './pages/BlogPage'
 import { BlogDetailPage } from './pages/BlogDetailPage'
+import { MarketAreaPage } from './pages/MarketAreaPage'
 import { AnnouncementBar } from './components/AnnouncementBar'
 import { Preloader } from './components/Preloader'
+import { ChessPuzzleWidget } from './components/ChessPuzzleWidget'
 import './App.css'
 
 function App() {
@@ -37,13 +40,16 @@ function App() {
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/book-class" element={<BookClassPage />} />
         <Route path="/achievements" element={<AchievementPage />} />
+        <Route path="/tournaments" element={<TournamentPage />} />
         <Route path="/privacy-policy" element={<PrivacyPage />} />
         <Route path="/terms-conditions" element={<TermsPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogDetailPage />} />
+        <Route path="/market-area" element={<MarketAreaPage />} />
       </Route>
       </Routes>
       <Preloader />
+      <ChessPuzzleWidget />
     </>
   )
 }

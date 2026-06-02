@@ -1,5 +1,5 @@
 import { ChevronDown, Clock, Home, Phone } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { contactDetails } from '../data/siteContent'
 
 const contactHeroImage = '/im1.png'
@@ -8,57 +8,68 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone Number',
-    text: contactDetails.phone,
-    href: `tel:${contactDetails.phone}`,
+    text: '+91 95821 35221, +91 84479 92702',
+    href: 'tel:+918447992702',
   },
   {
     icon: Clock,
     title: 'Business Hours',
-    text: 'Monday to Saturday, 09:00 AM - 06:00 PM',
+    text: 'Rohini: Wed & Fri 4-6 pm, Sat & Sun 2-7 pm | Indirapuram: Mon to Fri 4-7 pm',
   },
   {
     icon: Home,
     title: 'Address',
-    text: 'Rohini, Delhi, India',
+    text: 'Rohini (Sector-24, Delhi) & Indirapuram (Ghaziabad, UP), Delhi NCR',
   },
 ]
 
 const contactStats = [
-  { value: '4,200+', label: 'Students trained' },
-  { value: '98%', label: 'Rating improved' },
-  { value: '100+', label: 'Number of Schools' },
-  { value: '15+', label: 'Number of Years' },
+  { value: '5,000+', label: 'Students Trained' },
+  { value: '98%', label: 'Rating Improved' },
+  { value: '22+', label: 'Number of Schools' },
+  { value: '10+', label: 'Number of Years' },
 ]
 
 const faqs = [
   {
     question: 'How can I schedule a free trial class?',
     answer:
-      'Send us your child age, current chess level, and preferred timing. Our team will suggest the best beginner, intermediate, or advanced batch.',
+      'Send us your child\'s age, current chess level, and preferred timing. Our team at SckoolChess will suggest the best beginner, intermediate, or advanced batch available in Rohini, Pitampura or online.',
     image: '/im1.png',
   },
   {
     question: 'Do you offer online and offline chess classes?',
     answer:
-      'Yes. We conduct structured online sessions and in-person classes for students in Rohini and nearby Delhi NCR locations.',
+      'Yes. SckoolChess offers both online and offline chess classes. Our offline centres are in Rohini and Indirapuram. Online chess classes are available for students in Pitampura, Paschim Vihar, Shalimar Bagh, Noida and pan-India.',
     image: '/im2.png',
   },
   {
-    question: 'Which age group can join Rohini Chess Academy?',
+    question: 'Which age group can join SckoolChess?',
     answer:
-      'Children can start as beginners from a young age, and we also train school students preparing for tournaments and rating improvement.',
+      'SckoolChess welcomes students from age 6 to 18 years. We have structured programs for complete beginners, intermediate learners, and advanced students preparing for FIDE-rated and school-level tournaments across Delhi NCR.',
     image: '/im3.png',
   },
   {
     question: 'Do you provide school chess programs?',
     answer:
-      'Yes. We partner with schools for regular chess sessions, curriculum-based learning, tournament preparation, and chess-in-school programs.',
+      'Yes. SckoolChess runs a dedicated Chess in School program for institutions across Delhi, Noida and Navi Mumbai. We are a trusted chess partner for Apeejay Schools and 22+ leading institutions. Contact us to bring chess to your school.',
     image: '/im1.png',
   },
 ]
 
 export function ContactPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0)
+
+  useEffect(() => {
+    document.title = 'Contact SckoolChess | Chess Classes in Rohini Delhi NCR'
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Get in touch with SckoolChess — the best chess academy in Delhi. Find chess classes in Pitampura, Indirapuram & online across Delhi NCR. Book a free trial today.'
+      )
+    }
+  }, [])
 
   return (
     <div className="contact-page">
@@ -72,7 +83,7 @@ export function ContactPage() {
           <h2 id="contact-form-title">We'd Love to Hear From You</h2>
           <p className="contact-form-intro">
             Tell us what you are looking for and our team will get back with batch
-            timings, trial class details, and the right program for your child.
+            timings, trial class details, and the right chess program for your child in Delhi or online.
           </p>
 
           <div className="contact-info-list">
@@ -113,6 +124,10 @@ export function ContactPage() {
             <input type="email" name="email" placeholder="Enter your email" />
           </label>
           <label>
+            Your Phone Number
+            <input type="tel" name="phone" placeholder="Enter your phone number" />
+          </label>
+          <label>
             Your Message
             <textarea name="message" placeholder="Write your message" rows="5" />
           </label>
@@ -130,49 +145,6 @@ export function ContactPage() {
         </div>
 
         <div className="contact-branches-list">
-          <div className="branch-card">
-            <div className="branch-card-details">
-              <h3>Delhi (Rohini)</h3>
-              <div className="branch-info">
-                <p>
-                  <strong>Location:</strong>
-                  140, 2nd Floor, Pocket-21, Sector-24, Rohini, Delhi-110085
-                </p>
-                <p>
-                  <strong>Telephone:</strong>
-                  +91 95821 35221, +91 84479 92702
-                </p>
-                <p>
-                  <strong>Email:</strong>
-                  sckoolchess@gmail.com
-                </p>
-                <p>
-                  <strong>Availability Hours:</strong>
-                  Wed & Fri 4-6 pm | Sat & Sun 2-7 pm
-                </p>
-              </div>
-              <a 
-                href="https://maps.google.com/?q=140,+Pocket+21,+Sector+24,+Rohini,+Delhi,+110085" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="branch-maps-link"
-              >
-                Get Directions on Google Maps ↗
-              </a>
-            </div>
-            <div className="branch-card-map">
-              <iframe
-                title="Google Maps - Rohini Branch"
-                src="https://maps.google.com/maps?q=140,%20Pocket%2021,%20Sector%2024,%20Rohini,%20Delhi%20110085&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-
           <div className="branch-card">
             <div className="branch-card-details">
               <h3>Indirapuram Center</h3>
@@ -215,6 +187,49 @@ export function ContactPage() {
               ></iframe>
             </div>
           </div>
+
+          <div className="branch-card">
+            <div className="branch-card-details">
+              <h3>Delhi (Rohini)</h3>
+              <div className="branch-info">
+                <p>
+                  <strong>Location:</strong>
+                  140, 2nd Floor, Pocket-21, Sector-24, Rohini, Delhi-110085
+                </p>
+                <p>
+                  <strong>Telephone:</strong>
+                  +91 95821 35221, +91 84479 92702
+                </p>
+                <p>
+                  <strong>Email:</strong>
+                  sckoolchess@gmail.com
+                </p>
+                <p>
+                  <strong>Availability Hours:</strong>
+                  Wed & Fri 4-6 pm | Sat & Sun 2-7 pm
+                </p>
+              </div>
+              <a 
+                href="https://maps.google.com/?q=140,+Pocket+21,+Sector+24,+Rohini,+Delhi,+110085" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="branch-maps-link"
+              >
+                Get Directions on Google Maps ↗
+              </a>
+            </div>
+            <div className="branch-card-map">
+              <iframe
+                title="Google Maps - Rohini Branch"
+                src="https://maps.google.com/maps?q=140,%20Pocket%2021,%20Sector%2024,%20Rohini,%20Delhi%20110085&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -228,10 +243,10 @@ export function ContactPage() {
             <span aria-hidden="true" />
             Statistics
           </p>
-          <h2 id="contact-stats-title">Rohini Chess by the Numbers</h2>
+          <h2 id="contact-stats-title">SckoolChess by the Numbers</h2>
           <p>
             From first-time learners to competitive players, our programs are built
-            around steady progress, strong fundamentals, and confident decision-making.
+            around steady progress, strong fundamentals, and confident decision-making — across Rohini, Pitampura, Indirapuram and online across Delhi NCR.
           </p>
 
           <div className="contact-stats-grid">

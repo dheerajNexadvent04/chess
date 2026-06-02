@@ -10,6 +10,17 @@ export function BookClassPage() {
   const [success, setSuccess] = useState(false)
   const [openFaq, setOpenFaq] = useState(null)
 
+  useEffect(() => {
+    document.title = 'Book Online Chess Classes | SckoolChess Delhi NCR'
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Book your online chess class with SckoolChess — the best online chess academy in Rohini, Pitampura & Delhi NCR. Expert FIDE coaches, flexible scheduling. Free trial available.'
+      )
+    }
+  }, [])
+
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedTime, setSelectedTime] = useState('')
   const [customDate, setCustomDate] = useState('')
@@ -66,24 +77,28 @@ export function BookClassPage() {
 
   const faqs = [
     {
+      question: "How do I schedule my first online chess class?",
+      answer: "Simply fill out the booking form above with your child's name, location, preferred date and time slot. Our team at SckoolChess will confirm your session and send batch details within 24 hours. A free trial is available for first-time students."
+    },
+    {
       question: "Do I need any prior chess experience?",
-      answer: "Not at all! We cater to all skill levels. Whether you don't know how the pieces move, or you're an advanced player looking to push your Elo rating over 2000, our coaches will tailor the sessions to your exact level."
+      answer: "No prior experience is required. SckoolChess offers structured programs for complete beginners through to advanced tournament players. Our coaches in Rohini and online assess each student individually and recommend the right batch — beginner, intermediate, or advanced."
     },
     {
       question: "How long is each session?",
-      answer: "A standard online session is 60 minutes. This provides enough time for a warm-up puzzle, interactive lesson, real-time gameplay, and a thorough post-game analysis."
+      answer: "Each online chess session at SckoolChess is typically 60 minutes long. The session includes live game analysis, concept explanation, tactical puzzles, and personalised feedback from your assigned FIDE-rated or experienced coach."
     },
     {
       question: "What software do we use for the online classes?",
-      answer: "We primarily use Zoom for video communication and screen sharing, while playing the actual games on an interactive Lichess or Chess.com study board."
+      answer: "SckoolChess online classes are conducted via video conferencing tools and interactive chess platforms. Students will receive all joining details and platform access links after booking their class. No special installation is required to get started."
     },
     {
       question: "What happens if I need to reschedule?",
-      answer: "We offer flexible scheduling. As long as you notify your coach at least 24 hours in advance, you can easily reschedule your session for another time at no extra cost."
+      answer: "We understand that schedules can change. SckoolChess allows rescheduling with a minimum of 24 hours notice. Simply contact our team at +91-8447992702 or email sckoolchess@gmail.com and we will arrange an alternative slot for you."
     },
     {
       question: "Is there a free trial class available?",
-      answer: "Yes! We offer a complimentary 30-minute trial session for new students. This gives your child a chance to meet the coach, experience our teaching style, and decide if it's the right fit — with absolutely no commitment."
+      answer: "Yes. SckoolChess offers a free trial class for all new students. Fill out the booking form above, select your preferred date and time, and our team will confirm your complimentary first session within 24 hours."
     }
   ]
 
@@ -91,8 +106,8 @@ export function BookClassPage() {
     <div className="book-class-page-wrapper">
       <div className="book-class-banner">
         <p>
-          <span>⭐ Special Offer: Get an exclusive Grandmaster</span>
-          <span>chess puzzle free when you book your first class! ⭐</span>
+          <span>Special Offer: Get an exclusive</span>
+          <span>Grandmaster chess puzzle free when you book your first class with SckoolChess!</span>
         </p>
       </div>
 
@@ -101,12 +116,12 @@ export function BookClassPage() {
         <div className="premium-booking-copy">
           <p className="premium-kicker">
             <span aria-hidden="true" />
-            Join Rohini Chess Academy
+            Join SckoolChess Online
           </p>
           <h2 id="book-class-title">Schedule Your Online Class</h2>
           <p className="premium-intro">
-            Step onto the board with grandmaster strategies. 
-            Fill out the form to secure your spot in our highly sought-after online sessions.
+            Step onto the board with grandmaster strategies.
+            Fill out the form to secure your spot in our highly sought-after online chess sessions across Delhi NCR.
           </p>
 
 
@@ -127,7 +142,7 @@ export function BookClassPage() {
                 </span>
                 <span>
                   <strong>Live Interactive Sessions</strong>
-                  <small>Real-time game analysis and tailored guidance from the masters.</small>
+                  <small>Real-time game analysis and tailored guidance from top chess coaches.</small>
                 </span>
               </div>
               <div className="premium-info-row">
@@ -136,7 +151,7 @@ export function BookClassPage() {
                 </span>
                 <span>
                   <strong>Expert FIDE Coaches</strong>
-                  <small>Learn from titled players with decades of competitive experience.</small>
+                  <small>Learn from titled players with decades of competitive experience in chess.</small>
                 </span>
               </div>
 
@@ -239,22 +254,22 @@ export function BookClassPage() {
           <div className="feature-card">
             <div className="feature-icon"><Crown size={28} /></div>
             <h3>Elite Coaches</h3>
-            <p>Learn directly from titled players, including FIDE Masters and Grandmasters with years of teaching experience.</p>
+            <p>Learn directly from titled players, including FIDE Masters and Grandmasters with years of teaching experience at SckoolChess — the best chess academy in Rohini and online across NCR.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon"><Brain size={28} /></div>
             <h3>Custom Curriculum</h3>
-            <p>Every student receives a personalized training plan targeting their specific weaknesses and playing style.</p>
+            <p>Every student at SckoolChess receives a personalised training plan targeting their specific weaknesses and playing style — NEP-aligned and built for both school and competitive chess.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon"><Users size={28} /></div>
             <h3>1-on-1 Attention</h3>
-            <p>Get undivided attention during your classes to ensure you understand every concept deeply before moving on.</p>
+            <p>Get undivided attention during your online classes to ensure you understand every concept deeply before moving on. Available for students across Rohini, Pitampura, Indirapuram and pan-India.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon"><Trophy size={28} /></div>
             <h3>Tournament Prep</h3>
-            <p>We prepare you mentally and strategically for competitive play, helping you handle pressure and opening preparation.</p>
+            <p>We prepare you mentally and strategically for competitive play, helping you handle pressure and opening preparation — from school-level tournaments to FIDE-rated events across Delhi NCR.</p>
           </div>
         </div>
       </section>
