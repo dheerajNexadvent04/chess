@@ -235,7 +235,7 @@ export function ContactPage() {
 
       <section className="contact-stats-section" aria-labelledby="contact-stats-title">
         <div className="contact-stats-media">
-          <img src="/im2.png" alt="Students learning chess strategy" />
+          <img src="/contact us.png" alt="Students learning chess strategy" />
         </div>
 
         <div className="contact-stats-copy">
@@ -298,7 +298,7 @@ export function ContactPage() {
         </div>
 
         <div className="contact-faq-media">
-          <img src={faqs[Math.max(openFaqIndex, 0)].image} alt="Chess academy students" />
+          <img src="/contact us 2.png" alt="Chess academy students" />
         </div>
       </section>
     </div>

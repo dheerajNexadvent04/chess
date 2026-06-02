@@ -2,11 +2,10 @@ import { useEffect } from 'react'
 import { ArrowUpRight, FileText } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const aboutHeroImage = '/im2.png'
-const coachingImage =
-  'https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?auto=format&fit=crop&w=1200&q=80'
-const missionBoardImage = '/im1.png'
-const visionKidImage = '/im2.png'
+const aboutHeroImage = '/comapany profile banner2.png'
+const coachingImage = '/CP affiliated banner2.png'
+const missionBoardImage = '/cp career banner2.png'
+const visionKidImage = '/cp partnership banner2.png'
 
 const curriculumDetails = [
   {

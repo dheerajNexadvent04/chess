@@ -925,7 +925,7 @@ export function CurriculumPage() {
                 <circle cx="50" cy="50" r="49" fill="none" stroke="#ffd04d" strokeWidth="1" strokeDasharray="5 4" />
               </svg>
               <div className="nch-solid-circle"></div>
-              <img src="/student1.png" alt="Student playing chess" className="nch-main-img" />
+              <img src="/student4.png" alt="Student playing chess" className="nch-main-img" />
 
               {/* Floating cards */}
               <div className="nch-floating-card fc-1">
@@ -1125,7 +1125,7 @@ export function CurriculumPage() {
 
             <div className="impact-v5__image-wrap">
               <img 
-                src="/n2.jpg" 
+                src="/curiculum what your child will learn.png" 
                 alt="Professional chess coaching session" 
                 className="impact-v5__image"
               />
@@ -1181,7 +1181,7 @@ export function CurriculumPage() {
             {coursePrograms.map((course, idx) => (
               <div key={idx} className="cp-v5__card">
                 {/* Floating Boy Image */}
-                <img src="/student1.png" alt="Student" className="cp-v5__floating-img" />
+                <img src="/student4.png" alt="Student" className="cp-v5__floating-img" />
                 
                 <div className="cp-v5__card-main">
                   <div className="cp-v5__card-bg">
@@ -1272,7 +1272,7 @@ export function CurriculumPage() {
       <section className="curriculum-banner-v5">
         <div className="curriculum-banner-v5__container">
           <img 
-            src="/n5.jpg" 
+            src="/curriculum bottom banner.png" 
             alt="Chess Banner" 
             className="curriculum-banner-v5__image" 
           />

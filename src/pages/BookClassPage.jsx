@@ -158,7 +158,7 @@ export function BookClassPage() {
             </div>
 
             <div className="premium-booking-image-wrap">
-              <img src="/student1.png" alt="Student chess training session" className="premium-booking-image" />
+              <img src="/student4.png" alt="Student chess training session" className="premium-booking-image" />
             </div>
           </div>
         </div>
@@ -284,7 +284,7 @@ export function BookClassPage() {
         </div>
         <div className="faq-split-container">
           <div className="faq-image-wrapper">
-            <img src="/im1.png" alt="Students studying chess" className="faq-section-image" />
+            <img src="/book now.png" alt="Students studying chess" className="faq-section-image" />
           </div>
           <div className="faq-list">
             {faqs.map((faq, index) => (
