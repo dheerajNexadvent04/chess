@@ -435,7 +435,7 @@ export function HomePage() {
             {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
           <div className="figma-brand">
-            <img src="/logonewbg.png" alt="SckoolChess logo" />
+            <img src="/revised logo.png" alt="SckoolChess logo" />
           </div>
           <nav>
             {navItems.map((item) => (
