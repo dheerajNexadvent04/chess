@@ -8751,7 +8751,7 @@ p .feature-tag {
 }
 
 .figma-footer {
-  margin-top: 32px;
+  margin-top: 0px;
   background: #E8750A;
   color: #fff;
   overflow-x: clip;
