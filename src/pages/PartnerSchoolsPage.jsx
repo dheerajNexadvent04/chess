@@ -239,7 +239,11 @@ export function PartnerSchoolsPage() {
 
   return (
     <div className="partners-page">
-      <PartnerSchoolsHero onCollabClick={() => setCollabModalOpen(true)} />
+      <PartnerSchoolsHero onCollabClick={() => {
+        window.dispatchEvent(new CustomEvent('open-custom-modal', {
+          detail: { type: 'inquiry', section: 'Partner Hero Button' }
+        }));
+      }} />
       
       <section id="partner-timeline-v2" className="partner-timeline-v2">
         <div className="pt-container">
@@ -388,10 +392,6 @@ export function PartnerSchoolsPage() {
       
       {modalOpen && activeSchool && (
         <PartnerGalleryModal school={activeSchool} onClose={closeModal} />
-      )}
-
-      {collabModalOpen && (
-        <PartnerCollabModal isOpen={collabModalOpen} onClose={() => setCollabModalOpen(false)} />
       )}
     </div>
   )

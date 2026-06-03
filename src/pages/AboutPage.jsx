@@ -72,7 +72,16 @@ export function AboutPage() {
             Since 2022, SckoolChess has been turning curious beginners into confident players. As the best chess academy in Rohini and across Delhi NCR, we believe chess is the greatest classroom on earth.
           </p>
 
-          <a className="about-hero-first-btn" href="#about-details">
+          <a 
+            className="about-hero-first-btn" 
+            href="#about-details"
+            onClick={(e) => {
+              e.preventDefault();
+              window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                detail: { type: 'inquiry', section: 'About Hero' }
+              }));
+            }}
+          >
             GET IN TOUCH
           </a>
         </div>

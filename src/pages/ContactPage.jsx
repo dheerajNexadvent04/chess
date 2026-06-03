@@ -2,6 +2,8 @@ import { ChevronDown, Clock, Home, Phone } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { contactDetails } from '../data/siteContent'
 
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec'
+
 const contactHeroImage = '/im1.png'
 
 const contactInfo = [
@@ -59,6 +61,48 @@ const faqs = [
 
 export function ContactPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0)
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setSuccess(false)
+
+    const formData = new FormData(e.target)
+    formData.append('type', 'contact_inquiry')
+    formData.append('source_page', window.location.pathname)
+    formData.append('source_section', 'Contact Us Form')
+    formData.append('Form Name', 'Contact Page Form')
+    formData.append('date', new Date().toLocaleString())
+
+    // Map fields for the sheet
+    const nameVal = e.target.elements['name'] ? e.target.elements['name'].value : ''
+    const emailVal = e.target.elements['email'] ? e.target.elements['email'].value : ''
+    const phoneVal = e.target.elements['phone'] ? e.target.elements['phone'].value : ''
+    const messageVal = e.target.elements['message'] ? e.target.elements['message'].value : ''
+
+    formData.append('name', nameVal)
+    formData.append('email', emailVal)
+    formData.append('phone', phoneVal)
+    formData.append('time', messageVal || 'No message details')
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    })
+      .then(() => {
+        setLoading(false)
+        setSuccess(true)
+        e.target.reset()
+        setTimeout(() => setSuccess(false), 5000)
+      })
+      .catch((error) => {
+        console.error('Error submitting form!', error.message)
+        setLoading(false)
+      })
+  }
 
   useEffect(() => {
     document.title = 'Contact SckoolChess | Chess Classes in Rohini Delhi NCR'
@@ -114,24 +158,31 @@ export function ContactPage() {
           </div>
         </div>
 
-        <form className="contact-form-card" onSubmit={(event) => event.preventDefault()}>
+        <form className="contact-form-card" onSubmit={handleSubmit}>
           <label>
-            Your Name
-            <input type="text" name="name" placeholder="Enter your name" />
+            Your Name *
+            <input type="text" name="name" placeholder="Enter your name" required />
           </label>
           <label>
-            Your Email
-            <input type="email" name="email" placeholder="Enter your email" />
+            Your Email *
+            <input type="email" name="email" placeholder="Enter your email" required />
           </label>
           <label>
-            Your Phone Number
-            <input type="tel" name="phone" placeholder="Enter your phone number" />
+            Your Phone Number *
+            <input type="tel" name="phone" placeholder="Enter your phone number" required />
           </label>
           <label>
-            Your Message
-            <textarea name="message" placeholder="Write your message" rows="5" />
+            Your Message *
+            <textarea name="message" placeholder="Write your message" rows="5" required />
           </label>
-          <button type="submit">Submit Now</button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Submitting...' : 'Submit Now'}
+          </button>
+          {success && (
+            <p style={{ color: '#4ade80', fontSize: '14px', marginTop: '12px', textAlign: 'center', fontWeight: 'bold' }}>
+              Your message has been sent successfully!
+            </p>
+          )}
         </form>
       </section>
 

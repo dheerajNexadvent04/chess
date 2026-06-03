@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { TestimonialCarousel } from '../components/TestimonialCarousel'
 import { Footer } from '../components/Footer'
+import { UnifiedPopupModal } from '../components/UnifiedPopupModal'
 
 const drawerLinks = [
   { label: 'Home', to: '/' },
@@ -437,7 +438,17 @@ export function HomePage() {
         <div className="figma-overlay" />
 
         <header className={`figma-nav ${headerScrolled ? 'is-scrolled' : ''}`}>
-          <Link to="/book-class" className="header-mobile-book-btn" onClick={closeMobileMenu}>
+          <Link 
+            to="/book-class" 
+            className="header-mobile-book-btn" 
+            onClick={(e) => {
+              e.preventDefault();
+              closeMobileMenu();
+              window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                detail: { type: 'booking', section: 'Mobile Header' }
+              }));
+            }}
+          >
             Book Online Class
           </Link>
           <button
@@ -470,7 +481,16 @@ export function HomePage() {
               <Link to="/nepzo-program">
                 <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
               </Link>
-              <Link className="book-class-highlight" to="/book-class">
+              <Link 
+                className="book-class-highlight" 
+                to="/book-class"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                    detail: { type: 'booking', section: 'Desktop Header' }
+                  }));
+                }}
+              >
                 Book Online Class
               </Link>
             </div>
@@ -488,19 +508,29 @@ export function HomePage() {
             </button>
           </div>
           <nav className="figma-mobile-drawer-links">
-            {drawerLinks.map((item) => (
-              <NavLink 
-                key={`drawer-${item.to}`} 
-                to={item.to} 
-                onClick={closeMobileMenu}
-                className={({ isActive }) => {
-                  const isHighlight = item.to === '/book-class'
-                  return `${isActive ? 'active' : ''} ${isHighlight ? 'book-class-highlight' : ''}`.trim()
-                }}
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            {drawerLinks.map((item) => {
+              const isHighlight = item.to === '/book-class'
+              return (
+                <NavLink 
+                  key={`drawer-${item.to}`} 
+                  to={item.to} 
+                  onClick={(e) => {
+                    closeMobileMenu()
+                    if (isHighlight) {
+                      e.preventDefault()
+                      window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                        detail: { type: 'booking', section: 'Mobile Drawer' }
+                      }))
+                    }
+                  }}
+                  className={({ isActive }) => {
+                    return `${isActive ? 'active' : ''} ${isHighlight ? 'book-class-highlight' : ''}`.trim()
+                  }}
+                >
+                  {item.label}
+                </NavLink>
+              )
+            })}
           </nav>
           <div className="figma-mobile-drawer-footer">
             <Link to="/nepzo-program" onClick={closeMobileMenu} className="drawer-nepzo-link">
@@ -526,7 +556,17 @@ export function HomePage() {
             Trusted by 5,000+ students across Rohini, Pitampura, Noida and Navi Mumbai
           </p>
           <div className="figma-hero-actions">
-            <a href="/book-class">Start a Free Trial</a>
+            <a 
+              href="/book-class"
+              onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                  detail: { type: 'booking', section: 'Hero Section' }
+                }));
+              }}
+            >
+              Start a Free Trial
+            </a>
             <a className="ghost" href="/curriculum">
               Explore Chess Programs
             </a>
@@ -655,7 +695,18 @@ export function HomePage() {
           <p>
             Accelerate your game with structured lessons by top coaches in Rohini, Pitampura, Paschim Vihar, Shalimar Bagh, Dwarka, Vaishali and Gurgaon. Our future-ready, NEP-aligned learning programs are designed to build champions at every school level.
           </p>
-          <a className="start-btn" href="/book-class">Start Your Free Trial</a>
+          <a 
+            className="start-btn" 
+            href="/book-class"
+            onClick={(e) => {
+              e.preventDefault();
+              window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                detail: { type: 'booking', section: 'Features Section' }
+              }));
+            }}
+          >
+            Start Your Free Trial
+          </a>
           <div className="nums" ref={featureNumsRef}>
             <div className="num-block">
               <strong>{featureCounts.students >= 5000 ? '5K' : featureCounts.students.toLocaleString()}+</strong>
@@ -860,8 +911,7 @@ export function HomePage() {
       </section>
 
       <Footer />
-
-
+      <UnifiedPopupModal />
     </div>
   )
 }

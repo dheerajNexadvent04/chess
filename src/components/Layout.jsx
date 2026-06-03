@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { contactDetails, navLinks } from '../data/siteContent'
 import { Footer } from './Footer'
+import { UnifiedPopupModal } from './UnifiedPopupModal'
 
 const drawerLinks = [
   { label: 'Home', to: '/' },
@@ -59,7 +60,17 @@ export function Layout() {
     <div className="site">
       <header className={`header ${usesLightHeader ? 'about-header' : ''} ${headerScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-main">
-          <Link to="/book-class" className="header-mobile-book-btn" onClick={() => setMenuOpen(false)}>
+          <Link 
+            to="/book-class" 
+            className="header-mobile-book-btn" 
+            onClick={(e) => {
+              e.preventDefault();
+              setMenuOpen(false);
+              window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                detail: { type: 'booking', section: 'Mobile Header' }
+              }));
+            }}
+          >
             Book Online Class
           </Link>
           <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
@@ -121,7 +132,17 @@ export function Layout() {
               <Link to="/nepzo-program">
                 <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
               </Link>
-              <NavLink className="nav-link book-class-highlight" to="/book-class" onClick={() => setMenuOpen(false)}>
+              <NavLink 
+                className="nav-link book-class-highlight" 
+                to="/book-class" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                  window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                    detail: { type: 'booking', section: 'Desktop Header' }
+                  }));
+                }}
+              >
                 BOOK ONLINE CLASS
               </NavLink>
             </div>
@@ -141,19 +162,29 @@ export function Layout() {
               </button>
             </div>
             <nav className="about-mobile-drawer-links">
-              {drawerLinks.map((link) => (
-                <NavLink 
-                  key={`about-drawer-${link.label}`} 
-                  to={link.to} 
-                  onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) => {
-                    const isHighlight = link.to === '/book-class'
-                    return `${isActive ? 'active' : ''} ${isHighlight ? 'book-class-highlight' : ''}`.trim()
-                  }}
-                >
-                  {link.label}
-                </NavLink>
-              ))}
+              {drawerLinks.map((link) => {
+                const isBookClass = link.to === '/book-class'
+                return (
+                  <NavLink 
+                    key={`about-drawer-${link.label}`} 
+                    to={link.to} 
+                    onClick={(e) => {
+                      setMenuOpen(false)
+                      if (isBookClass) {
+                        e.preventDefault()
+                        window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                          detail: { type: 'booking', section: 'Mobile Drawer' }
+                        }))
+                      }
+                    }}
+                    className={({ isActive }) => {
+                      return `${isActive ? 'active' : ''} ${isBookClass ? 'book-class-highlight' : ''}`.trim()
+                    }}
+                  >
+                    {link.label}
+                  </NavLink>
+                )
+              })}
             </nav>
             <div className="about-mobile-drawer-footer">
               <Link to="/nepzo-program" onClick={() => setMenuOpen(false)} className="drawer-nepzo-link">
@@ -169,6 +200,7 @@ export function Layout() {
       </main>
 
       <Footer />
+      <UnifiedPopupModal />
     </div>
   )
 }
