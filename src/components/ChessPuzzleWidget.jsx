@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
 
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec'
+
 export function ChessPuzzleWidget() {
   const [puzzleModalOpen, setPuzzleModalOpen] = useState(false)
   const [puzzleSubmitted, setPuzzleSubmitted] = useState(false)
@@ -53,34 +55,37 @@ export function ChessPuzzleWidget() {
 
                 <form 
                   className="puzzle-modal-form"
-                  action="https://formspree.io/f/YOUR_FORM_ID" // Replace YOUR_FORM_ID with your actual ID from Formspree
-                  method="POST"
                   onSubmit={async (e) => {
                     e.preventDefault();
                     setIsSubmitting(true);
                     
                     const form = e.target;
                     const data = new FormData(form);
-                    
+                    data.append('type', 'free_puzzle');
+                    data.append('Form Name', 'Free Puzzle Request');
+                    data.append('date', new Date().toLocaleString());
+
                     try {
-                      const response = await fetch(form.action, {
+                      await fetch(SCRIPT_URL, {
                         method: 'POST',
                         body: data,
-                        headers: { 'Accept': 'application/json' }
+                        mode: 'no-cors'
                       });
                       
-                      if (response.ok) {
-                        setIsSubmitting(false);
-                        setPuzzleSubmitted(true);
-                      } else {
-                        throw new Error('Submission failed');
-                      }
+                      setIsSubmitting(false);
+                      setPuzzleSubmitted(true);
+                      
+                      // Programmatically trigger the download of the PDF
+                      const link = document.createElement('a');
+                      link.href = '/chess-puzzles.pdf';
+                      link.download = 'chess-puzzles.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
                     } catch (err) {
-                      // Fallback for demo purposes if ID is not set
-                      setTimeout(() => {
-                        setIsSubmitting(false);
-                        setPuzzleSubmitted(true);
-                      }, 1000);
+                      console.error('Error submitting form:', err.message);
+                      setIsSubmitting(false);
+                      setPuzzleSubmitted(true);
                     }
                   }}
                 >
