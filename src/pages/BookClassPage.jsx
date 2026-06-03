@@ -107,7 +107,7 @@ export function BookClassPage() {
       <div className="book-class-banner">
         <p>
           <span>Special Offer: Get an exclusive</span>
-          <span>Grandmaster chess puzzle free when you book your first class with SckoolChess!</span>
+          <span>Grandmaster chess puzzle free on your first class!</span>
         </p>
       </div>
 
