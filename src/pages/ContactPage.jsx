@@ -159,7 +159,7 @@ export function ContactPage() {
                 </p>
                 <p>
                   <strong>Email:</strong>
-                  sckoolchess@gmail.com
+                  Sckoolchess@gmail.com
                 </p>
                 <p>
                   <strong>Availability Hours:</strong>
@@ -202,7 +202,7 @@ export function ContactPage() {
                 </p>
                 <p>
                   <strong>Email:</strong>
-                  sckoolchess@gmail.com
+                  Sckoolchess@gmail.com
                 </p>
                 <p>
                   <strong>Availability Hours:</strong>

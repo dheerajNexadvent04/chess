@@ -1,0 +1,645 @@
+/* ==========================================================================
+   NEPZO FUTURE READY LEARNING PROGRAM CSS - scoped to .nz-page
+   ========================================================================== */
+
+.nz-page {
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Urbanist', sans-serif;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* Layout wrap */
+.nz-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Typography & Labels */
+.nz-section-label {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #E8750A;
+  text-align: center;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.nz-section-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0d1b2e;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.nz-section-sub {
+  font-size: 16px;
+  color: #6b7a99;
+  text-align: center;
+  max-width: 720px;
+  margin: 10px auto 48px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.nz-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 117, 10, 0.15);
+  border: 1px solid rgba(232, 117, 10, 0.3);
+  color: #fbbf24;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+/* Buttons */
+.nz-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #E8750A, #C45A00);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(232, 117, 10, 0.3);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+
+.nz-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(232, 117, 10, 0.45);
+}
+
+.nz-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #0d1b2e;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s;
+  white-space: nowrap;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.nz-btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.nz-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  white-space: nowrap;
+}
+
+.nz-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+.nz-hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #030812;
+  background-image: radial-gradient(circle at 80% 20%, rgba(232, 117, 10, 0.18) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 80%, rgba(14, 116, 144, 0.18) 0%, transparent 60%);
+  padding: 140px 0 100px;
+}
+
+.nz-hero__inner {
+  position: relative;
+  z-index: 3;
+  max-width: 820px;
+}
+
+.nz-hero__logo-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.nz-hero__partner-logo {
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.nz-hero__partner-logo--nepzo {
+  height: 48px;
+}
+
+.nz-hero__divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nz-hero__heading {
+  font-size: clamp(38px, 5.5vw, 64px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nz-hero__sub {
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.68;
+  max-width: 680px;
+  margin: 0 0 36px;
+}
+
+.nz-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nz-hero__decor-text {
+  position: absolute;
+  bottom: -20px;
+  right: -5%;
+  font-size: 15vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.015);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+.nz-hero__wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  z-index: 4;
+}
+
+/* ==========================================================================
+   2. TRACKS & TOGGLES (THE INTERACTIVE SELECTOR)
+   ========================================================================== */
+.nz-tracks-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.nz-track-toggle-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.nz-track-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6b7a99;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(13, 27, 46, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nz-track-toggle-btn:hover {
+  color: #0d1b2e;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(13, 27, 46, 0.05);
+}
+
+.nz-track-toggle-btn.active {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.nz-track-toggle-btn.active--financial {
+  background: #0e7490;
+  border-color: #0e7490;
+  box-shadow: 0 8px 24px rgba(14, 116, 144, 0.3);
+}
+
+.nz-track-toggle-btn.active--entrepreneur {
+  background: #E8750A;
+  border-color: #E8750A;
+  box-shadow: 0 8px 24px rgba(232, 117, 10, 0.3);
+}
+
+/* Panel Layout */
+.nz-track-panel {
+  background: #fff;
+  border: 1px solid #eef2f8;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 10px 40px rgba(13, 27, 46, 0.02);
+}
+
+.nz-track-intro {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1.5px dashed #f1f5f9;
+}
+
+.nz-track-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+}
+
+.nz-track-badge--financial {
+  background: rgba(14, 116, 144, 0.1);
+  color: #0e7490;
+}
+
+.nz-track-badge--entrepreneur {
+  background: rgba(232, 117, 10, 0.1);
+  color: #E8750A;
+}
+
+.nz-track-intro h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0d1b2e;
+  margin: 0 0 12px;
+}
+
+.nz-track-intro p {
+  font-size: 16px;
+  line-height: 1.68;
+  color: #4b5563;
+  max-width: 900px;
+  margin: 0;
+}
+
+/* Panel Columns Grid */
+.nz-panel-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+}
+
+.nz-panel-column-title {
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0d1b2e;
+  margin: 0 0 24px;
+  padding-left: 4px;
+}
+
+.nz-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards (Skills & Activities) */
+.nz-skill-card, .nz-activity-card {
+  display: flex;
+  gap: 20px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nz-skill-card:hover, .nz-activity-card:hover {
+  background: #fff;
+  transform: translateX(4px);
+  border-color: #e2e8f0;
+  box-shadow: 0 6px 20px rgba(13, 27, 46, 0.03);
+}
+
+.nz-skill-icon, .nz-activity-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nz-skill-icon--financial, .nz-activity-icon--financial {
+  background: rgba(14, 116, 144, 0.08);
+  color: #0e7490;
+}
+
+.nz-skill-icon--entrepreneur, .nz-activity-icon--entrepreneur {
+  background: rgba(232, 117, 10, 0.08);
+  color: #E8750A;
+}
+
+.nz-skill-content h5, .nz-activity-content h5 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d1b2e;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.nz-skill-content p, .nz-activity-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b7a99;
+  margin: 0;
+}
+
+/* Fade-in Animation */
+.nz-fade-in {
+  animation: nzFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes nzFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   3. ECOSYSTEM BENEFITS SECTION
+   ========================================================================== */
+.nz-benefits-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.nz-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.nz-benefit-card {
+  background: #ffffff;
+  border: 1px solid #eef2f8;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 15px rgba(13, 27, 46, 0.015);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.nz-benefit-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0e7490, #E8750A);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.nz-benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(13, 27, 46, 0.05);
+  border-color: rgba(14, 116, 144, 0.15);
+}
+
+.nz-benefit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(14, 116, 144, 0.06);
+  color: #0e7490;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.nz-benefit-card:nth-child(2n) .nz-benefit-icon {
+  background: rgba(232, 117, 10, 0.06);
+  color: #E8750A;
+}
+
+.nz-benefit-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0d1b2e;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.nz-benefit-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #6b7a99;
+}
+
+/* ==========================================================================
+   4. CLOSING CTA BANNER
+   ========================================================================== */
+.nz-cta-section {
+  background: #ffffff;
+  padding-bottom: 80px;
+}
+
+.nz-cta-card {
+  background: linear-gradient(135deg, #0d1b2e 0%, #040912 100%);
+  border-radius: 28px;
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(13, 27, 46, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.nz-cta-card::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232, 117, 10, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.nz-cta-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.nz-cta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #F5A623;
+  background: rgba(245, 166, 35, 0.12);
+  border: 1px solid rgba(245, 166, 35, 0.25);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.nz-cta-card h2 {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.nz-cta-card p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+  margin: 0 0 32px;
+}
+
+.nz-cta-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .nz-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .nz-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nz-hero {
+    min-height: 480px;
+    padding-top: 52px;
+    padding-bottom: 80px;
+  }
+  .nz-track-toggle-container {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 12px;
+  }
+  .nz-track-toggle-btn {
+    justify-content: center;
+  }
+  .nz-track-panel {
+    padding: 28px 20px;
+  }
+  .nz-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .nz-cta-card {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nz-hero__partner-logo--nepzo {
+    height: 36px;
+  }
+  .nz-hero__partner-logo {
+    height: 30px;
+  }
+  .nz-hero__divider {
+    height: 20px;
+  }
+  .nz-hero__logo-strip {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .nz-hero__heading {
+    font-size: 32px;
+  }
+  .nz-cta-actions, .nz-hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+  }
+  .nz-btn-primary, .nz-btn-secondary, .nz-btn-ghost {
+    justify-content: center;
+    padding: 12px 20px;
+  }
+}

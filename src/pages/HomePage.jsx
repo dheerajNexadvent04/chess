@@ -1,8 +1,23 @@
 import { Menu, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { TestimonialCarousel } from '../components/TestimonialCarousel'
 import { Footer } from '../components/Footer'
+
+const drawerLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'Company Profile', to: '/about-us' },
+  { label: 'Partner School', to: '/partners' },
+  { label: 'Coaches', to: '/coaches' },
+  { label: 'Curriculum', to: '/curriculum' },
+  { label: 'Achievements', to: '/achievements' },
+  { label: 'Tournaments', to: '/tournaments' },
+  { label: 'Market Area', to: '/market-area' },
+  { label: 'Careers', to: '/career' },
+  { label: 'Book Online Class', to: '/book-class' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'Contact', to: '/contact-us' }
+]
 
 const figmaAssets = {
   heroBg: '/herobanner.png',
@@ -452,7 +467,9 @@ export function HomePage() {
               <a className="figma-support-link" href="#support">
                 Support
               </a>
-              <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
+              <Link to="/nepzo-program">
+                <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
+              </Link>
               <Link className="book-class-highlight" to="/book-class">
                 Book Online Class
               </Link>
@@ -471,27 +488,32 @@ export function HomePage() {
             </button>
           </div>
           <nav className="figma-mobile-drawer-links">
-            {navItems.filter((item) => item.href !== '/contact-us').map((item) => (
-              <Link 
-                key={`drawer-${item.href}`} 
-                to={item.href} 
+            {drawerLinks.map((item) => (
+              <NavLink 
+                key={`drawer-${item.to}`} 
+                to={item.to} 
                 onClick={closeMobileMenu}
+                className={({ isActive }) => {
+                  const isHighlight = item.to === '/book-class'
+                  return `${isActive ? 'active' : ''} ${isHighlight ? 'book-class-highlight' : ''}`.trim()
+                }}
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
-
-            <a href="/contact-us" onClick={closeMobileMenu}>
-              Contact
-            </a>
           </nav>
+          <div className="figma-mobile-drawer-footer">
+            <Link to="/nepzo-program" onClick={closeMobileMenu} className="drawer-nepzo-link">
+              <img src="/nepzobg.png" alt="Nepzo Logo" className="drawer-nepzo-logo" />
+            </Link>
+          </div>
         </aside>
 
         <div className="figma-hero-content">
           <p className="hero-kicker-label" style={{ fontSize: '13px', fontWeight: '800', color: '#F5A623', textTransform: 'uppercase', letterSpacing: '0.14em', margin: '0' }}>
             STRUCTURED CHESS COACHING FOR KIDS
           </p>
-          <h1>The Best Investment You Can Make Is in Your Child's Mind</h1>
+          <h1>We make your chess dreams a reality</h1>
           <p>
             <strong>India's #1 NEP-Aligned Chess Academy for Schools and Students</strong>
             <br /><br />
@@ -543,7 +565,7 @@ export function HomePage() {
           aria-hidden="true"
         />
         <h2>What Our Students Say</h2>
-        <p className="sub" style={{ textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '16px', maxWidth: '640px', margin: '10px auto 30px' }}>
+        <p className="sub" style={{ textAlign: 'center', color: '#6b7a99', fontSize: '16px', maxWidth: '640px', margin: '8px auto 48px' }}>
           Real stories from young champions trained at SckoolChess across Rohini, Pitampura, Noida and Ghaziabad.
         </p>
         <div
@@ -597,7 +619,7 @@ export function HomePage() {
 
       <section className="figma-section school-row">
         <h2>Schools Associated With Us</h2>
-        <p className="sub" style={{ textAlign: 'center', color: '#6c6c6c', fontSize: '15px', maxWidth: '640px', margin: '-10px auto 24px' }}>
+        <p className="sub" style={{ textAlign: 'center', color: '#6c6c6c', fontSize: '15px', maxWidth: '640px', margin: '8px auto 48px' }}>
           Proud chess partner for leading schools in Rohini, Pitampura, Noida, Navi Mumbai and across NCR.
         </p>
         <div className="school-logo-marquee" aria-label="Associated schools">

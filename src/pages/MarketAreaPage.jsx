@@ -40,19 +40,14 @@ const serviceAreas = [
     keywords: 'chess coaching Punjabi Bagh',
   },
   {
-    city: 'Budh Vihar',
-    desc: 'Chess classes in Budh Vihar — beginner to advanced programs available with SckoolChess expert coaches.',
-    keywords: 'chess classes Budh Vihar',
+    city: 'Sonipat',
+    desc: 'Online chess classes in Sonipat for school students and beginners. Learn under FIDE-rated coaches.',
+    keywords: 'chess classes Sonipat, online chess classes Sonipat',
   },
   {
-    city: 'Avantika',
-    desc: 'Chess coaching in Avantika — part of North Delhi\'s top chess network with SckoolChess structured programs.',
-    keywords: 'chess coaching Avantika Rohini',
-  },
-  {
-    city: 'Nagloi',
-    desc: 'Chess classes near Nagloi — online sessions and school chess programs available through SckoolChess.',
-    keywords: 'chess classes near Nagloi',
+    city: 'Faridabad',
+    desc: 'Chess coaching in Faridabad — structured programs for beginners to advanced tournament players.',
+    keywords: 'chess coaching Faridabad, best chess classes Faridabad',
   },
   {
     city: 'Narela',
@@ -206,7 +201,7 @@ export function MarketAreaPage() {
           <div className="ma-tags-wrap">
             {[
               'Rohini', 'Pitampura', 'Paschim Vihar', 'Shalimar Bagh', 'Dwarka',
-              'Ashok Vihar', 'Punjabi Bagh', 'Budh Vihar', 'Avantika', 'Nagloi',
+              'Ashok Vihar', 'Punjabi Bagh', 'Sonipat', 'Faridabad',
               'Narela', 'Indirapuram', 'Vaishali', 'Kaushambi', 'Gurgaon', 'Noida',
               'Navi Mumbai', 'Vasundhara', 'Ghaziabad'
             ].map((loc) => (

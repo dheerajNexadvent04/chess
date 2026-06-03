@@ -17,6 +17,7 @@ import { TermsPage } from './pages/TermsPage'
 import { BlogPage } from './pages/BlogPage'
 import { BlogDetailPage } from './pages/BlogDetailPage'
 import { MarketAreaPage } from './pages/MarketAreaPage'
+import { NepzoProgramPage } from './pages/NepzoProgramPage'
 import { AnnouncementBar } from './components/AnnouncementBar'
 import { Preloader } from './components/Preloader'
 import { ChessPuzzleWidget } from './components/ChessPuzzleWidget'
@@ -46,6 +47,8 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogDetailPage />} />
         <Route path="/market-area" element={<MarketAreaPage />} />
+        <Route path="/nepzo" element={<NepzoProgramPage />} />
+        <Route path="/nepzo-program" element={<NepzoProgramPage />} />
       </Route>
       </Routes>
       <Preloader />

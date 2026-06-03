@@ -94,7 +94,7 @@ export function BookClassPage() {
     },
     {
       question: "What happens if I need to reschedule?",
-      answer: "We understand that schedules can change. SckoolChess allows rescheduling with a minimum of 24 hours notice. Simply contact our team at +91-8447992702 or email sckoolchess@gmail.com and we will arrange an alternative slot for you."
+      answer: "We understand that schedules can change. SckoolChess allows rescheduling with a minimum of 24 hours notice. Simply contact our team at +91-8447992702 or email Sckoolchess@gmail.com and we will arrange an alternative slot for you."
     },
     {
       question: "Is there a free trial class available?",

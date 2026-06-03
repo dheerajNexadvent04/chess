@@ -1,7 +1,7 @@
 export const contactDetails = {
   phone: '+91-8447992702',
   mentor: 'Dr. Shilpi Jain',
-  email: 'contact@sckoolchessacademy.com',
+  email: 'Sckoolchess@gmail.com',
 }
 
 export const navLinks = [
@@ -234,7 +234,7 @@ export const coaches = [
   {
     name: 'Jitender Rawat',
     title: 'Coach',
-    image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80',
+    image: '/jitender rawat.jpeg',
     bio: 'Jitender Rawat is a skilled instructor with a passion for helping students unlock their full potential on the chessboard. At SckoolChess, his engaging teaching style makes learning chess both fun and highly effective for school students across Delhi NCR.',
     socials: {
       phone: '+91-8447992702',

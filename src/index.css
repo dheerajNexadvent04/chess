@@ -113,9 +113,9 @@ button, input, select, textarea { font: inherit; }
 
 @media (max-width: 480px) {
   :root {
-    --h1: 30px;
-    --h2: 26px;
-    --h3: 20px;
+    --h1: 28px;
+    --h2: 24px;
+    --h3: 19px;
     --h4: 15px;
     --sec-pad: 36px;
   }

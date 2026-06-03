@@ -40,7 +40,7 @@ export function AchievementPage() {
       {/* ── Full-Width Hero Banner ── */}
       <section className="achievement-hero-banner">
         <img
-          src="/achievementhero.jpeg"
+          src="/achievment.png"
           alt="Achievements That Build Champions"
           className="achievement-hero-img"
         />

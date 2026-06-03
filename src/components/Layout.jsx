@@ -4,13 +4,28 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { contactDetails, navLinks } from '../data/siteContent'
 import { Footer } from './Footer'
 
+const drawerLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'Company Profile', to: '/about-us' },
+  { label: 'Partner School', to: '/partners' },
+  { label: 'Coaches', to: '/coaches' },
+  { label: 'Curriculum', to: '/curriculum' },
+  { label: 'Achievements', to: '/achievements' },
+  { label: 'Tournaments', to: '/tournaments' },
+  { label: 'Market Area', to: '/market-area' },
+  { label: 'Careers', to: '/career' },
+  { label: 'Book Online Class', to: '/book-class' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'Contact', to: '/contact-us' }
+]
+
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [headerScrolled, setHeaderScrolled] = useState(false)
   const location = useLocation()
   const isHomePage = location.pathname === '/'
   const isAboutPage = location.pathname === '/about-us'
-  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements', '/tournaments', '/blog'].includes(location.pathname) || location.pathname.startsWith('/blog/')
+  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements', '/tournaments', '/blog', '/market-area', '/nepzo', '/nepzo-program'].includes(location.pathname) || location.pathname.startsWith('/blog/')
   const supportLink = navLinks.find((link) => link.label === 'SUPPORT')
   const primaryNavLinks = navLinks.filter((link) => link.label !== 'SUPPORT')
 
@@ -103,7 +118,9 @@ export function Layout() {
                   {supportLink.label}
                 </a>
               ) : null}
-              <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
+              <Link to="/nepzo-program">
+                <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
+              </Link>
               <NavLink className="nav-link book-class-highlight" to="/book-class" onClick={() => setMenuOpen(false)}>
                 BOOK ONLINE CLASS
               </NavLink>
@@ -124,25 +141,25 @@ export function Layout() {
               </button>
             </div>
             <nav className="about-mobile-drawer-links">
-              {primaryNavLinks.filter((link) => link.to !== '/contact-us').map((link) => (
+              {drawerLinks.map((link) => (
                 <NavLink 
                   key={`about-drawer-${link.label}`} 
                   to={link.to} 
                   onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) => isActive ? 'active' : ''}
+                  className={({ isActive }) => {
+                    const isHighlight = link.to === '/book-class'
+                    return `${isActive ? 'active' : ''} ${isHighlight ? 'book-class-highlight' : ''}`.trim()
+                  }}
                 >
                   {link.label}
                 </NavLink>
               ))}
-
-              <NavLink 
-                to="/contact-us" 
-                onClick={() => setMenuOpen(false)}
-                className={({ isActive }) => isActive ? 'active' : ''}
-              >
-                CONTACT
-              </NavLink>
             </nav>
+            <div className="about-mobile-drawer-footer">
+              <Link to="/nepzo-program" onClick={() => setMenuOpen(false)} className="drawer-nepzo-link">
+                <img src="/nepzobg.png" alt="Nepzo Logo" className="drawer-nepzo-logo" />
+              </Link>
+            </div>
           </aside>
         </>
       ) : null}

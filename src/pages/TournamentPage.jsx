@@ -5,6 +5,7 @@ import {
   Award, Star, Shield, Users, ChevronRight, Zap
 } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import './TournamentPage.css'
 
 /* ─── Data ─── */
 const TOP3 = [
@@ -169,7 +170,7 @@ export function TournamentPage() {
       <section className="t2-podium-section">
         {/* dark wave top */}
         <svg className="t2-wave-top" viewBox="0 0 1440 56" preserveAspectRatio="none">
-          <path d="M0,0 C480,56 960,56 1440,0 L1440,0 L0,0 Z" fill="#f4f6fb" />
+          <path d="M0,0 C480,56 960,56 1440,0 L1440,0 L0,0 Z" fill="#f8fafc" />
         </svg>
 
         <div className="t2-wrap">
@@ -238,7 +239,7 @@ export function TournamentPage() {
 
         {/* light wave bottom */}
         <svg className="t2-wave-bot" viewBox="0 0 1440 56" preserveAspectRatio="none">
-          <path d="M0,56 C480,0 960,0 1440,56 L1440,56 L0,56 Z" fill="#f4f6fb" />
+          <path d="M0,56 C480,0 960,0 1440,56 L1440,56 L0,56 Z" fill="#ffffff" />
         </svg>
       </section>
 
