@@ -9911,6 +9911,10 @@ p .feature-tag {
     max-width: calc(100% - 24px);
   }
 
+  .student-section .sub {
+    margin: 8px auto 17px !important;
+  }
+
   .student-scroll {
     margin-top: 14px;
     padding: 0 12px;
