@@ -110,7 +110,7 @@ export function UnifiedPopupModal() {
 
             <form onSubmit={handleSubmit} className="collab-form">
               <div className="collab-form-grid">
-                <div className="collab-form-group" style={{ gridColumn: 'span 2' }}>
+                <div className="collab-form-group collab-full-width">
                   <label htmlFor="modalName">Full Name *</label>
                   <input type="text" id="modalName" name="name" placeholder="Enter your full name" required />
                 </div>
@@ -126,18 +126,18 @@ export function UnifiedPopupModal() {
                 </div>
 
                 {formType === 'booking' ? (
-                  <div className="collab-form-group" style={{ gridColumn: 'span 2' }}>
+                  <div className="collab-form-group collab-full-width">
                     <label htmlFor="modalLocation">Location (City, Country) *</label>
                     <input type="text" id="modalLocation" name="location" placeholder="e.g. Rohini, Delhi or Paschim Vihar" required />
                   </div>
                 ) : (
                   <>
-                    <div className="collab-form-group" style={{ gridColumn: 'span 2' }}>
+                    <div className="collab-form-group collab-full-width">
                       <label htmlFor="modalSchool">School / Organization Name</label>
                       <input type="text" id="modalSchool" name="school_org" placeholder="Enter school or company name (optional)" />
                     </div>
 
-                    <div className="collab-form-group collab-full-width" style={{ gridColumn: 'span 2' }}>
+                    <div className="collab-form-group collab-full-width">
                       <label htmlFor="modalMessage">Message / Collaboration Details *</label>
                       <textarea id="modalMessage" name="message" placeholder="Write your requirements or details here..." rows="4" required></textarea>
                     </div>
