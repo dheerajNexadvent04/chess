@@ -438,7 +438,7 @@ export function HomePage() {
 
         <header className={`figma-nav ${headerScrolled ? 'is-scrolled' : ''}`}>
           <Link to="/book-class" className="header-mobile-book-btn" onClick={closeMobileMenu}>
-            Book Now
+            Book Online Class
           </Link>
           <button
             type="button"

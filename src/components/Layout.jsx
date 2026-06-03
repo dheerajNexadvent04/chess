@@ -60,7 +60,7 @@ export function Layout() {
       <header className={`header ${usesLightHeader ? 'about-header' : ''} ${headerScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-main">
           <Link to="/book-class" className="header-mobile-book-btn" onClick={() => setMenuOpen(false)}>
-            Book Now
+            Book Online Class
           </Link>
           <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)}>
             <img src="/logonewbg.png" alt="SckoolChess logo" />
