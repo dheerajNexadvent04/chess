@@ -10,14 +10,62 @@
   overflow-x: hidden;
 }
 
-/* ─── Override the generic scroll reveal padding bug ─── */
+/* ─── Scroll Reveal Animations ─── */
 .t2-page .reveal.active {
-  border-radius: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important;
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+
+/* Premium GSAP-style 3D Tilt Reveal */
+.t2-page .reveal-3d {
+  opacity: 0;
+  transform: perspective(1200px) rotateX(15deg) translateY(60px) scale(0.96);
+  transform-origin: top center;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.t2-page .reveal-3d.active {
+  opacity: 1 !important;
+  transform: perspective(1200px) rotateX(0deg) translateY(0) scale(1) !important;
+}
+
+/* Stagger delays for category cards (up to 12 cards) */
+.t2-cats__grid .t2-cat-card:nth-child(1) { transition-delay: 0.03s; }
+.t2-cats__grid .t2-cat-card:nth-child(2) { transition-delay: 0.08s; }
+.t2-cats__grid .t2-cat-card:nth-child(3) { transition-delay: 0.13s; }
+.t2-cats__grid .t2-cat-card:nth-child(4) { transition-delay: 0.18s; }
+.t2-cats__grid .t2-cat-card:nth-child(5) { transition-delay: 0.23s; }
+.t2-cats__grid .t2-cat-card:nth-child(6) { transition-delay: 0.28s; }
+.t2-cats__grid .t2-cat-card:nth-child(7) { transition-delay: 0.33s; }
+.t2-cats__grid .t2-cat-card:nth-child(8) { transition-delay: 0.38s; }
+.t2-cats__grid .t2-cat-card:nth-child(9) { transition-delay: 0.43s; }
+.t2-cats__grid .t2-cat-card:nth-child(10) { transition-delay: 0.48s; }
+.t2-cats__grid .t2-cat-card:nth-child(11) { transition-delay: 0.53s; }
+.t2-cats__grid .t2-cat-card:nth-child(12) { transition-delay: 0.58s; }
+
+/* Stagger delays for podium cards (3 slots) */
+.t2-podium .t2-slot:nth-child(1) { transition-delay: 0.08s; }
+.t2-podium .t2-slot:nth-child(2) { transition-delay: 0.24s; }
+.t2-podium .t2-slot:nth-child(3) { transition-delay: 0.16s; }
+
+/* Stagger delays for gallery mosaic items */
+.t2-gallery__mosaic .t2-gimg:nth-child(1) { transition-delay: 0.04s; }
+.t2-gallery__mosaic .t2-gimg:nth-child(2) { transition-delay: 0.12s; }
+.t2-gallery__mosaic .t2-gimg:nth-child(3) { transition-delay: 0.08s; }
+
+.t2-gallery__mosaic .t2-gimg:nth-child(4) { transition-delay: 0.16s; }
+.t2-gallery__mosaic .t2-gimg:nth-child(5) { transition-delay: 0.2s; }
+.t2-gallery__mosaic .t2-gimg:nth-child(6) { transition-delay: 0.24s; }
+.t2-gallery__mosaic .t2-gimg:nth-child(7) { transition-delay: 0.28s; }
+
+/* Stagger delays for overview stats */
+.t2-overview__stats .t2-stat:nth-child(1) { transition-delay: 0.04s; }
+.t2-overview__stats .t2-stat:nth-child(2) { transition-delay: 0.1s; }
+.t2-overview__stats .t2-stat:nth-child(3) { transition-delay: 0.16s; }
+.t2-overview__stats .t2-stat:nth-child(4) { transition-delay: 0.22s; }
+.t2-overview__stats .t2-overview__img { transition-delay: 0.3s; }
 
 /* Specific text color overrides for light text on dark backgrounds when active */
 .t2-page .t2-section-title--light.reveal.active {
@@ -166,7 +214,7 @@
 
 .t2-hero {
   position: relative;
-  min-height: 560px;
+  min-height: 420px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -180,6 +228,7 @@
   background-position: center 30%;
   transform: scale(1.05);
   animation: t2HeroZoom 10s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
 }
 
 @keyframes t2HeroZoom {
@@ -218,8 +267,19 @@
 .t2-hero__content {
   position: relative;
   z-index: 3;
-  padding: 120px 5% 100px;
-  max-width: 820px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
+  margin: 0 auto;
+  padding: 50px 52px 205px;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 1024px) {
+  .t2-hero__content {
+    width: calc(100% - 28px);
+    padding-left: 34px;
+    padding-right: 34px;
+  }
 }
 
 .t2-hero__content h1 {
@@ -278,7 +338,7 @@
   bottom: -2px;
   left: 0;
   width: 100%;
-  height: 56px;
+  height: 180px;
   z-index: 4;
 }
 
@@ -333,6 +393,7 @@
   border: 1px solid #eef2f8;
   box-shadow: 0 10px 30px rgba(13, 27, 46, 0.02);
   position: relative;
+  overflow: hidden;
 }
 
 .t2-overview__prose::before {
@@ -343,8 +404,6 @@
   width: 4px;
   height: 100%;
   background: linear-gradient(to bottom, #E8750A, #F5A623);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
 
 .t2-overview__prose p {
@@ -469,7 +528,7 @@
 .t2-wave-top, .t2-wave-bot {
   display: block;
   width: 100%;
-  height: 56px;
+  height: 80px;
   margin: 0;
   padding: 0;
 }
@@ -731,13 +790,7 @@
   cursor: default;
 }
 
-/* Protect the card padding from global reveal active hijacking */
-.t2-page .t2-cat-card.reveal.active {
-  padding: 16px 20px !important;
-  border-radius: 18px !important;
-  box-shadow: 0 4px 12px rgba(13, 27, 46, 0.02) !important;
-  color: inherit !important;
-}
+
 
 .t2-page .t2-cat-card:hover {
   transform: translateY(-4px);
@@ -917,13 +970,7 @@
   color: #ffffff !important;
 }
 
-/* Protect the card padding & color from global reveal active hijacking */
-.t2-page .t2-upcoming.reveal.active {
-  padding: 48px !important;
-  border-radius: 24px !important;
-  box-shadow: 0 20px 48px rgba(13, 27, 46, 0.18) !important;
-  color: #ffffff !important;
-}
+
 
 .t2-upcoming::after {
   content: '';
@@ -982,13 +1029,7 @@
   color: #ffffff !important;
 }
 
-/* Protect the card padding & color from global reveal active hijacking */
-.t2-page .t2-cta.reveal.active {
-  padding: 48px !important;
-  border-radius: 24px !important;
-  box-shadow: 0 20px 48px rgba(232, 117, 10, 0.24) !important;
-  color: #ffffff !important;
-}
+
 
 .t2-cta::before {
   content: '';
@@ -1137,11 +1178,11 @@
 
 @media (max-width: 768px) {
   .t2-hero {
-    min-height: 480px;
+    min-height: 340px;
   }
   .t2-hero__content {
-    padding-top: 100px;
-    padding-bottom: 80px;
+    width: 100%;
+    padding: 50px 14px 95px;
   }
   .t2-podium {
     flex-direction: column;

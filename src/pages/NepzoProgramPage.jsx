@@ -1,33 +1,21 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Wallet,
-  PiggyBank,
   TrendingUp,
-  Scale,
-  GraduationCap,
-  ClipboardList,
-  LineChart,
-  HelpCircle,
-  BookOpen,
-  Trophy,
-  Lightbulb,
-  Briefcase,
-  Megaphone,
-  Rocket,
-  Store,
-  Mic,
-  Hash,
   Award,
   Users,
   Brain,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Wallet,
+  Rocket
 } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import './NepzoProgramPage.css'
 
 export function NepzoProgramPage() {
   const [activeTrack, setActiveTrack] = useState('financial') // 'financial' or 'entrepreneur'
+  useScrollReveal([activeTrack])
 
   useEffect(() => {
     document.title = 'NEPZO Future Ready Learning Program | SckoolChess'
@@ -69,27 +57,27 @@ export function NepzoProgramPage() {
     {
       title: 'Smart Money Management',
       desc: 'Learn to value, budget, and manage personal cash flow responsibly.',
-      icon: <Wallet size={24} />
+      image: '/c1.jpg'
     },
     {
       title: 'Budgeting and Saving',
       desc: 'Understand saving habits, target-setting, and the magic of compound interest.',
-      icon: <PiggyBank size={24} />
+      image: '/c2.jpg'
     },
     {
       title: 'Investment Basics',
       desc: 'Get introduced to stocks, banking fundamentals, and micro-investing structures.',
-      icon: <LineChart size={24} />
+      image: '/c3.jpg'
     },
     {
       title: 'Financial Decision Making',
       desc: 'Evaluate risks and returns, making logical choices for short & long-term goals.',
-      icon: <Scale size={24} />
+      image: '/c4.jpg'
     },
     {
       title: 'Advanced Money & Life Readiness',
       desc: 'Apply financial concepts to simulated real-world scenarios for life preparation.',
-      icon: <GraduationCap size={24} />
+      image: '/c5.jpg'
     }
   ]
 
@@ -97,27 +85,27 @@ export function NepzoProgramPage() {
     {
       title: 'Budget Worksheets',
       desc: 'Draft and balance budgets for hypothetical life projects and simulations.',
-      icon: <ClipboardList size={22} />
+      image: '/s1.jpeg'
     },
     {
       title: 'Mock Stock Market Game',
       desc: 'Participate in stock-trading simulations to learn market dynamics safely.',
-      icon: <TrendingUp size={22} />
+      image: '/s2.jpeg'
     },
     {
       title: 'Financial Quizzes',
       desc: 'Fun, competitive trivia to test knowledge on banking, ethics, and savings.',
-      icon: <HelpCircle size={22} />
+      image: '/s3.jpeg'
     },
     {
       title: 'Expense Diary Challenge',
       desc: 'Log and analyze mock daily expenditures to cultivate disciplined habits.',
-      icon: <BookOpen size={22} />
+      image: '/s4.jpeg'
     },
     {
       title: 'Savings Challenge Competition',
       desc: 'Compete in teams to design the most effective savings strategies.',
-      icon: <Trophy size={22} />
+      image: '/c6.jpeg'
     }
   ]
 
@@ -126,22 +114,22 @@ export function NepzoProgramPage() {
     {
       title: 'Entrepreneurial Mindset',
       desc: 'Develop confidence, creativity, and a passion to solve real-world problems.',
-      icon: <Lightbulb size={24} />
+      image: '/n1.jpg'
     },
     {
       title: 'Business Fundamentals',
       desc: 'Understand business models, customer segments, operations, and startup structures.',
-      icon: <Briefcase size={24} />
+      image: '/n2.jpg'
     },
     {
       title: 'Branding & Marketing',
       desc: 'Master product naming, logo creation, branding, and target audience marketing.',
-      icon: <Megaphone size={24} />
+      image: '/n3.jpg'
     },
     {
       title: 'Startup Creation Lab',
       desc: 'Collaborate to turn raw ideas into viable startup projects from scratch.',
-      icon: <Rocket size={24} />
+      image: '/n4.jpg'
     }
   ]
 
@@ -149,22 +137,22 @@ export function NepzoProgramPage() {
     {
       title: 'Local Business Visits',
       desc: 'Visit active commercial enterprises and learn from seasoned local entrepreneurs.',
-      icon: <Store size={22} />
+      image: '/n5.jpg'
     },
     {
       title: 'Student Startup Stalls',
       desc: 'Set up sales counters at school events to experience selling and generating profit.',
-      icon: <Briefcase size={22} />
+      image: '/g1.jpeg'
     },
     {
       title: 'Shark Tank Style Pitching',
       desc: 'Present ideas before mock panels to receive feedback and refine plans.',
-      icon: <Mic size={22} />
+      image: '/g2.jpeg'
     },
     {
       title: 'Social Media Campaign Projects',
       desc: 'Create mock digital marketing drives for brands, businesses, or social goals.',
-      icon: <Hash size={22} />
+      image: '/g3.jpeg'
     }
   ]
 
@@ -172,28 +160,36 @@ export function NepzoProgramPage() {
     <div className="nz-page">
       {/* ── 1. HERO SECTION ── */}
       <section className="nz-hero">
+        <video
+          className="nz-hero__bg-video"
+          src="/nepzo-bg-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         <div className="nz-wrap">
           <div className="nz-hero__inner">
-            <div className="nz-hero__logo-strip">
+            <div className="nz-hero__logo-strip reveal fade-up" style={{ '--delay': '0.05s' }}>
               <img src="/nepzobg.png" alt="NEPZO Logo" className="nz-hero__partner-logo nz-hero__partner-logo--nepzo" />
               <div className="nz-hero__divider"></div>
               <img src="/logonewbg.png" alt="SckoolChess Logo" className="nz-hero__partner-logo" />
             </div>
 
-            <span className="nz-eyebrow">
+            <span className="nz-eyebrow reveal fade-up" style={{ '--delay': '0.15s' }}>
               <Sparkles size={13} style={{ fill: '#fbbf24', stroke: '#E8750A' }} />
               NEP 2020 Aligned | Classes 5 to 10
             </span>
 
-            <h1 className="nz-hero__heading">
+            <h1 className="nz-hero__heading reveal fade-up" style={{ '--delay': '0.25s' }}>
               Future Ready Learning Program
             </h1>
 
-            <p className="nz-hero__sub">
+            <p className="nz-hero__sub reveal fade-up" style={{ '--delay': '0.35s' }}>
               An experiential education program powered by SckoolChess, co-designed with NEPZO to equip students with real-world skills, leadership qualities, financial responsibility, and an entrepreneurial mindset.
             </p>
 
-            <div className="nz-hero__actions">
+            <div className="nz-hero__actions reveal fade-up" style={{ '--delay': '0.45s' }}>
               <Link to="/book-class" className="nz-btn-primary" id="nepzo-hero-cta">
                 <span>Book a Free Session</span>
               </Link>
@@ -215,15 +211,15 @@ export function NepzoProgramPage() {
       <section className="nz-tracks-section">
         <div className="nz-wrap">
           <div className="nz-section-header">
-            <span className="nz-section-label">Select Core Program Track</span>
-            <h2 className="nz-section-title">Explore Our Future-Ready Pathways</h2>
-            <p className="nz-section-sub">
+            <span className="nz-section-label reveal fade-up" style={{ '--delay': '0.05s' }}>Select Core Program Track</span>
+            <h2 className="nz-section-title reveal fade-up" style={{ '--delay': '0.15s' }}>Explore Our Future-Ready Pathways</h2>
+            <p className="nz-section-sub reveal fade-up" style={{ '--delay': '0.25s' }}>
               Click the tracks below to see the specific skills students develop and the engaging practical activities they experience.
             </p>
           </div>
 
           {/* Toggle buttons */}
-          <div className="nz-track-toggle-container">
+          <div className="nz-track-toggle-container reveal reveal-3d" style={{ '--delay': '0.3s' }}>
             <button
               onClick={() => setActiveTrack('financial')}
               className={`nz-track-toggle-btn ${activeTrack === 'financial' ? 'active active--financial' : ''}`}
@@ -246,7 +242,7 @@ export function NepzoProgramPage() {
           <div className="nz-track-panel">
             {activeTrack === 'financial' ? (
               <div className="nz-fade-in">
-                <div className="nz-track-intro">
+                <div className="nz-track-intro reveal fade-up" style={{ '--delay': '0.05s' }}>
                   <span className="nz-track-badge nz-track-badge--financial">Wealth IQ Track</span>
                   <h3>Financial Literacy Program</h3>
                   <p>
@@ -257,11 +253,15 @@ export function NepzoProgramPage() {
                 <div className="nz-panel-grid">
                   {/* Skills Grid */}
                   <div className="nz-panel-column">
-                    <h4 className="nz-panel-column-title">Skills Students Will Learn</h4>
+                    <h4 className="nz-panel-column-title reveal fade-up" style={{ '--delay': '0.12s' }}>Skills Students Will Learn</h4>
                     <div className="nz-cards-list">
                       {financialSkills.map((skill, index) => (
-                        <div key={index} className="nz-skill-card">
-                          <div className="nz-skill-icon nz-skill-icon--financial">{skill.icon}</div>
+                        <div
+                          key={index}
+                          className="nz-skill-card reveal reveal-3d"
+                          style={{ '--delay': `${index * 0.05 + 0.15}s` }}
+                        >
+                          <img src={skill.image} className="nz-skill-img" alt={skill.title} />
                           <div className="nz-skill-content">
                             <h5>{skill.title}</h5>
                             <p>{skill.desc}</p>
@@ -273,11 +273,15 @@ export function NepzoProgramPage() {
 
                   {/* Activities Grid */}
                   <div className="nz-panel-column">
-                    <h4 className="nz-panel-column-title">Activities &amp; Games</h4>
+                    <h4 className="nz-panel-column-title reveal fade-up" style={{ '--delay': '0.12s' }}>Activities &amp; Games</h4>
                     <div className="nz-cards-list">
                       {financialActivities.map((act, index) => (
-                        <div key={index} className="nz-activity-card">
-                          <div className="nz-activity-icon nz-activity-icon--financial">{act.icon}</div>
+                        <div
+                          key={index}
+                          className="nz-activity-card reveal reveal-3d"
+                          style={{ '--delay': `${index * 0.05 + 0.15}s` }}
+                        >
+                          <img src={act.image} className="nz-activity-img" alt={act.title} />
                           <div className="nz-activity-content">
                             <h5>{act.title}</h5>
                             <p>{act.desc}</p>
@@ -290,7 +294,7 @@ export function NepzoProgramPage() {
               </div>
             ) : (
               <div className="nz-fade-in">
-                <div className="nz-track-intro">
+                <div className="nz-track-intro reveal fade-up" style={{ '--delay': '0.05s' }}>
                   <span className="nz-track-badge nz-track-badge--entrepreneur">Innovation Track</span>
                   <h3>Entrepreneurship Program</h3>
                   <p>
@@ -301,11 +305,15 @@ export function NepzoProgramPage() {
                 <div className="nz-panel-grid">
                   {/* Skills Grid */}
                   <div className="nz-panel-column">
-                    <h4 className="nz-panel-column-title">Skills Students Will Develop</h4>
+                    <h4 className="nz-panel-column-title reveal fade-up" style={{ '--delay': '0.12s' }}>Skills Students Will Develop</h4>
                     <div className="nz-cards-list">
                       {entrepreneurSkills.map((skill, index) => (
-                        <div key={index} className="nz-skill-card">
-                          <div className="nz-skill-icon nz-skill-icon--entrepreneur">{skill.icon}</div>
+                        <div
+                          key={index}
+                          className="nz-skill-card reveal reveal-3d"
+                          style={{ '--delay': `${index * 0.05 + 0.15}s` }}
+                        >
+                          <img src={skill.image} className="nz-skill-img" alt={skill.title} />
                           <div className="nz-skill-content">
                             <h5>{skill.title}</h5>
                             <p>{skill.desc}</p>
@@ -317,11 +325,15 @@ export function NepzoProgramPage() {
 
                   {/* Activities Grid */}
                   <div className="nz-panel-column">
-                    <h4 className="nz-panel-column-title">Practical Activities</h4>
+                    <h4 className="nz-panel-column-title reveal fade-up" style={{ '--delay': '0.12s' }}>Practical Activities</h4>
                     <div className="nz-cards-list">
                       {entrepreneurActivities.map((act, index) => (
-                        <div key={index} className="nz-activity-card">
-                          <div className="nz-activity-icon nz-activity-icon--entrepreneur">{act.icon}</div>
+                        <div
+                          key={index}
+                          className="nz-activity-card reveal reveal-3d"
+                          style={{ '--delay': `${index * 0.05 + 0.15}s` }}
+                        >
+                          <img src={act.image} className="nz-activity-img" alt={act.title} />
                           <div className="nz-activity-content">
                             <h5>{act.title}</h5>
                             <p>{act.desc}</p>
@@ -341,16 +353,20 @@ export function NepzoProgramPage() {
       <section className="nz-benefits-section">
         <div className="nz-wrap">
           <div className="nz-section-header">
-            <span className="nz-section-label">Program Outcomes</span>
-            <h2 className="nz-section-title">Holistic Growth Ecosystem</h2>
-            <p className="nz-section-sub">
+            <span className="nz-section-label reveal fade-up" style={{ '--delay': '0.05s' }}>Program Outcomes</span>
+            <h2 className="nz-section-title reveal fade-up" style={{ '--delay': '0.15s' }}>Holistic Growth Ecosystem</h2>
+            <p className="nz-section-sub reveal fade-up" style={{ '--delay': '0.25s' }}>
               Empowering school ecosystems with actionable capabilities and structural advantages.
             </p>
           </div>
 
           <div className="nz-benefits-grid">
             {pillars.map((p, idx) => (
-              <div key={idx} className="nz-benefit-card">
+              <div
+                key={idx}
+                className="nz-benefit-card reveal reveal-3d"
+                style={{ '--delay': `${idx * 0.06 + 0.15}s` }}
+              >
                 <div className="nz-benefit-icon">{p.icon}</div>
                 <h4>{p.title}</h4>
                 <p>{p.desc}</p>
@@ -363,7 +379,7 @@ export function NepzoProgramPage() {
       {/* ── 4. CLOSING CTA BANNER ── */}
       <section className="nz-cta-section">
         <div className="nz-wrap">
-          <div className="nz-cta-card">
+          <div className="nz-cta-card reveal reveal-3d" style={{ '--delay': '0.1s' }}>
             <div className="nz-cta-inner">
               <span className="nz-cta-tag">Co-powered by SckoolChess</span>
               <h2>Future Skills. Real Learning. Lasting Impact.</h2>

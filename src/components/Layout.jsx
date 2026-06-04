@@ -63,13 +63,7 @@ export function Layout() {
           <Link 
             to="/book-class" 
             className="header-mobile-book-btn" 
-            onClick={(e) => {
-              e.preventDefault();
-              setMenuOpen(false);
-              window.dispatchEvent(new CustomEvent('open-custom-modal', {
-                detail: { type: 'booking', section: 'Mobile Header' }
-              }));
-            }}
+            onClick={() => setMenuOpen(false)}
           >
             Book Online Class
           </Link>
@@ -135,13 +129,7 @@ export function Layout() {
               <NavLink 
                 className="nav-link book-class-highlight" 
                 to="/book-class" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMenuOpen(false);
-                  window.dispatchEvent(new CustomEvent('open-custom-modal', {
-                    detail: { type: 'booking', section: 'Desktop Header' }
-                  }));
-                }}
+                onClick={() => setMenuOpen(false)}
               >
                 BOOK ONLINE CLASS
               </NavLink>
@@ -178,7 +166,7 @@ export function Layout() {
                       }
                     }}
                     className={({ isActive }) => {
-                      return `${isActive ? 'active' : ''} ${isBookClass ? 'book-class-highlight' : ''}`.trim()
+                      return isActive ? 'active' : ''
                     }}
                   >
                     {link.label}

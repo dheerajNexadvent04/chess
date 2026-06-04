@@ -69,6 +69,68 @@ export function TournamentPage() {
     return () => window.removeEventListener('keydown', esc)
   }, [])
 
+  // Dynamic interactive scroll wave animation
+  useEffect(() => {
+    const heroWave = document.querySelector('.t2-hero__wave path')
+    const podiumSection = document.querySelector('.t2-podium-section')
+    const topWave = document.querySelector('.t2-wave-top path')
+    const botWave = document.querySelector('.t2-wave-bot path')
+
+    const handleScroll = () => {
+      // 1. Hero Bottom Wave & Parallax Exit
+      const scrollTop = window.scrollY
+      if (heroWave) {
+        const heroThreshold = 500
+        const progress = Math.min(1, scrollTop / heroThreshold)
+        // cpY starts at 20 (more pronounced roundness) and goes to -40 (much deeper curve) on scroll down
+        const cpY = 20 - (progress * 60)
+        heroWave.setAttribute('d', `M0,180 C360,${cpY} 1080,${cpY} 1440,180 L1440,180 L0,180 Z`)
+      }
+
+      const heroPhoto = document.querySelector('.t2-hero__photo')
+      const heroContent = document.querySelector('.t2-hero__content')
+      if (heroPhoto) {
+        heroPhoto.style.transform = `translateY(${scrollTop * 0.35}px)`
+      }
+      if (heroContent) {
+        heroContent.style.transform = `translateY(${scrollTop * 0.15}px)`
+        heroContent.style.opacity = Math.max(0, 1 - (scrollTop / 550))
+      }
+
+      // 2. Podium Section Waves
+      if (podiumSection && (topWave || botWave)) {
+        const rect = podiumSection.getBoundingClientRect()
+        const viewportHeight = window.innerHeight
+        const totalHeight = rect.height + viewportHeight
+        const scrolled = viewportHeight - rect.top
+        const progress = Math.max(0, Math.min(1, scrolled / totalHeight))
+
+        // Top Wave (curves down): cpY starts at 56 (original depth) and goes to 75 (deeper downward curve)
+        if (topWave) {
+          const cpYTop = 56 + (progress * 19)
+          topWave.setAttribute('d', `M0,0 C480,${cpYTop} 960,${cpYTop} 1440,0 L1440,0 L0,0 Z`)
+        }
+
+        // Bottom Wave (curves up): cpY starts at 24 (original depth) and goes to 10 (deeper upward curve)
+        if (botWave) {
+          const cpYBot = 24 - (progress * 14)
+          botWave.setAttribute('d', `M0,80 C480,${cpYBot} 960,${cpYBot} 1440,80 L1440,80 L0,80 Z`)
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll, { passive: true })
+    
+    // Initial run
+    handleScroll()
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
+  }, [])
+
   return (
     <div className="t2-page">
 
@@ -96,8 +158,8 @@ export function TournamentPage() {
         </div>
 
         {/* bottom wave */}
-        <svg className="t2-hero__wave" viewBox="0 0 1440 72" preserveAspectRatio="none">
-          <path d="M0,72 C360,0 1080,0 1440,72 L1440,72 L0,72 Z" fill="#f4f6fb" />
+        <svg className="t2-hero__wave" viewBox="0 0 1440 180" preserveAspectRatio="none">
+          <path d="M0,180 C360,20 1080,20 1440,180 L1440,180 L0,180 Z" fill="#f4f6fb" />
         </svg>
       </header>
 
@@ -111,10 +173,10 @@ export function TournamentPage() {
             SckoolChess Diwali Bonanza<br />Open Chess Tournament
           </h2>
 
-          <div className="t2-overview__body reveal fade-up">
+          <div className="t2-overview__body">
 
             {/* — Narrative text — */}
-            <div className="t2-overview__prose">
+            <div className="t2-overview__prose reveal reveal-3d">
               <div className="t2-overview__meta">
                 <span><Calendar size={14} strokeWidth={2} /> 19 – 20 October 2019</span>
                 <span><MapPin size={14} strokeWidth={2} /> Bansal Bhawan, Sector-16, Rohini, New Delhi</span>
@@ -143,7 +205,7 @@ export function TournamentPage() {
             </div>
 
             {/* — Stats strip — */}
-            <div className="t2-overview__stats">
+            <div className="t2-overview__stats reveal reveal-3d">
               {[
                 { v: '114',     l: 'Players',          icon: Users   },
                 { v: '17',      l: 'FIDE Rated',        icon: Star    },
@@ -169,7 +231,7 @@ export function TournamentPage() {
       {/* ════════════ PODIUM ════════════ */}
       <section className="t2-podium-section">
         {/* dark wave top */}
-        <svg className="t2-wave-top" viewBox="0 0 1440 56" preserveAspectRatio="none">
+        <svg className="t2-wave-top" viewBox="0 0 1440 80" preserveAspectRatio="none">
           <path d="M0,0 C480,56 960,56 1440,0 L1440,0 L0,0 Z" fill="#f8fafc" />
         </svg>
 
@@ -181,10 +243,10 @@ export function TournamentPage() {
           </p>
 
           {/* Podium arena */}
-          <div className="t2-podium reveal fade-up">
+          <div className="t2-podium">
 
             {/* 2nd — Silver */}
-            <div className="t2-slot t2-slot--silver">
+            <div className="t2-slot t2-slot--silver reveal reveal-3d">
               <div className="t2-slot__card">
                 <div className="t2-slot__avatar t2-slot__avatar--plain">
                   <User size={26} strokeWidth={1.5} />
@@ -200,7 +262,7 @@ export function TournamentPage() {
             </div>
 
             {/* 1st — Gold (center, tallest) */}
-            <div className="t2-slot t2-slot--gold">
+            <div className="t2-slot t2-slot--gold reveal reveal-3d">
               <div className="t2-slot__trophy"><Trophy size={42} strokeWidth={1.3} /></div>
               <div className="t2-slot__card t2-slot__card--gold">
                 <div className="t2-slot__avatar t2-slot__avatar--gold">
@@ -218,7 +280,7 @@ export function TournamentPage() {
             </div>
 
             {/* 3rd — Bronze */}
-            <div className="t2-slot t2-slot--bronze">
+            <div className="t2-slot t2-slot--bronze reveal reveal-3d">
               <div className="t2-slot__card">
                 <div className="t2-slot__avatar">
                   <img src="/c4.jpg" alt="Love Jindal" />
@@ -238,8 +300,8 @@ export function TournamentPage() {
         </div>
 
         {/* light wave bottom */}
-        <svg className="t2-wave-bot" viewBox="0 0 1440 56" preserveAspectRatio="none">
-          <path d="M0,56 C480,0 960,0 1440,56 L1440,56 L0,56 Z" fill="#ffffff" />
+        <svg className="t2-wave-bot" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,80 C480,24 960,24 1440,80 L1440,80 L0,80 Z" fill="#ffffff" />
         </svg>
       </section>
 
@@ -256,7 +318,7 @@ export function TournamentPage() {
             {CATEGORIES.map((c, i) => {
               const Icon = c.icon
               return (
-                <div className="t2-cat-card reveal fade-up" key={i} style={{ '--d': `${i * 0.04}s` }}>
+                <div className="t2-cat-card reveal reveal-3d" key={i} style={{ '--d': `${i * 0.04}s` }}>
                   <div className="t2-cat-card__num">{String(i + 1).padStart(2, '0')}</div>
                   <div className="t2-cat-card__avatar">
                     {c.img
@@ -289,7 +351,7 @@ export function TournamentPage() {
             {GALLERY.map((img, i) => (
               <div
                 key={i}
-                className={`t2-gimg t2-gimg--${img.span || 'sm'}`}
+                className={`t2-gimg t2-gimg--${img.span || 'sm'} reveal reveal-3d`}
                 onClick={() => setLb(img)}
               >
                 <img src={img.src} alt={img.caption} loading="lazy" />
@@ -305,7 +367,7 @@ export function TournamentPage() {
         <div className="t2-wrap t2-bottom__grid">
 
           {/* Upcoming card */}
-          <div className="t2-upcoming reveal fade-up">
+          <div className="t2-upcoming reveal reveal-3d">
             <span className="t2-upcoming__tag"><Zap size={11} /> Upcoming</span>
             <h3>Stay Tuned for Our Next Tournament</h3>
             <p>
@@ -316,7 +378,7 @@ export function TournamentPage() {
           </div>
 
           {/* CTA card */}
-          <div className="t2-cta reveal fade-up">
+          <div className="t2-cta reveal reveal-3d">
             <Trophy size={36} className="t2-cta__icon" />
             <h3>Ready to Train for the Next Championship?</h3>
             <p>SckoolChess provides DCA-affiliated training, FIDE guidance and extensive tournament practice.</p>

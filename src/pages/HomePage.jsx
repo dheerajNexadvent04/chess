@@ -143,24 +143,31 @@ const schoolLogos = [
   { src: '/the vasant international.png', alt: 'The Vasant International Pre-School', className: 'logo-square-sm' },
 ]
 
-const gallery = [
+const col1 = [
   '/g1.jpeg',
   '/g2.jpeg',
   '/g3.jpeg',
   '/g4.jpeg',
   '/g5.jpeg',
   '/g6.jpeg',
+]
+
+const col2 = [
   '/g7.jpeg',
   '/g8.jpeg',
   '/g9.jpeg',
   '/g10.jpeg',
   '/g11.jpeg',
   '/g12.jpeg',
+]
+
+const col3 = [
   '/g13.jpeg',
   '/g14.jpeg',
   '/g15.jpeg',
   '/g16.jpeg',
   '/g17.jpeg',
+  '/g1.jpeg',
 ]
 
 const marqueeItems = [
@@ -209,7 +216,6 @@ export function HomePage() {
   const metricsCountStartedRef = useRef(false)
   const reviewGridRef = useRef(null)
   const studentScrollRef = useRef(null)
-  const galleryRef = useRef(null)
   const dragStateRef = useRef({
     isDown: false,
     startX: 0,
@@ -339,31 +345,7 @@ export function HomePage() {
     }
   }, [])
 
-  useEffect(() => {
-    const node = galleryRef.current
-    if (!node) return
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('pop-in')
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-    )
-
-    const images = node.querySelectorAll('img')
-    images.forEach((img, i) => {
-      const col = i % 3
-      img.style.transitionDelay = `${col * 0.12}s`
-      observer.observe(img)
-    })
-
-    return () => observer.disconnect()
-  }, [])
 
   const closeMobileMenu = () => setMobileMenuOpen(false)
 
@@ -441,13 +423,7 @@ export function HomePage() {
           <Link 
             to="/book-class" 
             className="header-mobile-book-btn" 
-            onClick={(e) => {
-              e.preventDefault();
-              closeMobileMenu();
-              window.dispatchEvent(new CustomEvent('open-custom-modal', {
-                detail: { type: 'booking', section: 'Mobile Header' }
-              }));
-            }}
+            onClick={closeMobileMenu}
           >
             Book Online Class
           </Link>
@@ -484,12 +460,6 @@ export function HomePage() {
               <Link 
                 className="book-class-highlight" 
                 to="/book-class"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.dispatchEvent(new CustomEvent('open-custom-modal', {
-                    detail: { type: 'booking', section: 'Desktop Header' }
-                  }));
-                }}
               >
                 Book Online Class
               </Link>
@@ -524,7 +494,7 @@ export function HomePage() {
                     }
                   }}
                   className={({ isActive }) => {
-                    return `${isActive ? 'active' : ''} ${isHighlight ? 'book-class-highlight' : ''}`.trim()
+                    return isActive ? 'active' : ''
                   }}
                 >
                   {item.label}
@@ -903,10 +873,28 @@ export function HomePage() {
 
       <section className="figma-section gallery-section">
         <h2>Gallery</h2>
-        <div className="gallery-grid" ref={galleryRef}>
-          {gallery.map((src, idx) => (
-            <img key={`${src}-${idx}`} src={src} alt="Gallery" />
-          ))}
+        <div className="gallery-columns-container">
+          <div className="gallery-column side-column">
+            <div className="gallery-column-track scroll-up">
+              {col1.concat(col1).map((src, idx) => (
+                <img key={`col1-${idx}`} src={src} alt="Gallery item" />
+              ))}
+            </div>
+          </div>
+          <div className="gallery-column center-column">
+            <div className="gallery-column-track scroll-down">
+              {col2.concat(col2).map((src, idx) => (
+                <img key={`col2-${idx}`} src={src} alt="Gallery item" />
+              ))}
+            </div>
+          </div>
+          <div className="gallery-column side-column">
+            <div className="gallery-column-track scroll-up">
+              {col3.concat(col3).map((src, idx) => (
+                <img key={`col3-${idx}`} src={src} alt="Gallery item" />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

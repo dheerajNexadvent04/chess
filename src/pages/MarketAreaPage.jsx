@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { MapPin, ArrowRight, Phone, Globe } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const serviceAreas = [
   {
@@ -50,11 +51,6 @@ const serviceAreas = [
     keywords: 'chess coaching Faridabad, best chess classes Faridabad',
   },
   {
-    city: 'Narela',
-    desc: 'Online chess classes available for students in Narela and nearby areas. Structured batches for all levels.',
-    keywords: 'online chess classes Narela',
-  },
-  {
     city: 'Indirapuram',
     desc: 'SckoolChess coaching centre in Indirapuram — serving Vaishali, Kaushambi and Noida with offline and online classes.',
     keywords: 'chess classes Indirapuram, online chess Indirapuram',
@@ -95,6 +91,8 @@ const stats = [
 ]
 
 export function MarketAreaPage() {
+  useScrollReveal()
+
   useEffect(() => {
     document.title = 'SckoolChess | Chess Classes Near Me — Service Areas Delhi NCR'
     const metaDesc = document.querySelector('meta[name="description"]')
@@ -112,17 +110,17 @@ export function MarketAreaPage() {
       {/* ── Hero ── */}
       <section className="ma-hero">
         <div className="ma-hero__inner">
-          <p className="ma-hero__kicker">
+          <p className="ma-hero__kicker reveal fade-up" style={{ '--delay': '0.05s' }}>
             <MapPin size={16} strokeWidth={2.3} />
             Chess Classes Near You
           </p>
-          <h1 className="ma-hero__heading">
+          <h1 className="ma-hero__heading reveal fade-up" style={{ '--delay': '0.15s' }}>
             Chess Classes Across Delhi NCR &amp; Beyond
           </h1>
-          <p className="ma-hero__sub">
+          <p className="ma-hero__sub reveal fade-up" style={{ '--delay': '0.25s' }}>
             SckoolChess provides expert chess coaching across Rohini, Pitampura, Paschim Vihar, Shalimar Bagh, Dwarka, Indirapuram, Vaishali, Vasundhara, Gurgaon, Noida, Navi Mumbai and pan-India online. Find your nearest centre or book online.
           </p>
-          <div className="ma-hero__actions">
+          <div className="ma-hero__actions reveal fade-up" style={{ '--delay': '0.35s' }}>
             <Link to="/book-class" className="ma-btn-primary">Book a Free Trial</Link>
             <a href="tel:+918447992702" className="ma-btn-secondary">
               <Phone size={16} strokeWidth={2.3} /> Call Us Now
@@ -134,8 +132,8 @@ export function MarketAreaPage() {
 
       {/* ── Stats Bar ── */}
       <section className="ma-stats-bar">
-        {stats.map((s) => (
-          <div key={s.label} className="ma-stat">
+        {stats.map((s, idx) => (
+          <div key={s.label} className="ma-stat reveal reveal-3d" style={{ '--delay': `${idx * 0.08}s` }}>
             <strong>{s.value}</strong>
             <span>{s.label}</span>
           </div>
@@ -147,8 +145,8 @@ export function MarketAreaPage() {
         <div className="ma-areas-inner">
           <div className="ma-areas-header">
             <p className="ma-areas-kicker">Our Service Areas</p>
-            <h2 className="ma-areas-heading">Find Chess Classes in Your City</h2>
-            <p className="ma-areas-sub">
+            <h2 className="ma-areas-heading reveal fade-up">Find Chess Classes in Your City</h2>
+            <p className="ma-areas-sub reveal fade-up">
               SckoolChess offers chess classes online and offline across all these locations. Don't see your area? Online classes are available pan-India.
             </p>
           </div>
@@ -157,8 +155,8 @@ export function MarketAreaPage() {
             {serviceAreas.map((area, idx) => (
               <div
                 key={area.city}
-                className={`ma-card ${area.highlight ? 'ma-card--highlight' : ''}`}
-                style={{ '--delay': `${idx * 0.05}s` }}
+                className={`ma-card ${area.highlight ? 'ma-card--highlight' : ''} reveal reveal-3d`}
+                style={{ '--delay': `${idx * 0.04}s` }}
               >
                 <div className="ma-card__top">
                   <div className="ma-card__icon">
@@ -177,7 +175,10 @@ export function MarketAreaPage() {
             ))}
 
             {/* Pan-India card */}
-            <div className="ma-card ma-card--pan-india">
+            <div 
+              className="ma-card ma-card--pan-india reveal reveal-3d"
+              style={{ '--delay': `${serviceAreas.length * 0.04}s` }}
+            >
               <div className="ma-card__top">
                 <div className="ma-card__icon ma-card__icon--globe">
                   <Globe size={20} strokeWidth={2} />
@@ -196,13 +197,13 @@ export function MarketAreaPage() {
 
       {/* ── Location Tags Strip ── */}
       <section className="ma-tags-section">
-        <div className="ma-tags-inner">
+        <div className="ma-tags-inner reveal reveal-3d">
           <p className="ma-tags-label">Chess Classes Near You</p>
           <div className="ma-tags-wrap">
             {[
               'Rohini', 'Pitampura', 'Paschim Vihar', 'Shalimar Bagh', 'Dwarka',
               'Ashok Vihar', 'Punjabi Bagh', 'Sonipat', 'Faridabad',
-              'Narela', 'Indirapuram', 'Vaishali', 'Kaushambi', 'Gurgaon', 'Noida',
+              'Indirapuram', 'Vaishali', 'Kaushambi', 'Gurgaon', 'Noida',
               'Navi Mumbai', 'Vasundhara', 'Ghaziabad'
             ].map((loc) => (
               <Link key={loc} to="/book-class" className="ma-tag">{loc}</Link>
@@ -213,7 +214,7 @@ export function MarketAreaPage() {
 
       {/* ── CTA Banner ── */}
       <section className="ma-cta-section">
-        <div className="ma-cta-inner">
+        <div className="ma-cta-inner reveal reveal-3d">
           <div className="ma-cta-content">
             <h2>Ready to Start Your Chess Journey?</h2>
             <p>Book a free trial class with SckoolChess today — available online for students across India and offline in Rohini and Indirapuram.</p>

@@ -484,8 +484,8 @@ html {
 /* New Curriculum Hero */
 .new-curriculum-hero {
   background-color: #0D1B2E;
-  padding: 50px 5% 140px;
-  min-height: 80vh;
+  padding: 50px 0 50px;
+  min-height: 450px;
   display: flex;
   align-items: center;
   position: relative;
@@ -505,15 +505,16 @@ html {
 }
 
 .nch-container {
-  max-width: 1400px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
+  padding: 0 52px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
   z-index: 2;
   position: relative;
-  width: 100%;
 }
 
 .nch-left {
@@ -844,18 +845,20 @@ html {
 @media (max-width: 992px) {
   .new-curriculum-hero {
     min-height: auto;
-    padding: 60px 5% 100px;
+    padding: 50px 0 40px;
   }
 
   .nch-container {
     grid-template-columns: 1fr;
-    text-align: center;
+    width: calc(100% - 28px);
+    padding: 0 34px;
+    text-align: left;
   }
 
   .nch-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .nch-left h1 {
@@ -872,7 +875,7 @@ html {
   }
 
   .nch-actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .nch-image-wrapper {
@@ -884,7 +887,11 @@ html {
 
 @media (max-width: 576px) {
   .new-curriculum-hero {
-    padding: 40px 5% 60px;
+    padding: 40px 0 35px;
+  }
+  .nch-container {
+    width: 100%;
+    padding: 0 14px;
   }
 
   .nch-floating-card {
@@ -4681,14 +4688,15 @@ html {
 }
 
 .partner-hero-section {
-  max-width: 1280px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
-  padding: 60px 48px 72px;
+  padding: 50px 52px 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
-  min-height: 520px;
+  min-height: 420px;
 }
 
 .partner-hero-content {
@@ -4771,7 +4779,7 @@ html {
 
 .partner-hero-metrics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-top: 8px;
 }
@@ -5337,7 +5345,8 @@ html {
 @media (max-width: 960px) {
   .partner-hero-section {
     grid-template-columns: 1fr;
-    padding: 48px 28px;
+    width: calc(100% - 28px);
+    padding: 50px 34px 30px;
     min-height: unset;
   }
 
@@ -5401,7 +5410,8 @@ html {
 
 @media (max-width: 600px) {
   .partner-hero-section {
-    padding: 36px 16px;
+    width: 100%;
+    padding: 40px 14px 24px;
   }
 
   /* Center the timeline line at: container-padding(16) + node-col-half(24) = 40px */
@@ -6071,20 +6081,23 @@ p .feature-tag {
       rgba(232, 236, 244, 0.2) 48px,
       rgba(232, 236, 244, 0.2) 96px);
   border-radius: 12px;
-  padding: 44px 46px 44px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 6vw;
   display: grid;
-  grid-template-columns: minmax(0, 606px) minmax(0, 611px);
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: space-between;
-  gap: 34px;
+  gap: 50px;
+  box-sizing: border-box;
 }
 
 .about-coaching-copy h2 {
   margin: 0;
-  font-size: clamp(28px, 4vw, 52px);
-  line-height: 1.1;
+  font-size: clamp(24px, 2.8vw, 36px);
+  line-height: 1.2;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
   color: #1e2025;
 }
 
@@ -6093,49 +6106,56 @@ p .feature-tag {
 }
 
 .about-coaching-subtext {
-  margin: 18px 0 0;
-  max-width: 606px;
-  color: #585d66;
-  font-size: 20.8px;
-  line-height: 35.36px;
-  font-weight: 400;
+  margin: 14px 0 0;
+  max-width: 100%;
+  color: #334155;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
 }
 
 .about-coaching-body {
-  margin: 18px 0 0;
-  max-width: 606px;
+  margin: 12px 0 0;
+  max-width: 100%;
   color: #585d66;
-  font-size: 20.8px;
-  line-height: 35.36px;
+  font-size: 15px;
+  line-height: 24px;
   font-weight: 400;
 }
 
 .about-coaching-btn {
   margin-top: 22px;
-  width: 258.11px;
-  height: 68px;
-  border-radius: 42px;
+  padding: 12px 28px;
+  min-width: 180px;
+  height: 48px;
+  border-radius: 24px;
   background: #E8750A;
   color: #ffffff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.25s, transform 0.25s;
+}
+
+.about-coaching-btn:hover {
+  background-color: #d16604;
+  transform: translateY(-1px);
 }
 
 .about-coaching-image-wrap {
   width: 100%;
-  max-width: 611px;
+  max-width: 100%;
   justify-self: end;
 }
 
 .about-coaching-image-wrap img {
   width: 100%;
-  aspect-ratio: 611 / 683;
-  border-radius: 20px;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  border-radius: 16px;
   object-fit: cover;
   display: block;
 }
@@ -6143,64 +6163,77 @@ p .feature-tag {
 .about-duo-section {
   display: grid;
   gap: 56px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6vw 80px;
+  box-sizing: border-box;
 }
 
 .about-duo-row {
   display: grid;
-  grid-template-columns: minmax(0, 590px) minmax(0, 670px);
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: space-between;
-  gap: 34px;
+  gap: 50px;
+}
+
+.about-duo-row.reverse {
+  grid-template-columns: 1fr 1fr;
 }
 
 .about-duo-copy {
-  max-width: 590px;
+  width: 100%;
 }
 
 .about-duo-kicker {
   display: inline-block;
   color: #E8750A;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24.64px;
-  letter-spacing: 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .about-duo-copy h3 {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: #202329;
-  font-size: 40px;
-  line-height: 1.1;
+  font-size: 28px;
+  line-height: 1.2;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .about-duo-copy p {
-  margin: 16px 0 0;
+  margin: 14px 0 0;
   color: #5d626a;
-  font-size: 20px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 24px;
   font-weight: 400;
 }
 
 .about-duo-btn {
   margin-top: 22px;
-  width: 159px;
+  padding: 12px 28px;
+  min-width: 160px;
   height: 48px;
-  border-radius: 42px;
+  border-radius: 24px;
   text-decoration: none;
   background: #E8750A;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.25s, transform 0.25s;
 }
 
-.about-hero-first-btn,
+.about-duo-btn:hover {
+  background-color: #d16604;
+  transform: translateY(-1px);
+}
+
+.about-hero-first,
 .about-coaching-btn,
 .about-duo-btn {
   border: 1px solid #E8750A;
@@ -6209,13 +6242,14 @@ p .feature-tag {
 
 .about-duo-image-wrap {
   width: 100%;
-  max-width: 670px;
+  max-width: 100%;
 }
 
 .about-duo-image-wrap img {
   width: 100%;
-  aspect-ratio: 670 / 412;
-  border-radius: 20px;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  border-radius: 16px;
   object-fit: cover;
   display: block;
 }
@@ -6234,8 +6268,8 @@ p .feature-tag {
 .partners-grid-inline {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: -16px;
 }
 
 .partner-inline-card {
@@ -6245,7 +6279,7 @@ p .feature-tag {
   background: #ffffff;
   border: 1px solid #eef2f6;
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 3px 16px;
   box-shadow: 0 4px 10px rgba(13, 27, 46, 0.02);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -6268,7 +6302,6 @@ p .feature-tag {
 .partner-inline-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .partner-inline-info strong {
@@ -6668,57 +6701,61 @@ p .feature-tag {
   }
 
   .about-coaching-section {
-    padding: 30px 22px;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 470px);
-    gap: 24px;
+    padding: 32px 6vw;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 
   .about-coaching-copy h2 {
     max-width: 100%;
-    font-size: 40px;
-    line-height: 1.06;
+    font-size: 28px;
+    line-height: 1.15;
   }
 
   .about-coaching-subtext,
   .about-coaching-body {
     max-width: 100%;
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   .about-coaching-btn {
-    width: 220px;
-    height: 56px;
-    border-radius: 36px;
+    min-width: 180px;
+    height: 48px;
+    border-radius: 24px;
     font-size: 15px;
   }
 
   .about-coaching-image-wrap {
-    max-width: 470px;
+    max-width: 100%;
   }
 
   .about-duo-section {
     margin-top: 42px;
     gap: 34px;
+    padding: 0 6vw 48px;
   }
 
-  .about-duo-row {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 24px;
+  .about-duo-row,
+  .about-duo-row.reverse {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 
   .about-duo-copy h3 {
-    font-size: 30px;
+    font-size: 24px;
+    line-height: 1.25;
   }
 
   .about-duo-copy p {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   .about-duo-btn {
-    width: 152px;
-    height: 46px;
+    min-width: 160px;
+    height: 48px;
+    border-radius: 24px;
     font-size: 15px;
   }
 
@@ -7043,6 +7080,10 @@ p .feature-tag {
   margin-left: 10px;
   display: inline-block;
   vertical-align: middle;
+}
+
+.figma-nav .header-partner-logo {
+  filter: brightness(0) invert(1);
 }
 
 @media (max-width: 900px) {
@@ -8723,31 +8764,96 @@ p .feature-tag {
   padding-right: 80px;
 }
 
-.gallery-grid {
+.gallery-columns-container {
   margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
   max-width: 1200px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
 }
 
-.gallery-grid img {
+/* Elegant fade-out gradients at the top and bottom of the container */
+.gallery-columns-container::before,
+.gallery-columns-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 5;
+  pointer-events: none;
+}
+.gallery-columns-container::before {
+  top: 0;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+.gallery-columns-container::after {
+  bottom: 0;
+  background: linear-gradient(to top, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.gallery-column {
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-column-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-column-track.scroll-up {
+  animation: gallery-scroll-up 36s linear infinite;
+}
+
+.gallery-column-track.scroll-down {
+  animation: gallery-scroll-down 36s linear infinite;
+}
+
+/* Pause on hover of the entire gallery section or container */
+.gallery-columns-container:hover .gallery-column-track {
+  animation-play-state: paused;
+}
+
+.gallery-column-track img {
   width: 100%;
-  height: 260px;
+  height: 250px;
   object-fit: cover;
   border-radius: 12px;
-  opacity: 0;
-  transform: translateY(40px) scale(0.94);
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+  margin-bottom: 20px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.4s ease;
+  will-change: transform, filter;
 }
 
-.gallery-grid img.pop-in {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+/* Hover scales up and brightens the image */
+.gallery-column-track img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.08) contrast(1.05);
+}
+
+@keyframes gallery-scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes gallery-scroll-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .figma-footer {
@@ -8784,7 +8890,11 @@ p .feature-tag {
   height: 48px;
   flex-shrink: 0;
   object-fit: contain;
-  filter: brightness(0);
+  filter: drop-shadow(1px 0px 0px #ffffff) 
+          drop-shadow(-1px 0px 0px #ffffff) 
+          drop-shadow(0px 1px 0px #ffffff) 
+          drop-shadow(0px -1px 0px #ffffff) 
+          drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.95));
 }
 
 .footer-brand-name {
@@ -9001,13 +9111,14 @@ p .feature-tag {
     padding: 0 20px;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+  .gallery-columns-container {
+    height: 480px;
+    gap: 14px;
   }
 
-  .gallery-grid img {
-    height: 160px;
+  .gallery-column-track img {
+    height: 180px;
+    margin-bottom: 14px;
     border-radius: 10px;
   }
 
@@ -9708,21 +9819,21 @@ p .feature-tag {
   }
 
   .about-coaching-copy h2 {
-    font-size: var(--h2, 24px);
-    line-height: 1.1;
+    font-size: var(--h2, 22px);
+    line-height: 1.15;
   }
 
   .about-coaching-subtext,
   .about-coaching-body {
-    font-size: 15px;
+    font-size: 14.5px;
     line-height: 1.5;
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
   .about-coaching-btn {
     width: 100%;
-    height: 48px;
-    min-height: 48px;
+    height: 46px;
+    min-height: 46px;
     border-radius: 32px;
     font-size: 14px;
     font-weight: 600;
@@ -9742,10 +9853,12 @@ p .feature-tag {
   .about-coaching-image-wrap img {
     border-radius: 16px !important;
     aspect-ratio: 16 / 10;
+    height: auto !important;
   }
 
   .about-duo-section {
     gap: 22px;
+    padding-bottom: 40px;
   }
 
   .about-duo-row,
@@ -9763,20 +9876,20 @@ p .feature-tag {
   }
 
   .about-duo-copy h3 {
-    font-size: var(--h3, 19px);
-    line-height: 1.1;
+    font-size: var(--h3, 18px);
+    line-height: 1.25;
   }
 
   .about-duo-copy p {
-    font-size: 15px;
+    font-size: 14.5px;
     line-height: 1.5;
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
   .about-duo-btn {
     width: 100%;
-    height: 48px;
-    min-height: 48px;
+    height: 46px;
+    min-height: 46px;
     border-radius: 32px;
     font-size: 14px;
     font-weight: 600;
@@ -9791,6 +9904,7 @@ p .feature-tag {
   .about-duo-image-wrap img {
     border-radius: 16px;
     aspect-ratio: 16 / 10;
+    height: auto !important;
   }
 
   .figma-hero,
@@ -9933,14 +10047,15 @@ p .feature-tag {
     height: 404px;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+  .gallery-columns-container {
+    height: 380px;
+    gap: 10px;
   }
 
-  .gallery-grid img {
-    height: 160px;
-    border-radius: 10px;
+  .gallery-column-track img {
+    height: 140px;
+    margin-bottom: 10px;
+    border-radius: 8px;
   }
 
   .figma-section.student-section>h2 {
@@ -13119,6 +13234,7 @@ img.header-side-logo {
 .reveal {
   opacity: 0;
   transition: all 0.8s ease-out;
+  transition-delay: var(--delay, 0s);
 }
 
 .reveal.active {
@@ -13128,6 +13244,22 @@ img.header-side-logo {
 
 .reveal.fade-up {
   transform: translateY(20px);
+}
+
+/* Premium GSAP-style 3D Tilt Reveal */
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(1200px) rotateX(15deg) translateY(60px) scale(0.96);
+  transform-origin: top center;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: opacity, transform;
+}
+
+.reveal-3d.active {
+  opacity: 1 !important;
+  transform: none;
 }
 
 /* --- ACHIEVEMENT PAGE --- */
@@ -13885,10 +14017,10 @@ img.header-side-logo {
 .achievement-hero-content {
   position: relative;
   z-index: 2;
-  max-width: min(1200px, 90%);
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
-  width: 100%;
-  padding: 0 24px;
+  padding: 0 52px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -13974,8 +14106,8 @@ img.header-side-logo {
 @media (max-width: 600px) {
   .achievement-hero-banner {
     height: auto;
-    min-height: 420px;
-    padding: 52px 0 44px;
+    min-height: 320px;
+    padding: 80px 0 35px;
     align-items: flex-start;
   }
 
@@ -13989,7 +14121,7 @@ img.header-side-logo {
   }
 
   .achievement-hero-content {
-    padding: 0 20px;
+    padding: 0 14px;
     gap: 12px;
   }
 
@@ -16670,12 +16802,12 @@ img.header-side-logo {
 .ma-hero {
   position: relative;
   background: linear-gradient(135deg, #0d1b2e 0%, #0a1628 50%, #060c15 100%);
-  padding: 100px 5% 90px;
+  padding: 50px 0 60px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .ma-hero::before {
@@ -16719,8 +16851,10 @@ img.header-side-logo {
 .ma-hero__inner {
   position: relative;
   z-index: 2;
-  max-width: 780px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
+  padding: 0 52px;
 }
 
 .ma-hero__kicker {
@@ -16753,13 +16887,13 @@ img.header-side-logo {
   color: rgba(255, 255, 255, 0.65);
   line-height: 1.65;
   max-width: 640px;
-  margin: 0 auto 36px;
+  margin: 0 0 36px;
 }
 
 .ma-hero__actions {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -16913,8 +17047,6 @@ img.header-side-logo {
   flex-direction: column;
   gap: 10px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
-  animation: maCardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--delay, 0s);
 }
 
 @keyframes maCardIn {
@@ -17170,7 +17302,11 @@ img.header-side-logo {
 
 @media (max-width: 768px) {
   .ma-hero {
-    padding: 70px 5% 60px;
+    padding: 50px 0 40px;
+  }
+  .ma-hero__inner {
+    width: calc(100% - 28px);
+    padding: 0 34px;
   }
   .ma-hero__actions {
     flex-direction: column;
@@ -17202,7 +17338,11 @@ img.header-side-logo {
 
 @media (max-width: 480px) {
   .ma-hero {
-    padding: 56px 5% 48px;
+    padding: 2px 0 53px;
+  }
+  .ma-hero__inner {
+    width: 100%;
+    padding: 0 14px;
   }
   .ma-hero__bg-text {
     font-size: 60px;
@@ -18576,7 +18716,9 @@ img.header-side-logo {
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: 480px;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  min-height: 380px;
 }
 
 .achievement-hero-img {
@@ -18604,13 +18746,20 @@ img.header-side-logo {
 .achievement-hero-content {
   position: relative;
   z-index: 2;
-  max-width: min(1200px, 90%);
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
-  width: 100%;
-  padding: 0 24px;
+  padding: 0 52px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .achievement-hero-content {
+    width: calc(100% - 28px);
+    padding: 0 34px;
+  }
 }
 
 .achievement-hero-kicker {
@@ -18712,8 +18861,8 @@ img.header-side-logo {
 /* ── Achievement Hero Mobile Fix (overrides duplicate above) ── */
 @media (max-width: 600px) {
   .achievement-hero-banner {
-    min-height: 440px;
-    padding: 52px 0 44px;
+    min-height: 320px;
+    padding: 80px 0 35px;
     align-items: flex-start;
   }
   .achievement-hero-overlay {
@@ -18725,7 +18874,7 @@ img.header-side-logo {
     );
   }
   .achievement-hero-content {
-    padding: 0 20px;
+    padding: 0 14px;
     gap: 12px;
   }
   .achievement-hero-title {

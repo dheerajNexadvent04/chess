@@ -12,7 +12,7 @@
 
 /* Layout wrap */
 .nz-wrap {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 5%;
 }
@@ -140,14 +140,39 @@
    ========================================================================== */
 .nz-hero {
   position: relative;
-  min-height: 540px;
+  min-height: 420px;
   display: flex;
   align-items: center;
   overflow: hidden;
   background-color: #030812;
   background-image: radial-gradient(circle at 80% 20%, rgba(232, 117, 10, 0.18) 0%, transparent 50%),
                     radial-gradient(circle at 20% 80%, rgba(14, 116, 144, 0.18) 0%, transparent 60%);
-  padding: 140px 0 100px;
+  padding: 40px 0 113px;
+}
+
+.nz-hero__bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.nz-hero .nz-wrap {
+  max-width: 1436px;
+  width: calc(100% - 56px);
+  padding: 0 52px;
+}
+
+@media (max-width: 1024px) {
+  .nz-hero .nz-wrap {
+    width: calc(100% - 28px);
+    padding: 0 34px;
+  }
 }
 
 .nz-hero__inner {
@@ -285,7 +310,7 @@
   background: #fff;
   border: 1px solid #eef2f8;
   border-radius: 24px;
-  padding: 48px;
+  padding: 20px;
   box-shadow: 0 10px 40px rgba(13, 27, 46, 0.02);
 }
 
@@ -357,6 +382,8 @@
 /* Cards (Skills & Activities) */
 .nz-skill-card, .nz-activity-card {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
   background: #f8fafc;
   border: 1px solid #f1f5f9;
@@ -367,29 +394,19 @@
 
 .nz-skill-card:hover, .nz-activity-card:hover {
   background: #fff;
-  transform: translateX(4px);
+  transform: translateY(-4px); /* changed from translateX to translateY since layout is now column */
   border-color: #e2e8f0;
-  box-shadow: 0 6px 20px rgba(13, 27, 46, 0.03);
+  box-shadow: 0 10px 24px rgba(13, 27, 46, 0.06);
 }
 
-.nz-skill-icon, .nz-activity-icon {
-  width: 48px;
-  height: 48px;
+.nz-skill-img, .nz-activity-img {
+  width: 64px;
+  height: 64px;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
   flex-shrink: 0;
-}
-
-.nz-skill-icon--financial, .nz-activity-icon--financial {
-  background: rgba(14, 116, 144, 0.08);
-  color: #0e7490;
-}
-
-.nz-skill-icon--entrepreneur, .nz-activity-icon--entrepreneur {
-  background: rgba(232, 117, 10, 0.08);
-  color: #E8750A;
+  display: block;
+  box-shadow: 0 4px 12px rgba(13, 27, 46, 0.08);
 }
 
 .nz-skill-content h5, .nz-activity-content h5 {
@@ -442,6 +459,7 @@
   flex-direction: column;
   align-items: flex-start;
   transition: all 0.3s ease;
+  overflow: hidden; /* Added to clip absolute elements by border-radius */
 }
 
 .nz-benefit-card::after {
@@ -452,8 +470,6 @@
   width: 4px;
   height: 100%;
   background: linear-gradient(to bottom, #0e7490, #E8750A);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
 
 .nz-benefit-card:hover {
@@ -588,9 +604,13 @@
 
 @media (max-width: 768px) {
   .nz-hero {
-    min-height: 480px;
-    padding-top: 52px;
-    padding-bottom: 80px;
+    min-height: 340px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .nz-hero .nz-wrap {
+    width: 100%;
+    padding: 0 14px;
   }
   .nz-track-toggle-container {
     flex-direction: column;
