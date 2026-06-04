@@ -3471,7 +3471,7 @@ html {
 }
 
 .contact-form-section {
-  width: min(1080px, calc(100% - 40px));
+  width: min(1320px, calc(100% - 44px));
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
@@ -3640,7 +3640,7 @@ html {
 }
 
 .contact-stats-section {
-  width: min(1080px, calc(100% - 40px));
+  width: min(1320px, calc(100% - 44px));
   margin: var(--sec-pad, 72px) auto 0;
   display: grid;
   grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1fr);
@@ -3865,7 +3865,7 @@ html {
 
 /* ── Our Branches Section ── */
 .contact-branches-section {
-  width: min(1080px, calc(100% - 40px));
+  width: min(1320px, calc(100% - 44px));
   margin: var(--sec-pad, 72px) auto 0;
   background: #ffffff;
   padding: 40px 48px;
@@ -5464,7 +5464,7 @@ html {
 }
 
 .section {
-  width: min(1220px, calc(100% - 2rem));
+  width: min(1436px, calc(100% - 56px));
   margin: var(--sec-pad, 72px) auto 0;
 }
 
@@ -5877,7 +5877,7 @@ p .feature-tag {
 }
 
 .inner-header {
-  width: min(1040px, calc(100% - 2rem));
+  width: min(1320px, calc(100% - 44px));
   margin: 0 auto;
 }
 
@@ -10489,7 +10489,7 @@ img.header-side-logo {
 }
 
 .career-hero {
-  width: min(1320px, calc(100% - 44px));
+  width: min(1436px, calc(100% - 56px));
   margin: 0 auto;
   /* background: #ffffff;
   border: 1px solid #F0E0C8; */
@@ -14188,9 +14188,9 @@ img.header-side-logo {
 /* ── Inner wrapper (white area above stats bar) ── */
 .ach-showcase-inner {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1436px;
   margin: 0 auto;
-  padding: 36px 48px 24px;
+  padding: 36px 52px 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -14609,9 +14609,9 @@ img.header-side-logo {
 }
 
 .lm-inner {
-  max-width: 1280px;
+  max-width: 1436px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 52px;
 }
 
 /* ── Header ── */
@@ -15037,7 +15037,7 @@ img.header-side-logo {
 
 .ach-learn-inner {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1436px;
   margin: 0 auto;
 }
 
@@ -15109,7 +15109,7 @@ img.header-side-logo {
 
 .ach-testi-inner {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1436px;
   margin: 0 auto;
   padding: 36px 48px;
   background: #F5EDE0;
@@ -15212,7 +15212,7 @@ img.header-side-logo {
 
 .ach-cta-inner {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1436px;
   margin: 0 auto;
   padding: 28px 48px;
   background: #0d1b2e;
@@ -15560,13 +15560,15 @@ img.header-side-logo {
 
 /* Spotlight Featured Event Section */
 .spotlight-section {
-  padding: 96px 24px 60px;
+  padding: 96px 0 60px;
   background-color: #F8FAFC;
 }
 
 .spotlight-container {
-  max-width: 1200px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
+  padding: 0;
 }
 
 .spotlight-main {
@@ -15715,14 +15717,16 @@ img.header-side-logo {
 
 /* Standings / Winners Podium - PREMIUM LIGHT THEME */
 .standings-section {
-  padding: 96px 24px;
+  padding: 96px 0;
   background-color: #F8FAFC;
   border: none;
 }
 
 .standings-container {
-  max-width: 1200px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
+  padding: 0;
 }
 
 .podium-display {
@@ -15960,13 +15964,15 @@ img.header-side-logo {
 
 /* Category Winners Grid */
 .categories-section {
-  padding: 96px 24px;
+  padding: 96px 0;
   background-color: #FFFFFF;
 }
 
 .categories-container {
-  max-width: 1200px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
+  padding: 0;
 }
 
 .categories-grid {
@@ -16109,14 +16115,16 @@ img.header-side-logo {
 
 /* Gallery Section */
 .gallery-section {
-  padding: 96px 24px;
+  padding: 96px 0;
   background-color: #FFFFFF;
   border-top: 1px solid #E2E8F0;
 }
 
 .gallery-container {
-  max-width: 1200px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
+  padding: 0;
 }
 
 .gallery-grid {
@@ -16988,12 +16996,14 @@ img.header-side-logo {
 
 /* ── Areas Section ── */
 .ma-areas-section {
-  padding: 80px 5%;
+  padding: 80px 0;
 }
 
 .ma-areas-inner {
-  max-width: 1280px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
+  padding: 0;
 }
 
 .ma-areas-header {

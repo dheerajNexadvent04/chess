@@ -12,9 +12,10 @@
 
 /* Layout wrap */
 .nz-wrap {
-  max-width: 1400px;
+  max-width: 1436px;
+  width: calc(100% - 56px);
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 0 52px;
 }
 
 /* Typography & Labels */
