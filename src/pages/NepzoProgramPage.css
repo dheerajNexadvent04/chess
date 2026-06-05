@@ -590,6 +590,10 @@
    5. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
+  .nz-wrap {
+    width: 100%;
+    padding: 0 32px;
+  }
   .nz-panel-grid {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -600,6 +604,9 @@
 }
 
 @media (max-width: 768px) {
+  .nz-wrap {
+    padding: 0 20px;
+  }
   .nz-hero {
     min-height: 340px;
     padding-top: 40px;
@@ -607,7 +614,7 @@
   }
   .nz-hero .nz-wrap {
     width: 100%;
-    padding: 0 14px;
+    padding: 10px 14px;
   }
   .nz-track-toggle-container {
     flex-direction: column;
@@ -632,6 +639,9 @@
 }
 
 @media (max-width: 480px) {
+  .nz-wrap {
+    padding: 0 14px;
+  }
   .nz-hero__partner-logo--nepzo {
     height: 36px;
   }

@@ -1155,6 +1155,10 @@
    ========================================================================== */
 
 @media (max-width: 960px) {
+  .t2-wrap {
+    width: 100%;
+    padding: 0 32px;
+  }
   .t2-overview__body {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1178,12 +1182,44 @@
 }
 
 @media (max-width: 768px) {
+  .t2-wrap {
+    padding: 0 20px;
+  }
   .t2-hero {
     min-height: 340px;
   }
   .t2-hero__content {
     width: 100%;
     padding: 50px 14px 95px;
+  }
+  .t2-hero__wave {
+    height: 60px;
+  }
+  .t2-overview__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .t2-overview__img {
+    grid-column: span 2;
+  }
+  .t2-stat {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  .t2-stat__icon {
+    width: 36px;
+    height: 36px;
+  }
+  .t2-stat__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  .t2-stat strong {
+    font-size: 16px;
+  }
+  .t2-stat span {
+    font-size: 9px;
   }
   .t2-podium {
     flex-direction: column;
@@ -1225,6 +1261,9 @@
 }
 
 @media (max-width: 480px) {
+  .t2-wrap {
+    padding: 0 14px;
+  }
   .t2-hero__content h1 {
     font-size: var(--h1, 28px);
   }

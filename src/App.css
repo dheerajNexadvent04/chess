@@ -12475,6 +12475,14 @@ img.header-side-logo {
 }
 
 @media (max-width: 768px) {
+  .cp-v5__header {
+    margin-bottom: 6px;
+  }
+
+  .cp-v5__carousel {
+    padding: 56px 6vw 20px;
+  }
+
   .cp-v5__card {
     flex: 0 0 85vw;
   }
@@ -17854,7 +17862,8 @@ img.header-side-logo {
 }
 
 .ma-tags-inner {
-  max-width: 1280px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -18037,6 +18046,17 @@ img.header-side-logo {
   }
   .ma-cta-inner {
     padding: 32px 20px;
+  }
+  .ma-tag {
+    font-size: 11.5px;
+    padding: 5px 12px;
+  }
+  .ma-tags-label {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .ma-tags-section {
+    padding: 24px 14px;
   }
 }
 

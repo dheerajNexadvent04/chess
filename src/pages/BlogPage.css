@@ -506,6 +506,12 @@
 /* --- Responsive Adjustments --- */
 
 @media (max-width: 992px) {
+  .blog-hero,
+  .featured-post-container,
+  .blog-posts-grid-container {
+    width: 100%;
+    padding: 0 32px;
+  }
   .featured-post-card {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -519,6 +525,11 @@
 }
 
 @media (max-width: 768px) {
+  .blog-hero,
+  .featured-post-container,
+  .blog-posts-grid-container {
+    padding: 0 20px;
+  }
   .blog-inner-page {
     padding: 2rem 0 60px;
   }
@@ -545,5 +556,13 @@
   .blog-point-item p {
     padding-left: 0;
     margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-hero,
+  .featured-post-container,
+  .blog-posts-grid-container {
+    padding: 0 14px;
   }
 }

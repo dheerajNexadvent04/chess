@@ -187,6 +187,23 @@ export function Layout() {
         <Outlet />
       </main>
 
+      {/* ── Location Tags Strip ── */}
+      <section className="ma-tags-section">
+        <div className="ma-tags-inner">
+          <p className="ma-tags-label">Chess Classes Near You</p>
+          <div className="ma-tags-wrap">
+            {[
+              'Rohini', 'Pitampura', 'Paschim Vihar', 'Shalimar Bagh', 'Dwarka',
+              'Ashok Vihar', 'Punjabi Bagh', 'Sonipat', 'Faridabad',
+              'Indirapuram', 'Vaishali', 'Kaushambi', 'Gurgaon', 'Noida',
+              'Navi Mumbai', 'Vasundhara', 'Ghaziabad'
+            ].map((loc) => (
+              <Link key={loc} to="/book-class" className="ma-tag">{loc}</Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
       <UnifiedPopupModal />
     </div>

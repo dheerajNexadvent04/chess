@@ -201,23 +201,6 @@ export function MarketAreaPage() {
         </div>
       </section>
 
-      {/* ── Location Tags Strip ── */}
-      <section className="ma-tags-section">
-        <div className="ma-tags-inner reveal reveal-3d">
-          <p className="ma-tags-label">Chess Classes Near You</p>
-          <div className="ma-tags-wrap">
-            {[
-              'Rohini', 'Pitampura', 'Paschim Vihar', 'Shalimar Bagh', 'Dwarka',
-              'Ashok Vihar', 'Punjabi Bagh', 'Sonipat', 'Faridabad',
-              'Indirapuram', 'Vaishali', 'Kaushambi', 'Gurgaon', 'Noida',
-              'Navi Mumbai', 'Vasundhara', 'Ghaziabad'
-            ].map((loc) => (
-              <Link key={loc} to="/book-class" className="ma-tag">{loc}</Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA Banner ── */}
       <section className="ma-cta-section">
         <div className="ma-cta-inner reveal reveal-3d">
