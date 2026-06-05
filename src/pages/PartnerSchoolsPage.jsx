@@ -594,8 +594,15 @@ function PartnerSchoolsHero({ onCollabClick }) {
             <div className="partner-metric-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             </div>
-            <strong>5,000+</strong>
+            <strong>1,000+</strong>
             <span>Students Trained</span>
+          </div>
+          <div className="partner-metric-card">
+            <div className="partner-metric-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2a6 6 0 0 0-6 6v3.58a6 6 0 0 0 12 0V8a6 6 0 0 0-6-6z"/></svg>
+            </div>
+            <strong>150+</strong>
+            <span>Tournaments</span>
           </div>
           <div className="partner-metric-card">
             <div className="partner-metric-icon">
