@@ -46,7 +46,7 @@ export function CareerPage() {
       <section className="career-hero" aria-labelledby="career-title">
         <div className="career-hero-media">
           <div className="career-collage" aria-label="Coaching moments collage">
-            <img className="career-collage-main" src="/im2.png" alt="Students learning chess with coach" />
+            <img className="career-collage-main" src="/career.webp" alt="Students learning chess with coach" />
             <img className="career-collage-card career-collage-card-a" src="/im1.png" alt="Chess class activity" />
             <img className="career-collage-card career-collage-card-b" src="/im3.png" alt="Children practicing chess strategy" />
             <img className="career-collage-card career-collage-card-c" src="/home.png" alt="Academy chess training highlight" />

@@ -63,7 +63,6 @@ export function Footer() {
           <a href={`tel:${contactDetails.phone}`}>{contactDetails.phone}</a>
           <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
           <Link to="/#support">Help &amp; Contact</Link>
-          <Link to="/#faq">Faq</Link>
         </div>
         <div className="footer-col footer-col-benefits">
           <h4>EXCLUSIVE BENEFITS</h4>

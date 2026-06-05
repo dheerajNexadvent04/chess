@@ -77,29 +77,33 @@ export function BookClassPage() {
 
   const faqs = [
     {
-      question: "How do I schedule my first online chess class?",
-      answer: "Simply fill out the booking form above with your child's name, location, preferred date and time slot. Our team at SckoolChess will confirm your session and send batch details within 24 hours. A free trial is available for first-time students."
+      question: 'How do Sckoolchess online chess classes work?',
+      answer: 'Sckoolchess conducts live interactive online chess classes through structured sessions with trainers, practice activities, puzzles, and guided gameplay.'
     },
     {
-      question: "Do I need any prior chess experience?",
-      answer: "No prior experience is required. SckoolChess offers structured programs for complete beginners through to advanced tournament players. Our coaches in Rohini and online assess each student individually and recommend the right batch — beginner, intermediate, or advanced."
+      question: 'What age group can join online chess classes?',
+      answer: 'Students from 5 years onwards can join beginner, intermediate, and advanced online chess programs.'
     },
     {
-      question: "How long is each session?",
-      answer: "Each online chess session at SckoolChess is typically 60 minutes long. The session includes live game analysis, concept explanation, tactical puzzles, and personalised feedback from your assigned FIDE-rated or experienced coach."
+      question: 'Do students need prior chess knowledge to join?',
+      answer: 'No, beginners are welcome. Students are grouped according to their age and skill level.'
     },
     {
-      question: "What software do we use for the online classes?",
-      answer: "SckoolChess online classes are conducted via video conferencing tools and interactive chess platforms. Students will receive all joining details and platform access links after booking their class. No special installation is required to get started."
+      question: 'What are the benefits of online chess classes for students?',
+      answer: 'Online chess classes help students improve concentration, logical thinking, confidence, decision-making, and problem-solving skills from the comfort of home.'
     },
     {
-      question: "What happens if I need to reschedule?",
-      answer: "We understand that schedules can change. SckoolChess allows rescheduling with a minimum of 24 hours notice. Simply contact our team at +91-8447992702 or email Sckoolchess@gmail.com and we will arrange an alternative slot for you."
+      question: 'How many students are there in each online batch?',
+      answer: 'Batch sizes are kept structured to ensure better interaction, personalized attention, and effective learning.'
     },
     {
-      question: "Is there a free trial class available?",
-      answer: "Yes. SckoolChess offers a free trial class for all new students. Fill out the booking form above, select your preferred date and time, and our team will confirm your complimentary first session within 24 hours."
-    }
+      question: 'Do online students get tournament opportunities?',
+      answer: 'Yes, students receive tournament guidance and can participate in online and offline chess competitions organized by Sckoolchess and partner platforms.'
+    },
+    {
+      question: 'Which locations do students join from?',
+      answer: 'Students from Delhi, Rohini, Pitampura, Dwarka, Indirapuram, Noida, Gurgaon, Navi Mumbai, and other cities across India join Sckoolchess online chess classes.'
+    },
   ]
 
   return (
@@ -286,7 +290,7 @@ export function BookClassPage() {
           <div className="faq-image-wrapper">
             <img src="/book now.png" alt="Students studying chess" className="faq-section-image" />
           </div>
-          <div className="faq-list">
+          <div className="faq-list book-faq-scroll-list">
             {faqs.map((faq, index) => (
               <div 
                 key={index} 

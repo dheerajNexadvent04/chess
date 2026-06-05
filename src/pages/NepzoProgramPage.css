@@ -151,7 +151,8 @@
   padding: 40px 0 113px;
 }
 
-.nz-hero__bg-video {
+.nz-hero__bg-video,
+.nz-hero__bg-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -159,7 +160,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  opacity: 0.15;
+  opacity: 0.2;
   pointer-events: none;
 }
 
@@ -308,11 +309,6 @@
 
 /* Panel Layout */
 .nz-track-panel {
-  background: #fff;
-  border: 1px solid #eef2f8;
-  border-radius: 24px;
-  padding: 20px;
-  box-shadow: 0 10px 40px rgba(13, 27, 46, 0.02);
 }
 
 .nz-track-intro {
@@ -520,7 +516,7 @@
 }
 
 .nz-cta-card {
-  background: linear-gradient(135deg, #0d1b2e 0%, #040912 100%);
+  background: linear-gradient(135deg, rgba(13, 27, 46, 0.88) 0%, rgba(4, 9, 18, 0.82) 100%), url('/nepzo banner bottom.webp') no-repeat center center / cover;
   border-radius: 28px;
   padding: 60px 48px;
   position: relative;

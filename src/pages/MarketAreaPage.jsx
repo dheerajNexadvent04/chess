@@ -109,6 +109,12 @@ export function MarketAreaPage() {
 
       {/* ── Hero ── */}
       <section className="ma-hero">
+        <img
+          src="/market place herobanner.webp"
+          alt="Chess Classes Near You"
+          className="ma-hero-img"
+        />
+        <div className="ma-hero-overlay" />
         <div className="ma-hero__inner">
           <p className="ma-hero__kicker reveal fade-up" style={{ '--delay': '0.05s' }}>
             <MapPin size={16} strokeWidth={2.3} />

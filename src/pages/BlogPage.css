@@ -1,6 +1,6 @@
 /* --- Global Blog Styles --- */
 .blog-inner-page {
-  padding: 3rem 0 24px;
+  padding: 3rem 0 80px;
   background-color: #ffffff; /* Premium clean white background */
   min-height: 100vh;
   font-family: var(--font-main), sans-serif;
@@ -520,7 +520,7 @@
 
 @media (max-width: 768px) {
   .blog-inner-page {
-    padding: 2rem 0 24px;
+    padding: 2rem 0 60px;
   }
   .blog-hero {
     margin-bottom: 1.5rem;

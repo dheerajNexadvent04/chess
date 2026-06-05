@@ -1,3 +1,4 @@
+import { ChevronDown } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 const partnerSchools = [
@@ -85,6 +86,59 @@ const partnerSchools = [
   },
 ]
 
+const partnerFaqs = [
+  {
+    question: 'What is the Sckoolchess Future Ready Learning Program?',
+    answer:
+      'Sckoolchess offers a structured Future Ready Learning Program that helps schools develop critical thinking, concentration, creativity, decision-making, and problem-solving skills among students through professional chess education and activity-based learning.',
+  },
+  {
+    question: 'How does chess support the National Education Policy (NEP)?',
+    answer:
+      'Chess strongly aligns with NEP objectives by encouraging experiential learning, analytical thinking, cognitive development, discipline, holistic growth, and skill-based education in an engaging and student-friendly manner.',
+  },
+  {
+    question: 'What is Chess in School (CIS) by AICF?',
+    answer:
+      'Chess in School (CIS) is an initiative supported by the All India Chess Federation (AICF) to promote structured chess education and grassroots chess development in schools across India.',
+  },
+  {
+    question: 'Does Sckoolchess work with private and international schools?',
+    answer:
+      'Yes, Sckoolchess collaborates with private schools, international schools, CBSE schools, and educational institutions for chess curriculum programs, workshops, tournaments, and extracurricular learning initiatives.',
+  },
+  {
+    question: 'Does Sckoolchess have training experience across multiple cities?',
+    answer:
+      'Yes, Sckoolchess has experience training students across Rohini, Pitampura, Dwarka, Noida, Indirapuram, Gurgaon, Delhi NCR, and Navi Mumbai through both online and offline chess programs.',
+  },
+  {
+    question: 'Does Sckoolchess use experienced and FIDE-rated coaches?',
+    answer:
+      'Yes, Sckoolchess works with experienced trainers, FIDE-rated coaches, tournament players, and student-focused mentors to provide structured and professional chess training.',
+  },
+  {
+    question: 'What support does Sckoolchess provide to schools?',
+    answer:
+      'Sckoolchess provides complete chess ecosystem support including curriculum planning, specialized study material, chess kits, tournament support, workshops, chess activities, and inter-school competition management.',
+  },
+  {
+    question: 'What benefits do schools get by introducing chess education?',
+    answer:
+      'Chess education helps schools promote concentration, logical thinking, leadership, discipline, student engagement, confidence, strategic thinking, and future-ready learning skills among students.',
+  },
+  {
+    question: 'Can Sckoolchess organize chess tournaments and activity programs?',
+    answer:
+      'Yes, Sckoolchess conducts intra-school tournaments, inter-school competitions, chess festivals, workshops, summer camps, and chess activity programs for schools and educational institutions.',
+  },
+  {
+    question: 'Why do principals, coordinators, and school administrators choose Sckoolchess?',
+    answer:
+      'Schools choose Sckoolchess for its structured implementation approach, NEP-aligned programs, experienced coaching team, professional school support, tournament ecosystem, and strong focus on holistic student development.',
+  },
+]
+
 export function PartnerSchoolsPage() {
   useEffect(() => {
     document.title = 'SckoolChess | Chess Partner for Schools in Delhi NCR'
@@ -103,6 +157,7 @@ export function PartnerSchoolsPage() {
     { src: '/the vasant international.png', alt: 'The Vasant School' },
   ]
 
+  const [openFaqIndex, setOpenFaqIndex] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
   const [activeSchool, setActiveSchool] = useState(null)
   const [collabModalOpen, setCollabModalOpen] = useState(false)
@@ -390,6 +445,48 @@ export function PartnerSchoolsPage() {
         </div>
       </section>
       
+      {/* FAQ Section */}
+      <section className="contact-faq-section" aria-labelledby="partner-faq-title">
+        <div className="contact-faq-copy">
+          <p className="contact-kicker">
+            <span aria-hidden="true" />
+            FAQ
+          </p>
+          <h2 id="partner-faq-title">Your Questions Answered</h2>
+
+          <div className="contact-faq-list partner-faq-scroll-list">
+            {partnerFaqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index
+              return (
+                <div className={`contact-faq-item ${isOpen ? 'open' : ''}`} key={faq.question}>
+                  <button
+                    type="button"
+                    className="contact-faq-question"
+                    aria-expanded={isOpen}
+                    aria-controls={`partner-faq-answer-${index}`}
+                    onClick={() => setOpenFaqIndex(isOpen ? -1 : index)}
+                  >
+                    <span>{faq.question}</span>
+                    <ChevronDown size={18} strokeWidth={2.3} aria-hidden="true" />
+                  </button>
+                  <div
+                    id={`partner-faq-answer-${index}`}
+                    className="contact-faq-answer"
+                    aria-hidden={!isOpen}
+                  >
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="contact-faq-media">
+          <img src="/contact us 2.png" alt="Chess academy students" />
+        </div>
+      </section>
+
       {modalOpen && activeSchool && (
         <PartnerGalleryModal school={activeSchool} onClose={closeModal} />
       )}

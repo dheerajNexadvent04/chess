@@ -5,7 +5,7 @@ export const blogPosts = [
     category: 'Cognitive Development',
     date: 'May 15, 2026',
     readTime: '4 min read',
-    image: '/fundamentals.jpg',
+    image: '/blog 1.webp',
     summary: "In today's competitive academic environment, chess stands out as a powerful educational tool. Discover how regular chess practice improves focus, critical thinking, confidence, memory, and emotional control in school children.",
     introduction: 'In today’s competitive academic environment, parents and schools across Delhi NCR are actively searching for activities that improve concentration, intelligence, confidence, and decision-making skills among students. One of the most powerful educational tools gaining popularity in schools is Chess Education.',
     points: [
@@ -59,7 +59,7 @@ export const blogPosts = [
     category: 'Focus & Concentration',
     date: 'May 20, 2026',
     readTime: '3 min read',
-    image: '/tactics.jpg',
+    image: '/blog 2.webp',
     summary: 'Screen distractions and short attention spans are common hurdles for kids today. Read how chess training helps kids filter out noise, build patience, and strengthen visual memory.',
     introduction: 'In today’s fast-moving digital world, maintaining concentration has become one of the biggest challenges for children. Excessive screen time, distractions, and short attention spans often affect academic performance and learning abilities. This is why many schools and parents across Delhi NCR are turning towards chess education as a powerful solution.',
     points: [
@@ -109,7 +109,7 @@ export const blogPosts = [
     category: 'Mindset & Habits',
     date: 'May 24, 2026',
     readTime: '4 min read',
-    image: '/im3.png',
+    image: '/blog 3.webp',
     summary: 'Compare the dopamine-driven loop of mobile video games with the deep thinking of chess. Find out why chess promotes healthy brain development while gaming can hinder focus.',
     introduction: 'In today’s digital era, mobile gaming has become one of the most common activities among children. While gaming may provide entertainment, excessive screen time and addiction to mobile games often affect concentration, academic performance, discipline, and mental growth.',
     points: [
@@ -159,7 +159,7 @@ export const blogPosts = [
     category: 'Learning Formats',
     date: 'May 28, 2026',
     readTime: '5 min read',
-    image: '/opening.jpg',
+    image: '/blog 4.webp',
     summary: 'Evaluating the pros and cons of online versus offline chess training. Decide which learning format works best for your child in the Delhi NCR area.',
     introduction: 'Chess has become one of the fastest-growing educational activities for children in India. Parents and schools across Delhi NCR are increasingly introducing chess programs to improve concentration, logical thinking, confidence, and academic performance among students.',
     points: [], // This article uses section layout instead of points list

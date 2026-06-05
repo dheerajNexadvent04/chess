@@ -126,7 +126,7 @@ const solutionCards = [
     ),
   },
   {
-    image: '/touranement%20div4.png',
+    image: '/tournaments.png',
     title: 'Tournament Preparation',
     desc: 'From local school tournaments to national championships, SckoolChess prepares every student to compete with confidence and strategy.',
     icon: (

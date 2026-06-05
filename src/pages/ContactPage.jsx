@@ -34,28 +34,54 @@ const contactStats = [
 
 const faqs = [
   {
-    question: 'How can I schedule a free trial class?',
+    question: 'What is the Sckoolchess Future Ready Learning Program?',
     answer:
-      'Send us your child\'s age, current chess level, and preferred timing. Our team at SckoolChess will suggest the best beginner, intermediate, or advanced batch available in Rohini, Pitampura or online.',
-    image: '/im1.png',
+      'Sckoolchess offers a structured Future Ready Learning Program that helps schools develop critical thinking, concentration, creativity, decision-making, and problem-solving skills among students through professional chess education and activity-based learning.',
   },
   {
-    question: 'Do you offer online and offline chess classes?',
+    question: 'How does chess support the National Education Policy (NEP)?',
     answer:
-      'Yes. SckoolChess offers both online and offline chess classes. Our offline centres are in Rohini and Indirapuram. Online chess classes are available for students in Pitampura, Paschim Vihar, Shalimar Bagh, Noida and pan-India.',
-    image: '/im2.png',
+      'Chess strongly aligns with NEP objectives by encouraging experiential learning, analytical thinking, cognitive development, discipline, holistic growth, and skill-based education in an engaging and student-friendly manner.',
   },
   {
-    question: 'Which age group can join SckoolChess?',
+    question: 'What is Chess in School (CIS) by AICF?',
     answer:
-      'SckoolChess welcomes students from age 6 to 18 years. We have structured programs for complete beginners, intermediate learners, and advanced students preparing for FIDE-rated and school-level tournaments across Delhi NCR.',
-    image: '/im3.png',
+      'Chess in School (CIS) is an initiative supported by the All India Chess Federation (AICF) to promote structured chess education and grassroots chess development in schools across India.',
   },
   {
-    question: 'Do you provide school chess programs?',
+    question: 'Does Sckoolchess work with private and international schools?',
     answer:
-      'Yes. SckoolChess runs a dedicated Chess in School program for institutions across Delhi, Noida and Navi Mumbai. We are a trusted chess partner for Apeejay Schools and 22+ leading institutions. Contact us to bring chess to your school.',
-    image: '/im1.png',
+      'Yes, Sckoolchess collaborates with private schools, international schools, CBSE schools, and educational institutions for chess curriculum programs, workshops, tournaments, and extracurricular learning initiatives.',
+  },
+  {
+    question: 'Does Sckoolchess have training experience across multiple cities?',
+    answer:
+      'Yes, Sckoolchess has experience training students across Rohini, Pitampura, Dwarka, Noida, Indirapuram, Gurgaon, Delhi NCR, and Navi Mumbai through both online and offline chess programs.',
+  },
+  {
+    question: 'Does Sckoolchess use experienced and FIDE-rated coaches?',
+    answer:
+      'Yes, Sckoolchess works with experienced trainers, FIDE-rated coaches, tournament players, and student-focused mentors to provide structured and professional chess training.',
+  },
+  {
+    question: 'What support does Sckoolchess provide to schools?',
+    answer:
+      'Sckoolchess provides complete chess ecosystem support including curriculum planning, specialized study material, chess kits, tournament support, workshops, chess activities, and inter-school competition management.',
+  },
+  {
+    question: 'What benefits do schools get by introducing chess education?',
+    answer:
+      'Chess education helps schools promote concentration, logical thinking, leadership, discipline, student engagement, confidence, strategic thinking, and future-ready learning skills among students.',
+  },
+  {
+    question: 'Can Sckoolchess organize chess tournaments and activity programs?',
+    answer:
+      'Yes, Sckoolchess conducts intra-school tournaments, inter-school competitions, chess festivals, workshops, summer camps, and chess activity programs for schools and educational institutions.',
+  },
+  {
+    question: 'Why do principals, coordinators, and school administrators choose Sckoolchess?',
+    answer:
+      'Schools choose Sckoolchess for its structured implementation approach, NEP-aligned programs, experienced coaching team, professional school support, tournament ecosystem, and strong focus on holistic student development.',
   },
 ]
 
@@ -319,7 +345,7 @@ export function ContactPage() {
           </p>
           <h2 id="contact-faq-title">Your Questions Answered</h2>
 
-          <div className="contact-faq-list">
+          <div className="contact-faq-list partner-faq-scroll-list">
             {faqs.map((faq, index) => {
               const isOpen = openFaqIndex === index
 

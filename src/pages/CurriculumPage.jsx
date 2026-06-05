@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { Award, BookOpen, Brain, CalendarDays, CheckCircle2, ChevronLeft, ChevronRight, Clock, GraduationCap, Lightbulb, LayoutGrid, Phone, Plus, Scale, ShieldCheck, Star, Target, TrendingUp, Trophy, Building2, User, Users, Wallet, Zap, ArrowUpRight, PlayCircle, FolderCheck, Globe, ArrowRight } from 'lucide-react'
 import { googleReviews } from '../data/siteContent'
 
@@ -450,6 +451,141 @@ const journeySteps = [
   }
 ];
 
+const premiumLevelsData = [
+  {
+    id: 'walkers',
+    name: 'Walkers',
+    levelLabel: 'LEVEL 1 — WALKERS',
+    subtitle: 'Beginner Foundation Program',
+    subheading: 'Beginner Level (Level 1)',
+    description: 'Students start by learning the rules, piece movements, board setup, and basic tactics to build a confident foundation in chess.',
+    marqueeText: 'BIG MOVES START WITH SMALL STEPS • LEARN CHESS. LOVE CHESS. LIVE CHESS.',
+    piece: '♟',
+    themeColor: '#2563eb',
+    bgImage: '/fundamentals.jpg',
+    ageGroup: '6–12 Years',
+    duration: '3 Months',
+    fees: '₹9,000/- INR',
+    goals: [
+      'Understand legal moves / Piece movement',
+      'Build pattern recognition',
+      'Spot simple tactics',
+      'Play basic Chess game'
+    ],
+    topics: [
+      'Capturing Rules & Basic Attacks',
+      'Check, Checkmate & Stalemate',
+      'Castling, Pawn Promotion, En Passant',
+      'Basic Opening Principles',
+      'Simple Tactics (Fork, Pin, Skewer, Discover Attack, Back Rank, Double Check)',
+      'Rook & Queen Checkmates & Notations'
+    ],
+    activities: [
+      { name: 'Chess stories', icon: BookOpen },
+      { name: 'Piece Race Game', icon: Trophy },
+      { name: 'Simple Checkmate exercises', icon: Target },
+      { name: 'Study Material, Puzzles & Mini Games', icon: Brain }
+    ]
+  },
+  {
+    id: 'joggers',
+    name: 'Joggers',
+    levelLabel: 'LEVEL 2 — JOGGERS',
+    subtitle: 'Intermediate Skill Development',
+    subheading: 'Intermediate Level (Level 2)',
+    description: 'Students develop positional understanding, opening theory, middle game tactics, and endgame techniques to sharpen their competitive edge.',
+    marqueeText: 'BUILD SKILLS • BUILD CONFIDENCE • BUILD CHAMPIONS.',
+    piece: '♞',
+    themeColor: '#8b5cf6',
+    bgImage: '/opening.jpg',
+    ageGroup: '7–15 Years',
+    duration: '6 Months',
+    fees: '₹21,000/- INR',
+    goals: [
+      'Can play structured openings',
+      'Recognizes common tactical patterns',
+      'Ready for beginner tournaments'
+    ],
+    topics: [
+      'Pawn Structure & Chess Patterns',
+      'Opening Principles fundamental',
+      'Checkmate in 2 & 3 moves',
+      'Practice matches & Doubt clearing',
+      'Middle Game Tactics (Fork, Remove Defender, Decoy/Deflection, Outpost, etc.)',
+      'Endgames & Openings (Ruy Lopez, Sicilian, French, Queen Gambit)'
+    ],
+    activities: [
+      { name: 'Practice games, review & Analysis', icon: TrendingUp },
+      { name: 'Online & OTB Tournaments', icon: Trophy },
+      { name: 'Study Material and Puzzles', icon: Brain }
+    ]
+  },
+  {
+    id: 'runner',
+    name: 'Runner',
+    levelLabel: 'LEVEL 3 — RUNNER',
+    subtitle: 'Advanced Tournament Training',
+    subheading: 'Advanced Level (Level 3)',
+    description: 'Students compete confidently in school-level and open tournaments, developing deep tactical vision, game preparation, and psychological match readiness.',
+    marqueeText: 'CHALLENGE YOUR LIMITS • THINK THREE MOVES AHEAD • MASTER THE BOARD.',
+    piece: '♜',
+    themeColor: '#4f46e5',
+    bgImage: '/tactics.jpg',
+    ageGroup: '10–15 Years',
+    duration: 'Ongoing Training',
+    fees: 'Price on request',
+    goals: [
+      'Compete in FIDE-rated / Open Tournaments',
+      'Deep tactical vision & calculation precision',
+      'Ready for competitive chess circuits'
+    ],
+    topics: [
+      'Advanced opening systems & positional setups',
+      'Complex endgame play (Opposition, King/Rook mates)',
+      'Game preparation & analytical review',
+      'Psychological match readiness & pressure handling',
+      'Tactical pattern mastery (1500+ Chess.com rating targets)'
+    ],
+    activities: [
+      { name: 'FIDE Tournament Preparation', icon: Trophy },
+      { name: 'Personalized Game Analysis', icon: TrendingUp },
+      { name: 'Advanced Match Play', icon: Zap },
+      { name: 'Doubt Solving & Coaching', icon: GraduationCap }
+    ]
+  },
+  {
+    id: 'crash',
+    name: 'Crash Course',
+    levelLabel: 'FAST TRACK PROGRAM',
+    subtitle: 'Accelerated Chess Learning',
+    subheading: 'Fast Track Program',
+    description: 'An intensive learning program designed for talented students who need rapid chess development with focused guidance from expert SckoolChess coaches.',
+    marqueeText: 'INTENSIVE TRAINING • ACCELERATED PROGRESSION • SPEED UP YOUR GAME.',
+    piece: '♛',
+    themeColor: '#f97316',
+    bgImage: '/tournament.jpg',
+    ageGroup: '5–16 Years (All welcome)',
+    duration: '3 Months',
+    fees: '₹11,000/- INR',
+    goals: [
+      'Accelerated progression & learning curves',
+      'Build endgame precision quickly',
+      'Targeted strategy & tactic improvements'
+    ],
+    topics: [
+      'Learning openings by strategic concepts',
+      'Building endgame precision and technique',
+      'Result analysis & gameplay review sessions',
+      'Intensive practical games and tactical drills'
+    ],
+    activities: [
+      { name: 'Intensive coaching sessions', icon: GraduationCap },
+      { name: 'Speed chess practice matches', icon: Zap },
+      { name: 'Interactive puzzles & worksheets', icon: Brain }
+    ]
+  }
+];
+
 const coursePrograms = [
   {
     name: "Walkers",
@@ -584,11 +720,11 @@ const ReviewCard = ({ review }) => {
 
   return (
     <article className="review-card" style={{ display: 'flex', flexDirection: 'column', minHeight: '380px', boxSizing: 'border-box' }}>
-      <span className="stars">{'★'.repeat(review.rating)}</span>
-      <h4 style={{ minHeight: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{review.title}</h4>
+      <span className="stars" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>{'★'.repeat(review.rating)}</span>
+      <h4 style={{ minHeight: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', width: '100%' }}>{review.title}</h4>
       <p 
         className={(!isExpanded && isLongText) ? "review-text-clamp" : ""} 
-        style={{ flex: '1 0 auto', margin: '11px auto 0', minHeight: 'unset', textAlign: 'center' }}
+        style={{ flex: '1 0 auto', margin: '11px auto 0', minHeight: 'unset', textAlign: 'center', width: '100%' }}
       >
         {review.text}
       </p>
@@ -614,7 +750,7 @@ const ReviewCard = ({ review }) => {
           {isExpanded ? 'Read Less' : 'Read More'}
         </button>
       )}
-      <b style={{ marginTop: 'auto' }}>– {review.name}</b>
+      <b style={{ marginTop: 'auto', display: 'block', textAlign: 'center', width: '100%' }}>– {review.name}</b>
     </article>
   );
 };
@@ -962,9 +1098,8 @@ export function CurriculumPage() {
         </div>
       </div>
 
-
-
-      {/* ── Animated Journey Timeline Section ── */}
+      {/* ── Animated Journey Timeline Section (Hidden) ── */}
+      {false && (
       <section id="journey-v5" className="journey-v5">
 
         {/* Floating Background Pieces */}
@@ -991,7 +1126,6 @@ export function CurriculumPage() {
               </div>
             </div>
 
-            {/* Steps Content */}
             <div className="journey-v5__steps">
               {journeySteps.map((step, idx) => {
                 const isEven = idx % 2 === 1; // 0-index based, so index 1 is even step
@@ -1101,6 +1235,149 @@ export function CurriculumPage() {
                 );
               })}
             </div>
+          </div>
+        </div>
+      </section>
+      )}
+
+      {/* ── New Premium Curriculum Levels Section (v6) ── */}
+      <section id="journey-v6" className="journey-v6">
+        <div className="journey-v6__container">
+          <div className="journey-v6__header">
+            <h2 className="journey-v6__heading">What Your Child Will Learn</h2>
+            <p className="journey-v6__subheading">A progressive, stage-by-stage journey to chess mastery and beyond.</p>
+          </div>
+
+          {/* List of all Levels Stacked Vertically */}
+          <div className="journey-v6__levels-list">
+            {premiumLevelsData.map((level) => (
+              <div 
+                key={level.id} 
+                className="journey-v6__level-row"
+                style={{ '--level-theme-color': level.themeColor }}
+              >
+                {/* Level Row Background Banner Image and Ambient Glow */}
+                <div className="journey-v6__level-bg">
+                  <img src={level.bgImage} alt="" className="journey-v6__level-bg-img" />
+                  <div className="journey-v6__level-bg-overlay"></div>
+                  <div className="journey-v6__level-theme-glow"></div>
+                </div>
+
+                {/* Left Side: Title, Subtitle, and Topics Covered */}
+                <div className="journey-v6__left-col">
+                  <div className="journey-v6__level-title-group">
+                    <h3 className="journey-v6__level-title">
+                      {level.name} <span className="journey-v6__title-piece">{level.piece}</span>
+                    </h3>
+                    <p className="journey-v6__level-subtitle">{level.subheading}</p>
+                  </div>
+                  
+                  <div className="journey-v6__topics-section">
+                    <h4 className="journey-v6__topics-title">Topics Covered</h4>
+                    <div className="journey-v6__topics-list">
+                      {level.topics.map((topic, index) => (
+                        <div key={index} className="journey-v6__topic-item">
+                          <span className="journey-v6__topic-number">{index + 1}</span>
+                          <span className="journey-v6__topic-text">{topic}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Side: Info Stack + Goals, Activities, Book Class Button */}
+                <div className="journey-v6__right-col">
+                  {/* Marquee Pill Bar */}
+                  <div className="journey-v6__marquee-pill">
+                    <div className="journey-v6__marquee-content">
+                      <span className="journey-v6__marquee-text">{level.marqueeText}</span>
+                      <span className="journey-v6__marquee-text" aria-hidden="true">{level.marqueeText}</span>
+                    </div>
+                  </div>
+
+                  {/* Top Row: Stack of 3 Info Cards + Goals Box */}
+                  <div className="journey-v6__right-top-row">
+                    {/* Stack of Info Cards */}
+                    <div className="journey-v6__info-stack">
+                      <div className="journey-v6__info-card journey-v6__info-card--age">
+                        <div className="journey-v6__info-icon-wrap">
+                          <Users size={20} />
+                        </div>
+                        <div className="journey-v6__info-content">
+                          <span className="journey-v6__info-label">AGE GROUP</span>
+                          <strong className="journey-v6__info-value">{level.ageGroup}</strong>
+                        </div>
+                      </div>
+
+                      <div className="journey-v6__info-card journey-v6__info-card--duration">
+                        <div className="journey-v6__info-icon-wrap">
+                          <Clock size={20} />
+                        </div>
+                        <div className="journey-v6__info-content">
+                          <span className="journey-v6__info-label">DURATION</span>
+                          <strong className="journey-v6__info-value">{level.duration}</strong>
+                        </div>
+                      </div>
+
+                      <div className="journey-v6__info-card journey-v6__info-card--fees">
+                        <div className="journey-v6__info-icon-wrap">
+                          <Wallet size={20} />
+                        </div>
+                        <div className="journey-v6__info-content">
+                          <span className="journey-v6__info-label">FEES</span>
+                          <strong className="journey-v6__info-value">{level.fees}</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Goals Box */}
+                    <div className="journey-v6__goals-box">
+                      <div className="journey-v6__goals-header">
+                        <Target size={20} className="journey-v6__goals-icon" />
+                        <h4>GOALS</h4>
+                      </div>
+                      <ul className="journey-v6__goals-list">
+                        {level.goals.map((goal, index) => (
+                          <li key={index}>
+                            <CheckCircle2 size={15} className="journey-v6__goal-check" />
+                            <span>{goal}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Bottom Area: Activities Panel + Book Trial Button */}
+                  <div className="journey-v6__activities-panel">
+                    <h4 className="journey-v6__activities-title">ACTIVITIES</h4>
+                    <div className="journey-v6__activities-grid">
+                      {level.activities.map((act, index) => {
+                        const IconComponent = act.icon;
+                        const activityThemes = [
+                          { bg: 'rgba(245, 158, 11, 0.1)', color: '#d97706' }, // Yellow
+                          { bg: 'rgba(34, 197, 94, 0.1)', color: '#16a34a' }, // Green
+                          { bg: 'rgba(239, 68, 68, 0.1)', color: '#dc2626' }, // Red
+                          { bg: 'rgba(99, 102, 241, 0.1)', color: '#4f46e5' }  // Blue/Indigo
+                        ];
+                        const theme = activityThemes[index % activityThemes.length];
+                        return (
+                          <div key={index} className="journey-v6__activity-card">
+                            <div 
+                              className="journey-v6__activity-icon-wrap"
+                              style={{ backgroundColor: theme.bg, color: theme.color }}
+                            >
+                              <IconComponent size={20} />
+                            </div>
+                            <span className="journey-v6__activity-name">{act.name}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1241,8 +1518,8 @@ export function CurriculumPage() {
 
       {/* ── Customer Reviews (from Home) ── */}
       <section className="figma-section reviews" id="support">
-        <h2>Customer Reviews</h2>
-        <p className="sub">
+        <h2 style={{ textAlign: 'center' }}>Customer Reviews</h2>
+        <p className="sub" style={{ textAlign: 'center', marginLeft: 'auto', marginRight: 'auto' }}>
           See what parents and students are saying about learning chess with SckoolChess.
         </p>
         <div className="review-row">

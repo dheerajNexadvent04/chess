@@ -160,13 +160,10 @@ export function NepzoProgramPage() {
     <div className="nz-page">
       {/* ── 1. HERO SECTION ── */}
       <section className="nz-hero">
-        <video
-          className="nz-hero__bg-video"
-          src="/nepzo-bg-video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          className="nz-hero__bg-image"
+          src="/nezpo main banner.webp"
+          alt="NEPZO Future Ready Learning Background"
         />
         <div className="nz-wrap">
           <div className="nz-hero__inner">
