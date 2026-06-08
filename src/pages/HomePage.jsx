@@ -15,7 +15,6 @@ const drawerLinks = [
   { label: 'Tournaments', to: '/tournaments' },
   { label: 'Market Area', to: '/market-area' },
   { label: 'Careers', to: '/career' },
-  { label: 'Book Online Class', to: '/book-class' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact-us' }
 ]
@@ -144,30 +143,30 @@ const schoolLogos = [
 ]
 
 const col1 = [
-  '/g1.jpeg',
-  '/g2.jpeg',
-  '/g3.jpeg',
-  '/g4.jpeg',
-  '/g5.jpeg',
-  '/g6.jpeg',
+  '/wg1.jpeg',
+  '/wg2.jpeg',
+  '/wg3.jpeg',
+  '/wg4.jpeg',
+  '/wg5.jpeg',
+  '/wg6.jpeg',
 ]
 
 const col2 = [
-  '/g7.jpeg',
-  '/g8.jpeg',
-  '/g9.jpeg',
-  '/g10.jpeg',
-  '/g11.jpeg',
-  '/g12.jpeg',
+  '/wg7.jpeg',
+  '/wg8.jpeg',
+  '/wg9.jpeg',
+  '/wg10.jpeg',
+  '/wg11.jpeg',
+  '/wg12.jpeg',
 ]
 
 const col3 = [
-  '/g13.jpeg',
-  '/g14.jpeg',
-  '/g15.jpeg',
-  '/g16.jpeg',
-  '/g17.jpeg',
-  '/g1.jpeg',
+  '/wg13.jpeg',
+  '/wg14.jpeg',
+  '/wg15.jpeg',
+  '/wg16.jpeg',
+  '/wg17.jpeg',
+  '/wg18.jpeg',
 ]
 
 const marqueeItems = [
@@ -190,10 +189,10 @@ const navItems = [
 
 export function HomePage() {
   useEffect(() => {
-    document.title = "SckoolChess | Best Chess Academy in Rohini, Delhi NCR"
+    document.title = "SckoolChess | Best Chess Solution Provider in Rohini, Delhi NCR"
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) {
-      metaDesc.setAttribute('content', "SckoolChess — India's top NEP-aligned chess academy. Best chess classes in Rohini, Pitampura, Paschim Vihar, Dwarka, Vaishali, Indirapuram, Vasundhara, Gurgaon and online pan-India. 5,000+ students trained.")
+      metaDesc.setAttribute('content', "SckoolChess — India's top NEP-aligned chess solution provider. Best chess classes in Rohini, Pitampura, Paschim Vihar, Dwarka, Vaishali, Indirapuram, Vasundhara, Gurgaon and online pan-India. 5,000+ students trained.")
     }
   }, [])
 
@@ -473,6 +472,14 @@ export function HomePage() {
         />
         <aside className={`figma-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
           <div className="figma-mobile-drawer-head">
+            <div className="drawer-header-logos">
+              <Link to="/" onClick={closeMobileMenu} className="drawer-brand-logo-link">
+                <img src="/logonewbg.png" alt="SckoolChess logo" className="drawer-brand-logo" />
+              </Link>
+              <Link to="/nepzo-program" onClick={closeMobileMenu} className="drawer-nepzo-link">
+                <img src="/nepzobg.png" alt="Nepzo Logo" className="drawer-nepzo-logo" />
+              </Link>
+            </div>
             <button type="button" aria-label="Close menu" onClick={closeMobileMenu}>
               <X size={18} />
             </button>
@@ -502,11 +509,6 @@ export function HomePage() {
               )
             })}
           </nav>
-          <div className="figma-mobile-drawer-footer">
-            <Link to="/nepzo-program" onClick={closeMobileMenu} className="drawer-nepzo-link">
-              <img src="/nepzobg.png" alt="Nepzo Logo" className="drawer-nepzo-logo" />
-            </Link>
-          </div>
         </aside>
 
         <div className="figma-hero-content">
@@ -515,9 +517,9 @@ export function HomePage() {
           </p>
           <h1>We make your chess dreams a reality</h1>
           <p>
-            <strong>India's #1 NEP-Aligned Chess Academy for Schools and Students</strong>
+            <strong>India's Top NEP-Aligned Chess Solution Provider for Schools and Students</strong>
             <br /><br />
-            We help students discover their inner champion through structured chess training. Join SckoolChess, the best chess academy in Rohini, Pitampura, Paschim Vihar, Dwarka, Vaishali, Indirapuram, Vasundhara and Gurgaon to start your child’s winning journey today.
+            We help students discover their inner champion through structured chess training. Join SckoolChess, the best chess solution provider in Rohini, Pitampura, Paschim Vihar, Dwarka, Vaishali, Indirapuram, Vasundhara and Gurgaon to start your child’s winning journey today.
           </p>
           <p className="trust-chip" style={{ background: 'rgba(255, 255, 255, 0.07)', border: '1px solid rgba(255, 255, 255, 0.12)', padding: '8px 16px', borderRadius: '24px', fontSize: '13.5px', color: 'rgba(255,255,255,0.85)', display: 'inline-flex', alignItems: 'center', gap: '8px', alignSelf: 'flex-start' }}>
             <span className="trust-chip-icon" aria-hidden="true" style={{ display: 'inline-flex' }}>
@@ -786,7 +788,7 @@ export function HomePage() {
               <img src="/calander.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.years}+</strong>
-            <span>Titles Won</span>
+            <span>Years of experience 2016 Est.</span>
           </article>
         </div>
         <div className="metrics-marquee" aria-label="Achievements ticker">

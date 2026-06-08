@@ -15,14 +15,18 @@ const drawerLinks = [
   { label: 'Tournaments', to: '/tournaments' },
   { label: 'Market Area', to: '/market-area' },
   { label: 'Careers', to: '/career' },
-  { label: 'Book Online Class', to: '/book-class' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact-us' }
 ]
 
+const cityRow1 = ['Rohini', 'Pitampura', 'Paschim Vihar', 'Shalimar Bagh', 'Dwarka', 'Ashok Vihar']
+const cityRow2 = ['Punjabi Bagh', 'Sonipat', 'Faridabad', 'Indirapuram', 'Vaishali', 'Kaushambi']
+const cityRow3 = ['Gurgaon', 'Noida', 'Navi Mumbai', 'Vasundhara', 'Ghaziabad']
+
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [headerScrolled, setHeaderScrolled] = useState(false)
+  const [pausedRows, setPausedRows] = useState({})
   const location = useLocation()
   const isHomePage = location.pathname === '/'
   const isAboutPage = location.pathname === '/about-us'
@@ -145,6 +149,14 @@ export function Layout() {
           />
           <aside className={`about-mobile-drawer ${menuOpen ? 'open' : ''}`}>
             <div className="about-mobile-drawer-head">
+              <div className="drawer-header-logos">
+                <Link to="/" onClick={() => setMenuOpen(false)} className="drawer-brand-logo-link">
+                  <img src="/logonewbg.png" alt="SckoolChess logo" className="drawer-brand-logo" />
+                </Link>
+                <Link to="/nepzo-program" onClick={() => setMenuOpen(false)} className="drawer-nepzo-link">
+                  <img src="/nepzobg.png" alt="Nepzo Logo" className="drawer-nepzo-logo" />
+                </Link>
+              </div>
               <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)}>
                 <X size={18} />
               </button>
@@ -174,11 +186,6 @@ export function Layout() {
                 )
               })}
             </nav>
-            <div className="about-mobile-drawer-footer">
-              <Link to="/nepzo-program" onClick={() => setMenuOpen(false)} className="drawer-nepzo-link">
-                <img src="/nepzobg.png" alt="Nepzo Logo" className="drawer-nepzo-logo" />
-              </Link>
-            </div>
           </aside>
         </>
       ) : null}
@@ -191,15 +198,43 @@ export function Layout() {
       <section className="ma-tags-section">
         <div className="ma-tags-inner">
           <p className="ma-tags-label">Chess Classes Near You</p>
-          <div className="ma-tags-wrap">
-            {[
-              'Rohini', 'Pitampura', 'Paschim Vihar', 'Shalimar Bagh', 'Dwarka',
-              'Ashok Vihar', 'Punjabi Bagh', 'Sonipat', 'Faridabad',
-              'Indirapuram', 'Vaishali', 'Kaushambi', 'Gurgaon', 'Noida',
-              'Navi Mumbai', 'Vasundhara', 'Ghaziabad'
-            ].map((loc) => (
+          
+          {/* Desktop view (normal wrap) */}
+          <div className="ma-tags-desktop-wrap">
+            {[...cityRow1, ...cityRow2, ...cityRow3].map((loc) => (
               <Link key={loc} to="/book-class" className="ma-tag">{loc}</Link>
             ))}
+          </div>
+
+          {/* Mobile view (scrolling marquee rows) */}
+          <div className="ma-tags-mobile-marquee">
+            {[cityRow1, cityRow2, cityRow3].map((row, idx) => {
+              const directionClass = idx % 2 === 0 ? 'row-left' : 'row-right';
+              const isPaused = !!pausedRows[idx];
+              return (
+                <div
+                  key={idx}
+                  className={`ma-tags-marquee-row ${directionClass} ${isPaused ? 'is-paused' : ''}`}
+                  onMouseEnter={() => setPausedRows(prev => ({ ...prev, [idx]: true }))}
+                  onMouseLeave={() => setPausedRows(prev => ({ ...prev, [idx]: false }))}
+                  onClick={() => setPausedRows(prev => ({ ...prev, [idx]: !prev[idx] }))}
+                  onTouchStart={() => setPausedRows(prev => ({ ...prev, [idx]: !prev[idx] }))}
+                >
+                  <div className="ma-tags-marquee-track">
+                    <div className="ma-tags-marquee-group">
+                      {row.map((loc) => (
+                        <Link key={loc} to="/book-class" className="ma-tag">{loc}</Link>
+                      ))}
+                    </div>
+                    <div className="ma-tags-marquee-group" aria-hidden="true">
+                      {row.map((loc) => (
+                        <Link key={`${loc}-dup`} to="/book-class" className="ma-tag">{loc}</Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

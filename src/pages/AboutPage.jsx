@@ -1,55 +1,31 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowUpRight, FileText } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const aboutHeroImage = '/comapany profile banner2.png'
-const coachingImage = '/CP affiliated banner2.png'
+const slideshowImages = Array.from({ length: 15 }, (_, i) => `/about_slide${i + 1}.jpeg`)
+const coachingImage = '/l2.png'
 const missionBoardImage = '/cp career banner2.png'
 const visionKidImage = '/cp partnership banner2.png'
 
-const curriculumDetails = [
-  {
-    title: "Fundamentals",
-    description: "Students begin by understanding the chessboard, piece movement, rules and essential gameplay concepts required to build a strong foundation for competitive play.",
-    topics: ["Chess board and pieces", "Check, checkmate and stalemate", "Basic gameplay understanding", "Rules of the game", "Castling, promotion and en passant", "Opening principles", "Chess notation basics", "Time management in games"],
-    image: "/fundamentals.jpg"
-  },
-  {
-    title: "Openings",
-    description: "Students learn critical opening systems, positional development and safe opening habits that help create strong early-game positions in both school and competitive chess tournaments.",
-    topics: ["Basic opening ideas", "Pawn development", "Indian Game introduction", "Central control concepts", "Common opening traps", "Top-rated opening moves"],
-    image: "/opening.jpg"
-  },
-  {
-    title: "Tactics",
-    description: "Our curriculum focuses heavily on tactical pattern recognition and practical combinations that improve real match performance for students at every level.",
-    topics: ["Forks", "Skewers", "Double attacks", "Puzzle-solving practice", "Pins", "Discovered attacks", "Back-rank checkmates", "Zwischenzug concepts"],
-    image: "/tactics.jpg"
-  },
-  {
-    title: "Endgames",
-    description: "Students develop the ability to convert winning positions confidently through structured endgame training — a critical skill for every tournament-ready chess player across Rohini, Pitampura, Dwarka and Delhi NCR.",
-    topics: ["King and Queen checkmates", "Rook pawn endgames", "Practical endgame strategies", "King and Rook checkmates", "Opposition concepts", "Pawn promotion technique"],
-    image: "/endgame.jpg"
-  },
-  {
-    title: "Tournament Activities",
-    description: "Students regularly participate in practice games, puzzle contests and mini-tournaments to build confidence and competitive exposure across Rohini, Pitampura, Noida and NCR.",
-    topics: ["Practice matches", "Result analysis", "Competitive preparation", "Puzzle competitions", "Friendly tournaments", "Post-game debriefs"],
-    label: "Activities Included",
-    image: "/tournament.jpg"
-  }
-];
 
 export function AboutPage() {
   useScrollReveal();
+  const [activeSlide, setActiveSlide] = useState(0)
 
   useEffect(() => {
-    document.title = "About SckoolChess | Best Chess Academy in Noida, Ghaziabad, Indirapuram, Delhi and Navi Mumbai"
+    document.title = "About SckoolChess | Best Chess Solution Provider in Noida, Ghaziabad, Indirapuram, Delhi and Navi Mumbai"
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) {
-      metaDesc.setAttribute('content', "Learn about SckoolChess, a NEP-aligned chess academy offering the best chess classes in Rohini, Pitampura, Dwarka, Vaishali and across Delhi NCR. Affiliated to Delhi Chess Association.")
+      metaDesc.setAttribute('content', "Learn about SckoolChess, a NEP-aligned chess solution provider offering the best chess classes in Rohini, Pitampura, Dwarka, Vaishali and across Delhi NCR. Affiliated to Delhi Chess Association.")
     }
+  }, [])
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % 15)
+    }, 3200)
+    return () => clearInterval(slideInterval)
   }, [])
 
   return (
@@ -58,7 +34,14 @@ export function AboutPage() {
 
       <section className="about-hero-first reveal fade-up">
         <div className="about-hero-first-image">
-          <img src={aboutHeroImage} alt="Chess training session" />
+          {slideshowImages.map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`Chess training session ${idx + 1}`}
+              className={idx === activeSlide ? 'active' : ''}
+            />
+          ))}
         </div>
 
         <div className="about-hero-first-head">
@@ -69,55 +52,15 @@ export function AboutPage() {
           </h1>
 
           <p>
-            Since 2022, SckoolChess has been turning curious beginners into confident players. As the best chess academy in Rohini and across Delhi NCR, we believe chess is the greatest classroom on earth.
+            Since 2022, SckoolChess has been turning curious beginners into confident players. As the best chess solution provider in Rohini and across Delhi NCR, we believe chess is the greatest classroom on earth.
           </p>
 
-          <a 
-            className="about-hero-first-btn" 
-            href="#about-details"
-            onClick={(e) => {
-              e.preventDefault();
-              window.dispatchEvent(new CustomEvent('open-custom-modal', {
-                detail: { type: 'inquiry', section: 'About Hero' }
-              }));
-            }}
-          >
+          <Link to="/contact-us" className="about-hero-first-btn">
             GET IN TOUCH
-          </a>
+          </Link>
         </div>
       </section>
 
-      <section className="curriculum-detail-v5" aria-label="Curriculum Details">
-        <div className="curriculum-detail-v5__container">
-          {curriculumDetails.map((detail, idx) => {
-            const isReverse = idx % 2 === 0;
-            return (
-              <div 
-                key={detail.title} 
-                className={`curriculum-detail-v5__row ${isReverse ? 'curriculum-detail-v5__row--reverse' : ''}`}
-              >
-                <div className="curriculum-detail-v5__content">
-                  <h3 className="curriculum-detail-v5__title">{detail.title}</h3>
-                  <div className="curriculum-detail-v5__desc-wrap">
-                    <p className="curriculum-detail-v5__description">{detail.description}</p>
-                  </div>
-                  <div className="curriculum-detail-v5__topics-wrap">
-                    <p className="curriculum-detail-v5__topics-label">{detail.label || "Topics Covered"}</p>
-                    <ul className="curriculum-detail-v5__list">
-                      {detail.topics.map((topic, tIdx) => (
-                        <li key={tIdx}>{topic}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="curriculum-detail-v5__image-wrap">
-                  <img src={detail.image} alt={detail.title} className="curriculum-detail-v5__image" />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
 
       <section className="about-coaching-section reveal fade-up" aria-label="Master chess coaching" id="about-details">
         <div className="about-coaching-copy">

@@ -64,7 +64,7 @@ export function AchievementPage() {
                 </svg>
               </div>
               <div className="achievement-stat-info">
-                <span className="achievement-stat-num">1200+</span>
+                <span className="achievement-stat-num">5,000+</span>
                 <span className="achievement-stat-label">Students Trained</span>
               </div>
             </div>
@@ -78,7 +78,7 @@ export function AchievementPage() {
               </div>
               <div className="achievement-stat-info">
                 <span className="achievement-stat-num">10+</span>
-                <span className="achievement-stat-label">Years of Excellence</span>
+                <span className="achievement-stat-label">Years of experience 2016 Est.</span>
               </div>
             </div>
             <div className="achievement-stat-divider" />
@@ -94,7 +94,7 @@ export function AchievementPage() {
                 </svg>
               </div>
               <div className="achievement-stat-info">
-                <span className="achievement-stat-num">50+</span>
+                <span className="achievement-stat-num">10+</span>
                 <span className="achievement-stat-label">Awards Won</span>
               </div>
             </div>

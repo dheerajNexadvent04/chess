@@ -16,7 +16,7 @@ export function BookClassPage() {
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'Book your online chess class with SckoolChess — the best online chess academy in Rohini, Pitampura & Delhi NCR. Expert FIDE coaches, flexible scheduling. Free trial available.'
+        'Book your online chess class with SckoolChess — the best online chess solution provider in Rohini, Pitampura & Delhi NCR. Expert FIDE coaches, flexible scheduling. Free trial available.'
       )
     }
   }, [])
@@ -258,7 +258,7 @@ export function BookClassPage() {
           <div className="feature-card">
             <div className="feature-icon"><Crown size={28} /></div>
             <h3>Elite Coaches</h3>
-            <p>Learn directly from titled players, including FIDE Masters and Grandmasters with years of teaching experience at SckoolChess — the best chess academy in Rohini and online across NCR.</p>
+            <p>Learn directly from titled players, including FIDE Masters and Grandmasters with years of teaching experience at SckoolChess — the best chess solution provider in Rohini and online across NCR.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon"><Brain size={28} /></div>

@@ -1,5 +1,6 @@
 import { ChevronDown } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const partnerSchools = [
   {
@@ -165,15 +166,15 @@ export function PartnerSchoolsPage() {
   const reviews = [
     {
       text: "SckoolChess has been an incredible partner in nurturing our students' strategic thinking and confidence. Their structured chess programs and expert coaches have made a real difference to our school community.",
-      author: "— Principal, Apeejay School, Sheikh Sarai"
+      author: "— Principal"
     },
     {
       text: "The Chess in School program introduced by SckoolChess has received amazing feedback from parents. It has significantly enhanced our students' concentration and cognitive skills across all year groups.",
-      author: "— Principal, Apeejay School, Noida"
+      author: "— Principal"
     },
     {
       text: "Their coaches are highly professional, patient, and skilled. SckoolChess's structured tournament preparation has helped our school win multiple inter-school chess championships across Delhi NCR.",
-      author: "— Activity Coordinator, Apeejay School, Nerul"
+      author: "— Activity Coordinator"
     }
   ]
 
@@ -222,6 +223,7 @@ export function PartnerSchoolsPage() {
     const nodes = section.querySelectorAll('.partner-node');
 
     function updateTimeline() {
+      if (window.innerWidth <= 1024) return;
       const windowHeight = window.innerHeight;
       const headerHeight = 86;
       const activationY = headerHeight + (windowHeight - headerHeight) / 2;
@@ -294,11 +296,7 @@ export function PartnerSchoolsPage() {
 
   return (
     <div className="partners-page">
-      <PartnerSchoolsHero onCollabClick={() => {
-        window.dispatchEvent(new CustomEvent('open-custom-modal', {
-          detail: { type: 'inquiry', section: 'Partner Hero Button' }
-        }));
-      }} />
+      <PartnerSchoolsHero />
       
       <section id="partner-timeline-v2" className="partner-timeline-v2">
         <div className="pt-container">
@@ -483,7 +481,7 @@ export function PartnerSchoolsPage() {
         </div>
 
         <div className="contact-faq-media">
-          <img src="/contact us 2.png" alt="Chess academy students" />
+          <img src="/contact us 2.png" alt="Chess solution provider students" />
         </div>
       </section>
 
@@ -554,7 +552,7 @@ function PartnerGalleryModal({ school, onClose }) {
   )
 }
 
-function PartnerSchoolsHero({ onCollabClick }) {
+function PartnerSchoolsHero() {
   return (
     <div className="partner-hero-wrapper">
       <section className="partner-hero-section">
@@ -578,9 +576,9 @@ function PartnerSchoolsHero({ onCollabClick }) {
           We are proud to collaborate with leading schools across Delhi NCR to promote chess education, creativity, critical thinking and holistic development through our NEP-aligned Chess in School program.
         </p>
         <div className="partner-hero-cta-wrapper">
-          <button className="partner-hero-cta-btn" onClick={onCollabClick}>
+          <Link to="/contact-us" className="partner-hero-cta-btn">
             Contact Us to Collaborate
-          </button>
+          </Link>
         </div>
         <div className="partner-hero-metrics">
           <div className="partner-metric-card">
@@ -594,22 +592,22 @@ function PartnerSchoolsHero({ onCollabClick }) {
             <div className="partner-metric-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             </div>
-            <strong>1,000+</strong>
+            <strong>5,000+</strong>
             <span>Students Trained</span>
           </div>
           <div className="partner-metric-card">
             <div className="partner-metric-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2a6 6 0 0 0-6 6v3.58a6 6 0 0 0 12 0V8a6 6 0 0 0-6-6z"/></svg>
             </div>
-            <strong>150+</strong>
+            <strong>10+</strong>
             <span>Tournaments</span>
           </div>
           <div className="partner-metric-card">
             <div className="partner-metric-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
             </div>
-            <strong>3+</strong>
-            <span>Years of Impact</span>
+            <strong>10+</strong>
+            <span>Years of experience 2016 Est.</span>
           </div>
         </div>
       </div>

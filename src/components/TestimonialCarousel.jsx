@@ -7,7 +7,7 @@ const reviewsData = [
     image: "/A4.jpeg",
     rating: "5.0/5",
     title: "Excellent Coaching & Management",
-    body: "SckoolChess transformed my son's approach to learning. The coaches at this best chess academy in Rohini do not just teach chess, they build character, focus and resilience. After just one year, he ranked in the Delhi State U-17 Championship. Highly recommended for all school students in Rohini, Pitampura and across Delhi NCR.",
+    body: "SckoolChess transformed my son's approach to learning. The coaches at this best chess solution provider in Rohini do not just teach chess, they build character, focus and resilience. After just one year, he ranked in the Delhi State U-17 Championship. Highly recommended for all school students in Rohini, Pitampura and across Delhi NCR.",
     name: "Parent of Vatsal Singla, Delhi State U-17 Medallist"
   },
   {

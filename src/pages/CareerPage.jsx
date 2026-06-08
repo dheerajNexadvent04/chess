@@ -49,7 +49,7 @@ export function CareerPage() {
             <img className="career-collage-main" src="/career.webp" alt="Students learning chess with coach" />
             <img className="career-collage-card career-collage-card-a" src="/im1.png" alt="Chess class activity" />
             <img className="career-collage-card career-collage-card-b" src="/im3.png" alt="Children practicing chess strategy" />
-            <img className="career-collage-card career-collage-card-c" src="/home.png" alt="Academy chess training highlight" />
+            <img className="career-collage-card career-collage-card-c" src="/home.png" alt="Solution Provider chess training highlight" />
           </div>
           <div className="career-hero-badge">
             <Sparkles size={16} strokeWidth={2.4} />

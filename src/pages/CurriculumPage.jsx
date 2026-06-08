@@ -588,6 +588,7 @@ const premiumLevelsData = [
 
 const coursePrograms = [
   {
+    id: "walkers",
     name: "Walkers",
     level: "Beginner Level",
     desc: "Perfect for children starting their chess journey and learning the game step-by-step.",
@@ -596,6 +597,7 @@ const coursePrograms = [
     bgImage: "/n1.jpg"
   },
   {
+    id: "joggers",
     name: "Joggers",
     level: "Intermediate Level",
     desc: "Designed for students ready to improve tactical understanding and tournament gameplay.",
@@ -604,6 +606,7 @@ const coursePrograms = [
     bgImage: "/n2.jpg"
   },
   {
+    id: "runner",
     name: "Runner",
     level: "Advanced Level",
     desc: "For students aiming to compete seriously and improve advanced strategic understanding.",
@@ -612,6 +615,7 @@ const coursePrograms = [
     bgImage: "/n3.jpg"
   },
   {
+    id: "crash",
     name: "Crash Course",
     level: "Fast Track Learning",
     desc: "An accelerated program for rapid improvement and tournament-focused preparation.",
@@ -861,6 +865,7 @@ export function CurriculumPage() {
     const nodes = section.querySelectorAll('.journey-v5__node');
 
     function updateTimeline() {
+      if (window.innerWidth <= 1024) return;
       const windowHeight = window.innerHeight;
       const headerHeight = 86;
       // Use 50% of the AVAILABLE screen (below header) so the line exactly meets the dot
@@ -1041,10 +1046,10 @@ export function CurriculumPage() {
               Structured Chess Curriculum Designed to Build Future Champions
             </h1>
             <p>
-              A structured and progressive learning program for students of all ages. Shape their decisions, strategy, thinking, tournament confidence and life skills through SckoolChess — the best chess academy in Rohini and across Delhi NCR.
+              A structured and progressive learning program for students of all ages. Shape their decisions, strategy, thinking, tournament confidence and life skills through SckoolChess — the best chess solution provider in Rohini and across Delhi NCR.
             </p>
             <div className="nch-actions">
-              <a href="tel:+918447992702" className="nch-btn-primary">Book Free Trial</a>
+              <Link to="/book-class" className="nch-btn-primary">Book Free Trial</Link>
               <a href="#about" className="nch-btn-secondary">View Courses</a>
               <a href="https://www.youtube.com/@sckoolchess" target="_blank" rel="noopener noreferrer" className="nch-btn-youtube">
                 <span className="nch-yt-icon-wrap">
@@ -1068,14 +1073,14 @@ export function CurriculumPage() {
                 <div className="fc-icon"><ArrowUpRight size={20} strokeWidth={3} /></div>
                 <div className="fc-text">
                   <strong><AnimatedNumber end={5} suffix="+" /></strong>
-                  <span>Online Courses</span>
+                  <span>Courses</span>
                 </div>
               </div>
 
               <div className="nch-floating-card fc-2">
                 <div className="fc-text">
-                  <strong><AnimatedNumber end={10} suffix="k+" /></strong>
-                  <span>Online Students</span>
+                  <strong><AnimatedNumber end={5} suffix="K+" /></strong>
+                  <span>Students</span>
                 </div>
                 <div className="fc-avatars">
                   <img src="/c1.jpg" alt="student" />
@@ -1252,6 +1257,7 @@ export function CurriculumPage() {
           <div className="journey-v6__levels-list">
             {premiumLevelsData.map((level) => (
               <div 
+                id={level.id}
                 key={level.id} 
                 className="journey-v6__level-row"
                 style={{ '--level-theme-color': level.themeColor }}
@@ -1394,7 +1400,7 @@ export function CurriculumPage() {
               </p>
 
               <div className="impact-v5__stats">
-                <StatBox number={15000} suffix="+" label="Enrolled Students" />
+                <StatBox number={500} suffix="+" label="Online Students" />
                 <StatBox number={500} suffix="+" label="Tournaments Won" />
                 <StatBox number={95} suffix="%" label="Success Rate" />
               </div>
@@ -1458,7 +1464,7 @@ export function CurriculumPage() {
             {coursePrograms.map((course, idx) => (
               <div key={idx} className="cp-v5__card">
                 {/* Floating Boy Image */}
-                <img src="/student4.png" alt="Student" className="cp-v5__floating-img" />
+                <img src="/booy.png" alt="Student" className="cp-v5__floating-img" />
                 
                 <div className="cp-v5__card-main">
                   <div className="cp-v5__card-bg">
@@ -1467,12 +1473,17 @@ export function CurriculumPage() {
                   <div className="cp-v5__card-overlay"></div>
                   
                   <div className="cp-v5__card-content">
-                    <h3 className="cp-v5__card-title">{course.name}</h3>
+                    <h3 className="cp-v5__card-title">
+                      <a href={"#" + course.id} className="cp-v5__card-title-link">{course.name}</a>
+                    </h3>
                     <p className="cp-v5__card-desc">{course.desc}</p>
                     <div className="cp-v5__capsules">
                       {course.points.map((p, pIdx) => (
                         <span key={pIdx} className="cp-v5__capsule">{p}</span>
                       ))}
+                    </div>
+                    <div style={{ marginTop: '14px' }}>
+                      <a href={"#" + course.id} className="cp-v5__learn-more">Learn Details &rarr;</a>
                     </div>
                   </div>
                 </div>

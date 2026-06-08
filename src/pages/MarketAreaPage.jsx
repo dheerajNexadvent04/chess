@@ -6,8 +6,8 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 const serviceAreas = [
   {
     city: 'Rohini',
-    desc: 'Best chess academy in Delhi. Offline and online classes available for students of all levels across Rohini, Gurgaon, Noida, Ghaziabad and Navi Mumbai.',
-    keywords: 'best chess classes in Rohini, top chess academy in Rohini, best chess academy in Delhi',
+    desc: 'Best chess solution provider in Delhi. Offline and online classes available for students of all levels across Rohini, Gurgaon, Noida, Ghaziabad and Navi Mumbai.',
+    keywords: 'best chess classes in Rohini, top chess solution provider in Rohini, best chess solution provider in Delhi',
     highlight: true,
   },
   {
@@ -69,7 +69,7 @@ const serviceAreas = [
   {
     city: 'Noida',
     desc: 'Chess coaching in Noida — structured programs for beginners and advanced students preparing for FIDE tournaments.',
-    keywords: 'chess classes Noida, chess academy Noida',
+    keywords: 'chess classes Noida, chess solution provider Noida',
   },
   {
     city: 'Navi Mumbai',
@@ -87,7 +87,7 @@ const stats = [
   { value: '17+', label: 'Cities Served' },
   { value: '5,000+', label: 'Students Trained' },
   { value: '22+', label: 'Partner Schools' },
-  { value: '10+', label: 'Years of Experience' },
+  { value: '10+', label: 'Years of experience 2016 Est.' },
 ]
 
 export function MarketAreaPage() {

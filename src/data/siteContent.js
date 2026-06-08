@@ -77,8 +77,8 @@ export const associatedSchoolLogos = [
 
 export const keyMetrics = [
   { label: 'Happy Students', value: '5000+' },
-  { label: 'Partner Schools', value: '100+' },
-  { label: 'Years of Trust', value: '15+' },
+  { label: 'Partner Schools', value: '12+' },
+  { label: 'Years of experience 2016 Est.', value: '10+' },
 ]
 
 export const partnerships = [
@@ -144,7 +144,7 @@ export const coaches = [
   {
     name: 'Anil Shivpuri',
     title: 'Senior Coach',
-    image: '/c1.jpg',
+    image: '/anil.jpeg',
     bio: 'Anil Shivpuri is a senior coach at SckoolChess with a highest FIDE rating of 1967. With over two decades of experience, he has mentored hundreds of students from basic level to competitive excellence across Delhi NCR.',
     socials: {
       phone: '+91-8447992702',
@@ -156,13 +156,13 @@ export const coaches = [
       experience: '20+ Years',
       rating: '1967 FIDE',
       language: 'English, Hindi',
-      specialty: 'Strategy & Endgames',
+      specialty: 'Opening & End Games Strategy',
     },
   },
   {
     name: 'Hamid Hasan',
     title: 'Former Delhi State Champion',
-    image: '/c2.jpg',
+    image: '/hamid.jpeg',
     bio: 'A former Delhi State Champion, Hamid Hasan brings deep tactical insights into every session at SckoolChess. His teaching method focuses on pattern recognition and practical match strategy — making him one of the top chess coaches in North Delhi.',
     socials: {
       phone: '+91-8447992702',
@@ -174,7 +174,7 @@ export const coaches = [
       experience: '15+ Years',
       rating: 'State Champion',
       language: 'English, Hindi',
-      specialty: 'Tactics & Openings',
+      specialty: 'Tactics and End Games',
     },
   },
   {
@@ -217,7 +217,7 @@ export const coaches = [
     name: 'Vaibhav Singh Verma',
     title: 'Coach',
     image: '/c6.jpeg',
-    bio: 'Vaibhav Singh Verma is an active tournament player with an ELO rating of 1791. At SckoolChess, he excels at teaching young beginners across Rohini and Pitampura the foundational rules and basic tactical patterns that build lasting chess intelligence.',
+    bio: 'Vaibhav Singh Verma has over 10 plus years of experience and is an active tournament player with an ELO rating of 1791. At SckoolChess, he excels at teaching young beginners across Rohini and Pitampura the foundational rules and basic tactical patterns that build lasting chess intelligence.',
     socials: {
       phone: '+91-8447992702',
       instagram: '#',
@@ -225,17 +225,17 @@ export const coaches = [
       twitter: '#',
     },
     info: {
-      experience: '5+ Years',
+      experience: '10+ Years',
       rating: '1791 FIDE',
       language: 'English, Hindi',
       specialty: 'Foundation Building',
     },
   },
   {
-    name: 'Jitender Rawat',
+    name: 'Jitendra Rawat',
     title: 'Coach',
     image: '/jitender rawat.jpeg',
-    bio: 'Jitender Rawat is a skilled instructor with a passion for helping students unlock their full potential on the chessboard. At SckoolChess, his engaging teaching style makes learning chess both fun and highly effective for school students across Delhi NCR.',
+    bio: 'Jitendra Rawat is a skilled instructor with a passion for helping students unlock their full potential on the chessboard. At SckoolChess, his engaging teaching style makes learning chess both fun and highly effective for school students across Delhi NCR.',
     socials: {
       phone: '+91-8447992702',
       instagram: '#',
@@ -246,7 +246,7 @@ export const coaches = [
       experience: '5+ Years',
       rating: '1800 FIDE',
       language: 'English, Hindi',
-      specialty: 'Tactical Play',
+      specialty: 'Beginner & Tournament Prep.',
     },
   },
 ]

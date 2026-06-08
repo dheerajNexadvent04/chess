@@ -136,7 +136,7 @@ export function ContactPage() {
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'Get in touch with SckoolChess — the best chess academy in Delhi. Find chess classes in Pitampura, Indirapuram & online across Delhi NCR. Book a free trial today.'
+        'Get in touch with SckoolChess — the best chess solution provider in Delhi. Find chess classes in Pitampura, Indirapuram & online across Delhi NCR. Book a free trial today.'
       )
     }
   }, [])
@@ -215,7 +215,7 @@ export function ContactPage() {
       {/* ── Our Branches Section ── */}
       <section className="contact-branches-section" aria-labelledby="contact-branches-title">
         <div className="contact-branches-header">
-          <h2 id="contact-branches-title">Our Academy Branches</h2>
+          <h2 id="contact-branches-title">Our Solution Provider Branches</h2>
           <p className="contact-branches-intro">
             We conduct structured offline coaching classes at our main branches. Drop by for a trial or session during availability hours.
           </p>
@@ -375,7 +375,7 @@ export function ContactPage() {
         </div>
 
         <div className="contact-faq-media">
-          <img src="/contact us 2.png" alt="Chess academy students" />
+          <img src="/contact us 2.png" alt="Chess solution provider students" />
         </div>
       </section>
     </div>
