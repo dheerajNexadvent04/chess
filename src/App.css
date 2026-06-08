@@ -18188,6 +18188,7 @@ img.header-side-logo {
   }
   .ma-cta-section {
     padding: 56px 4%;
+    padding-top: 0;
   }
   .ma-tags-section {
     padding: 28px 4%;
