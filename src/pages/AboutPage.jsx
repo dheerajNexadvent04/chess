@@ -62,7 +62,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* 01 WHO WE ARE Section */}
+      {/* WHO WE ARE Section */}
       <section className="about-coaching-section reveal fade-up" aria-label="Master chess coaching" id="about-details">
         <div className="about-coaching-copy">
           <h2>
@@ -94,10 +94,10 @@ export function AboutPage() {
       {/* Alternating Duo Sections representing Section 02, 03, 04, 05 */}
       <section className="about-duo-section" aria-label="Mission and vision">
         
-        {/* 02 WHAT WE OFFER */}
+        {/* WHAT WE OFFER */}
         <article className="about-duo-row reveal fade-up">
           <div className="about-duo-copy">
-            <span className="about-duo-kicker">02 WHAT WE OFFER</span>
+            <span className="about-duo-kicker">WHAT WE OFFER</span>
             <h3>Our Programs</h3>
             <p>
               SckoolChess delivers chess education through multiple formats designed to fit the needs of schools, students, and parents. We have designed a specifically curated curriculum for our partner schools in Delhi NCR and Navi Mumbai, structured for every skill level from complete beginners to students preparing for competitive tournaments:
@@ -119,13 +119,13 @@ export function AboutPage() {
           </div>
         </article>
 
-        {/* 03 OUR REACH */}
+        {/* OUR REACH */}
         <article className="about-duo-row reverse reveal fade-up">
           <div className="about-duo-image-wrap">
             <img src={visionKidImage} alt="Student focusing on a chess move" />
           </div>
           <div className="about-duo-copy">
-            <span className="about-duo-kicker">03 OUR REACH</span>
+            <span className="about-duo-kicker">OUR REACH</span>
             <h3>Where We Operate</h3>
             <p style={{ fontSize: '15px', color: '#6c6c6c', lineHeight: '1.6', margin: '12px 0 24px' }}>
               SckoolChess has built a growing student community across Delhi NCR and Navi Mumbai. We currently serve students in Rohini, Pitampura, Paschim Vihar, Dwarka, Indirapuram, Noida, Gurgaon, and Navi Mumbai through both offline and online learning channels. Our goal is to extend this reach to schools across every city in India. We are proud to partner with leading schools:
@@ -159,39 +159,33 @@ export function AboutPage() {
           </div>
         </article>
 
-        {/* 04 WHY CHOOSE US */}
+        {/* WHY CHOOSE US */}
         <article className="about-duo-row reveal fade-up">
           <div className="about-duo-copy">
-            <span className="about-duo-kicker">04 WHY SCHOOLS &amp; PARENTS CHOOSE US</span>
+            <span className="about-duo-kicker">WHY SCHOOLS &amp; PARENTS CHOOSE US</span>
             <h3>Our Commitment to Schools</h3>
             <p>
-              School principals and management teams value and appreciate our approach because we manage chess programs end-to-end. From curriculum design and coach deployment to assessments, tournaments, and parent communication, SckoolChess handles everything so schools do not have to. This complete ownership and accountability is what sets us apart:
+              School principals and management teams value SckoolChess because we take complete ownership of the chess program, allowing schools to focus on their core academic priorities. From curriculum design and coach deployment to assessments, tournaments, and parent communication, every aspect of the program is managed end-to-end by our team. Our expert coaches are specially trained to work with school-age children, delivering engaging, age-appropriate lessons that foster a love for learning.
             </p>
-            <ol className="about-commitment-list" style={{ paddingLeft: '20px', color: '#4f4f4f', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
-              <li><strong>End-to-end program management:</strong> From curriculum design and coach deployment to assessments, tournaments, and parent communication.</li>
-              <li><strong>Specifically curated curriculum:</strong> Aligned to the Chess in School (CIS) framework under AICF and customized for each partner school.</li>
-              <li><strong>Expert coaches:</strong> Trained to work with school-age children, using a student-friendly and age-appropriate teaching approach.</li>
-              <li><strong>Regular tournament exposure:</strong> Inter-school tournament opportunities to give students real competitive match experience and build confidence.</li>
-              <li><strong>Strong core pillars:</strong> Focused on developing creativity, imagination, concentration, and patience.</li>
-              <li><strong>Supportive learning environment:</strong> Safe and structured spaces with consistent coach presence and progress tracking.</li>
-              <li><strong>Flexible delivery options:</strong> Classes run through both offline academy centres and online live sessions to suit every student's schedule.</li>
-              <li><strong>Extracurricular activities:</strong> Weekend batches, after-school programs, summer camps, and workshops to complement main school curriculum.</li>
-              <li><strong>Transparent reporting:</strong> Regular progress communication with school management to ensure complete accountability.</li>
-              <li><strong>Trusted credentials:</strong> Relied on by over 5,000 students and their families across Delhi NCR and Navi Mumbai.</li>
-            </ol>
+            <p style={{ marginTop: '12px' }}>
+              Students benefit from regular inter-school tournament opportunities that provide real competitive exposure, helping them build confidence and sharpen their skills. The program is built around the development of key life skills such as creativity, imagination, concentration, and patience, while maintaining a safe, structured, and supportive learning environment with consistent progress tracking.
+            </p>
+            <p style={{ marginTop: '12px' }}>
+              To meet the diverse needs of students and schools, we offer flexible learning options through both offline academy centres and online live sessions, along with weekend batches, after-school programs, summer camps, and workshops. Regular progress updates and transparent communication with school management ensure complete accountability, while our proven track record of serving over 5,000 students and their families across Delhi NCR and Navi Mumbai reflects the trust and confidence placed in SckoolChess.
+            </p>
           </div>
           <div className="about-duo-image-wrap">
             <img src={chooseUsImage} alt="School children participating in a SckoolChess event" />
           </div>
         </article>
 
-        {/* 05 SKILLS & VISION */}
+        {/* SKILLS & VISION */}
         <article className="about-duo-row reverse reveal fade-up">
           <div className="about-duo-image-wrap">
             <img src={skillsVisionImage} alt="SckoolChess student in classroom learning board strategies" />
           </div>
           <div className="about-duo-copy">
-            <span className="about-duo-kicker">05 SKILLS WE DEVELOP &amp; OUR VISION</span>
+            <span className="about-duo-kicker">SKILLS WE DEVELOP &amp; OUR VISION</span>
             <h3>Building Future-Ready Learners</h3>
             <p>
               Our Chess Intelligence Program is designed to go far beyond moves and strategies. Every session is crafted to build the cognitive and character skills that help children succeed in school, in competitions, and in life:
