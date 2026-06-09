@@ -362,34 +362,49 @@ export function TournamentPage() {
         </div>
       </section>
 
-      {/* ════════════ UPCOMING + CTA ════════════ */}
-      <section className="t2-bottom">
-        <div className="t2-wrap t2-bottom__grid">
+      {/* ════════════ UPCOMING MATCHES ════════════ */}
+      <section className="t2-upcoming-section">
+        <div className="t2-wrap t2-upm-inner">
 
-          {/* Upcoming card */}
-          <div className="t2-upcoming reveal reveal-3d">
-            <span className="t2-upcoming__tag"><Zap size={11} /> Upcoming</span>
-            <h3>Stay Tuned for Our Next Tournament</h3>
+          {/* Left — text content */}
+          <div className="t2-upm-left">
+            <span className="t2-upm-badge">
+              <Calendar size={12} /> Schedule
+            </span>
+            <h2>Upcoming<br />Chess Matches</h2>
             <p>
-              New FIDE-rated and school-level events are being planned across Rohini, Pitampura,
-              Noida, Gurgaon and Delhi NCR. Register your interest to be notified first.
+              New FIDE-rated and school-level chess events are being planned
+              across Rohini, Pitampura, Noida, Gurgaon and Delhi NCR.
+              Register your interest to be notified first.
             </p>
-            <Link to="/contact-us" className="t2-btn-white">Register Interest <ChevronRight size={15} /></Link>
+            <Link to="/contact-us" className="t2-upm-btn">
+              Timetable <ChevronRight size={16} />
+            </Link>
           </div>
 
-          {/* CTA card */}
-          <div className="t2-cta reveal reveal-3d">
-            <Trophy size={36} className="t2-cta__icon" />
-            <h3>Ready to Train for the Next Championship?</h3>
-            <p>SckoolChess provides DCA-affiliated training, FIDE guidance and extensive tournament practice.</p>
-            <div className="t2-cta__btns">
-              <Link to="/book-class" className="t2-btn-orange">Book Free Trial</Link>
-              <Link to="/contact-us" className="t2-btn-ghost">Enquire Now</Link>
+          {/* Right — floating event card */}
+          <div className="t2-upm-right">
+            <div className="t2-upm-card reveal reveal-3d">
+              <div className="t2-upm-card__top">
+                <h3>Elite Chess Tournament</h3>
+                <p>Annual FIDE-rated open for all ages and skill levels across Delhi NCR.</p>
+              </div>
+              <div className="t2-upm-card__img">
+                <img src="/t1.jpg" alt="Chess Tournament" />
+                <button className="t2-upm-card__arrow" aria-label="View event">
+                  <ChevronRight size={15} />
+                </button>
+              </div>
+              <div className="t2-upm-card__footer">
+                <span><Calendar size={13} /> Coming 2025</span>
+                <span><MapPin size={13} /> Rohini, New Delhi</span>
+              </div>
             </div>
           </div>
 
         </div>
       </section>
+
 
       {/* ════════════ LIGHTBOX ════════════ */}
       {lb && (

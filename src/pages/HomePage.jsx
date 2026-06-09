@@ -273,7 +273,7 @@ export function HomePage() {
     const targets = {
       students: 5000,
       rating: 98,
-      retention: 80,
+      retention: 75,
     }
     const durationMs = 1400
     let rafId = 0
@@ -705,7 +705,7 @@ export function HomePage() {
             <div className="num-divider" />
             <div className="num-block">
               <strong>{featureCounts.retention}%</strong>
-              <span>Student Win Rate</span>
+              <span>Customer Retention</span>
             </div>
           </div>
         </div>
