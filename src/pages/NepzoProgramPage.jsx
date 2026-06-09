@@ -328,63 +328,61 @@ export function NepzoProgramPage() {
             </p>
           </div>
 
-          <div className="nz-why-nepzo-grid">
+          <div className="nz-gallery-grid">
             {[
               {
-                icon: <Award size={24} />,
+                badge: 'NEP 2020',
                 title: 'Supports NEP 2020 Goals',
                 desc: 'Aligns directly with experiential, practical, and skill-based learning frameworks for school pupils.',
-                color: 'rgba(124, 58, 237, 0.08)',
-                iconColor: '#7c3aed'
+                img: '/t4.jpg'
               },
               {
-                icon: <Star size={24} />,
+                badge: 'Branding',
                 title: 'Strengthens School Brand',
                 desc: 'Enhances institutional prestige and builds a strong reputation for hosting future-focused education.',
-                color: 'rgba(232, 117, 10, 0.08)',
-                iconColor: '#E8750A'
+                img: '/student2.png'
               },
               {
-                icon: <Users size={24} />,
+                badge: 'Life Skills',
                 title: 'Builds Core Life Skills',
                 desc: 'Cultivates high-agency leadership capabilities, personal confidence, and effective communication.',
-                color: 'rgba(124, 58, 237, 0.08)',
-                iconColor: '#7c3aed'
+                img: '/t1.jpg'
               },
               {
-                icon: <Lightbulb size={24} />,
+                badge: 'Cognitive',
                 title: 'Future-Focused Learning',
                 desc: 'Introduces cutting-edge domains and cognitive models that prepare students for the modern landscape.',
-                color: 'rgba(232, 117, 10, 0.08)',
-                iconColor: '#E8750A'
+                img: '/student1.png'
               },
               {
-                icon: <TrendingUp size={24} />,
+                badge: 'Exposure',
                 title: 'Real Industry Exposure',
                 desc: 'Provides students with direct exposure through active entrepreneur mentors and leading industry professionals.',
-                color: 'rgba(124, 58, 237, 0.08)',
-                iconColor: '#7c3aed'
+                img: '/t2.jpg'
               },
               {
-                icon: <Brain size={24} />,
+                badge: 'Positioning',
                 title: 'Elevates School Positioning',
                 desc: 'Enhances parent value perception and aligns school institutions directly with modern educational outcomes.',
-                color: 'rgba(232, 117, 10, 0.08)',
-                iconColor: '#E8750A'
+                img: '/t3.jpg'
               }
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="nz-why-card reveal reveal-3d"
-                style={{
-                  '--delay': `${idx * 0.06 + 0.1}s`,
-                  '--theme-bg': item.color,
-                  '--theme-color': item.iconColor
-                }}
+                className="nz-gallery-card reveal reveal-3d"
+                style={{ '--delay': `${idx * 0.08 + 0.15}s` }}
               >
-                <div className="nz-why-icon-box">{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+                <div className="nz-gallery-card-img-wrap">
+                  <img src={item.img} alt={item.title} />
+                  <div className="nz-gallery-card-overlay" />
+                </div>
+                <div className="nz-gallery-card-badge">
+                  <span>{item.badge}</span>
+                </div>
+                <div className="nz-gallery-card-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
