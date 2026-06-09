@@ -799,7 +799,7 @@ export function HomePage() {
           </article>
           <article className="metric-card metric-card-right">
             <div className="metric-icon-wrap">
-              <img src="/10%2B%20years%20home%20page.png" alt="" aria-hidden="true" />
+              <img src="/10_years_home_page.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.years}+</strong>
             <span>Years of experience 2016 Est.</span>
