@@ -317,55 +317,74 @@ export function NepzoProgramPage() {
         </div>
       </section>
 
-      {/* ── 6. PROGRAM FOCUS GALLERY ── */}
+      {/* ── 6. WHY SCHOOLS CHOOSE NEPZO ── */}
       <section className="nz-program-gallery-section">
         <div className="nz-wrap">
           <div className="nz-section-header">
-            <span className="nz-section-label reveal fade-up" style={{ '--delay': '0.05s' }}>Our Specializations</span>
-            <h2 className="nz-section-title reveal fade-up" style={{ '--delay': '0.12s' }}>Designed for Holistic Excellence</h2>
+            <span className="nz-section-label reveal fade-up" style={{ '--delay': '0.05s' }}>Value Proposition</span>
+            <h2 className="nz-section-title reveal fade-up" style={{ '--delay': '0.12s' }}>Why Schools Choose NEPZO</h2>
             <p className="nz-section-sub reveal fade-up" style={{ '--delay': '0.2s' }}>
-              Empowering students with strategic depth, personal coaching, and structured competition platforms.
+              Enabling structural advantages, high cognitive lift, and future-readiness for leading educational institutions.
             </p>
           </div>
 
-          <div className="nz-gallery-grid">
+          <div className="nz-why-nepzo-grid">
             {[
               {
-                badge: 'Game Strategy',
-                title: 'Match Strategy & Chess IQ Training',
-                img: '/t4.jpg'
+                icon: <Award size={24} />,
+                title: 'Supports NEP 2020 Goals',
+                desc: 'Aligns directly with experiential, practical, and skill-based learning frameworks for school pupils.',
+                color: 'rgba(124, 58, 237, 0.08)',
+                iconColor: '#7c3aed'
               },
               {
-                badge: 'Coaching',
-                title: 'Private Chess & Life Mentorship',
-                img: '/student2.png'
+                icon: <Star size={24} />,
+                title: 'Strengthens School Brand',
+                desc: 'Enhances institutional prestige and builds a strong reputation for hosting future-focused education.',
+                color: 'rgba(232, 117, 10, 0.08)',
+                iconColor: '#E8750A'
               },
               {
-                badge: 'Competitions',
-                title: 'Grandmaster Arenas & Leagues',
-                img: '/t1.jpg'
+                icon: <Users size={24} />,
+                title: 'Builds Core Life Skills',
+                desc: 'Cultivates high-agency leadership capabilities, personal confidence, and effective communication.',
+                color: 'rgba(124, 58, 237, 0.08)',
+                iconColor: '#7c3aed'
               },
               {
-                badge: 'Junior Program',
-                title: 'Youth Cognitive Development',
-                img: '/student1.png'
+                icon: <Lightbulb size={24} />,
+                title: 'Future-Focused Learning',
+                desc: 'Introduces cutting-edge domains and cognitive models that prepare students for the modern landscape.',
+                color: 'rgba(232, 117, 10, 0.08)',
+                iconColor: '#E8750A'
+              },
+              {
+                icon: <TrendingUp size={24} />,
+                title: 'Real Industry Exposure',
+                desc: 'Provides students with direct exposure through active entrepreneur mentors and leading industry professionals.',
+                color: 'rgba(124, 58, 237, 0.08)',
+                iconColor: '#7c3aed'
+              },
+              {
+                icon: <Brain size={24} />,
+                title: 'Elevates School Positioning',
+                desc: 'Enhances parent value perception and aligns school institutions directly with modern educational outcomes.',
+                color: 'rgba(232, 117, 10, 0.08)',
+                iconColor: '#E8750A'
               }
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="nz-gallery-card reveal reveal-3d"
-                style={{ '--delay': `${idx * 0.08 + 0.15}s` }}
+                className="nz-why-card reveal reveal-3d"
+                style={{
+                  '--delay': `${idx * 0.06 + 0.1}s`,
+                  '--theme-bg': item.color,
+                  '--theme-color': item.iconColor
+                }}
               >
-                <div className="nz-gallery-card-img-wrap">
-                  <img src={item.img} alt={item.title} />
-                  <div className="nz-gallery-card-overlay" />
-                </div>
-                <div className="nz-gallery-card-badge">
-                  <span>{item.badge}</span>
-                </div>
-                <div className="nz-gallery-card-content">
-                  <h3>{item.title}</h3>
-                </div>
+                <div className="nz-why-icon-box">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
               </div>
             ))}
           </div>
