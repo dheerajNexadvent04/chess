@@ -43,6 +43,7 @@
   flex-direction: column;
   min-height: 640px;
   padding-top: 80px;
+  margin-bottom: 47px;
 }
 
 /* Glowing Ambient Orbs */
@@ -349,6 +350,7 @@
   flex-shrink: 0;
   position: relative;
   z-index: 15;
+  width: 97%;
 }
 
 /* Left: counters on gradient background */
@@ -401,7 +403,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: self-end;
   overflow: hidden;
   margin-top: 2.5rem;
 }
@@ -422,7 +424,9 @@
   position: relative;
   z-index: 5;
   padding: 0 40px;
-  width: 100%;
+  padding-right: 0;
+  width: 79%;
+  text-align: right;
 }
 
 .nz-trust-title {
