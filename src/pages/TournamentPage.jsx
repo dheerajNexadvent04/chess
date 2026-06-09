@@ -82,8 +82,8 @@ export function TournamentPage() {
       if (heroWave) {
         const heroThreshold = 500
         const progress = Math.min(1, scrollTop / heroThreshold)
-        // cpY starts at 20 (more pronounced roundness) and goes to -40 (much deeper curve) on scroll down
-        const cpY = 20 - (progress * 60)
+        // cpY starts at 110 (gentle roundness) and goes to 70 (slightly deeper curve) on scroll down
+        const cpY = 110 - (progress * 40)
         heroWave.setAttribute('d', `M0,180 C360,${cpY} 1080,${cpY} 1440,180 L1440,180 L0,180 Z`)
       }
 
@@ -136,7 +136,7 @@ export function TournamentPage() {
 
       {/* ════════════ HERO ════════════ */}
       <header className="t2-hero">
-        <div className="t2-hero__photo" style={{ backgroundImage: "url('/t1.jpg')" }} />
+        <div className="t2-hero__photo" style={{ backgroundImage: "url('/tournamnent.webp')" }} />
         <div className="t2-hero__scrim" />
 
         {/* floating chess squares */}
@@ -159,7 +159,7 @@ export function TournamentPage() {
 
         {/* bottom wave */}
         <svg className="t2-hero__wave" viewBox="0 0 1440 180" preserveAspectRatio="none">
-          <path d="M0,180 C360,20 1080,20 1440,180 L1440,180 L0,180 Z" fill="#f4f6fb" />
+          <path d="M0,180 C360,110 1080,110 1440,180 L1440,180 L0,180 Z" fill="#f4f6fb" />
         </svg>
       </header>
 

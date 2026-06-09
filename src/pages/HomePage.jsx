@@ -52,7 +52,7 @@ const students = [
 
 const whyCards = [
   {
-    image: '/s1.jpeg',
+    image: '/homepage creativity.webp',
     title: 'Creativity',
     desc: 'Chess builds creative thinking by training young minds to imagine bold, unconventional moves and strategies.',
     icon: (
@@ -62,7 +62,7 @@ const whyCards = [
     )
   },
   {
-    image: '/s2.jpeg',
+    image: '/home page logical thinking.webp',
     title: 'Logical Thinking',
     desc: 'Our NEP-aligned chess curriculum sharpens analytical skills and decision-making, essential tools for 21st-century learners.',
     icon: (
@@ -72,7 +72,7 @@ const whyCards = [
     )
   },
   {
-    image: '/s3.jpeg',
+    image: '/homepage patience.webp',
     title: 'Patience',
     desc: 'Every game of chess teaches students to stay calm, think ahead, and never rush a decision.',
     icon: (
@@ -82,7 +82,7 @@ const whyCards = [
     )
   },
   {
-    image: '/s4.jpeg',
+    image: '/homepage imagination.webp',
     title: 'Imagination',
     desc: 'SckoolChess sparks creative imagination, helping students visualise multiple outcomes and develop a strategic mindset early.',
     icon: (
@@ -197,6 +197,7 @@ export function HomePage() {
   }, [])
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [lightboxImage, setLightboxImage] = useState(null)
   const [headerScrolled, setHeaderScrolled] = useState(false)
   const [featureCounts, setFeatureCounts] = useState({
     students: 0,
@@ -366,6 +367,7 @@ export function HomePage() {
   }
 
   const onStudentPointerDown = (event) => {
+    if (event.pointerType !== 'mouse') return
     const node = studentScrollRef.current
     if (!node) return
     const target = event.target
@@ -576,9 +578,9 @@ export function HomePage() {
           alt=""
           aria-hidden="true"
         />
-        <h2>What Our Students Say</h2>
+        <h2>Watch young minds in action</h2>
         <p className="sub" style={{ textAlign: 'center', color: '#6b7a99', fontSize: '16px', maxWidth: '640px', margin: '8px auto 48px' }}>
-          Real stories from young champions trained at SckoolChess across Rohini, Pitampura, Noida and Ghaziabad.
+          Real videos of young Chess minds - creativity and imagination at work
         </p>
         <div
           ref={studentScrollRef}
@@ -609,7 +611,7 @@ export function HomePage() {
           aria-hidden="true"
         />
         <h2>Give Your Child the Best Gift of Their Life</h2>
-        <p className="sub">One Board. Six Skills Your Child Carries for Life.</p>
+        <p className="sub">One Board. 4 Skills Your Child Carries for Life.</p>
         <div className="why-scroll" role="region" aria-label="Chess benefits">
           <div className="why-grid">
             {whyCards.map((card) => (
@@ -739,7 +741,7 @@ export function HomePage() {
 
       <section className="figma-section solutions-section">
         <h2>Our Solutions</h2>
-        <p className="sub">One Board. Six Skills Your Child Carries for Life.</p>
+        <p className="sub">One Board. 4 Skills Your Child Carries for Life.</p>
         <div className="solutions-scroll" role="region" aria-label="Our solutions">
           <div className="solutions-grid">
             {solutionCards.map((card) => (
@@ -791,28 +793,7 @@ export function HomePage() {
             <span>Years of experience 2016 Est.</span>
           </article>
         </div>
-        <div className="metrics-marquee" aria-label="Achievements ticker">
-          <div className="metrics-marquee-track">
-            {[
-              'Aryan Sharma - 1st Place, Delhi State U13',
-              'Priya Mehra - 2nd Place, Delhi State U13',
-              'Rohit Kumar - 2nd Place, Delhi State U13',
-              'Riya Gupta - 1st Place, Delhi State U11',
-            ]
-              .concat([
-                'Aryan Sharma - 1st Place, Delhi State U13',
-                'Priya Mehra - 2nd Place, Delhi State U13',
-                'Rohit Kumar - 2nd Place, Delhi State U13',
-                'Riya Gupta - 1st Place, Delhi State U11',
-              ])
-              .map((item, index) => (
-                <span className="metrics-marquee-item" key={`${item}-${index}`}>
-                  <span className="metrics-marquee-dot" aria-hidden="true" />
-                  {item}
-                </span>
-              ))}
-          </div>
-        </div>
+        {/* Achievements ticker removed */}
       </section>
 
       {false && (<section className="figma-section reviews" id="support">
@@ -879,26 +860,76 @@ export function HomePage() {
           <div className="gallery-column side-column">
             <div className="gallery-column-track scroll-up">
               {col1.concat(col1).map((src, idx) => (
-                <img key={`col1-${idx}`} src={src} alt="Gallery item" />
+                <img key={`col1-${idx}`} src={src} alt="Gallery item" style={{ cursor: 'pointer' }} onClick={() => setLightboxImage(src)} />
               ))}
             </div>
           </div>
           <div className="gallery-column center-column">
             <div className="gallery-column-track scroll-down">
               {col2.concat(col2).map((src, idx) => (
-                <img key={`col2-${idx}`} src={src} alt="Gallery item" />
+                <img key={`col2-${idx}`} src={src} alt="Gallery item" style={{ cursor: 'pointer' }} onClick={() => setLightboxImage(src)} />
               ))}
             </div>
           </div>
           <div className="gallery-column side-column">
             <div className="gallery-column-track scroll-up">
               {col3.concat(col3).map((src, idx) => (
-                <img key={`col3-${idx}`} src={src} alt="Gallery item" />
+                <img key={`col3-${idx}`} src={src} alt="Gallery item" style={{ cursor: 'pointer' }} onClick={() => setLightboxImage(src)} />
               ))}
             </div>
           </div>
         </div>
       </section>
+
+      {lightboxImage && (
+        <div 
+          className="lightbox-overlay" 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            zIndex: 99999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'zoom-out'
+          }}
+          onClick={() => setLightboxImage(null)}
+        >
+          <button 
+            style={{
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              background: 'none',
+              border: 'none',
+              color: '#fff',
+              fontSize: '40px',
+              cursor: 'pointer',
+              zIndex: 100000
+            }}
+            onClick={() => setLightboxImage(null)}
+          >
+            &times;
+          </button>
+          <img 
+            src={lightboxImage} 
+            alt="Gallery item large" 
+            style={{
+              maxWidth: '90%',
+              maxHeight: '90%',
+              objectFit: 'contain',
+              borderRadius: '8px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+              cursor: 'default'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       <Footer />
       <UnifiedPopupModal />

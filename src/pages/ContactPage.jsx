@@ -27,8 +27,8 @@ const contactInfo = [
 
 const contactStats = [
   { value: '5,000+', label: 'Students Trained' },
-  { value: '98%', label: 'Rating Improved' },
-  { value: '22+', label: 'Number of Schools' },
+  { value: '75%', label: 'Customer Retention' },
+  { value: '12+', label: 'Number of Schools' },
   { value: '10+', label: 'Number of Years' },
 ]
 

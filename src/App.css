@@ -8240,7 +8240,7 @@ p .feature-tag {
   scrollbar-width: none;
   -ms-overflow-style: none;
   cursor: grab;
-  touch-action: pan-y;
+  touch-action: pan-x pan-y;
   user-select: none;
 }
 
@@ -8433,9 +8433,7 @@ p .feature-tag {
 .why-card-shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.18) 44%, rgba(0, 0, 0, 0.07) 100%),
-    linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.04));
+  background: linear-gradient(to top, rgba(13, 27, 46, 0.95) 0%, rgba(13, 27, 46, 0.45) 45%, rgba(13, 27, 46, 0) 100%);
 }
 
 .why-card-content {
@@ -8573,8 +8571,7 @@ p .feature-tag {
 .solutions-card-shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.12) 40%, rgba(0, 0, 0, 0.52) 100%);
+  background: linear-gradient(to top, rgba(13, 27, 46, 0.95) 0%, rgba(13, 27, 46, 0.45) 45%, rgba(13, 27, 46, 0) 100%);
 }
 
 .solutions-card-content {

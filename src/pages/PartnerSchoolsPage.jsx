@@ -165,16 +165,16 @@ export function PartnerSchoolsPage() {
 
   const reviews = [
     {
-      text: "SckoolChess has been an incredible partner in nurturing our students' strategic thinking and confidence. Their structured chess programs and expert coaches have made a real difference to our school community.",
-      author: "— Principal"
+      text: "Partnering with SckoolChess has been highly beneficial for our students. Their structured approach and experienced coaching team have helped integrate chess into our curriculum smoothly, boosting cognitive focus and strategic thinking.",
+      author: "— Principal, Apeejay School"
     },
     {
-      text: "The Chess in School program introduced by SckoolChess has received amazing feedback from parents. It has significantly enhanced our students' concentration and cognitive skills across all year groups.",
-      author: "— Principal"
+      text: "We have received excellent feedback from parents regarding the SckoolChess program. It has significantly improved students' attention span and problem-solving skills, making it a very valuable addition to our co-curricular activities.",
+      author: "— Primary Years Coordinator"
     },
     {
-      text: "Their coaches are highly professional, patient, and skilled. SckoolChess's structured tournament preparation has helped our school win multiple inter-school chess championships across Delhi NCR.",
-      author: "— Activity Coordinator"
+      text: "The SckoolChess team has been very professional in coordinating inter-school chess activities. Their support during the inter-school chess events in Navi Mumbai was exemplary, giving our students great exposure.",
+      author: "— Activity Coordinator, Nerul, Mumbai"
     }
   ]
 
@@ -599,7 +599,7 @@ function PartnerSchoolsHero() {
             <div className="partner-metric-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2a6 6 0 0 0-6 6v3.58a6 6 0 0 0 12 0V8a6 6 0 0 0-6-6z"/></svg>
             </div>
-            <strong>10+</strong>
+            <strong>50+</strong>
             <span>Tournaments</span>
           </div>
           <div className="partner-metric-card">
@@ -607,7 +607,7 @@ function PartnerSchoolsHero() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
             </div>
             <strong>10+</strong>
-            <span>Years of experience 2016 Est.</span>
+            <span>Years of Impact</span>
           </div>
         </div>
       </div>

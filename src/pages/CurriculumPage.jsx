@@ -1079,23 +1079,23 @@ export function CurriculumPage() {
 
               <div className="nch-floating-card fc-2">
                 <div className="fc-text">
-                  <strong><AnimatedNumber end={5} suffix="K+" /></strong>
+                  <strong><AnimatedNumber end={500} suffix="+" /></strong>
                   <span>Students</span>
                 </div>
                 <div className="fc-avatars">
-                  <img src="/c1.jpg" alt="student" />
-                  <img src="/c2.jpg" alt="student" />
-                  <img src="/c3.jpg" alt="student" />
-                  <img src="/c4.jpg" alt="student" />
+                  <img src="/A1.jpeg" alt="student" />
+                  <img src="/A2.jpeg" alt="student" />
+                  <img src="/A3.jpeg" alt="student" />
+                  <img src="/A4.jpeg" alt="student" />
                 </div>
               </div>
 
-              <div className="nch-floating-card fc-3">
-                <img src="/c6.jpeg" alt="coach" className="fc-coach-img" />
+              <div className="nch-floating-card fc-3" style={{ cursor: 'pointer' }} onClick={() => window.dispatchEvent(new CustomEvent('open-custom-modal', { detail: { type: 'booking', section: 'Curriculum Hero Floating Card' } }))}>
+                <img src="/A3.jpeg" alt="student" className="fc-coach-img" />
                 <div className="fc-text">
-                  <strong>Chess Masterclass</strong>
-                  <span>Today at 02:00 Pm</span>
-                  <button className="fc-btn">Join now</button>
+                  <strong>Book Free Demo</strong>
+                  <span>Live 1-on-1 Class</span>
+                  <button className="fc-btn">Book Now</button>
                 </div>
               </div>
             </div>
@@ -1400,9 +1400,9 @@ export function CurriculumPage() {
               </p>
 
               <div className="impact-v5__stats">
-                <StatBox number={500} suffix="+" label="Online Students" />
-                <StatBox number={500} suffix="+" label="Tournaments Won" />
-                <StatBox number={95} suffix="%" label="Success Rate" />
+                <StatBox number={500} suffix="+" label="Enrolled Students" />
+                <StatBox number={10} suffix="+" label="Tournaments Won" />
+                <StatBox number={80} suffix="%" label="Customer Retention" />
               </div>
             </div>
 
