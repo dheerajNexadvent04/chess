@@ -21,8 +21,18 @@ export function useScrollReveal(dependencies = []) {
     const elements = document.querySelectorAll('.reveal');
     elements.forEach((el) => observer.observe(el));
 
+    // Fallback: force active class after a short delay in case IntersectionObserver doesn't fire
+    const fallbackTimer = setTimeout(() => {
+      elements.forEach((el) => {
+        if (!el.classList.contains('active')) {
+          el.classList.add('active');
+        }
+      });
+    }, 1000);
+
     return () => {
       elements.forEach((el) => observer.unobserve(el));
+      clearTimeout(fallbackTimer);
     };
   }, dependencies);
 }
