@@ -5334,7 +5334,7 @@ html {
 
 /* ── Hero ── */
 .partner-hero-wrapper {
-  background: linear-gradient(135deg, rgba(13, 27, 46, 0.94) 0%, rgba(17, 34, 64, 0.91) 60%, rgba(26, 58, 107, 0.88) 100%), url('/chess background.png') no-repeat center center / cover;
+  background: linear-gradient(135deg, rgba(13, 27, 46, 0.82) 0%, rgba(17, 34, 64, 0.80) 60%, rgba(26, 58, 107, 0.78) 100%), url('/partnership%20school%20background.png') no-repeat center center / cover;
   margin-top: 0;
   padding-top: 0;
 }
