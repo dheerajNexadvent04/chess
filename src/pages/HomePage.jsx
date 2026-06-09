@@ -785,21 +785,21 @@ export function HomePage() {
         <div className="metric-grid">
           <article className="metric-card metric-card-left">
             <div className="metric-icon-wrap">
-              <img src="/students trained home page.png" alt="" aria-hidden="true" />
+              <img src="/students%20trained%20home%20page.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.students.toLocaleString()}+</strong>
             <span>Students Trained</span>
           </article>
           <article className="metric-card metric-card-center">
             <div className="metric-icon-wrap">
-              <img src="/school partnership home page.png" alt="" aria-hidden="true" />
+              <img src="/school%20partnership%20home%20page.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.schools}+</strong>
             <span>Partner Schools</span>
           </article>
           <article className="metric-card metric-card-right">
             <div className="metric-icon-wrap">
-              <img src="/10+ years home page.png" alt="" aria-hidden="true" />
+              <img src="/10%2B%20years%20home%20page.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.years}+</strong>
             <span>Years of experience 2016 Est.</span>
