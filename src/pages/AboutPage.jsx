@@ -190,15 +190,25 @@ export function AboutPage() {
             <p>
               Our Chess Intelligence Program is designed to go far beyond moves and strategies. Every session is crafted to build the cognitive and character skills that help children succeed in school, in competitions, and in life:
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', color: '#4f4f4f', margin: '16px 0 20px', fontWeight: '600' }}>
-              <div>• Creativity</div>
-              <div>• Imagination</div>
-              <div>• Concentration</div>
-              <div>• Patience</div>
-              <div>• Logical Thinking</div>
-              <div>• Decision Making</div>
-              <div>• Confidence</div>
-              <div>• Sportsmanship</div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 8px', margin: '12px 0 16px' }}>
+              {['Creativity', 'Imagination', 'Concentration', 'Patience', 'Logical Thinking', 'Decision Making', 'Confidence', 'Sportsmanship'].map((skill) => (
+                <span
+                  key={skill}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    backgroundColor: '#FFF5E8',
+                    color: '#E8750A',
+                    padding: '4px 10px',
+                    borderRadius: '20px',
+                    fontSize: '13px',
+                    fontWeight: '600',
+                    border: '1px solid #FFE0C2'
+                  }}
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
             <p style={{ marginTop: '16px' }}>
               <strong>Our Vision:</strong> To make structured chess education accessible to students across India and help schools build future-ready learning environments. Whether a child is taking their first step into chess or preparing for national-level competitions, SckoolChess provides the curriculum, coaching, mentorship, and end-to-end support needed to succeed.
