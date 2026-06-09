@@ -378,9 +378,6 @@ export function PartnerSchoolsPage() {
                 {reviews[activeReviewIndex].text}
               </p>
               <span className="quote-mark-right">”</span>
-              <p className="partners-review-author">
-                {reviews[activeReviewIndex].author}
-              </p>
             </div>
             
             <div className="partners-review-footer">

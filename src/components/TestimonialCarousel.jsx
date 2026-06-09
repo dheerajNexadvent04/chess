@@ -54,7 +54,6 @@ export const TestimonialCarousel = () => {
 
   return (
     <section className="figma-section testimonial-banner testimonial-carousel-container" id="events" aria-label="Customer Reviews Carousel">
-      <img className="testimonial-banner-bg" src="/chess background.png" alt="" aria-hidden="true" />
 
       <div className="testimonial-carousel-inner" style={{ position: 'relative', width: '100%', maxWidth: '1080px' }}>
         <button className="testimonial-nav testimonial-nav-prev" onClick={prev} aria-label="Previous review">

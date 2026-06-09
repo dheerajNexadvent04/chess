@@ -1,4 +1,4 @@
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { TestimonialCarousel } from '../components/TestimonialCarousel'
@@ -169,6 +169,8 @@ const col3 = [
   '/wg18.jpeg',
 ]
 
+const allGalleryImages = [...col1, ...col2, ...col3]
+
 const marqueeItems = [
   'SckoolChess | Best Chess Classes in Rohini and Indirapuram',
   'Top Chess Coaches in North Delhi and Gurgaon',
@@ -199,6 +201,26 @@ export function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [lightboxImage, setLightboxImage] = useState(null)
   const [headerScrolled, setHeaderScrolled] = useState(false)
+
+  // Lightbox keyboard carousel navigation
+  useEffect(() => {
+    if (!lightboxImage) return
+    const handleKeyDown = (e) => {
+      const currentIdx = allGalleryImages.indexOf(lightboxImage)
+      if (currentIdx === -1) return
+      if (e.key === 'ArrowRight') {
+        const nextIdx = (currentIdx + 1) % allGalleryImages.length
+        setLightboxImage(allGalleryImages[nextIdx])
+      } else if (e.key === 'ArrowLeft') {
+        const prevIdx = (currentIdx - 1 + allGalleryImages.length) % allGalleryImages.length
+        setLightboxImage(allGalleryImages[prevIdx])
+      } else if (e.key === 'Escape') {
+        setLightboxImage(null)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [lightboxImage])
   const [featureCounts, setFeatureCounts] = useState({
     students: 0,
     rating: 0,
@@ -669,18 +691,12 @@ export function HomePage() {
           <p>
             Accelerate your game with structured lessons by top coaches in Rohini, Pitampura, Paschim Vihar, Shalimar Bagh, Dwarka, Vaishali and Gurgaon. Our future-ready, NEP-aligned learning programs are designed to build champions at every school level.
           </p>
-          <a 
+          <Link 
             className="start-btn" 
-            href="/book-class"
-            onClick={(e) => {
-              e.preventDefault();
-              window.dispatchEvent(new CustomEvent('open-custom-modal', {
-                detail: { type: 'booking', section: 'Features Section' }
-              }));
-            }}
+            to="/book-class"
           >
             Start Your Free Trial
-          </a>
+          </Link>
           <div className="nums" ref={featureNumsRef}>
             <div className="num-block">
               <strong>{featureCounts.students >= 5000 ? '5K' : featureCounts.students.toLocaleString()}+</strong>
@@ -708,10 +724,6 @@ export function HomePage() {
             </div>
             <h4>Build a Deadly Opening Repertoire</h4>
             <p>Learn Sicilian, King's Indian, and more from top GMs.</p>
-            <a href="/courses-offered" className="explore-btn">
-              Explore
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg>
-            </a>
           </article>
           <article className="feature-white-card">
             <div className="pill-wrapper">
@@ -773,21 +785,21 @@ export function HomePage() {
         <div className="metric-grid">
           <article className="metric-card metric-card-left">
             <div className="metric-icon-wrap">
-              <img src="/student.png" alt="" aria-hidden="true" />
+              <img src="/students trained home page.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.students.toLocaleString()}+</strong>
             <span>Students Trained</span>
           </article>
           <article className="metric-card metric-card-center">
             <div className="metric-icon-wrap">
-              <img src="/home.png" alt="" aria-hidden="true" />
+              <img src="/school partnership home page.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.schools}+</strong>
             <span>Partner Schools</span>
           </article>
           <article className="metric-card metric-card-right">
             <div className="metric-icon-wrap">
-              <img src="/calander.png" alt="" aria-hidden="true" />
+              <img src="/10+ years home page.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.years}+</strong>
             <span>Years of experience 2016 Est.</span>
@@ -890,7 +902,7 @@ export function HomePage() {
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            backgroundColor: 'rgba(0, 0, 0, 0.95)',
             zIndex: 99999,
             display: 'flex',
             alignItems: 'center',
@@ -912,22 +924,55 @@ export function HomePage() {
               zIndex: 100000
             }}
             onClick={() => setLightboxImage(null)}
+            aria-label="Close lightbox"
           >
             &times;
           </button>
+
+          <button 
+            className="lightbox-nav-btn prev"
+            onClick={(e) => {
+              e.stopPropagation()
+              const currentIdx = allGalleryImages.indexOf(lightboxImage)
+              if (currentIdx !== -1) {
+                const prevIdx = (currentIdx - 1 + allGalleryImages.length) % allGalleryImages.length
+                setLightboxImage(allGalleryImages[prevIdx])
+              }
+            }}
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={24} strokeWidth={2.5} />
+          </button>
+
           <img 
             src={lightboxImage} 
             alt="Gallery item large" 
             style={{
-              maxWidth: '90%',
-              maxHeight: '90%',
+              maxWidth: '80%',
+              maxHeight: '80%',
               objectFit: 'contain',
-              borderRadius: '8px',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
-              cursor: 'default'
+              borderRadius: '12px',
+              boxShadow: '0 12px 48px rgba(0,0,0,0.6)',
+              cursor: 'default',
+              border: '1.5px solid rgba(255,255,255,0.15)'
             }}
             onClick={(e) => e.stopPropagation()}
           />
+
+          <button 
+            className="lightbox-nav-btn next"
+            onClick={(e) => {
+              e.stopPropagation()
+              const currentIdx = allGalleryImages.indexOf(lightboxImage)
+              if (currentIdx !== -1) {
+                const nextIdx = (currentIdx + 1) % allGalleryImages.length
+                setLightboxImage(allGalleryImages[nextIdx])
+              }
+            }}
+            aria-label="Next image"
+          >
+            <ChevronRight size={24} strokeWidth={2.5} />
+          </button>
         </div>
       )}
 

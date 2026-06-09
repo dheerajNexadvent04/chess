@@ -76,9 +76,9 @@ export function AboutPage() {
             SckoolChess applies the fundamental principles of chess education to today's young and bright children. With experienced coaches and a NEP-aligned, scientific approach to chess openings, tactics and endgames, we are confident in educating tomorrow's chess champions across Rohini, Pitampura, Paschim Vihar, Shalimar Bagh, Dwarka, Vaishali and Gurgaon.
           </p>
 
-          <a className="about-coaching-btn" href="/book-class">
+          <Link className="about-coaching-btn" to="/book-class">
             Start Your Free Trial
-          </a>
+          </Link>
         </div>
 
         <div className="about-coaching-image-wrap">

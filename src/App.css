@@ -589,7 +589,7 @@ html {
   text-align: center;
   background: linear-gradient(135deg, #E8750A 0%, #C45A00 100%);
   color: #ffffff;
-  padding: 16px 36px;
+  padding: 16px 56px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 16px;
@@ -1783,13 +1783,13 @@ html {
   width: 60%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.28;
+  opacity: 0.58;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 .journey-v6__level-row:hover .journey-v6__level-bg-img {
   transform: scale(1.05);
-  opacity: 0.38;
+  opacity: 0.68;
 }
 
 .journey-v6__level-bg-overlay {
@@ -2241,10 +2241,10 @@ html {
   /* Responsive background adjustments */
   .journey-v6__level-bg-img {
     width: 100%;
-    opacity: 0.08;
+    opacity: 0.22;
   }
   .journey-v6__level-row:hover .journey-v6__level-bg-img {
-    opacity: 0.12;
+    opacity: 0.28;
   }
   .journey-v6__level-bg-overlay {
     background: radial-gradient(
@@ -5334,7 +5334,7 @@ html {
 
 /* ── Hero ── */
 .partner-hero-wrapper {
-  background: linear-gradient(135deg, #0D1B2E 0%, #112240 60%, #1a3a6b 100%);
+  background: linear-gradient(135deg, rgba(13, 27, 46, 0.94) 0%, rgba(17, 34, 64, 0.91) 60%, rgba(26, 58, 107, 0.88) 100%), url('/chess background.png') no-repeat center center / cover;
   margin-top: 0;
   padding-top: 0;
 }
@@ -8433,7 +8433,7 @@ p .feature-tag {
 .why-card-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13, 27, 46, 0.95) 0%, rgba(13, 27, 46, 0.45) 45%, rgba(13, 27, 46, 0) 100%);
+  background: linear-gradient(to top, rgba(13, 27, 46, 0.8) 0%, rgba(13, 27, 46, 0.35) 50%, rgba(13, 27, 46, 0) 100%);
 }
 
 .why-card-content {
@@ -8571,7 +8571,7 @@ p .feature-tag {
 .solutions-card-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13, 27, 46, 0.95) 0%, rgba(13, 27, 46, 0.45) 45%, rgba(13, 27, 46, 0) 100%);
+  background: linear-gradient(to top, rgba(13, 27, 46, 0.8) 0%, rgba(13, 27, 46, 0.35) 50%, rgba(13, 27, 46, 0) 100%);
 }
 
 .solutions-card-content {
@@ -8913,9 +8913,7 @@ p .feature-tag {
   display: none;
 }
 
-.pill-wrapper {
-  margin-bottom: auto;
-}
+
 
 .pill {
   display: inline-flex;
@@ -12550,6 +12548,8 @@ img.header-side-logo {
 }
 
 .cp-v5__book-btn {
+  display: inline-block;
+  text-decoration: none;
   background: #fbbf24;
   color: #0D1B2E;
   padding: 8px 20px;
@@ -17006,6 +17006,56 @@ img.header-side-logo {
   font-weight: 600;
   color: #FFFFFF;
   text-align: center;
+}
+
+/* Gallery Lightbox Nav Buttons */
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100000;
+  transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.lightbox-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.lightbox-nav-btn.prev {
+  left: 24px;
+}
+
+.lightbox-nav-btn.next {
+  right: 24px;
+}
+
+@media (max-width: 768px) {
+  .lightbox-nav-btn {
+    width: 46px;
+    height: 46px;
+  }
+  .lightbox-nav-btn.prev {
+    left: 12px;
+  }
+  .lightbox-nav-btn.next {
+    right: 12px;
+  }
 }
 
 /* Call to Action (Sleek Dark Brand Gradient) */

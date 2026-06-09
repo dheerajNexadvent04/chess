@@ -8,14 +8,24 @@ import {
   Sparkles,
   ArrowRight,
   Wallet,
-  Rocket
+  Rocket,
+  X,
+  Maximize2,
+  CheckCircle2,
+  Calendar,
+  Layers,
+  Lightbulb,
+  Sparkle
 } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './NepzoProgramPage.css'
 
 export function NepzoProgramPage() {
   const [activeTrack, setActiveTrack] = useState('financial') // 'financial' or 'entrepreneur'
-  useScrollReveal([activeTrack])
+  const [activeSubTab, setActiveSubTab] = useState('skills') // 'skills' or 'activities'
+  const [lightboxImage, setLightboxImage] = useState(null)
+
+  useScrollReveal([activeTrack, activeSubTab])
 
   useEffect(() => {
     document.title = 'NEPZO Future Ready Learning Program | SckoolChess'
@@ -28,27 +38,35 @@ export function NepzoProgramPage() {
     }
   }, [])
 
-  // Core Pillars (Bottom/Right items on flyers)
+  // Core Pillars (Pillars from brochure)
   const pillars = [
     {
       title: 'Prepares for the Future',
-      icon: <Award size={20} />,
-      desc: 'Builds modern capabilities so students are ready for the evolving global landscape.'
+      icon: <Award size={22} />,
+      desc: 'Builds modern capabilities and real-world intelligence so students are ready for the evolving global landscape.',
+      color: 'rgba(14, 116, 144, 0.08)',
+      iconColor: '#0e7490'
     },
     {
       title: 'Develops Life Skills',
-      icon: <Users size={20} />,
-      desc: 'Fosters high-agency collaboration, confidence, communication, and leadership.'
+      icon: <Users size={22} />,
+      desc: 'Fosters high-agency collaboration, critical thinking, confidence, communication, and real leadership.',
+      color: 'rgba(232, 117, 10, 0.08)',
+      iconColor: '#E8750A'
     },
     {
       title: 'Academic & Cognitive Boost',
-      icon: <Brain size={20} />,
-      desc: 'Enhances cognitive focus, problem-solving, logical thinking, and academic discipline.'
+      icon: <Brain size={22} />,
+      desc: 'Enhances cognitive focus, strategic foresight, problem-solving, logical reasoning, and academic discipline.',
+      color: 'rgba(14, 116, 144, 0.08)',
+      iconColor: '#0e7490'
     },
     {
       title: 'Financial & Business IQ',
-      icon: <TrendingUp size={20} />,
-      desc: 'Equips students with smart money management, risk evaluation, and investment principles.'
+      icon: <TrendingUp size={22} />,
+      desc: 'Equips students with smart budgeting, money management, risk evaluation, and investment principles.',
+      color: 'rgba(232, 117, 10, 0.08)',
+      iconColor: '#E8750A'
     }
   ]
 
@@ -113,7 +131,7 @@ export function NepzoProgramPage() {
   const entrepreneurSkills = [
     {
       title: 'Entrepreneurial Mindset',
-      desc: 'Develop confidence, creativity, and a passion to solve real-world problems.',
+      desc: 'Develop confidence, creativity, resilience, and a passion to solve real-world problems.',
       image: '/n1.jpg'
     },
     {
@@ -156,246 +174,376 @@ export function NepzoProgramPage() {
     }
   ]
 
+  const handleTrackChange = (track) => {
+    setActiveTrack(track)
+    // Keep or reset sub-tab when track changes
+  }
+
   return (
     <div className="nz-page">
-      {/* ── 1. HERO SECTION ── */}
-      <section className="nz-hero">
-        <img
-          className="nz-hero__bg-image"
-          src="/nezpo main banner.webp"
-          alt="NEPZO Future Ready Learning Background"
-        />
+      {/* ── 1. PREMIUM SPLIT HERO SECTION ── */}
+      <section className="nz-premium-hero">
+        {/* Glow Spheres */}
+        <div className="nz-glow-sphere sphere-1" />
+        <div className="nz-glow-sphere sphere-2" />
+        
         <div className="nz-wrap">
-          <div className="nz-hero__inner">
-            <div className="nz-hero__logo-strip reveal fade-up" style={{ '--delay': '0.05s' }}>
-              <img src="/nepzobg.png" alt="NEPZO Logo" className="nz-hero__partner-logo nz-hero__partner-logo--nepzo" />
-              <div className="nz-hero__divider"></div>
-              <img src="/logonewbg.png" alt="SckoolChess Logo" className="nz-hero__partner-logo" />
+          <div className="nz-hero-split-grid">
+            {/* Left Content */}
+            <div className="nz-hero-left">
+              <div className="nz-hero__logo-strip reveal fade-up" style={{ '--delay': '0.05s' }}>
+                <img src="/nepzobg.png" alt="NEPZO Logo" className="nz-hero__partner-logo nz-hero__partner-logo--nepzo" />
+                <div className="nz-hero__divider"></div>
+                <img src="/logonewbg.png" alt="SckoolChess Logo" className="nz-hero__partner-logo" />
+              </div>
+
+              <span className="nz-hero-pill reveal fade-up" style={{ '--delay': '0.12s' }}>
+                <Sparkle size={12} className="pulse-sparkle" />
+                NEP 2020 Aligned | Batches for Classes 5 to 10
+              </span>
+
+              <h1 className="nz-hero-title reveal fade-up" style={{ '--delay': '0.2s' }}>
+                Preparing Kids For The <span className="gradient-text">Real World</span>
+              </h1>
+
+              <p className="nz-hero-desc reveal fade-up" style={{ '--delay': '0.28s' }}>
+                An experiential education program co-designed by <strong>NEPZO</strong> and powered by <strong>SckoolChess</strong>. We equip young minds with financial intelligence, entrepreneurial spirit, leadership qualities, and critical cognitive abilities.
+              </p>
+
+              <div className="nz-hero-actions reveal fade-up" style={{ '--delay': '0.36s' }}>
+                <Link to="/book-class" className="nz-hero-btn-primary">
+                  <span>Schedule Free Session</span>
+                  <ArrowRight size={16} />
+                </Link>
+                <a href="tel:+918447992702" className="nz-hero-btn-secondary">
+                  <span>Talk to Program Expert</span>
+                </a>
+              </div>
             </div>
 
-            <span className="nz-eyebrow reveal fade-up" style={{ '--delay': '0.15s' }}>
-              <Sparkles size={13} style={{ fill: '#fbbf24', stroke: '#E8750A' }} />
-              NEP 2020 Aligned | Classes 5 to 10
-            </span>
+            {/* Right Interactive Preview */}
+            <div className="nz-hero-right reveal reveal-3d" style={{ '--delay': '0.25s' }}>
+              <div className="nz-hero-preview-box">
+                {/* Dashed outer orbit */}
+                <div className="nz-orbit-dashed" />
+                
+                {/* Main Image Shield */}
+                <div className="nz-preview-shield">
+                  <div className="nz-shield-glow" />
+                  <img src="/student4.png" alt="Student learning future skills" className="nz-preview-student-img" />
+                </div>
 
-            <h1 className="nz-hero__heading reveal fade-up" style={{ '--delay': '0.25s' }}>
-              Future Ready Learning Program
-            </h1>
+                {/* Floating Cards */}
+                <div className="nz-float-badge badge-wealth">
+                  <div className="badge-icon"><Wallet size={16} /></div>
+                  <div className="badge-text">
+                    <strong>Financial IQ</strong>
+                    <span>Smart Money</span>
+                  </div>
+                </div>
 
-            <p className="nz-hero__sub reveal fade-up" style={{ '--delay': '0.35s' }}>
-              An experiential education program powered by SckoolChess, co-designed with NEPZO to equip students with real-world skills, leadership qualities, financial responsibility, and an entrepreneurial mindset.
-            </p>
+                <div className="nz-float-badge badge-startups">
+                  <div className="badge-icon"><Rocket size={16} /></div>
+                  <div className="badge-text">
+                    <strong>Startups</strong>
+                    <span>Pitching & Launching</span>
+                  </div>
+                </div>
 
-            <div className="nz-hero__actions reveal fade-up" style={{ '--delay': '0.45s' }}>
-              <Link to="/book-class" className="nz-btn-primary" id="nepzo-hero-cta">
-                <span>Book a Free Session</span>
-              </Link>
-              <a href="tel:+918447992702" className="nz-btn-ghost">
-                <span>Call Program Expert</span>
-              </a>
+                <div className="nz-float-badge badge-cognitive">
+                  <div className="badge-icon"><Brain size={16} /></div>
+                  <div className="badge-text">
+                    <strong>Cognitive Lift</strong>
+                    <span>Logic & Focus</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="nz-hero__decor-text" aria-hidden="true">NEPZO</div>
-        
-        {/* WAVE TRANSITION */}
-        <svg className="nz-hero__wave" viewBox="0 0 1440 56" preserveAspectRatio="none">
-          <path fill="#f8fafc" d="M0,56 C480,0 960,0 1440,56 L1440,56 L0,56 Z"></path>
+
+        {/* Waves Transition */}
+        <svg className="nz-hero-bottom-wave" viewBox="0 0 1440 60" preserveAspectRatio="none">
+          <path fill="#f8fafc" d="M0,60 C480,10 960,10 1440,60 L1440,60 L0,60 Z"></path>
         </svg>
       </section>
 
-      {/* ── 2. INTERACTIVE TRACK SELECTOR ── */}
-      <section className="nz-tracks-section">
+      {/* ── 2. STATS OVERVIEW STRIP ── */}
+      <section className="nz-stats-strip">
         <div className="nz-wrap">
-          <div className="nz-section-header">
-            <span className="nz-section-label reveal fade-up" style={{ '--delay': '0.05s' }}>Select Core Program Track</span>
-            <h2 className="nz-section-title reveal fade-up" style={{ '--delay': '0.15s' }}>Explore Our Future-Ready Pathways</h2>
-            <p className="nz-section-sub reveal fade-up" style={{ '--delay': '0.25s' }}>
-              Click the tracks below to see the specific skills students develop and the engaging practical activities they experience.
-            </p>
-          </div>
-
-          {/* Toggle buttons */}
-          <div className="nz-track-toggle-container reveal reveal-3d" style={{ '--delay': '0.3s' }}>
-            <button
-              onClick={() => setActiveTrack('financial')}
-              className={`nz-track-toggle-btn ${activeTrack === 'financial' ? 'active active--financial' : ''}`}
-              id="btn-track-financial"
-            >
-              <Wallet size={20} />
-              <span>Financial Literacy</span>
-            </button>
-            <button
-              onClick={() => setActiveTrack('entrepreneur')}
-              className={`nz-track-toggle-btn ${activeTrack === 'entrepreneur' ? 'active active--entrepreneur' : ''}`}
-              id="btn-track-entrepreneur"
-            >
-              <Rocket size={20} />
-              <span>Entrepreneurship</span>
-            </button>
-          </div>
-
-          {/* Active Tab Panel */}
-          <div className="nz-track-panel">
-            {activeTrack === 'financial' ? (
-              <div className="nz-fade-in">
-                <div className="nz-track-intro reveal fade-up" style={{ '--delay': '0.05s' }}>
-                  <span className="nz-track-badge nz-track-badge--financial">Wealth IQ Track</span>
-                  <h3>Financial Literacy Program</h3>
-                  <p>
-                    Promoting holistic development and 21st century skills. This track helps students understand money values, budgeting, savings, compound interest, banking, and safe digital transactions through simulated experiences.
-                  </p>
-                </div>
-
-                <div className="nz-panel-grid">
-                  {/* Skills Grid */}
-                  <div className="nz-panel-column">
-                    <h4 className="nz-panel-column-title reveal fade-up" style={{ '--delay': '0.12s' }}>Skills Students Will Learn</h4>
-                    <div className="nz-cards-list">
-                      {financialSkills.map((skill, index) => (
-                        <div
-                          key={index}
-                          className="nz-skill-card reveal reveal-3d"
-                          style={{ '--delay': `${index * 0.05 + 0.15}s` }}
-                        >
-                          <img src={skill.image} className="nz-skill-img" alt={skill.title} />
-                          <div className="nz-skill-content">
-                            <h5>{skill.title}</h5>
-                            <p>{skill.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Activities Grid */}
-                  <div className="nz-panel-column">
-                    <h4 className="nz-panel-column-title reveal fade-up" style={{ '--delay': '0.12s' }}>Activities &amp; Games</h4>
-                    <div className="nz-cards-list">
-                      {financialActivities.map((act, index) => (
-                        <div
-                          key={index}
-                          className="nz-activity-card reveal reveal-3d"
-                          style={{ '--delay': `${index * 0.05 + 0.15}s` }}
-                        >
-                          <img src={act.image} className="nz-activity-img" alt={act.title} />
-                          <div className="nz-activity-content">
-                            <h5>{act.title}</h5>
-                            <p>{act.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="nz-fade-in">
-                <div className="nz-track-intro reveal fade-up" style={{ '--delay': '0.05s' }}>
-                  <span className="nz-track-badge nz-track-badge--entrepreneur">Innovation Track</span>
-                  <h3>Entrepreneurship Program</h3>
-                  <p>
-                    Aligning Education with NEP 2020. Building Skills for the 21st Century. This track introduces students to creative business modeling, branding, marketing campaigns, public pitching, and teamwork.
-                  </p>
-                </div>
-
-                <div className="nz-panel-grid">
-                  {/* Skills Grid */}
-                  <div className="nz-panel-column">
-                    <h4 className="nz-panel-column-title reveal fade-up" style={{ '--delay': '0.12s' }}>Skills Students Will Develop</h4>
-                    <div className="nz-cards-list">
-                      {entrepreneurSkills.map((skill, index) => (
-                        <div
-                          key={index}
-                          className="nz-skill-card reveal reveal-3d"
-                          style={{ '--delay': `${index * 0.05 + 0.15}s` }}
-                        >
-                          <img src={skill.image} className="nz-skill-img" alt={skill.title} />
-                          <div className="nz-skill-content">
-                            <h5>{skill.title}</h5>
-                            <p>{skill.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Activities Grid */}
-                  <div className="nz-panel-column">
-                    <h4 className="nz-panel-column-title reveal fade-up" style={{ '--delay': '0.12s' }}>Practical Activities</h4>
-                    <div className="nz-cards-list">
-                      {entrepreneurActivities.map((act, index) => (
-                        <div
-                          key={index}
-                          className="nz-activity-card reveal reveal-3d"
-                          style={{ '--delay': `${index * 0.05 + 0.15}s` }}
-                        >
-                          <img src={act.image} className="nz-activity-img" alt={act.title} />
-                          <div className="nz-activity-content">
-                            <h5>{act.title}</h5>
-                            <p>{act.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+          <div className="nz-stats-strip-grid">
+            <div className="nz-stat-item">
+              <div className="nz-stat-num">5 - 10</div>
+              <div className="nz-stat-lbl">Target Classes</div>
+            </div>
+            <div className="nz-stat-sep" />
+            <div className="nz-stat-item">
+              <div className="nz-stat-num">NEP 2020</div>
+              <div className="nz-stat-lbl">Curriculum Framework</div>
+            </div>
+            <div className="nz-stat-sep" />
+            <div className="nz-stat-item">
+              <div className="nz-stat-num">Experiential</div>
+              <div className="nz-stat-lbl">Learning Methods</div>
+            </div>
+            <div className="nz-stat-sep" />
+            <div className="nz-stat-item">
+              <div className="nz-stat-num">2 Tracks</div>
+              <div className="nz-stat-lbl">Finances & Business</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 3. CORE BENEFITS SECTION (THE 4 PILLARS) ── */}
-      <section className="nz-benefits-section">
+      {/* ── 3. INTERACTIVE PROGRAM TRACKS ── */}
+      <section className="nz-curriculum-section">
         <div className="nz-wrap">
           <div className="nz-section-header">
-            <span className="nz-section-label reveal fade-up" style={{ '--delay': '0.05s' }}>Program Outcomes</span>
-            <h2 className="nz-section-title reveal fade-up" style={{ '--delay': '0.15s' }}>Holistic Growth Ecosystem</h2>
-            <p className="nz-section-sub reveal fade-up" style={{ '--delay': '0.25s' }}>
-              Empowering school ecosystems with actionable capabilities and structural advantages.
+            <span className="nz-section-label reveal fade-up" style={{ '--delay': '0.05s' }}>Interactive Syllabus Browser</span>
+            <h2 className="nz-section-title reveal fade-up" style={{ '--delay': '0.12s' }}>Explore Our Future-Ready Tracks</h2>
+            <p className="nz-section-sub reveal fade-up" style={{ '--delay': '0.2s' }}>
+              Select a track below and switch between Key Skills and Practical Labs to see how we transform theory into actionable capability.
             </p>
           </div>
 
-          <div className="nz-benefits-grid">
+          {/* Track Selection Buttons */}
+          <div className="nz-track-tab-container reveal reveal-3d" style={{ '--delay': '0.25s' }}>
+            <button
+              onClick={() => handleTrackChange('financial')}
+              className={`nz-track-tab-btn ${activeTrack === 'financial' ? 'active active-financial' : ''}`}
+            >
+              <div className="tab-btn-icon"><Wallet size={18} /></div>
+              <span>Financial Literacy Program</span>
+            </button>
+            <button
+              onClick={() => handleTrackChange('entrepreneur')}
+              className={`nz-track-tab-btn ${activeTrack === 'entrepreneur' ? 'active active-entrepreneur' : ''}`}
+            >
+              <div className="tab-btn-icon"><Rocket size={18} /></div>
+              <span>Entrepreneurship Program</span>
+            </button>
+          </div>
+
+          {/* Core Panel Content */}
+          <div className="nz-curriculum-panel reveal reveal-3d" style={{ '--delay': '0.3s' }}>
+            {/* Header / Intro */}
+            <div className="nz-panel-header">
+              <div className="nz-panel-meta">
+                <span className={`nz-panel-badge ${activeTrack === 'financial' ? 'badge-financial' : 'badge-entrepreneur'}`}>
+                  {activeTrack === 'financial' ? 'WEALTH IQ MODULE' : 'STARTUP INNOVATION MODULE'}
+                </span>
+                <h3>
+                  {activeTrack === 'financial'
+                    ? 'Practical Financial Literacy & Money IQ'
+                    : 'Experiential Entrepreneurship & Startup Incubator'}
+                </h3>
+                <p>
+                  {activeTrack === 'financial'
+                    ? 'Promoting structured money values, savings strategies, budgeting rules, compound interest basics, banking operations, and digital security in real-world contexts.'
+                    : 'Fostering a creative startup mindset. Students learn business model generation, marketing campaigns, product branding, public pitching, and collaborative work.'}
+                </p>
+              </div>
+
+              {/* Sub-tab selection (Skills vs Activities) */}
+              <div className="nz-subtab-container">
+                <button
+                  onClick={() => setActiveSubTab('skills')}
+                  className={`nz-subtab-btn ${activeSubTab === 'skills' ? 'active' : ''}`}
+                >
+                  <Layers size={15} />
+                  <span>Key Skills Covered</span>
+                </button>
+                <button
+                  onClick={() => setActiveSubTab('activities')}
+                  className={`nz-subtab-btn ${activeSubTab === 'activities' ? 'active' : ''}`}
+                >
+                  <Calendar size={15} />
+                  <span>Practical Activities & Labs</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Split Content (Flyer Showcase on Left, Dynamic List on Right) */}
+            <div className="nz-panel-body-grid">
+              {/* Left Column: Flyer Showcase */}
+              <div className="nz-panel-flyer-col">
+                <div className="nz-flyer-card">
+                  <div className="nz-flyer-image-container">
+                    <img
+                      src={activeTrack === 'financial' ? '/nepzocontent1.jpeg' : '/nepzocontent2.jpeg'}
+                      alt="Program Brochure Content"
+                      className="nz-flyer-img"
+                    />
+                    <div className="nz-flyer-overlay" />
+                    <button
+                      className="nz-flyer-zoom-btn"
+                      onClick={() => setLightboxImage(activeTrack === 'financial' ? '/nepzocontent1.jpeg' : '/nepzocontent2.jpeg')}
+                      aria-label="Zoom Brochure Image"
+                    >
+                      <Maximize2 size={18} />
+                      <span>View Full Brochure</span>
+                    </button>
+                  </div>
+                  <div className="nz-flyer-footer">
+                    <Sparkles size={16} className="text-warning" />
+                    <span>Click image to expand official syllabus and details</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Dynamic Cards List */}
+              <div className="nz-panel-list-col">
+                <div className="nz-curriculum-list-wrap">
+                  {/* Financial Track -> Skills */}
+                  {activeTrack === 'financial' && activeSubTab === 'skills' && (
+                    <div className="nz-list-fade">
+                      {financialSkills.map((item, index) => (
+                        <div className="nz-curriculum-row" key={index}>
+                          <div className="nz-row-num">0{index + 1}</div>
+                          <div className="nz-row-details">
+                            <h4>{item.title}</h4>
+                            <p>{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Financial Track -> Activities */}
+                  {activeTrack === 'financial' && activeSubTab === 'activities' && (
+                    <div className="nz-list-fade">
+                      {financialActivities.map((item, index) => (
+                        <div className="nz-curriculum-row" key={index}>
+                          <img src={item.image} alt="" className="nz-row-avatar" />
+                          <div className="nz-row-details">
+                            <h4>{item.title}</h4>
+                            <p>{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Entrepreneurship Track -> Skills */}
+                  {activeTrack === 'entrepreneur' && activeSubTab === 'skills' && (
+                    <div className="nz-list-fade">
+                      {entrepreneurSkills.map((item, index) => (
+                        <div className="nz-curriculum-row" key={index}>
+                          <div className="nz-row-num">0{index + 1}</div>
+                          <div className="nz-row-details">
+                            <h4>{item.title}</h4>
+                            <p>{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Entrepreneurship Track -> Activities */}
+                  {activeTrack === 'entrepreneur' && activeSubTab === 'activities' && (
+                    <div className="nz-list-fade">
+                      {entrepreneurActivities.map((item, index) => (
+                        <div className="nz-curriculum-row" key={index}>
+                          <img src={item.image} alt="" className="nz-row-avatar" />
+                          <div className="nz-row-details">
+                            <h4>{item.title}</h4>
+                            <p>{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. HOLISTIC GROWTH PILLARS ── */}
+      <section className="nz-pillars-section">
+        <div className="nz-wrap">
+          <div className="nz-section-header">
+            <span className="nz-section-label reveal fade-up" style={{ '--delay': '0.05s' }}>Program Outcomes</span>
+            <h2 className="nz-section-title reveal fade-up" style={{ '--delay': '0.12s' }}>Our Core Growth Ecosystem</h2>
+            <p className="nz-section-sub reveal fade-up" style={{ '--delay': '0.2s' }}>
+              Enabling structural advantages and high cognitive lift for school students.
+            </p>
+          </div>
+
+          <div className="nz-pillars-grid">
             {pillars.map((p, idx) => (
               <div
                 key={idx}
-                className="nz-benefit-card reveal reveal-3d"
-                style={{ '--delay': `${idx * 0.06 + 0.15}s` }}
+                className="nz-pillar-card reveal reveal-3d"
+                style={{
+                  '--delay': `${idx * 0.08 + 0.15}s`,
+                  '--theme-bg': p.color,
+                  '--theme-color': p.iconColor
+                }}
               >
-                <div className="nz-benefit-icon">{p.icon}</div>
-                <h4>{p.title}</h4>
+                <div className="nz-pillar-icon-box">{p.icon}</div>
+                <h3>{p.title}</h3>
                 <p>{p.desc}</p>
+                <div className="nz-pillar-check-row">
+                  <CheckCircle2 size={14} className="check-icon" />
+                  <span>NEP-Aligned Objective</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 4. CLOSING CTA BANNER ── */}
-      <section className="nz-cta-section">
+      {/* ── 5. PREMIUM CALL-TO-ACTION SECTION ── */}
+      <section className="nz-premium-cta-section">
         <div className="nz-wrap">
-          <div className="nz-cta-card reveal reveal-3d" style={{ '--delay': '0.1s' }}>
-            <div className="nz-cta-inner">
-              <span className="nz-cta-tag">Co-powered by SckoolChess</span>
-              <h2>Future Skills. Real Learning. Lasting Impact.</h2>
+          <div className="nz-cta-card-wrapper reveal reveal-3d" style={{ '--delay': '0.1s' }}>
+            <div className="nz-cta-ambient-glow" />
+            <div className="nz-cta-content-inner">
+              <span className="nz-cta-badge-pill">CO-POWERED BY SCKOOLCHESS</span>
+              <h2>Future Readiness Starts Today</h2>
               <p>
-                Aligned with the vision of the National Education Policy (NEP 2020). Partner with SckoolChess to introduce NEPZO’s future readiness programs in your institution today.
+                Empower your child or school institution with cutting-edge 21st-century capabilities. Aligning educational structures directly with NEP 2020 frameworks.
               </p>
-              <div className="nz-cta-actions">
-                <Link to="/book-class" className="nz-btn-primary" id="nepzo-footer-cta">
-                  <span>Request Program Details</span>
+              <div className="nz-cta-btns">
+                <Link to="/book-class" className="nz-cta-btn-primary">
+                  <span>Request Program Guide</span>
                   <ArrowRight size={16} />
                 </Link>
-                <a href="http://www.nepzo.in" target="_blank" rel="noopener noreferrer" className="nz-btn-secondary">
-                  <span>Visit www.nepzo.in</span>
+                <a href="http://www.nepzo.in" target="_blank" rel="noopener noreferrer" className="nz-cta-btn-secondary">
+                  <span>Visit Official NEPZO website</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ── LIGHTBOX MODAL VIEWER ── */}
+      {lightboxImage && (
+        <div
+          className="nz-lightbox-overlay"
+          onClick={() => setLightboxImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Expanded brochure viewer"
+        >
+          <button
+            className="nz-lightbox-close"
+            onClick={() => setLightboxImage(null)}
+            aria-label="Close viewer"
+          >
+            <X size={32} />
+          </button>
+          <img
+            src={lightboxImage}
+            alt="Expanded brochure full view"
+            className="nz-lightbox-img"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   )
 }
