@@ -14334,7 +14334,7 @@ img.header-side-logo {
 
 @media (max-width: 768px) {
   .premium-benefits-wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 32px;
   }
