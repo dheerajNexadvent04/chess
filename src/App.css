@@ -9150,7 +9150,7 @@ p .feature-tag {
   line-height: 1;
   font-weight: 700;
   color: #2b2f33;
-  text-align: center;
+  max-width: -webkit-fill-available;
 }
 
 .reviews .sub {
