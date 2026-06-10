@@ -223,7 +223,6 @@ export function PartnerSchoolsPage() {
     const nodes = section.querySelectorAll('.partner-node');
 
     function updateTimeline() {
-      if (window.innerWidth <= 1024) return;
       const windowHeight = window.innerHeight;
       const headerHeight = 86;
       const activationY = headerHeight + (windowHeight - headerHeight) / 2;
