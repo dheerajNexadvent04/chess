@@ -1764,10 +1764,26 @@ html {
   box-shadow: 0 10px 30px rgba(13, 27, 46, 0.03);
   transition: all 0.3s ease;
 }
+.journey-v6__level-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset -220px 0 200px -120px rgba(13, 27, 46, 0.45);
+  z-index: 2;
+  transition: box-shadow 0.3s ease;
+}
 .journey-v6__level-row:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(13, 27, 46, 0.07);
   border-color: var(--level-theme-color);
+}
+.journey-v6__level-row:hover::before {
+  box-shadow: inset -220px 0 200px -120px rgba(13, 27, 46, 0.65);
 }
 
 /* Background Banner Styles */
@@ -1879,7 +1895,7 @@ html {
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .journey-v6__level-title-group {
@@ -1980,7 +1996,7 @@ html {
   gap: 24px;
   min-width: 0;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Top Row: Stack of 3 Info Cards + Goals Box */
