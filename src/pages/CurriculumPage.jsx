@@ -1485,7 +1485,7 @@ export function CurriculumPage() {
                   <div className="cp-v5__price">
                     {course.fees.toLowerCase().includes('price') ? course.fees : `₹${course.fees}`}
                   </div>
-                  <Link to="/contact-us" className="cp-v5__book-btn">BOOK TRIAL</Link>
+                  <Link to="/book-class" className="cp-v5__book-btn">BOOK TRIAL</Link>
                 </div>
               </div>
             ))}

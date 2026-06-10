@@ -1802,7 +1802,7 @@ html {
   position: absolute;
   top: 0;
   right: 0;
-  width: 60%;
+  width: 75%;
   height: 100%;
   object-fit: cover;
   opacity: 0.58;
@@ -1823,9 +1823,9 @@ html {
   background: linear-gradient(
     90deg,
     #ffffff 0%,
-    #ffffff 35%,
-    rgba(255, 255, 255, 0.7) 55%,
-    rgba(255, 255, 255, 0.1) 100%
+    #ffffff 15%,
+    rgba(255, 255, 255, 0.75) 45%,
+    rgba(255, 255, 255, 0.15) 100%
   );
   z-index: 2;
 }
