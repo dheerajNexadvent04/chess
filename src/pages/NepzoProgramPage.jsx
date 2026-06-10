@@ -596,7 +596,7 @@ export function NepzoProgramPage() {
                 badge: 'Cognitive',
                 title: 'Future-Focused Learning',
                 desc: 'Introduces future-focused learning opportunities.',
-                img: '/student1.png'
+                img: '/Future-Focused Learning.png'
               },
               {
                 badge: 'Exposure',
