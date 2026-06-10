@@ -2091,16 +2091,16 @@
     gap: 40px;
   }
   .nz-upm-left {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
   .nz-upm-left > p {
     max-width: 100%;
   }
   .nz-upm-list {
     grid-template-columns: 1fr;
-    margin: 0 auto 28px auto;
-    max-width: 360px;
+    margin: 0 0 28px 0;
+    max-width: 100%;
     text-align: left;
   }
   .nz-upm-left h2 {
