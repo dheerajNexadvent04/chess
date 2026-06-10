@@ -14,7 +14,15 @@ import {
   Wallet,
   Rocket,
   Layers,
-  ZoomIn
+  ZoomIn,
+  FileText,
+  HelpCircle,
+  ClipboardList,
+  PiggyBank,
+  Building,
+  Store,
+  Presentation,
+  Megaphone
 } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './NepzoProgramPage.css'
@@ -66,27 +74,27 @@ const programDetails = {
     ],
     activities: [
       {
-        img: '/A4.jpeg',
+        icon: <FileText size={20} />,
         title: 'Budget Worksheets',
         desc: 'Draft and balance budgets for hypothetical life projects and simulations.'
       },
       {
-        img: '/A2.jpeg',
+        icon: <TrendingUp size={20} />,
         title: 'Mock Stock Market Game',
         desc: 'Participate in stock-trading simulations to learn market dynamics safely.'
       },
       {
-        img: '/A1.jpeg',
+        icon: <HelpCircle size={20} />,
         title: 'Financial Quizzes',
         desc: 'Fun, competitive trivia to test knowledge on banking, ethics, and savings.'
       },
       {
-        img: '/A3.jpeg',
+        icon: <ClipboardList size={20} />,
         title: 'Expense Diary Challenge',
         desc: 'Log and analyze mock daily expenditures to cultivate disciplined habits.'
       },
       {
-        img: '/g1.jpeg',
+        icon: <PiggyBank size={20} />,
         title: 'Savings Challenge Competition',
         desc: 'Compete in teams to design the most effective savings strategies.'
       }
@@ -123,22 +131,22 @@ const programDetails = {
     ],
     activities: [
       {
-        img: '/c1.jpg',
+        icon: <Building size={20} />,
         title: 'Local Business Visits',
         desc: 'Visit active commercial enterprises and learn from seasoned local entrepreneurs.'
       },
       {
-        img: '/gal1.jpg',
+        icon: <Store size={20} />,
         title: 'Student Startup Stalls',
         desc: 'Set up sales counters at school events to experience selling and generating profit.'
       },
       {
-        img: '/gal2.jpg',
+        icon: <Presentation size={20} />,
         title: 'Shark Tank Style Pitching',
         desc: 'Present ideas before mock panels to receive feedback and refine plans.'
       },
       {
-        img: '/gal3.jpg',
+        icon: <Megaphone size={20} />,
         title: 'Social Media Campaign Projects',
         desc: 'Create mock digital marketing drives for brands, businesses, or social goals.'
       }
@@ -322,30 +330,6 @@ export function NepzoProgramPage() {
       <section className="nz-upcoming-section">
         <div className="nz-wrap">
           
-          {/* Main Program Switcher */}
-          <div className="nz-program-tabs-container reveal fade-up" style={{ '--delay': '0.05s' }}>
-            <button
-              className={`nz-main-program-tab ${activeProgramTab === 'finance' ? 'active-finance' : ''}`}
-              onClick={() => {
-                setActiveProgramTab('finance')
-                setActiveSubTab('skills')
-              }}
-            >
-              <Wallet size={18} />
-              <span>Financial Literacy Program</span>
-            </button>
-            <button
-              className={`nz-main-program-tab ${activeProgramTab === 'entrepreneur' ? 'active-entrepreneur' : ''}`}
-              onClick={() => {
-                setActiveProgramTab('entrepreneur')
-                setActiveSubTab('skills')
-              }}
-            >
-              <Rocket size={18} />
-              <span>Entrepreneurship Program</span>
-            </button>
-          </div>
-
           {/* Main Interactive Card */}
           <div className={`nz-program-detail-card ${activeProgramTab} reveal fade-up`} style={{ '--delay': '0.12s' }}>
             
@@ -363,20 +347,27 @@ export function NepzoProgramPage() {
               </div>
 
               <div className="nz-pd-card-header-right">
-                <div className="nz-inner-tabs">
+                {/* Main Program Switcher */}
+                <div className="nz-program-tabs-container">
                   <button
-                    className={`nz-inner-tab ${activeSubTab === 'skills' ? 'active' : ''}`}
-                    onClick={() => setActiveSubTab('skills')}
+                    className={`nz-main-program-tab ${activeProgramTab === 'finance' ? 'active-finance' : ''}`}
+                    onClick={() => {
+                      setActiveProgramTab('finance')
+                      setActiveSubTab('skills')
+                    }}
                   >
-                    <Layers size={16} />
-                    <span>Key Skills Covered</span>
+                    <Wallet size={18} />
+                    <span>Financial Literacy Program</span>
                   </button>
                   <button
-                    className={`nz-inner-tab ${activeSubTab === 'activities' ? 'active' : ''}`}
-                    onClick={() => setActiveSubTab('activities')}
+                    className={`nz-main-program-tab ${activeProgramTab === 'entrepreneur' ? 'active-entrepreneur' : ''}`}
+                    onClick={() => {
+                      setActiveProgramTab('entrepreneur')
+                      setActiveSubTab('skills')
+                    }}
                   >
-                    <Calendar size={16} />
-                    <span>Practical Activities & Labs</span>
+                    <Rocket size={18} />
+                    <span>Entrepreneurship Program</span>
                   </button>
                 </div>
               </div>
@@ -412,6 +403,24 @@ export function NepzoProgramPage() {
 
               {/* Right Column: List of items */}
               <div className="nz-pd-list-col">
+                {/* Inner Sub-Tabs Switcher */}
+                <div className="nz-inner-tabs">
+                  <button
+                    className={`nz-inner-tab ${activeSubTab === 'skills' ? 'active' : ''}`}
+                    onClick={() => setActiveSubTab('skills')}
+                  >
+                    <Layers size={16} />
+                    <span>Key Skills Covered</span>
+                  </button>
+                  <button
+                    className={`nz-inner-tab ${activeSubTab === 'activities' ? 'active' : ''}`}
+                    onClick={() => setActiveSubTab('activities')}
+                  >
+                    <Calendar size={16} />
+                    <span>Practical Activities & Labs</span>
+                  </button>
+                </div>
+
                 {activeSubTab === 'skills' ? (
                   <div className="nz-skills-list">
                     {programDetails[activeProgramTab].skills.map((skill, idx) => (
@@ -433,8 +442,11 @@ export function NepzoProgramPage() {
                   <div className="nz-activities-list">
                     {programDetails[activeProgramTab].activities.map((activity, idx) => (
                       <div key={idx} className="nz-activity-item">
-                        <div className="nz-activity-img-wrapper">
-                          <img src={activity.img} alt={activity.title} />
+                        <div className="nz-activity-icon-wrapper" style={{
+                          background: programDetails[activeProgramTab].badgeBg,
+                          color: programDetails[activeProgramTab].badgeColor
+                        }}>
+                          {activity.icon}
                         </div>
                         <div className="nz-activity-text">
                           <h4>{activity.title}</h4>
