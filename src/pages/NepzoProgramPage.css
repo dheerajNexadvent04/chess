@@ -1083,7 +1083,7 @@
 }
 
 .nz-pillar-interactive-card {
-  background: linear-gradient(135deg, #1e0a4f 0%, #120536 100%);
+  background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   padding: 36px 28px 24px;
@@ -1104,7 +1104,7 @@
   transform: translateY(-6px);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
   border-color: rgba(255, 255, 255, 0.2);
-  background: linear-gradient(135deg, #2e1065 0%, #1a0c42 100%);
+  background: linear-gradient(135deg, #371e82 0%, #5b21b6 100%);
 }
 
 
@@ -1201,9 +1201,9 @@
 }
 
 .nz-benefit-card {
-  background: linear-gradient(135deg, #1e0a4f 0%, #120536 100%);
-  border-radius: 20px;
+  background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
   padding: 32px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1218,7 +1218,7 @@
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   border-color: rgba(255, 255, 255, 0.2);
-  background: linear-gradient(135deg, #2e1065 0%, #1a0c42 100%);
+  background: linear-gradient(135deg, #371e82 0%, #5b21b6 100%);
 }
 
 .nz-benefit-icon-wrap {
@@ -1257,12 +1257,13 @@
 /* Location Highlights Banner */
 .nz-locations-banner {
   margin-top: 56px;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 100%);
   border-radius: 24px;
   padding: 40px;
   text-align: center;
   color: #ffffff;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nz-loc-label {
