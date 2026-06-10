@@ -2217,13 +2217,43 @@
     gap: 14px;
     padding: 12px 16px;
   }
+
+  .nz-locations-banner {
+    padding: 24px 16px;
+    margin-top: 36px;
+    border-radius: 18px;
+  }
+
+  .nz-loc-pills {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .nz-loc-pill {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .nz-loc-footnote {
+    font-size: 12px;
+    line-height: 1.5;
+  }
 }
 
 @media (max-width: 480px) {
-  .nz-inner-tab {
-    padding: 8px 12px;
-    font-size: 12px;
+  .nz-inner-tabs {
+    flex-direction: column;
     gap: 6px;
+    padding: 6px;
+    width: 100%;
+  }
+
+  .nz-inner-tab {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    gap: 8px;
   }
 }
 

@@ -6,8 +6,8 @@ const slideshowImages = Array.from({ length: 15 }, (_, i) => `/about_slide${i + 
 const coachingImage = '/l2.png'
 const missionBoardImage = '/cp career banner2.png'
 const visionKidImage = '/cp partnership banner2.png'
-const chooseUsImage = '/student3.png'
-const skillsVisionImage = '/student4.png'
+const chooseUsImage = '/commitment to school.png'
+const skillsVisionImage = '/future ready.png'
 
 export function AboutPage() {
   useScrollReveal();

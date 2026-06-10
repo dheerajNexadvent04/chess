@@ -245,8 +245,8 @@ export function NepzoProgramPage() {
               <span>Schedule Free Session</span>
               <ArrowRight size={16} />
             </Link>
-            <a href="tel:+918447992702" className="nz-hero-btn-secondary">
-              <span>Talk to Program Expert</span>
+            <a href="/DOWNLOAD BROCHURE.pdf" download="DOWNLOAD BROCHURE.pdf" className="nz-hero-btn-secondary">
+              <span>Download Brochure</span>
             </a>
           </div>
         </div>
