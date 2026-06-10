@@ -212,6 +212,12 @@ html {
   min-height: 78px;
 }
 
+@media (max-width: 768px) {
+  .about-header.is-scrolled .header-main {
+    min-height: 58px;
+  }
+}
+
 .about-header .nav {
   gap: 6px;
   justify-self: center;
@@ -10444,6 +10450,7 @@ p .feature-tag {
 
   .about-hero-first-image {
     margin: 0;
+    aspect-ratio: 1340 / 1134;
   }
 
   .about-hero-first-image img {

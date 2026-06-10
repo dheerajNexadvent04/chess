@@ -42,7 +42,8 @@
   display: flex;
   flex-direction: column;
   min-height: 640px;
-  padding-top: 80px;
+  max-height: 760px;
+  padding-top: 0px;
   margin-bottom: 47px;
 }
 
@@ -76,7 +77,7 @@
 .nz-hero-text-col {
   width: 52%;
   max-width: 700px;
-  padding: 0 60px 60px 80px;
+  padding: 0 60px 70px 80px;
   position: relative;
   z-index: 5;
   flex: 1;
@@ -88,6 +89,7 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 32px;
+  margin-top: 50px;
 }
 
 .nz-hero__partner-logo {
@@ -155,8 +157,12 @@
   font-size: clamp(15px, 1.1vw, 17px);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
-  margin-bottom: 36px;
+  margin-bottom: 0px;
   max-width: 580px;
+}
+
+.nz-hero-desc:last-of-type {
+  margin-bottom: 15px;
 }
 
 /* Action buttons */
@@ -223,6 +229,9 @@
   z-index: 10;
   filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.25));
   pointer-events: none;
+  /* Smoothly fade out the bottom of the image to hide the sharp cut */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* Floating satisfaction card */
@@ -230,11 +239,13 @@
   position: absolute;
   right: 35%;
   bottom: 34%;
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
   padding: 20px 24px;
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -249,39 +260,41 @@
 }
 
 .nz-satisfaction-card .avatar-circle {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2.5px solid #0f172a;
+  border: 2px solid #0f172a;
   margin-right: -10px;
 }
 
 .nz-satisfaction-card .avatar-plus {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #22c55e;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  font-weight: 900;
-  border: 2.5px solid #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+  border: 2px solid #0f172a;
   margin-left: 10px;
 }
 
 .nz-satisfaction-card .satisfaction-num {
   font-size: 42px;
   font-weight: 900;
-  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1;
 }
 
 .nz-satisfaction-card .satisfaction-label {
   font-size: 13px;
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
 }
 
@@ -293,8 +306,8 @@
 /* Rotating badge â€” absolutely positioned, top right */
 .nz-rotating-badge {
   position: absolute;
-  right: 4%;
-  top: 20%;
+  right: 8%;
+  top: 19%;
   width: 120px;
   height: 120px;
   display: flex;
@@ -363,6 +376,7 @@
   color: white;
   position: relative;
   z-index: 5;
+  margin-bottom: 2rem;
 }
 
 .nz-counter-box {
@@ -405,7 +419,7 @@
   flex-direction: column;
   align-items: self-end;
   overflow: hidden;
-  margin-top: 2.5rem;
+  justify-content: start;
 }
 
 /* Curve image fills the trust column */
@@ -431,7 +445,7 @@
 
 .nz-trust-title {
   display: block;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 800;
   color: #374151;
   text-transform: uppercase;
@@ -450,23 +464,31 @@
 
 .nz-logo-track {
   display: flex;
-  gap: 40px;
+  gap: 24px;
   width: max-content;
   animation: logoScroll 22s linear infinite;
   align-items: center;
 }
 
-.nz-logo-item {
-  height: 28px;
-  object-fit: contain;
-  opacity: 0.6;
-  filter: grayscale(80%);
-  transition: opacity 0.3s ease, filter 0.3s ease;
+.nz-scroll-text {
+  font-size: 15px;
+  font-weight: 800;
+  color: #3b0764;
+  white-space: nowrap;
+  letter-spacing: 0.08em;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  padding: 6px 18px;
+  border-radius: 99px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
-.nz-logo-item:hover {
-  opacity: 0.9;
-  filter: grayscale(0%);
+.nz-scroll-text:hover {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.3);
+  transform: translateY(-1px);
 }
 
 @keyframes logoScroll {
@@ -494,6 +516,7 @@
 @media (max-width: 1024px) {
   .nz-premium-hero {
     padding-top: 60px;
+    max-height: none;
   }
   .nz-hero-text-col {
     width: 70%;
@@ -509,23 +532,55 @@
   }
   .nz-hero-bottom {
     height: auto;
-    flex-direction: column;
   }
   .nz-hero-counters {
     flex: none;
-    justify-content: center;
     padding: 24px 40px;
     gap: 60px;
+    margin-bottom: 0;
   }
-  .nz-hero-trust-col {
-    min-height: 120px;
+  .nz-hero__logo-strip {
+    margin-top: 0;
   }
   .nz-trust-inner {
-    padding: 20px 30px;
+    padding: 20px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding-top: 0px;
+    width: 100%;
+  }
+  .nz-logo-marquee {
+    width: 77%;
+  }
+  .nz-scroll-text {
+    font-size: 13px;
+    padding: 5px 14px;
+  }
+  .nz-hero-trust-col {
+    justify-content: flex-start;
+  }
+  .nz-trust-title {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nz-hero-text-col {
+    width: 55%;
+  }
+  .nz-hero-person-img {
+    right: 30px;
+    bottom: 155px;
+    height: 62%;
+    opacity: 1;
   }
 }
 
 @media (max-width: 768px) {
+  .nz-glow-sphere.sphere-1 {
+    display: none;
+  }
   .nz-hero-text-col {
     width: 100%;
     padding: 0 24px 40px;
@@ -534,11 +589,43 @@
     display: none;
   }
   .nz-hero-counters {
-    flex-direction: column;
-    gap: 20px;
+    gap: 3px;
     align-items: center;
     text-align: center;
-    padding: 24px;
+    padding: 10px;
+    padding-bottom: 22px;
+    max-width: 187px;
+  }
+  .nz-hero-counters .star-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .nz-hero-pill {
+    font-size: 8px;
+    padding: 4px 18px;
+    margin-bottom: 10px;
+  }
+  .nz-counter-val {
+    font-size: 26px;
+  }
+  .nz-counter-lbl {
+    font-size: 8px;
+  }
+  .nz-trust-title {
+    font-size: 9px;
+    margin-bottom: 10px;
+  }
+  .nz-trust-inner {
+    padding: 16px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 8px;
+    width: 87%;
+  }
+  .nz-scroll-text {
+    font-size: 11px;
+    padding: 4px 12px;
   }
 }
 
@@ -995,8 +1082,8 @@
 }
 
 .nz-pillar-interactive-card {
-  background: #f8fafc;
-  border: 1px solid #eef2f8;
+  background: linear-gradient(135deg, #1e0a4f 0%, #120536 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   padding: 36px 28px 24px;
   position: relative;
@@ -1014,59 +1101,12 @@
 
 .nz-pillar-interactive-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(13, 27, 46, 0.08);
-  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #2e1065 0%, #1a0c42 100%);
 }
 
-/* Header inside card */
-.nz-pillar-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
 
-.nz-pillar-badge {
-  background: #ffffff;
-  color: #7c3aed;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 4px 10px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  animation: fadeInPill 0.3s ease forwards;
-}
-
-@keyframes fadeInPill {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.nz-pillar-badge-placeholder {
-  visibility: hidden;
-  height: 20px;
-}
-
-.nz-pillar-arrow {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #7c3aed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.3s,
-              color 0.3s;
-}
-
-.nz-pillar-interactive-card:hover .nz-pillar-arrow {
-  transform: scale(1.08);
-}
 
 /* Content block */
 .nz-pillar-card-content {
@@ -1081,8 +1121,8 @@
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: var(--theme-bg, rgba(124, 58, 237, 0.08));
-  color: var(--theme-color, #7c3aed);
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1093,7 +1133,7 @@
 .nz-pillar-interactive-card h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #1e293b;
+  color: #ffffff;
   margin: 0 0 12px 0;
   line-height: 1.3;
   transition: color 0.4s;
@@ -1102,40 +1142,34 @@
 .nz-pillar-desc {
   font-size: 14px;
   line-height: 1.6;
-  color: #55627a;
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
   transition: color 0.4s;
 }
 
 /* Bottom banner */
 .nz-pillar-card-bottom-banner {
-  border-top: 1px solid #f0f4f8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 16px;
   font-size: 12.5px;
   font-weight: 700;
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: border-color 0.4s, color 0.4s;
 }
 
-/* ACTIVE CARD STATE (Brand purple) */
 .nz-pillar-interactive-card.active {
   background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 100%);
-  border-color: transparent;
-  box-shadow: 0 24px 48px rgba(76, 29, 149, 0.35);
+  border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-4px);
 }
 
-.nz-pillar-interactive-card.active .nz-pillar-arrow {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  backdrop-filter: blur(10px);
-}
+
 
 .nz-pillar-interactive-card.active .nz-pillar-icon-wrapper {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
 }
 
 .nz-pillar-interactive-card.active h3 {
@@ -1143,12 +1177,133 @@
 }
 
 .nz-pillar-interactive-card.active .nz-pillar-desc {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .nz-pillar-interactive-card.active .nz-pillar-card-bottom-banner {
-  border-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Benefits for Schools Block */
+/* Benefits for Schools Section */
+.nz-benefits-section {
+  padding: 72px 0;
+  background: #f8fafc;
+  position: relative;
+}
+
+.nz-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.nz-benefit-card {
+  background: linear-gradient(135deg, #1e0a4f 0%, #120536 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+
+.nz-benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #2e1065 0%, #1a0c42 100%);
+}
+
+.nz-benefit-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.2);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nz-benefit-card:hover .nz-benefit-icon-wrap {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.nz-benefit-card h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.nz-benefit-card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+/* Location Highlights Banner */
+.nz-locations-banner {
+  margin-top: 56px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.nz-loc-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fb923c;
+  margin-bottom: 20px;
+}
+
+.nz-loc-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.nz-loc-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.nz-loc-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.nz-loc-footnote {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* PROGRAM GALLERY / WHY NEPZO SECTION */
@@ -1161,7 +1316,7 @@
 
 .nz-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -1316,6 +1471,16 @@
   line-height: 1.15;
 }
 
+.nz-cta-tagline {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fb923c !important;
+  margin-top: -8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .nz-cta-card-wrapper p {
   font-size: 16.5px;
   color: rgba(255, 255, 255, 0.7);
@@ -1463,8 +1628,9 @@
 
 @media (max-width: 768px) {
   .nz-premium-hero {
-    padding-top: 48px;
-    padding-bottom: 100px;
+    padding-top: 29px;
+    padding-bottom: 0px;
+    background-image: url('/nepzomob2.png');
   }
   .nz-curriculum-panel {
     padding: 24px;
@@ -1531,16 +1697,78 @@
   .nz-hero-btn-primary, .nz-hero-btn-secondary, .nz-cta-btn-primary, .nz-cta-btn-secondary {
     justify-content: center;
   }
-  .nz-pillars-grid,
-  .nz-pillars-interactive-grid,
-  .nz-gallery-grid {
+  .nz-pillars-grid {
     grid-template-columns: 1fr;
   }
+  .nz-gallery-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 10px 20px 24px 20px;
+    margin: 0 -20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .nz-gallery-grid::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  .nz-gallery-card {
+    flex: 0 0 280px;
+    aspect-ratio: 4 / 5;
+    scroll-snap-align: start;
+  }
+  .nz-pillars-interactive-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 10px 20px 24px 20px;
+    margin: 0 -20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .nz-pillars-interactive-grid::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
   .nz-pillar-interactive-card {
-    min-height: auto;
-    padding: 28px 24px;
+    flex: 0 0 290px;
+    min-height: 350px;
+    padding: 32px 24px;
+    scroll-snap-align: start;
+  }
+  .nz-benefits-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 10px 20px 24px 20px;
+    margin: 0 -20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .nz-benefits-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .nz-benefit-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    padding: 24px;
   }
   .nz-pillars-section,
+  .nz-benefits-section,
   .nz-program-gallery-section {
     padding: 36px 0;
   }
@@ -1600,21 +1828,49 @@
   align-items: flex-start;
 }
 
-/* "Schedule" orange pill badge */
-.nz-upm-badge {
+/* Tab switcher inside program section */
+.nz-program-tabs {
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(232, 117, 10, 0.15);
-  border: 1px solid rgba(232, 117, 10, 0.35);
-  color: #F5A623;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  padding: 6px 18px;
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px;
+  border-radius: 99px;
   margin-bottom: 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.nz-program-tab {
+  background: none;
+  border: none;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+  border-radius: 99px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nz-program-tab.active {
+  background: #ffffff;
+  color: #6d28d9;
+  box-shadow: 0 4px 14px rgba(109, 40, 217, 0.2);
+}
+
+.nz-program-tab:hover:not(.active) {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nz-upm-bottom-text {
+  margin-top: 10px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  border-left: 3px solid #E8750A;
+  padding-left: 12px;
 }
 
 .nz-upm-left h2 {
@@ -1696,6 +1952,7 @@
 .nz-upm-card {
   background: #ffffff;
   border-radius: 24px;
+  padding: 24px;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
   width: 100%;
@@ -1723,7 +1980,7 @@
 
 /* Card header */
 .nz-upm-card__top {
-  padding: 26px 26px 20px;
+  padding: 0 0 16px 0;
 }
 
 .nz-upm-card__top h3 {
@@ -1746,11 +2003,12 @@
   position: relative;
   overflow: hidden;
   background: #f0f4ff;
+  border-radius: 16px;
 }
 
 .nz-upm-card__img img {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: top center;
   display: block;
@@ -1761,52 +2019,32 @@
   transform: scale(1.05);
 }
 
-/* Arrow/link button overlaying the image */
-.nz-upm-card__arrow {
+/* Metadata pills overlaying the image */
+.nz-upm-card__pills {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  cursor: pointer;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0d1b2e;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-  text-decoration: none;
-  transition: background 0.25s, transform 0.25s;
-}
-
-.nz-upm-card__arrow:hover {
-  background: #ffffff;
-  transform: scale(1.12);
-}
-
-/* Card footer */
-.nz-upm-card__footer {
-  display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 16px 26px;
-  border-top: 1px solid #f0f4f8;
-  background: #fafbfd;
+  gap: 10px;
+  z-index: 5;
 }
 
-.nz-upm-card__footer span {
+.nz-upm-card__pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12.5px;
+  background: #ffffff;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 13px;
   font-weight: 600;
-  color: #55627a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.nz-upm-card__footer svg {
+.nz-upm-card__pill svg {
   color: #7c3aed;
   flex-shrink: 0;
 }
@@ -1855,18 +2093,47 @@
   .nz-upm-card {
     max-width: 100%;
   }
+
+  .nz-locations-banner {
+    padding: 32px 20px;
+    margin-top: 36px;
+  }
+  .nz-loc-pill {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 480px) {
   .nz-upm-left h2 {
     font-size: 30px;
   }
-  .nz-upm-card__top {
-    padding: 20px 20px 16px;
+  .nz-program-tabs {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
   }
-  .nz-upm-card__footer {
-    padding: 14px 20px;
-    gap: 12px;
+  .nz-program-tab {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .nz-upm-card {
+    padding: 16px;
+  }
+  .nz-upm-card__top {
+    padding: 0 0 12px 0;
+  }
+  .nz-upm-card__pills {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    gap: 8px;
+  }
+  .nz-upm-card__pill {
+    padding: 6px 12px;
+    font-size: 11px;
   }
 }
 
