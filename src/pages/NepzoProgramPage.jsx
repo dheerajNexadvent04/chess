@@ -44,7 +44,7 @@ const programDetails = {
     badgeColor: '#22d3ee',
     title: 'Practical Financial Literacy & Money IQ',
     desc: 'Promoting structured money values, savings strategies, budgeting rules, compound interest basics, banking operations, and digital security in real-world contexts.',
-    brochureImg: '/nepzocontent1.jpeg',
+    brochureImg: '/Financial Literacy Bootcamp.png',
     skills: [
       {
         num: '01',
@@ -106,7 +106,7 @@ const programDetails = {
     badgeColor: '#fb923c',
     title: 'Experiential Entrepreneurship & Startup Incubator',
     desc: 'Fostering a creative startup mindset. Students learn business model generation, marketing campaigns, product branding, public pitching, and collaborative work.',
-    brochureImg: '/nepzocontent2.jpeg',
+    brochureImg: '/Entrepreneurship Bootcamp.png',
     skills: [
       {
         num: '01',
