@@ -78,7 +78,7 @@ export function AchievementPage() {
               </div>
               <div className="achievement-stat-info">
                 <span className="achievement-stat-num">10+</span>
-                <span className="achievement-stat-label">Years of experience 2016 Est.</span>
+                <span className="achievement-stat-label">Years of experience</span>
               </div>
             </div>
             <div className="achievement-stat-divider" />

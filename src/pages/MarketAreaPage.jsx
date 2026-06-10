@@ -87,7 +87,7 @@ const stats = [
   { value: '10+', label: 'Cities Served' },
   { value: '5,000+', label: 'Students Trained' },
   { value: '12+', label: 'Partner Schools' },
-  { value: '10+', label: 'Years of experience 2016 Est.' },
+  { value: '10+', label: 'Years of experience' },
 ]
 
 export function MarketAreaPage() {

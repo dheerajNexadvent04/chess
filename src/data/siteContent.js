@@ -78,7 +78,7 @@ export const associatedSchoolLogos = [
 export const keyMetrics = [
   { label: 'Happy Students', value: '5000+' },
   { label: 'Partner Schools', value: '12+' },
-  { label: 'Years of experience 2016 Est.', value: '10+' },
+  { label: 'Years of experience', value: '10+' },
 ]
 
 export const partnerships = [

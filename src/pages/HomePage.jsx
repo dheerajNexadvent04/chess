@@ -802,7 +802,7 @@ export function HomePage() {
               <img src="/10_years_home_page.png" alt="" aria-hidden="true" />
             </div>
             <strong>{metricsCounts.years}+</strong>
-            <span>Years of experience 2016 Est.</span>
+            <span>Years of experience</span>
           </article>
         </div>
         {/* Achievements ticker removed */}
