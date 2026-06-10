@@ -10,7 +10,11 @@ import {
   Calendar,
   Lightbulb,
   Sparkle,
-  Star
+  Star,
+  Wallet,
+  Rocket,
+  Layers,
+  ZoomIn
 } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './NepzoProgramPage.css'
@@ -25,46 +29,130 @@ const partnerLogos = [
   { src: 'https://elementorkits-1.nextdin.com/coursely/wp-content/uploads/sites/13/2026/03/Logoipsum4.png', alt: 'Partner 4' },
 ]
 
+const programDetails = {
+  finance: {
+    badge: 'WEALTH IQ MODULE',
+    badgeBg: 'rgba(14, 116, 144, 0.08)',
+    badgeColor: '#0e7490',
+    title: 'Practical Financial Literacy & Money IQ',
+    desc: 'Promoting structured money values, savings strategies, budgeting rules, compound interest basics, banking operations, and digital security in real-world contexts.',
+    brochureImg: '/nepzocontent1.jpeg',
+    skills: [
+      {
+        num: '01',
+        title: 'Smart Money Management',
+        desc: 'Learn to value, budget, and manage personal cash flow responsibly.'
+      },
+      {
+        num: '02',
+        title: 'Budgeting and Saving',
+        desc: 'Understand saving habits, target-setting, and the magic of compound interest.'
+      },
+      {
+        num: '03',
+        title: 'Investment Basics',
+        desc: 'Get introduced to stocks, banking fundamentals, and micro-investing structures.'
+      },
+      {
+        num: '04',
+        title: 'Financial Decision Making',
+        desc: 'Evaluate risks and returns, making logical choices for short & long-term goals.'
+      },
+      {
+        num: '05',
+        title: 'Advanced Money & Life Readiness',
+        desc: 'Apply financial concepts to simulated real-world scenarios for life preparation.'
+      }
+    ],
+    activities: [
+      {
+        img: '/A4.jpeg',
+        title: 'Budget Worksheets',
+        desc: 'Draft and balance budgets for hypothetical life projects and simulations.'
+      },
+      {
+        img: '/A2.jpeg',
+        title: 'Mock Stock Market Game',
+        desc: 'Participate in stock-trading simulations to learn market dynamics safely.'
+      },
+      {
+        img: '/A1.jpeg',
+        title: 'Financial Quizzes',
+        desc: 'Fun, competitive trivia to test knowledge on banking, ethics, and savings.'
+      },
+      {
+        img: '/A3.jpeg',
+        title: 'Expense Diary Challenge',
+        desc: 'Log and analyze mock daily expenditures to cultivate disciplined habits.'
+      },
+      {
+        img: '/g1.jpeg',
+        title: 'Savings Challenge Competition',
+        desc: 'Compete in teams to design the most effective savings strategies.'
+      }
+    ]
+  },
+  entrepreneur: {
+    badge: 'STARTUP INNOVATION MODULE',
+    badgeBg: 'rgba(232, 117, 10, 0.08)',
+    badgeColor: '#E8750A',
+    title: 'Experiential Entrepreneurship & Startup Incubator',
+    desc: 'Fostering a creative startup mindset. Students learn business model generation, marketing campaigns, product branding, public pitching, and collaborative work.',
+    brochureImg: '/nepzocontent2.jpeg',
+    skills: [
+      {
+        num: '01',
+        title: 'Entrepreneurial Mindset',
+        desc: 'Develop confidence, creativity, resilience, and a passion to solve real-world problems.'
+      },
+      {
+        num: '02',
+        title: 'Business Fundamentals',
+        desc: 'Understand business models, customer segments, operations, and startup structures.'
+      },
+      {
+        num: '03',
+        title: 'Branding & Marketing',
+        desc: 'Master product naming, logo creation, branding, and target audience marketing.'
+      },
+      {
+        num: '04',
+        title: 'Startup Creation Lab',
+        desc: 'Collaborate to turn raw ideas into viable startup projects from scratch.'
+      }
+    ],
+    activities: [
+      {
+        img: '/c1.jpg',
+        title: 'Local Business Visits',
+        desc: 'Visit active commercial enterprises and learn from seasoned local entrepreneurs.'
+      },
+      {
+        img: '/gal1.jpg',
+        title: 'Student Startup Stalls',
+        desc: 'Set up sales counters at school events to experience selling and generating profit.'
+      },
+      {
+        img: '/gal2.jpg',
+        title: 'Shark Tank Style Pitching',
+        desc: 'Present ideas before mock panels to receive feedback and refine plans.'
+      },
+      {
+        img: '/gal3.jpg',
+        title: 'Social Media Campaign Projects',
+        desc: 'Create mock digital marketing drives for brands, businesses, or social goals.'
+      }
+    ]
+  }
+}
+
 export function NepzoProgramPage() {
   const [lightboxImage, setLightboxImage] = useState(null)
   const [activePillar, setActivePillar] = useState(0)
   const [activeProgramTab, setActiveProgramTab] = useState('finance')
+  const [activeSubTab, setActiveSubTab] = useState('skills')
 
-  useScrollReveal([activePillar, activeProgramTab])
-
-  const programTabs = {
-    finance: {
-      title: 'Financial Literacy Program',
-      desc: 'NEPZO’s Financial Literacy Program helps students understand money management and financial responsibility through practical and age-appropriate learning experiences:',
-      bullets: [
-        'Saving and budgeting',
-        'Smart spending habits',
-        'Banking fundamentals',
-        'Digital payments and financial safety',
-        'Goal-based financial planning',
-        'Understanding value and responsibility'
-      ],
-      bootcampTitle: 'Financial Literacy Bootcamp',
-      bootcampDesc: 'NEP-aligned money management and financial responsibility program.',
-      bootcampImage: '/student4.png'
-    },
-    entrepreneur: {
-      title: 'Entrepreneurship Program',
-      desc: 'The Entrepreneurship Program introduces students to innovation, leadership, business thinking, communication, and problem-solving through engaging and activity-based learning experiences:',
-      bullets: [
-        'Creative and entrepreneurial thinking',
-        'Leadership and teamwork',
-        'Business and startup fundamentals',
-        'Presentation and communication skills',
-        'Problem-solving and decision-making',
-        'Innovation and idea development'
-      ],
-      bottomText: 'Students interact with real entrepreneurs, startup founders, and business professionals, helping them connect classroom learning with real-world opportunities.',
-      bootcampTitle: 'Entrepreneurship Bootcamp',
-      bootcampDesc: 'NEP-aligned practical business, startup, and leadership program.',
-      bootcampImage: '/student2.png'
-    }
-  }
+  useScrollReveal([activePillar, activeProgramTab, activeSubTab])
 
   useEffect(() => {
     document.title = 'NEPZO Future Ready Learning Program | SckoolChess'
@@ -230,64 +318,136 @@ export function NepzoProgramPage() {
       </section>
 
 
-      {/* ── 4. UPCOMING NEPZO SESSIONS ── */}
+      {/* ── 4. UPCOMING NEPZO SESSIONS (INTERACTIVE DASHBOARD) ── */}
       <section className="nz-upcoming-section">
-        <div className="nz-wrap nz-upm-inner">
-
-          {/* Left — text content */}
-          <div className="nz-upm-left">
-            {/* Tab switcher */}
-            <div className="nz-program-tabs reveal fade-up" style={{ '--delay': '0.05s' }}>
-              <button
-                className={`nz-program-tab ${activeProgramTab === 'finance' ? 'active' : ''}`}
-                onClick={() => setActiveProgramTab('finance')}
-              >
-                Financial Literacy
-              </button>
-              <button
-                className={`nz-program-tab ${activeProgramTab === 'entrepreneur' ? 'active' : ''}`}
-                onClick={() => setActiveProgramTab('entrepreneur')}
-              >
-                Entrepreneurship
-              </button>
-            </div>
-
-            <h2>{programTabs[activeProgramTab].title}</h2>
-            <p>{programTabs[activeProgramTab].desc}</p>
-            <ul className="nz-upm-list">
-              {programTabs[activeProgramTab].bullets.map((bullet, idx) => (
-                <li key={idx}>
-                  <span className="nz-upm-list-bullet">✦</span> {bullet}
-                </li>
-              ))}
-            </ul>
-            {programTabs[activeProgramTab].bottomText && (
-              <p className="nz-upm-bottom-text">{programTabs[activeProgramTab].bottomText}</p>
-            )}
-            <Link to="/book-class" className="nz-upm-btn">
-              Enroll Now <ArrowRight size={16} />
-            </Link>
+        <div className="nz-wrap">
+          
+          {/* Main Program Switcher */}
+          <div className="nz-program-tabs-container reveal fade-up" style={{ '--delay': '0.05s' }}>
+            <button
+              className={`nz-main-program-tab ${activeProgramTab === 'finance' ? 'active-finance' : ''}`}
+              onClick={() => {
+                setActiveProgramTab('finance')
+                setActiveSubTab('skills')
+              }}
+            >
+              <Wallet size={18} />
+              <span>Financial Literacy Program</span>
+            </button>
+            <button
+              className={`nz-main-program-tab ${activeProgramTab === 'entrepreneur' ? 'active-entrepreneur' : ''}`}
+              onClick={() => {
+                setActiveProgramTab('entrepreneur')
+                setActiveSubTab('skills')
+              }}
+            >
+              <Rocket size={18} />
+              <span>Entrepreneurship Program</span>
+            </button>
           </div>
 
-          {/* Right — floating session card */}
-          <div className="nz-upm-right">
-            <div className="nz-upm-card">
-              <div className="nz-upm-card__top">
-                <h3>{programTabs[activeProgramTab].bootcampTitle}</h3>
-                <p>{programTabs[activeProgramTab].bootcampDesc}</p>
+          {/* Main Interactive Card */}
+          <div className={`nz-program-detail-card ${activeProgramTab} reveal fade-up`} style={{ '--delay': '0.12s' }}>
+            
+            {/* Card Header */}
+            <div className="nz-pd-card-header">
+              <div className="nz-pd-card-header-left">
+                <span className="nz-pd-badge" style={{
+                  background: programDetails[activeProgramTab].badgeBg,
+                  color: programDetails[activeProgramTab].badgeColor
+                }}>
+                  {programDetails[activeProgramTab].badge}
+                </span>
+                <h2>{programDetails[activeProgramTab].title}</h2>
+                <p>{programDetails[activeProgramTab].desc}</p>
               </div>
-              <div className="nz-upm-card__img">
-                <img src={programTabs[activeProgramTab].bootcampImage} alt="NEPZO Program Session" />
-                <div className="nz-upm-card__pills">
-                  <span className="nz-upm-card__pill">
-                    <Calendar size={13} /> Batches Starting 2025
-                  </span>
-                  <span className="nz-upm-card__pill">
-                    <Users size={13} /> Classes 5 – 10
-                  </span>
+
+              <div className="nz-pd-card-header-right">
+                <div className="nz-inner-tabs">
+                  <button
+                    className={`nz-inner-tab ${activeSubTab === 'skills' ? 'active' : ''}`}
+                    onClick={() => setActiveSubTab('skills')}
+                  >
+                    <Layers size={16} />
+                    <span>Key Skills Covered</span>
+                  </button>
+                  <button
+                    className={`nz-inner-tab ${activeSubTab === 'activities' ? 'active' : ''}`}
+                    onClick={() => setActiveSubTab('activities')}
+                  >
+                    <Calendar size={16} />
+                    <span>Practical Activities & Labs</span>
+                  </button>
                 </div>
               </div>
             </div>
+
+            {/* Horizontal Line Divider */}
+            <div className="nz-pd-divider" />
+
+            {/* Card Content Grid */}
+            <div className="nz-pd-card-grid">
+              
+              {/* Left Column: Brochure Preview Image */}
+              <div className="nz-pd-brochure-col">
+                <div 
+                  className="nz-pd-brochure-card" 
+                  onClick={() => setLightboxImage(programDetails[activeProgramTab].brochureImg)}
+                >
+                  <div className="nz-pd-image-wrapper">
+                    <img 
+                      src={programDetails[activeProgramTab].brochureImg} 
+                      alt={`${programDetails[activeProgramTab].title} Syllabus`} 
+                    />
+                    <div className="nz-pd-image-overlay">
+                      <ZoomIn size={28} className="nz-zoom-icon" />
+                    </div>
+                  </div>
+                  <div className="nz-pd-image-caption">
+                    <ZoomIn size={14} />
+                    <span>Click image to expand official syllabus and details</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: List of items */}
+              <div className="nz-pd-list-col">
+                {activeSubTab === 'skills' ? (
+                  <div className="nz-skills-list">
+                    {programDetails[activeProgramTab].skills.map((skill, idx) => (
+                      <div key={idx} className="nz-skill-item">
+                        <div className="nz-skill-number" style={{
+                          background: programDetails[activeProgramTab].badgeBg,
+                          color: programDetails[activeProgramTab].badgeColor
+                        }}>
+                          {skill.num}
+                        </div>
+                        <div className="nz-skill-text">
+                          <h4>{skill.title}</h4>
+                          <p>{skill.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="nz-activities-list">
+                    {programDetails[activeProgramTab].activities.map((activity, idx) => (
+                      <div key={idx} className="nz-activity-item">
+                        <div className="nz-activity-img-wrapper">
+                          <img src={activity.img} alt={activity.title} />
+                        </div>
+                        <div className="nz-activity-text">
+                          <h4>{activity.title}</h4>
+                          <p>{activity.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+            </div>
+
           </div>
 
         </div>
