@@ -377,9 +377,6 @@ export function TournamentPage() {
               across Rohini, Pitampura, Noida, Gurgaon and Delhi NCR.
               Register your interest to be notified first.
             </p>
-            <Link to="/contact-us" className="t2-upm-btn">
-              Timetable <ChevronRight size={16} />
-            </Link>
           </div>
 
           {/* Right — floating event card */}
@@ -391,9 +388,6 @@ export function TournamentPage() {
               </div>
               <div className="t2-upm-card__img">
                 <img src="/t1.jpg" alt="Chess Tournament" />
-                <button className="t2-upm-card__arrow" aria-label="View event">
-                  <ChevronRight size={15} />
-                </button>
               </div>
               <div className="t2-upm-card__footer">
                 <span><Calendar size={13} /> Coming 2025</span>
