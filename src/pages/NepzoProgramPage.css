@@ -27,6 +27,7 @@
 
 @media (max-width: 768px) {
   .nz-wrap {
+    width: 100%;
     padding: 0 20px;
   }
 }
@@ -583,18 +584,28 @@
   }
   .nz-hero-text-col {
     width: 100%;
-    padding: 0 24px 40px;
+    padding: 0 20px 40px;
   }
   .nz-hero-person-img {
     display: none;
   }
-  .nz-hero-counters {
-    gap: 3px;
+  .nz-hero-bottom {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
     align-items: center;
+    gap: 20px;
+    padding-bottom: 24px;
+  }
+  .nz-hero-counters {
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 10px;
-    padding-bottom: 22px;
-    max-width: 187px;
+    padding: 16px 20px;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
   }
   .nz-hero-counters .star-icon {
     width: 20px !important;
@@ -611,17 +622,27 @@
   .nz-counter-lbl {
     font-size: 8px;
   }
+  .nz-hero-trust-col {
+    width: 100%;
+    align-items: center;
+  }
   .nz-trust-title {
     font-size: 9px;
     margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
   }
   .nz-trust-inner {
-    padding: 16px 0px;
+    padding: 16px 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4px;
     padding-top: 8px;
-    width: 87%;
+    width: 100%;
+  }
+  .nz-logo-marquee {
+    width: 100%;
   }
   .nz-scroll-text {
     font-size: 11px;
