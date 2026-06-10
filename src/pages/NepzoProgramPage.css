@@ -1707,8 +1707,9 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
     gap: 16px;
-    padding: 10px 0 24px 0;
+    padding: 10px 20px 24px 20px;
     margin: 0 -20px;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -1723,20 +1724,15 @@
     aspect-ratio: 4 / 5;
     scroll-snap-align: start;
   }
-  .nz-gallery-card:first-child {
-    margin-left: 20px;
-  }
-  .nz-gallery-card:last-child {
-    margin-right: 20px;
-  }
   .nz-pillars-interactive-grid {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
     gap: 16px;
-    padding: 10px 0 24px 0;
+    padding: 10px 20px 24px 20px;
     margin: 0 -20px;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -1752,20 +1748,15 @@
     padding: 32px 24px;
     scroll-snap-align: start;
   }
-  .nz-pillar-interactive-card:first-child {
-    margin-left: 20px;
-  }
-  .nz-pillar-interactive-card:last-child {
-    margin-right: 20px;
-  }
   .nz-benefits-grid {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
     gap: 16px;
-    padding: 10px 0 24px 0;
+    padding: 10px 20px 24px 20px;
     margin: 0 -20px;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -1779,12 +1770,6 @@
     flex: 0 0 280px;
     scroll-snap-align: start;
     padding: 24px;
-  }
-  .nz-benefit-card:first-child {
-    margin-left: 20px;
-  }
-  .nz-benefit-card:last-child {
-    margin-right: 20px;
   }
   .nz-pillars-section,
   .nz-benefits-section,
