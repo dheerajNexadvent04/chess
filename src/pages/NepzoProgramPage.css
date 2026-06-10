@@ -1847,11 +1847,11 @@
 
 /* Main Interactive Card */
 .nz-program-detail-card {
-  background: #ffffff;
+  background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 100%);
   border-radius: 24px;
   padding: 40px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 20px 40px rgba(13, 27, 46, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1881,14 +1881,14 @@
 .nz-pd-card-header-left h2 {
   font-size: clamp(26px, 3vw, 32px);
   font-weight: 800;
-  color: #0d1b2e;
+  color: #ffffff;
   margin: 0 0 12px 0;
   line-height: 1.25;
 }
 
 .nz-pd-card-header-left p {
   font-size: 15px;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
   line-height: 1.6;
 }
@@ -1941,7 +1941,7 @@
 /* Divider */
 .nz-pd-divider {
   height: 1px;
-  background: #e2e8f0;
+  background: rgba(255, 255, 255, 0.1);
   margin: 15px 0;
 }
 
@@ -1959,8 +1959,8 @@
 }
 
 .nz-pd-brochure-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 16px;
   cursor: pointer;
@@ -1969,16 +1969,16 @@
 
 .nz-pd-brochure-card:hover {
   transform: translateY(-4px);
-  border-color: #cbd5e1;
-  background: #ffffff;
-  box-shadow: 0 12px 24px rgba(13, 27, 46, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .nz-pd-image-wrapper {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  background: #f1f5f9;
+  background: rgba(255, 255, 255, 0.05);
   max-height: 260px;
   display: flex;
   align-items: flex-start;
@@ -2030,11 +2030,11 @@
   margin-top: 14px;
   font-size: 12.5px;
   font-weight: 600;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .nz-pd-image-caption svg {
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.4);
   flex-shrink: 0;
 }
 
@@ -2075,14 +2075,14 @@
 .nz-skill-text h4 {
   font-size: 16.5px;
   font-weight: 700;
-  color: #0d1b2e;
+  color: #ffffff;
   margin: 0 0 6px 0;
   line-height: 1.3;
 }
 
 .nz-skill-text p {
   font-size: 14.5px;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
   line-height: 1.5;
 }
@@ -2098,18 +2098,18 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 7px 8px;
   transition: all 0.3s ease;
 }
 
 .nz-activity-item:hover {
-  border-color: #cbd5e1;
-  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   transform: translateX(4px);
-  box-shadow: 0 6px 16px rgba(13, 27, 46, 0.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .nz-activity-icon-wrapper {
@@ -2134,14 +2134,14 @@
 .nz-activity-text h4 {
   font-size: 15.5px;
   font-weight: 700;
-  color: #0d1b2e;
+  color: #ffffff;
   margin: 0 0 4px 0;
   line-height: 1.3;
 }
 
 .nz-activity-text p {
   font-size: 13.5px;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
   line-height: 1.45;
 }

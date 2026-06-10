@@ -40,8 +40,8 @@ const partnerLogos = [
 const programDetails = {
   finance: {
     badge: 'WEALTH IQ MODULE',
-    badgeBg: 'rgba(14, 116, 144, 0.08)',
-    badgeColor: '#0e7490',
+    badgeBg: 'rgba(34, 211, 238, 0.12)',
+    badgeColor: '#22d3ee',
     title: 'Practical Financial Literacy & Money IQ',
     desc: 'Promoting structured money values, savings strategies, budgeting rules, compound interest basics, banking operations, and digital security in real-world contexts.',
     brochureImg: '/nepzocontent1.jpeg',
@@ -102,8 +102,8 @@ const programDetails = {
   },
   entrepreneur: {
     badge: 'STARTUP INNOVATION MODULE',
-    badgeBg: 'rgba(232, 117, 10, 0.08)',
-    badgeColor: '#E8750A',
+    badgeBg: 'rgba(251, 146, 60, 0.15)',
+    badgeColor: '#fb923c',
     title: 'Experiential Entrepreneurship & Startup Incubator',
     desc: 'Fostering a creative startup mindset. Students learn business model generation, marketing campaigns, product branding, public pitching, and collaborative work.',
     brochureImg: '/nepzocontent2.jpeg',
