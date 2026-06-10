@@ -578,19 +578,19 @@ export function NepzoProgramPage() {
                 badge: 'NEP 2020',
                 title: 'Supports NEP 2020 Goals',
                 desc: 'Supports NEP 2020 experiential and skill-based learning goals.',
-                img: '/t4.jpg'
+                img: '/Supports NEP 2020 Goals.png'
               },
               {
                 badge: 'Branding',
                 title: 'Strengthens School Brand',
                 desc: 'Strengthens school brand and reputation.',
-                img: '/student2.png'
+                img: '/Strengthens School Brand.png'
               },
               {
                 badge: 'Life Skills',
                 title: 'Builds Core Life Skills',
                 desc: 'Builds leadership, confidence, and communication skills.',
-                img: '/t1.jpg'
+                img: '/Builds Core Life Skills.png'
               },
               {
                 badge: 'Cognitive',
@@ -602,13 +602,13 @@ export function NepzoProgramPage() {
                 badge: 'Exposure',
                 title: 'Real Industry Exposure',
                 desc: 'Provides industry exposure through entrepreneurs and professionals.',
-                img: '/t2.jpg'
+                img: '/Real Industry Exposure.png'
               },
               {
                 badge: 'Positioning',
                 title: 'Elevates School Positioning',
                 desc: 'Enhances parent value perception and school positioning.',
-                img: '/t3.jpg'
+                img: '/Elevates School Positioning.png'
               }
             ].map((item, idx) => (
               <div
