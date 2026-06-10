@@ -652,9 +652,6 @@ export function NepzoProgramPage() {
                   <span>Request Program Guide</span>
                   <ArrowRight size={16} />
                 </Link>
-                <a href="http://www.nepzo.in" target="_blank" rel="noopener noreferrer" className="nz-cta-btn-secondary">
-                  <span>Visit Official NEPZO website</span>
-                </a>
               </div>
             </div>
           </div>
