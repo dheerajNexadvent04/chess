@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvBydd6I0jpFWm4UPgRIUrJkyttZwI8gC-FSV5WMVzFkg1hJdJ1n041jF80eIemf4h/exec'
 
@@ -7,6 +8,11 @@ export function ChessPuzzleWidget() {
   const [puzzleModalOpen, setPuzzleModalOpen] = useState(false)
   const [puzzleSubmitted, setPuzzleSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const location = useLocation()
+
+  const isNepzoPage = ['/nepzo', '/nepzo-program'].includes(location.pathname)
+
+  if (isNepzoPage) return null
 
   // Auto-trigger popup on page load (runs once per session)
   useEffect(() => {

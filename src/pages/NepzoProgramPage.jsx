@@ -275,7 +275,7 @@ export function NepzoProgramPage() {
               <img src="/whatsapp/WhatsApp Image 2026-06-08 at 11.38.46 AM.jpeg" alt="Student" className="avatar-circle" />
               <div className="avatar-plus">+</div>
             </div>
-            <div className="satisfaction-num">98%</div>
+            <div className="satisfaction-num">80%</div>
             <div className="satisfaction-label">Learner Satisfaction</div>
           </div>
 

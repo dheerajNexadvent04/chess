@@ -494,7 +494,7 @@ html {
 
 .page {
   flex: 1;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .contact-page {
@@ -7626,7 +7626,7 @@ p .feature-tag {
 .figma-home {
   background: #fff;
   color: #1a1a1a;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .figma-hero {
@@ -16253,7 +16253,7 @@ img.header-side-logo {
   background-color: #F8FAFC;
   color: #1F2937;
   font-family: 'Outfit', sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   padding-bottom: 80px;
 }
 
@@ -18316,7 +18316,7 @@ img.header-side-logo {
 /* ── Shared container ── */
 .tp-page {
   background: #f3f5f9;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .tp-container {
