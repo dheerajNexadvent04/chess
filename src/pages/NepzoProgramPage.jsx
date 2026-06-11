@@ -157,10 +157,10 @@ const programDetails = {
 export function NepzoProgramPage() {
   const [lightboxImage, setLightboxImage] = useState(null)
   const [activePillar, setActivePillar] = useState(0)
-  const [activeProgramTab, setActiveProgramTab] = useState('finance')
-  const [activeSubTab, setActiveSubTab] = useState('skills')
+  const [financeSubTab, setFinanceSubTab] = useState('skills')
+  const [entrepreneurSubTab, setEntrepreneurSubTab] = useState('skills')
 
-  useScrollReveal([activePillar, activeProgramTab, activeSubTab])
+  useScrollReveal([activePillar, financeSubTab, entrepreneurSubTab])
 
   useEffect(() => {
     document.title = 'NEPZO Future Ready Learning Program | SckoolChess'
@@ -358,46 +358,20 @@ export function NepzoProgramPage() {
       <section className="nz-upcoming-section">
         <div className="nz-wrap">
           
-          {/* Main Interactive Card */}
-          <div className={`nz-program-detail-card ${activeProgramTab} reveal fade-up`} style={{ '--delay': '0.12s' }}>
+          {/* Financial Literacy Card */}
+          <div className="nz-program-detail-card finance reveal fade-up" style={{ '--delay': '0.12s' }}>
             
             {/* Card Header */}
             <div className="nz-pd-card-header">
               <div className="nz-pd-card-header-left">
                 <span className="nz-pd-badge" style={{
-                  background: programDetails[activeProgramTab].badgeBg,
-                  color: programDetails[activeProgramTab].badgeColor
+                  background: programDetails.finance.badgeBg,
+                  color: programDetails.finance.badgeColor
                 }}>
-                  {programDetails[activeProgramTab].badge}
+                  {programDetails.finance.badge}
                 </span>
-                <h2>{programDetails[activeProgramTab].title}</h2>
-                <p>{programDetails[activeProgramTab].desc}</p>
-              </div>
-
-              <div className="nz-pd-card-header-right">
-                {/* Main Program Switcher */}
-                <div className="nz-program-tabs-container">
-                  <button
-                    className={`nz-main-program-tab ${activeProgramTab === 'finance' ? 'active-finance' : ''}`}
-                    onClick={() => {
-                      setActiveProgramTab('finance')
-                      setActiveSubTab('skills')
-                    }}
-                  >
-                    <Wallet size={18} />
-                    <span>Financial Literacy Program</span>
-                  </button>
-                  <button
-                    className={`nz-main-program-tab ${activeProgramTab === 'entrepreneur' ? 'active-entrepreneur' : ''}`}
-                    onClick={() => {
-                      setActiveProgramTab('entrepreneur')
-                      setActiveSubTab('skills')
-                    }}
-                  >
-                    <Rocket size={18} />
-                    <span>Entrepreneurship Program</span>
-                  </button>
-                </div>
+                <h2>{programDetails.finance.title}</h2>
+                <p>{programDetails.finance.desc}</p>
               </div>
             </div>
 
@@ -411,12 +385,12 @@ export function NepzoProgramPage() {
               <div className="nz-pd-brochure-col">
                 <div 
                   className="nz-pd-brochure-card" 
-                  onClick={() => setLightboxImage(programDetails[activeProgramTab].brochureImg)}
+                  onClick={() => setLightboxImage(programDetails.finance.brochureImg)}
                 >
                   <div className="nz-pd-image-wrapper">
                     <img 
-                      src={programDetails[activeProgramTab].brochureImg} 
-                      alt={`${programDetails[activeProgramTab].title} Syllabus`} 
+                      src={programDetails.finance.brochureImg} 
+                      alt={`${programDetails.finance.title} Syllabus`} 
                     />
                     <div className="nz-pd-image-overlay">
                       <ZoomIn size={28} className="nz-zoom-icon" />
@@ -434,28 +408,28 @@ export function NepzoProgramPage() {
                 {/* Inner Sub-Tabs Switcher */}
                 <div className="nz-inner-tabs">
                   <button
-                    className={`nz-inner-tab ${activeSubTab === 'skills' ? 'active' : ''}`}
-                    onClick={() => setActiveSubTab('skills')}
+                    className={`nz-inner-tab ${financeSubTab === 'skills' ? 'active' : ''}`}
+                    onClick={() => setFinanceSubTab('skills')}
                   >
                     <Layers size={16} />
                     <span>Key Skills Covered</span>
                   </button>
                   <button
-                    className={`nz-inner-tab ${activeSubTab === 'activities' ? 'active' : ''}`}
-                    onClick={() => setActiveSubTab('activities')}
+                    className={`nz-inner-tab ${financeSubTab === 'activities' ? 'active' : ''}`}
+                    onClick={() => setFinanceSubTab('activities')}
                   >
                     <Calendar size={16} />
                     <span>Practical Activities & Labs</span>
                   </button>
                 </div>
 
-                {activeSubTab === 'skills' ? (
+                {financeSubTab === 'skills' ? (
                   <div className="nz-skills-list">
-                    {programDetails[activeProgramTab].skills.map((skill, idx) => (
+                    {programDetails.finance.skills.map((skill, idx) => (
                       <div key={idx} className="nz-skill-item">
                         <div className="nz-skill-number" style={{
-                          background: programDetails[activeProgramTab].badgeBg,
-                          color: programDetails[activeProgramTab].badgeColor
+                          background: programDetails.finance.badgeBg,
+                          color: programDetails.finance.badgeColor
                         }}>
                           {skill.num}
                         </div>
@@ -468,11 +442,117 @@ export function NepzoProgramPage() {
                   </div>
                 ) : (
                   <div className="nz-activities-list">
-                    {programDetails[activeProgramTab].activities.map((activity, idx) => (
+                    {programDetails.finance.activities.map((activity, idx) => (
                       <div key={idx} className="nz-activity-item">
                         <div className="nz-activity-icon-wrapper" style={{
-                          background: programDetails[activeProgramTab].badgeBg,
-                          color: programDetails[activeProgramTab].badgeColor
+                          background: programDetails.finance.badgeBg,
+                          color: programDetails.finance.badgeColor
+                        }}>
+                          {activity.icon}
+                        </div>
+                        <div className="nz-activity-text">
+                          <h4>{activity.title}</h4>
+                          <p>{activity.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Entrepreneurship Card */}
+          <div className="nz-program-detail-card entrepreneur reveal fade-up" style={{ '--delay': '0.15s' }}>
+            
+            {/* Card Header */}
+            <div className="nz-pd-card-header">
+              <div className="nz-pd-card-header-left">
+                <span className="nz-pd-badge" style={{
+                  background: programDetails.entrepreneur.badgeBg,
+                  color: programDetails.entrepreneur.badgeColor
+                }}>
+                  {programDetails.entrepreneur.badge}
+                </span>
+                <h2>{programDetails.entrepreneur.title}</h2>
+                <p>{programDetails.entrepreneur.desc}</p>
+              </div>
+            </div>
+
+            {/* Horizontal Line Divider */}
+            <div className="nz-pd-divider" />
+
+            {/* Card Content Grid */}
+            <div className="nz-pd-card-grid">
+              
+              {/* Left Column: Brochure Preview Image */}
+              <div className="nz-pd-brochure-col">
+                <div 
+                  className="nz-pd-brochure-card" 
+                  onClick={() => setLightboxImage(programDetails.entrepreneur.brochureImg)}
+                >
+                  <div className="nz-pd-image-wrapper">
+                    <img 
+                      src={programDetails.entrepreneur.brochureImg} 
+                      alt={`${programDetails.entrepreneur.title} Syllabus`} 
+                    />
+                    <div className="nz-pd-image-overlay">
+                      <ZoomIn size={28} className="nz-zoom-icon" />
+                    </div>
+                  </div>
+                  <div className="nz-pd-image-caption">
+                    <ZoomIn size={14} />
+                    <span>Click image to expand official syllabus and details</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: List of items */}
+              <div className="nz-pd-list-col">
+                {/* Inner Sub-Tabs Switcher */}
+                <div className="nz-inner-tabs">
+                  <button
+                    className={`nz-inner-tab ${entrepreneurSubTab === 'skills' ? 'active' : ''}`}
+                    onClick={() => setEntrepreneurSubTab('skills')}
+                  >
+                    <Layers size={16} />
+                    <span>Key Skills Covered</span>
+                  </button>
+                  <button
+                    className={`nz-inner-tab ${entrepreneurSubTab === 'activities' ? 'active' : ''}`}
+                    onClick={() => setEntrepreneurSubTab('activities')}
+                  >
+                    <Calendar size={16} />
+                    <span>Practical Activities & Labs</span>
+                  </button>
+                </div>
+
+                {entrepreneurSubTab === 'skills' ? (
+                  <div className="nz-skills-list">
+                    {programDetails.entrepreneur.skills.map((skill, idx) => (
+                      <div key={idx} className="nz-skill-item">
+                        <div className="nz-skill-number" style={{
+                          background: programDetails.entrepreneur.badgeBg,
+                          color: programDetails.entrepreneur.badgeColor
+                        }}>
+                          {skill.num}
+                        </div>
+                        <div className="nz-skill-text">
+                          <h4>{skill.title}</h4>
+                          <p>{skill.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="nz-activities-list">
+                    {programDetails.entrepreneur.activities.map((activity, idx) => (
+                      <div key={idx} className="nz-activity-item">
+                        <div className="nz-activity-icon-wrapper" style={{
+                          background: programDetails.entrepreneur.badgeBg,
+                          color: programDetails.entrepreneur.badgeColor
                         }}>
                           {activity.icon}
                         </div>
