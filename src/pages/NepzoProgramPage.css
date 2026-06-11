@@ -631,16 +631,47 @@
     width: 100%;
     padding: 0 24px 20px; /* Reduced bottom padding */
   }
+  .nz-hero-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin-bottom: 0px;
+  }
+  .nz-hero-desc:last-of-type {
+    margin-bottom: 0px;
+  }
   .nz-hero-actions--desktop {
     display: none;
   }
   .nz-hero-actions--mobile {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 16px;
     padding: 0 24px;
     margin-top: 10px;
     margin-bottom: 30px;
+  }
+  .nz-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0px;
+    color: #6d28d9;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 0px 8px;
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  .nz-hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 13px 30px;
   }
   .nz-hero-graphics-mobile-wrap {
     display: block;
