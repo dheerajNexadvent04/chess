@@ -1049,7 +1049,7 @@ export function CurriculumPage() {
               A structured and progressive learning program for students of all ages. Shape their decisions, strategy, thinking, tournament confidence and life skills through SckoolChess — the best chess solution provider in Rohini and across Delhi NCR.
             </p>
             <div className="nch-actions">
-              <Link to="/book-class" className="nch-btn-primary">Book Free Trial</Link>
+              <Link to="/book-class?ref=Curriculum+Page+Hero" className="nch-btn-primary">Book Free Trial</Link>
               <a href="https://www.youtube.com/@sckoolchess" target="_blank" rel="noopener noreferrer" className="nch-btn-youtube">
                 <span className="nch-yt-icon-wrap">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.53 3.5 12 3.5 12 3.5s-7.53 0-9.388.555A3.002 3.002 0 0 0 .502 6.163C0 8.07 0 12 0 12s0 3.93.502 5.837a3.003 3.003 0 0 0 2.11 2.108C4.47 20.5 12 20.5 12 20.5s7.53 0 9.388-.555a3.002 3.002 0 0 0 2.11-2.108C24 15.93 24 12 24 12s0-3.93-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -1485,7 +1485,7 @@ export function CurriculumPage() {
                   <div className="cp-v5__price">
                     {course.fees.toLowerCase().includes('price') ? course.fees : `₹${course.fees}`}
                   </div>
-                  <Link to="/book-class" className="cp-v5__book-btn">BOOK TRIAL</Link>
+                  <Link to="/book-class?ref=Curriculum+Page+Course+Cards" className="cp-v5__book-btn">BOOK TRIAL</Link>
                 </div>
               </div>
             ))}

@@ -1,8 +1,9 @@
 import { ChevronDown, Clock, Home, Phone } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { contactDetails } from '../data/siteContent'
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec'
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1TtKUQz_NCr50Y_7x0AVDM8aDYmmK1p_TlnKCl0B6YYCfD4TCasBdFtaWihz395w4/exec'
 
 const contactHeroImage = '/im1.png'
 
@@ -89,6 +90,11 @@ export function ContactPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0)
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [searchParams] = useSearchParams()
+
+  // Capture traffic source from the ?ref= query parameter
+  // e.g. /contact-us?ref=Partner+Page+Hero+Banner
+  const refSource = searchParams.get('ref') || 'Direct / Contact Page'
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -98,7 +104,7 @@ export function ContactPage() {
     const formData = new FormData(e.target)
     formData.append('type', 'contact_inquiry')
     formData.append('source_page', window.location.pathname)
-    formData.append('source_section', 'Contact Us Form')
+    formData.append('source_section', refSource)
     formData.append('Form Name', 'Contact Page Form')
     formData.append('date', new Date().toLocaleString())
 

@@ -224,7 +224,7 @@ export function NepzoProgramPage() {
           <div className="nz-hero__logo-strip reveal fade-up" style={{ '--delay': '0.05s' }}>
             <img src="/nepzobg.png" alt="NEPZO Logo" className="nz-hero__partner-logo nz-hero__partner-logo--nepzo" />
             <div className="nz-hero__divider"></div>
-            <img src="/logonewbg.png" alt="SckoolChess Logo" className="nz-hero__partner-logo" />
+            <img src="/SUPERMANFINAL.png" alt="SckoolChess Logo" className="nz-hero__partner-logo" />
           </div>
 
 
@@ -241,10 +241,17 @@ export function NepzoProgramPage() {
           </p>
 
           <div className="nz-hero-actions reveal fade-up" style={{ '--delay': '0.36s' }}>
-            <Link to="/book-class" className="nz-hero-btn-primary">
+            <button 
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                  detail: { type: 'booking', section: 'Nepzo Hero Section' }
+                }));
+              }}
+              className="nz-hero-btn-primary"
+            >
               <span>Schedule Free Session</span>
               <ArrowRight size={16} />
-            </Link>
+            </button>
             <a href="/DOWNLOAD BROCHURE.pdf" download="DOWNLOAD BROCHURE.pdf" className="nz-hero-btn-secondary">
               <span>Download Brochure</span>
             </a>
@@ -253,7 +260,7 @@ export function NepzoProgramPage() {
 
         {/* Person image — absolute, extends full height to right edge */}
         <img
-          src="/superman kid.png"
+          src="/FINALSUPERMAN.png"
           alt="Student learning future skills"
           className="nz-hero-person-img"
         />
@@ -648,7 +655,7 @@ export function NepzoProgramPage() {
                 Empower your child or school institution with cutting-edge 21st-century capabilities. Aligning educational structures directly with NEP 2020 frameworks.
               </p>
               <div className="nz-cta-btns">
-                <Link to="/book-class" className="nz-cta-btn-primary">
+                <Link to="/book-class?ref=Nepzo+Page+CTA+Section" className="nz-cta-btn-primary">
                   <span>Request Program Guide</span>
                   <ArrowRight size={16} />
                 </Link>

@@ -56,7 +56,7 @@ export function AboutPage() {
             SckoolChess, a flagship brand of Rohini Chess Academy Pvt. Ltd., is an official Chess in School (CIS) Partner affiliated with AICF and a leader in Chess Intelligence for schools in NCR. With 5,000+ students benefitted across 12 partner schools in 10 cities and 2 regions, we are committed to shaping the future of young learners.
           </p>
 
-          <Link to="/contact-us" className="about-hero-first-btn">
+          <Link to="/contact-us?ref=About+Page+Hero" className="about-hero-first-btn">
             GET IN TOUCH
           </Link>
         </div>
@@ -81,7 +81,7 @@ export function AboutPage() {
             We serve students through both our online classes and offline academy centres. Students attending our programs come from a wide range of reputed schools including DPS Rohini, Ryan International School, DAV Public School, Bal Bharati Public School, Heritage School, Apeejay School, Mount Abu School, and many other leading institutions across Delhi NCR and Navi Mumbai.
           </p>
 
-          <Link className="about-coaching-btn" to="/book-class">
+          <Link className="about-coaching-btn" to="/book-class?ref=About+Page+Coaching+Section">
             Start Your Free Trial
           </Link>
         </div>
@@ -213,7 +213,7 @@ export function AboutPage() {
             <p style={{ marginTop: '16px' }}>
               <strong>Our Vision:</strong> To make structured chess education accessible to students across India and help schools build future-ready learning environments. Whether a child is taking their first step into chess or preparing for national-level competitions, SckoolChess provides the curriculum, coaching, mentorship, and end-to-end support needed to succeed.
             </p>
-            <Link className="about-duo-btn" style={{ marginTop: '24px' }} to="/contact-us">
+            <Link className="about-duo-btn" style={{ marginTop: '24px' }} to="/contact-us?ref=About+Page+Vision+Section">
               PARTNER WITH US
             </Link>
           </div>

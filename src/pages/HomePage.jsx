@@ -552,17 +552,11 @@ export function HomePage() {
             Trusted by 5,000+ students across Rohini, Pitampura, Noida and Navi Mumbai
           </p>
           <div className="figma-hero-actions">
-            <a 
-              href="/book-class"
-              onClick={(e) => {
-                e.preventDefault();
-                window.dispatchEvent(new CustomEvent('open-custom-modal', {
-                  detail: { type: 'booking', section: 'Hero Section' }
-                }));
-              }}
+            <Link 
+              to="/book-class?ref=Homepage+Hero"
             >
               Start a Free Trial
-            </a>
+            </Link>
             <a className="ghost" href="/curriculum">
               Explore Chess Programs
             </a>

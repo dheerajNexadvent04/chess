@@ -1,14 +1,20 @@
 import { useState, useEffect, useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Clock, Calendar, CheckCircle, Crown, Users, Brain, Trophy, Star, ChevronDown, ChevronUp } from 'lucide-react'
 import { TestimonialCarousel } from '../components/TestimonialCarousel'
 
 // TODO: Replace this with the deployed Google Apps Script Web App URL
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec'
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1TtKUQz_NCr50Y_7x0AVDM8aDYmmK1p_TlnKCl0B6YYCfD4TCasBdFtaWihz395w4/exec'
 
 export function BookClassPage() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [openFaq, setOpenFaq] = useState(null)
+  const [searchParams] = useSearchParams()
+
+  // Capture traffic source from the ?ref= query parameter
+  // e.g. /book-class?ref=Home+Hero+Section
+  const refSource = searchParams.get('ref') || 'Direct / Book Class Page'
 
   useEffect(() => {
     document.title = 'Book Online Chess Classes | SckoolChess Delhi NCR'
@@ -46,6 +52,11 @@ export function BookClassPage() {
     setSuccess(false)
 
     const formData = new FormData(e.target)
+    formData.append('type', 'booking')
+    formData.append('source_page', window.location.pathname)
+    formData.append('source_section', refSource)
+    formData.append('Form Name', 'Book Class Page Form')
+    formData.append('date', new Date().toLocaleString())
 
     fetch(SCRIPT_URL, {
       method: 'POST',

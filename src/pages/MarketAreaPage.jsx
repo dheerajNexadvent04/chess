@@ -127,7 +127,7 @@ export function MarketAreaPage() {
             SckoolChess provides expert chess coaching across Rohini, Pitampura, Paschim Vihar, Shalimar Bagh, Dwarka, Indirapuram, Vaishali, Vasundhara, Gurgaon, Noida, Navi Mumbai and pan-India online. Find your nearest centre or book online.
           </p>
           <div className="ma-hero__actions reveal fade-up" style={{ '--delay': '0.35s' }}>
-            <Link to="/book-class" className="ma-btn-primary">Book a Free Trial</Link>
+            <Link to="/book-class?ref=Market+Area+Hero" className="ma-btn-primary">Book a Free Trial</Link>
             <a href="tel:+918447992702" className="ma-btn-secondary">
               <Phone size={16} strokeWidth={2.3} /> Call Us Now
             </a>
@@ -174,7 +174,7 @@ export function MarketAreaPage() {
                 </div>
                 <h3 className="ma-card__city">{area.city}</h3>
                 <p className="ma-card__desc">{area.desc}</p>
-                <Link to="/book-class" className="ma-card__cta">
+                <Link to={`/book-class?ref=Market+Area+${encodeURIComponent(area.city)}+Card`} className="ma-card__cta">
                   Book a Class <ArrowRight size={15} strokeWidth={2.3} />
                 </Link>
               </div>
@@ -193,7 +193,7 @@ export function MarketAreaPage() {
               </div>
               <h3 className="ma-card__city">Your City</h3>
               <p className="ma-card__desc">Don't see your area listed? SckoolChess online classes are available to students anywhere across India.</p>
-              <Link to="/book-class" className="ma-card__cta">
+              <Link to="/book-class?ref=Market+Area+Pan+India+Card" className="ma-card__cta">
                 Book a Free Trial <ArrowRight size={15} strokeWidth={2.3} />
               </Link>
             </div>
@@ -209,8 +209,8 @@ export function MarketAreaPage() {
             <p>Book a free trial class with SckoolChess today — available online for students across India and offline in Rohini and Indirapuram.</p>
           </div>
           <div className="ma-cta-actions">
-            <Link to="/book-class" className="ma-btn-primary">Book Free Trial</Link>
-            <Link to="/contact-us" className="ma-btn-secondary">
+            <Link to="/book-class?ref=Market+Area+CTA+Banner" className="ma-btn-primary">Book Free Trial</Link>
+            <Link to="/contact-us?ref=Market+Area+CTA+Banner" className="ma-btn-secondary">
               Contact Us <ArrowRight size={16} strokeWidth={2.3} />
             </Link>
           </div>

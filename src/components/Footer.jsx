@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { contactDetails } from '../data/siteContent'
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec'
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1TtKUQz_NCr50Y_7x0AVDM8aDYmmK1p_TlnKCl0B6YYCfD4TCasBdFtaWihz395w4/exec'
 
 export function Footer() {
   const [loading, setLoading] = useState(false)
@@ -55,14 +55,14 @@ export function Footer() {
           <Link to="/tournaments">Tournaments</Link>
           <Link to="/market-area">Market Area</Link>
           <Link to="/career">Careers</Link>
-          <Link to="/book-class">Book Online Class</Link>
+          <Link to="/book-class?ref=Footer+Nav">Book Online Class</Link>
           <Link to="/blog">Blog</Link>
         </div>
         <div className="footer-col footer-col-contact">
           <h4>CONTACT US</h4>
           <a href={`tel:${contactDetails.phone}`}>{contactDetails.phone}</a>
           <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
-          <Link to="/contact-us">Help &amp; Contact</Link>
+          <Link to="/contact-us?ref=Footer+Nav">Help &amp; Contact</Link>
         </div>
         <div className="footer-col footer-col-benefits">
           <h4>EXCLUSIVE BENEFITS</h4>

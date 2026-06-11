@@ -406,7 +406,7 @@ function AchLearnSection() {
               <p className="ach-cta-sub">Join thousands of young minds learning, growing and winning with SckoolChess across Rohini, Pitampura and Delhi NCR.</p>
             </div>
           </div>
-          <a href="/book-class" className="ach-cta-btn">Book Online Class →</a>
+          <a href="/book-class?ref=Achievement+Page+CTA+Banner" className="ach-cta-btn">Book Online Class →</a>
         </div>
       </section>
     </>

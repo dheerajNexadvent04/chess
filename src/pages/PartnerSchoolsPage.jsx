@@ -572,7 +572,7 @@ function PartnerSchoolsHero() {
           We are proud to collaborate with leading schools across Delhi NCR to promote chess education, creativity, critical thinking and holistic development through our NEP-aligned Chess in School program.
         </p>
         <div className="partner-hero-cta-wrapper">
-          <Link to="/contact-us" className="partner-hero-cta-btn">
+          <Link to="/contact-us?ref=Partner+Page+Hero+Banner" className="partner-hero-cta-btn">
             Contact Us to Collaborate
           </Link>
         </div>
@@ -635,6 +635,8 @@ function PartnerCollabModal({ isOpen, onClose }) {
     const formData = new FormData(e.target)
     formData.append('Form Name', 'School Collaboration Form')
     formData.append('type', 'school_collab')
+    formData.append('source_page', window.location.pathname)
+    formData.append('source_section', 'Partner Page - Collaboration Modal')
 
     // Extract values safely to match sheet columns used by the BookClass form
     const schoolNameVal = e.target.elements['School Name'] ? e.target.elements['School Name'].value : ''
@@ -651,7 +653,7 @@ function PartnerCollabModal({ isOpen, onClose }) {
     formData.append('date', designationVal)
     formData.append('time', messageVal || 'No message details')
 
-    fetch('https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbx1TtKUQz_NCr50Y_7x0AVDM8aDYmmK1p_TlnKCl0B6YYCfD4TCasBdFtaWihz395w4/exec', {
       method: 'POST',
       body: formData,
       mode: 'no-cors'

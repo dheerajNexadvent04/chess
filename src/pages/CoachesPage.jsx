@@ -93,7 +93,7 @@ export function CoachesPage() {
             <p>Book a session with one of our master coaches and start your personalized chess journey today.</p>
           </div>
           <div className="coaches-cta-actions">
-            <a href="/book-class" className="coaches-cta-btn">
+            <a href="/book-class?ref=Coaches+Page+CTA" className="coaches-cta-btn">
               Book Your Online Class
             </a>
           </div>

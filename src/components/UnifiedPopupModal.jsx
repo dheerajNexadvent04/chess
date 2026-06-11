@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd44tk1iAWW6brxlSk88PC9wk0JJ1B76xQaoC-tk276Qe3BBDk9KMWT7F2q_1c3blu/exec'
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1TtKUQz_NCr50Y_7x0AVDM8aDYmmK1p_TlnKCl0B6YYCfD4TCasBdFtaWihz395w4/exec'
 
 export function UnifiedPopupModal() {
   const [isOpen, setIsOpen] = useState(false)
