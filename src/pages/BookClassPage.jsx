@@ -4,7 +4,7 @@ import { Clock, Calendar, CheckCircle, Crown, Users, Brain, Trophy, Star, Chevro
 import { TestimonialCarousel } from '../components/TestimonialCarousel'
 
 // TODO: Replace this with the deployed Google Apps Script Web App URL
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1TtKUQz_NCr50Y_7x0AVDM8aDYmmK1p_TlnKCl0B6YYCfD4TCasBdFtaWihz395w4/exec'
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvBydd6I0jpFWm4UPgRIUrJkyttZwI8gC-FSV5WMVzFkg1hJdJ1n041jF80eIemf4h/exec'
 
 export function BookClassPage() {
   const [loading, setLoading] = useState(false)
@@ -60,7 +60,7 @@ export function BookClassPage() {
 
     fetch(SCRIPT_URL, {
       method: 'POST',
-      body: formData,
+      body: new URLSearchParams(formData),
       mode: 'no-cors'
     })
       .then(() => {

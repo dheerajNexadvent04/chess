@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { contactDetails } from '../data/siteContent'
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1TtKUQz_NCr50Y_7x0AVDM8aDYmmK1p_TlnKCl0B6YYCfD4TCasBdFtaWihz395w4/exec'
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvBydd6I0jpFWm4UPgRIUrJkyttZwI8gC-FSV5WMVzFkg1hJdJ1n041jF80eIemf4h/exec'
 
 const contactHeroImage = '/im1.png'
 
@@ -121,7 +121,7 @@ export function ContactPage() {
 
     fetch(SCRIPT_URL, {
       method: 'POST',
-      body: formData,
+      body: new URLSearchParams(formData),
       mode: 'no-cors'
     })
       .then(() => {

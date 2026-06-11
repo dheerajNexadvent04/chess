@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1TtKUQz_NCr50Y_7x0AVDM8aDYmmK1p_TlnKCl0B6YYCfD4TCasBdFtaWihz395w4/exec'
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvBydd6I0jpFWm4UPgRIUrJkyttZwI8gC-FSV5WMVzFkg1hJdJ1n041jF80eIemf4h/exec'
 
 export function ChessPuzzleWidget() {
   const [puzzleModalOpen, setPuzzleModalOpen] = useState(false)
@@ -68,7 +68,7 @@ export function ChessPuzzleWidget() {
                     try {
                       await fetch(SCRIPT_URL, {
                         method: 'POST',
-                        body: data,
+                        body: new URLSearchParams(data),
                         mode: 'no-cors'
                       });
                       
