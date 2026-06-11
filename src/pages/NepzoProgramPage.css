@@ -648,14 +648,13 @@
     width: 100%;
     height: 270px;
     margin-top: 10px;
-    margin-bottom: 20px;
   }
   .nz-hero-person-img {
     display: block;
     position: absolute;
-    right: 10px;
-    bottom: 0px;
-    height: 250px;
+    right: 59px;
+    bottom: -17px;
+    height: 314px;
     width: auto;
     opacity: 1;
     z-index: 10;
@@ -685,7 +684,7 @@
     margin-left: 4px;
   }
   .nz-satisfaction-card .satisfaction-num {
-    font-size: 24px;
+    font-size: 21px;
   }
   .nz-satisfaction-card .satisfaction-label {
     font-size: 9px;
@@ -694,7 +693,7 @@
   .nz-rotating-badge {
     display: flex;
     position: absolute;
-    right: 16px;
+    right: 35px;
     top: 10px;
     bottom: auto;
     width: 64px;
