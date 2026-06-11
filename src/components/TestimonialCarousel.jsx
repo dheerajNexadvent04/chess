@@ -81,7 +81,7 @@ export const TestimonialCarousel = () => {
                 </div>
                 <div className="testimonial-card-right">
                   <div className="testimonial-stars">★★★★★</div>
-                  <p className="testimonial-rated">Rated <strong>{review.rating}</strong> by 1,200+ Chess Players</p>
+                  <p className="testimonial-rated">Rated <strong>{review.rating}</strong> by 100+ Reviews</p>
                   <h3>{review.title}</h3>
                   <p className="testimonial-body">{review.body}</p>
                   <div className="testimonial-avatars">

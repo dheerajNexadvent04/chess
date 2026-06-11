@@ -323,15 +323,15 @@ export function NepzoProgramPage() {
             <div className="nz-counter-box">
               <div className="nz-counter-top">
                 <Star size={28} className="star-icon" />
-                <span className="nz-counter-val">4.8</span>
+                <span className="nz-counter-val">100+</span>
               </div>
-              <span className="nz-counter-lbl">Average Course Rating</span>
+              <span className="nz-counter-lbl">Reviews</span>
             </div>
             <div className="nz-counter-box">
               <div className="nz-counter-top">
-                <span className="nz-counter-val">5K+</span>
+                <span className="nz-counter-val">5+</span>
               </div>
-              <span className="nz-counter-lbl">Expert-Led Courses</span>
+              <span className="nz-counter-lbl">Courses</span>
             </div>
           </div>
 
