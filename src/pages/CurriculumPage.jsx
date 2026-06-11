@@ -409,7 +409,7 @@ const journeySteps = [
     name: "Walkers",
     piece: "♟",
     icon: Star,
-    image: "/fundamentals.jpg"
+    image: "/walker bg.png"
   },
   {
     id: 2,
@@ -422,7 +422,7 @@ const journeySteps = [
     name: "Joggers",
     piece: "♞",
     icon: FolderCheck,
-    image: "/opening.jpg"
+    image: "/jogger bg.png"
   },
   {
     id: 3,
@@ -435,7 +435,7 @@ const journeySteps = [
     name: "Runner",
     piece: "♜",
     icon: Globe,
-    image: "/tactics.jpg"
+    image: "/runner bg.png"
   },
   {
     id: 4,
@@ -447,7 +447,7 @@ const journeySteps = [
     label: "Crash Course",
     piece: "♛",
     icon: Zap,
-    image: "/tournament.jpg"
+    image: "/crash course bg.png"
   }
 ];
 
@@ -462,7 +462,7 @@ const premiumLevelsData = [
     marqueeText: 'BIG MOVES START WITH SMALL STEPS • LEARN CHESS. LOVE CHESS. LIVE CHESS.',
     piece: '♟',
     themeColor: '#2563eb',
-    bgImage: '/fundamentals.jpg',
+    bgImage: '/walker bg.png',
     ageGroup: '6–12 Years',
     duration: '3 Months',
     fees: '₹9,000/- INR',
@@ -497,7 +497,7 @@ const premiumLevelsData = [
     marqueeText: 'BUILD SKILLS • BUILD CONFIDENCE • BUILD CHAMPIONS.',
     piece: '♞',
     themeColor: '#8b5cf6',
-    bgImage: '/opening.jpg',
+    bgImage: '/jogger bg.png',
     ageGroup: '7–15 Years',
     duration: '6 Months',
     fees: '₹21,000/- INR',
@@ -530,7 +530,7 @@ const premiumLevelsData = [
     marqueeText: 'CHALLENGE YOUR LIMITS • THINK THREE MOVES AHEAD • MASTER THE BOARD.',
     piece: '♜',
     themeColor: '#4f46e5',
-    bgImage: '/tactics.jpg',
+    bgImage: '/runner bg.png',
     ageGroup: '10–15 Years',
     duration: 'Ongoing Training',
     fees: 'Price on request',
@@ -563,7 +563,7 @@ const premiumLevelsData = [
     marqueeText: 'INTENSIVE TRAINING • ACCELERATED PROGRESSION • SPEED UP YOUR GAME.',
     piece: '♛',
     themeColor: '#f97316',
-    bgImage: '/tournament.jpg',
+    bgImage: '/crash course bg.png',
     ageGroup: '5–16 Years (All welcome)',
     duration: '3 Months',
     fees: '₹11,000/- INR',
@@ -594,7 +594,7 @@ const coursePrograms = [
     desc: "Perfect for children starting their chess journey and learning the game step-by-step.",
     points: ["24 Classes", "1 Hour Each", "Basic Tactics", "Foundation Building"],
     fees: "9,000",
-    bgImage: "/walkerscr.png"
+    bgImage: "/walker bg.png"
   },
   {
     id: "joggers",
@@ -603,7 +603,7 @@ const coursePrograms = [
     desc: "Designed for students ready to improve tactical understanding and tournament gameplay.",
     points: ["48 Classes", "Opening & Endgame", "Tournament Prep", "Tactical Improvement"],
     fees: "21,000",
-    bgImage: "/joggerscr.png"
+    bgImage: "/jogger bg.png"
   },
   {
     id: "runner",
@@ -612,7 +612,7 @@ const coursePrograms = [
     desc: "For students aiming to compete seriously and improve advanced strategic understanding.",
     points: ["Advanced Strategy", "FIDE Preparation", "Match Analysis", "Competitive Training"],
     fees: "Price on request",
-    bgImage: "/runnerscr.png"
+    bgImage: "/runner bg.png"
   },
   {
     id: "crash",
@@ -621,7 +621,7 @@ const coursePrograms = [
     desc: "An accelerated program for rapid improvement and tournament-focused preparation.",
     points: ["24 Classes", "Intensive Learning", "Tactical Training", "Fast Progression"],
     fees: "11,000",
-    bgImage: "/crashcoursecr.png"
+    bgImage: "/crash course bg.png"
   }
 ];
 
