@@ -1089,14 +1089,14 @@ export function CurriculumPage() {
                 </div>
               </div>
 
-              <div className="nch-floating-card fc-3" style={{ cursor: 'pointer' }} onClick={() => window.dispatchEvent(new CustomEvent('open-custom-modal', { detail: { type: 'booking', section: 'Curriculum Hero Floating Card' } }))}>
+              <Link to="/book-class?ref=Curriculum+Hero+Floating+Card" className="nch-floating-card fc-3" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <img src="/A3.jpeg" alt="student" className="fc-coach-img" />
                 <div className="fc-text">
                   <strong>Book Free Demo</strong>
                   <span>Live 1-on-1 Class</span>
                   <button className="fc-btn">Book Now</button>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
