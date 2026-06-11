@@ -594,7 +594,7 @@ const coursePrograms = [
     desc: "Perfect for children starting their chess journey and learning the game step-by-step.",
     points: ["24 Classes", "1 Hour Each", "Basic Tactics", "Foundation Building"],
     fees: "9,000",
-    bgImage: "/walker bg.png"
+    bgImage: "/walkerscr.png"
   },
   {
     id: "joggers",
@@ -603,7 +603,7 @@ const coursePrograms = [
     desc: "Designed for students ready to improve tactical understanding and tournament gameplay.",
     points: ["48 Classes", "Opening & Endgame", "Tournament Prep", "Tactical Improvement"],
     fees: "21,000",
-    bgImage: "/jogger bg.png"
+    bgImage: "/joggerscr.png"
   },
   {
     id: "runner",
@@ -612,7 +612,7 @@ const coursePrograms = [
     desc: "For students aiming to compete seriously and improve advanced strategic understanding.",
     points: ["Advanced Strategy", "FIDE Preparation", "Match Analysis", "Competitive Training"],
     fees: "Price on request",
-    bgImage: "/runner bg.png"
+    bgImage: "/runnerscr.png"
   },
   {
     id: "crash",
@@ -621,7 +621,7 @@ const coursePrograms = [
     desc: "An accelerated program for rapid improvement and tournament-focused preparation.",
     points: ["24 Classes", "Intensive Learning", "Tactical Training", "Fast Progression"],
     fees: "11,000",
-    bgImage: "/crash course bg.png"
+    bgImage: "/crashcoursecr.png"
   }
 ];
 

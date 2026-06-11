@@ -2396,18 +2396,19 @@
 
 @media (max-width: 480px) {
   .nz-inner-tabs {
-    flex-direction: column;
-    gap: 6px;
-    padding: 6px;
-    width: 100%;
+    gap: 4px;
+    padding: 4px;
   }
 
   .nz-inner-tab {
-    width: 100%;
-    justify-content: center;
-    padding: 10px 14px;
-    font-size: 12.5px;
-    gap: 8px;
+    padding: 8px 4px;
+    font-size: 9.5px;
+    gap: 6px;
+  }
+
+  .nz-inner-tab svg {
+    width: 10px;
+    height: 10px;
   }
 }
 
