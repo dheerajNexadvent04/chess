@@ -4,10 +4,10 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const slideshowImages = Array.from({ length: 15 }, (_, i) => `/about_slide${i + 1}.jpeg`)
 const coachingImage = '/l2.png'
-const missionBoardImage = '/cp career banner2.png'
-const visionKidImage = '/cp partnership banner2.png'
-const chooseUsImage = '/commitment to school.png'
-const skillsVisionImage = '/future ready.png'
+const missionBoardImage = '/whatsapp/WhatsApp Image 2026-06-08 at 11.39.00 AM (1).jpeg'
+const visionKidImage = '/where we operate image.jpeg'
+const chooseUsImage = '/whatsapp/WhatsApp Image 2026-06-08 at 11.39.00 AM.jpeg'
+const skillsVisionImage = '/whatsapp/WhatsApp Image 2026-06-08 at 11.39.03 AM (2).jpeg'
 
 export function AboutPage() {
   useScrollReveal();

@@ -153,12 +153,19 @@ const programDetails = {
     ]
   }
 }
+const nepzoSlides = [
+  { id: 1, src: '/nepzonew1.jpeg', alt: "1. The Problem: Marks Don't Build the Future" },
+  { id: 2, src: '/nepzonew2.jpeg', alt: '2. The Changing World: Jobs are Changing, Skills are Missing' },
+  { id: 3, src: '/nepzonew4.jpeg', alt: '3. The Nepzo Solution: Learn to Think. Build. Pitch. Lead.' },
+  { id: 4, src: '/nepzonew3.jpeg', alt: '4. The Outcome: Future Ready Minds, Limitless Possibilities' },
+]
 
 export function NepzoProgramPage() {
   const [lightboxImage, setLightboxImage] = useState(null)
   const [activePillar, setActivePillar] = useState(0)
   const [financeSubTab, setFinanceSubTab] = useState('skills')
   const [entrepreneurSubTab, setEntrepreneurSubTab] = useState('skills')
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   useScrollReveal([activePillar, financeSubTab, entrepreneurSubTab])
 
@@ -614,6 +621,56 @@ export function NepzoProgramPage() {
                 </div>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5.0 NEPZO CHRONOLOGICAL SYLLABUS SLIDES ── */}
+      <section className="nz-slides-section">
+        <div className="nz-wrap">
+          {/* Desktop Grid Layout (4 columns) */}
+          <div className="nz-slides-desktop-grid">
+            {nepzoSlides.map((slide) => (
+              <div key={slide.id} className="nz-slide-card" onClick={() => setLightboxImage(slide.src)}>
+                <img src={slide.src} alt={slide.alt} className="nz-slide-img" />
+                <div className="nz-slide-hover-overlay">
+                  <ZoomIn size={24} />
+                  <span>Click to Expand</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Carousel Layout */}
+          <div className="nz-slides-mobile-carousel">
+            <div className="nz-slides-carousel-track-wrapper">
+              <div 
+                className="nz-slides-carousel-track" 
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {nepzoSlides.map((slide) => (
+                  <div key={slide.id} className="nz-slides-carousel-slide" onClick={() => setLightboxImage(slide.src)}>
+                    <img src={slide.src} alt={slide.alt} className="nz-slide-img" />
+                    <div className="nz-slide-hover-overlay">
+                      <ZoomIn size={20} />
+                      <span>Click to Expand</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Carousel Navigation Dots */}
+            <div className="nz-slides-carousel-dots">
+              {nepzoSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`nz-slides-carousel-dot ${currentSlide === idx ? 'active' : ''}`}
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>

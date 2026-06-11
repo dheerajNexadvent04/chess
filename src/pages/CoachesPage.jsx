@@ -34,7 +34,11 @@ export function CoachesPage() {
 
                 {/* Image Side */}
                 <div className="coach-v3-card__image-wrap">
-                  <img src={coach.image} alt={coach.name} />
+                  <img 
+                    src={coach.image} 
+                    alt={coach.name} 
+                    className={coach.name === 'Hamid Hasan' ? 'coach-img-hamid' : ''}
+                  />
                   <div className="coach-v3-card__image-overlay"></div>
                 </div>
 

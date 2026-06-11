@@ -12938,6 +12938,16 @@ img.header-side-logo {
   transform: scale(1.05);
 }
 
+/* Specific crop for Hamid Hasan's image to hide the top whiteboard text */
+.coach-v3-card__image-wrap img.coach-img-hamid {
+  transform: scale(1.18);
+  transform-origin: bottom center;
+}
+
+.coach-v3-card:hover .coach-v3-card__image-wrap img.coach-img-hamid {
+  transform: scale(1.23);
+}
+
 /* Subtle inner shadow to blend image edge */
 .coach-v3-card__image-overlay {
   position: absolute;
@@ -16097,6 +16107,10 @@ img.header-side-logo {
   .testimonial-card-left {
     height: 180px !important;
     width: 100% !important;
+  }
+
+  .testimonial-card-left img {
+    object-position: center 30% !important;
   }
 
   /* Card content details and alignment */
