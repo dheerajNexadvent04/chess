@@ -658,7 +658,7 @@
     color: #6d28d9;
     font-weight: 800;
     font-size: 12px;
-    padding: 0px 8px;
+    padding: 7px 8px;
     border-radius: 12px;
     text-decoration: none;
   }
@@ -671,7 +671,8 @@
     color: #ffffff;
     font-weight: 700;
     font-size: 12px;
-    padding: 13px 30px;
+    padding: 7px 30px;
+    width: max-content;
   }
   .nz-hero-graphics-mobile-wrap {
     display: block;
@@ -1843,7 +1844,6 @@
     height: 20px;
   }
   .nz-hero-actions, .nz-cta-btns {
-    flex-direction: column;
     align-items: stretch;
     width: 100%;
   }
