@@ -240,7 +240,7 @@ export function NepzoProgramPage() {
             Designed for students of Classes 5 to 10, the <strong>NEPZO Future Ready Learning Program</strong> (co-powered by <strong>SckoolChess</strong>) helps schools implement practical, skill-based, and experiential learning aligned with the vision of NEP 2020.
           </p>
 
-          <div className="nz-hero-actions reveal fade-up" style={{ '--delay': '0.36s' }}>
+          <div className="nz-hero-actions nz-hero-actions--desktop reveal fade-up" style={{ '--delay': '0.36s' }}>
             <button 
               onClick={() => {
                 window.dispatchEvent(new CustomEvent('open-custom-modal', {
@@ -258,42 +258,63 @@ export function NepzoProgramPage() {
           </div>
         </div>
 
-        {/* Person image — absolute, extends full height to right edge */}
-        <img
-          src="/FINALSUPERMAN.png"
-          alt="Student learning future skills"
-          className="nz-hero-person-img"
-        />
+        {/* Graphics Wrapper (Absolute on desktop, Relative block on mobile) */}
+        <div className="nz-hero-graphics-mobile-wrap">
+          {/* Person image — absolute, extends full height to right edge */}
+          <img
+            src="/FINALSUPERMAN.png"
+            alt="Student learning future skills"
+            className="nz-hero-person-img"
+          />
 
-        {/* Satisfaction card — absolute, overlaps center */}
-        <div className="nz-satisfaction-card">
-          <div className="avatar-row">
-            <img src="/whatsapp/WhatsApp Image 2026-06-08 at 11.38.45 AM (1).jpeg" alt="Student" className="avatar-circle" />
-            <img src="/whatsapp/WhatsApp Image 2026-06-08 at 11.38.45 AM.jpeg" alt="Student" className="avatar-circle" />
-            <img src="/whatsapp/WhatsApp Image 2026-06-08 at 11.38.46 AM.jpeg" alt="Student" className="avatar-circle" />
-            <div className="avatar-plus">+</div>
+          {/* Satisfaction card — absolute, overlaps center */}
+          <div className="nz-satisfaction-card">
+            <div className="avatar-row">
+              <img src="/whatsapp/WhatsApp Image 2026-06-08 at 11.38.45 AM (1).jpeg" alt="Student" className="avatar-circle" />
+              <img src="/whatsapp/WhatsApp Image 2026-06-08 at 11.38.45 AM.jpeg" alt="Student" className="avatar-circle" />
+              <img src="/whatsapp/WhatsApp Image 2026-06-08 at 11.38.46 AM.jpeg" alt="Student" className="avatar-circle" />
+              <div className="avatar-plus">+</div>
+            </div>
+            <div className="satisfaction-num">98%</div>
+            <div className="satisfaction-label">Learner Satisfaction</div>
           </div>
-          <div className="satisfaction-num">98%</div>
-          <div className="satisfaction-label">Learner Satisfaction</div>
+
+          {/* Rotating badge — absolute, top right */}
+          <div className="nz-rotating-badge">
+            <div className="badge-icon-center">
+              <Lightbulb size={22} />
+            </div>
+            <svg viewBox="0 0 100 100" className="nz-rotating-svg">
+              <path
+                id="nzCirclePath"
+                d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                fill="none"
+              />
+              <text>
+                <textPath href="#nzCirclePath">
+                  START LEARNING TODAY • UPGRADE SKILL •
+                </textPath>
+              </text>
+            </svg>
+          </div>
         </div>
 
-        {/* Rotating badge — absolute, top right */}
-        <div className="nz-rotating-badge">
-          <div className="badge-icon-center">
-            <Lightbulb size={22} />
-          </div>
-          <svg viewBox="0 0 100 100" className="nz-rotating-svg">
-            <path
-              id="nzCirclePath"
-              d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-              fill="none"
-            />
-            <text>
-              <textPath href="#nzCirclePath">
-                START LEARNING TODAY • UPGRADE SKILL •
-              </textPath>
-            </text>
-          </svg>
+        {/* Mobile Buttons (Visible only on mobile, placed below the graphics wrapper) */}
+        <div className="nz-hero-actions nz-hero-actions--mobile reveal fade-up" style={{ '--delay': '0.1s' }}>
+          <button 
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('open-custom-modal', {
+                detail: { type: 'booking', section: 'Nepzo Hero Section' }
+              }));
+            }}
+            className="nz-hero-btn-primary"
+          >
+            <span>Schedule Free Session</span>
+            <ArrowRight size={16} />
+          </button>
+          <a href="/DOWNLOAD BROCHURE.pdf" download="DOWNLOAD BROCHURE.pdf" className="nz-hero-btn-secondary">
+            <span>Download Brochure</span>
+          </a>
         </div>
 
         {/* Bottom strip — counters left, curve+logos right */}

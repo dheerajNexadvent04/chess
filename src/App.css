@@ -1773,7 +1773,7 @@ html {
   left: 0;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: inset -260px 0 220px -100px rgba(13, 27, 46, 0.65);
+  box-shadow: inset -260px 0 220px -100px rgba(13, 27, 46, 0.25);
   z-index: 2;
   transition: box-shadow 0.3s ease;
 }
@@ -1783,7 +1783,7 @@ html {
   border-color: var(--level-theme-color);
 }
 .journey-v6__level-row:hover::before {
-  box-shadow: inset -260px 0 220px -100px rgba(13, 27, 46, 0.85);
+  box-shadow: inset -260px 0 220px -100px rgba(13, 27, 46, 0.35);
 }
 
 /* Background Banner Styles */
@@ -1802,16 +1802,16 @@ html {
   position: absolute;
   top: 0;
   right: 0;
-  width: 75%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.58;
+  opacity: 0.9;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 .journey-v6__level-row:hover .journey-v6__level-bg-img {
   transform: scale(1.05);
-  opacity: 0.68;
+  opacity: 1;
 }
 
 .journey-v6__level-bg-overlay {
@@ -1822,10 +1822,10 @@ html {
   bottom: 0;
   background: linear-gradient(
     90deg,
-    #ffffff 0%,
-    #ffffff 15%,
-    rgba(255, 255, 255, 0.75) 45%,
-    rgba(255, 255, 255, 0.15) 100%
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.9) 25%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.2) 100%
   );
   z-index: 2;
 }
@@ -2265,16 +2265,16 @@ html {
   /* Responsive background adjustments */
   .journey-v6__level-bg-img {
     width: 100%;
-    opacity: 0.22;
+    opacity: 0.85;
   }
   .journey-v6__level-row:hover .journey-v6__level-bg-img {
-    opacity: 0.28;
+    opacity: 0.95;
   }
   .journey-v6__level-bg-overlay {
     background: radial-gradient(
       circle at center,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(255, 255, 255, 0.95) 85%,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0.9) 75%,
       #ffffff 100%
     );
   }
