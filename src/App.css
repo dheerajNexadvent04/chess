@@ -9513,11 +9513,11 @@ p .feature-tag {
 }
 
 .gallery-column-track.scroll-up {
-  animation: gallery-scroll-up 36s linear infinite;
+  animation: gallery-scroll-up 120s linear infinite;
 }
 
 .gallery-column-track.scroll-down {
-  animation: gallery-scroll-down 36s linear infinite;
+  animation: gallery-scroll-down 120s linear infinite;
 }
 
 /* Pause on hover of the entire gallery section or container */
