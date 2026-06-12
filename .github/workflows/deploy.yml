@@ -32,6 +32,7 @@ jobs:
         run: |
           lftp -e "
             set ftp:passive-mode yes;
+            set ssl:verify-certificate no;
             set net:timeout 60;
             set net:max-retries 10;
             set net:reconnect-interval-base 5;
