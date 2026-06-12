@@ -37,3 +37,8 @@ jobs:
           server-dir: /public_html/
           state-name: .ftp-deploy-sync-state.json
           dry-run: false
+          timeout: 60000
+          exclude: |
+            **/*.mp4
+            **/*.mov
+            **/*.webm
