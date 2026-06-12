@@ -127,9 +127,9 @@ export function Layout() {
                   {supportLink.label}
                 </a>
               ) : null}
-              <Link to="/nepzo-program">
+              <a href="https://nepzo.in/" target="_blank" rel="noopener noreferrer">
                 <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
-              </Link>
+              </a>
               <NavLink 
                 className="nav-link book-class-highlight" 
                 to="/book-class" 
@@ -153,9 +153,9 @@ export function Layout() {
                 <Link to="/" onClick={() => setMenuOpen(false)} className="drawer-brand-logo-link">
                   <img src="/logonewbg.png" alt="SckoolChess logo" className="drawer-brand-logo" />
                 </Link>
-                <Link to="/nepzo-program" onClick={() => setMenuOpen(false)} className="drawer-nepzo-link">
+                <a href="https://nepzo.in/" target="_blank" rel="noopener noreferrer" className="drawer-nepzo-link" onClick={() => setMenuOpen(false)}>
                   <img src="/nepzobg.png" alt="Nepzo Logo" className="drawer-nepzo-logo" />
-                </Link>
+                </a>
               </div>
               <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)}>
                 <X size={18} />
