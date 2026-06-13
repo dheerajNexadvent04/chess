@@ -2,33 +2,40 @@ import { useEffect } from 'react';
 
 export function useScrollReveal(dependencies = []) {
   useEffect(() => {
+    const elements = document.querySelectorAll('.reveal');
+
+    // Immediately reveal elements already in the viewport (handles post-navigation top-of-page content)
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        el.classList.add('active');
+      }
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            // Optional: stop observing once revealed
-            // observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px',
       }
     );
 
-    const elements = document.querySelectorAll('.reveal');
     elements.forEach((el) => observer.observe(el));
 
-    // Fallback: force active class after a short delay in case IntersectionObserver doesn't fire
+    // Short fallback to catch any elements the observer missed
     const fallbackTimer = setTimeout(() => {
       elements.forEach((el) => {
         if (!el.classList.contains('active')) {
           el.classList.add('active');
         }
       });
-    }, 1000);
+    }, 250);
 
     return () => {
       elements.forEach((el) => observer.unobserve(el));

@@ -105,6 +105,13 @@ export function Footer() {
               <img src="/youtubelogo.png" alt="YouTube" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
             </a>
           </div>
+          <a href="https://www.rohinichessacademy.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/updated logo header.png"
+              alt="Rohini Chess Academy"
+              style={{ width: '160px', objectFit: 'contain', marginTop: '16px' }}
+            />
+          </a>
         </div>
       </div>
       <div className="figma-footer-bottom">

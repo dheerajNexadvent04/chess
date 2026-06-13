@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const Preloader = () => {
   const [loading, setLoading] = useState(true);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    // Hide preloader after a short delay to allow initial rendering
+    setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 600);
+    }, 400);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   return (
     <div className={`preloader ${!loading ? 'hidden' : ''}`}>
