@@ -30,7 +30,7 @@ export function Layout() {
   const location = useLocation()
   const isHomePage = location.pathname === '/'
   const isAboutPage = location.pathname === '/about-us'
-  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements', '/tournaments', '/blog', '/market-area', '/nepzo', '/nepzo-program'].includes(location.pathname) || location.pathname.startsWith('/blog/')
+  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements', '/tournaments', '/blog', '/market-area'].includes(location.pathname) || location.pathname.startsWith('/blog/')
   const supportLink = navLinks.find((link) => link.label === 'SUPPORT')
   const primaryNavLinks = navLinks.filter((link) => link.label !== 'SUPPORT')
 

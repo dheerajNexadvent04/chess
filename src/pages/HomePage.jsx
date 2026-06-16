@@ -520,9 +520,9 @@ export function HomePage() {
               <a className="figma-support-link" href="#support">
                 Support
               </a>
-              <Link to="/nepzo-program">
+              <a href="https://nepzo.in/" target="_blank" rel="noopener noreferrer">
                 <img src="/nepzobg.png" alt="Nepzo Logo" className="header-partner-logo" />
-              </Link>
+              </a>
               <Link 
                 className="book-class-highlight" 
                 to="/book-class"
@@ -543,9 +543,9 @@ export function HomePage() {
               <Link to="/" onClick={closeMobileMenu} className="drawer-brand-logo-link">
                 <img src="/logonewbg.png" alt="SckoolChess logo" className="drawer-brand-logo" />
               </Link>
-              <Link to="/nepzo-program" onClick={closeMobileMenu} className="drawer-nepzo-link">
+              <a href="https://nepzo.in/" target="_blank" rel="noopener noreferrer" className="drawer-nepzo-link" onClick={closeMobileMenu}>
                 <img src="/nepzobg.png" alt="Nepzo Logo" className="drawer-nepzo-logo" />
-              </Link>
+              </a>
             </div>
             <button type="button" aria-label="Close menu" onClick={closeMobileMenu}>
               <X size={18} />

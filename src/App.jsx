@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { ScrollToTop } from './components/ScrollToTop'
 import { Layout } from './components/Layout'
@@ -17,11 +18,17 @@ import { TermsPage } from './pages/TermsPage'
 import { BlogPage } from './pages/BlogPage'
 import { BlogDetailPage } from './pages/BlogDetailPage'
 import { MarketAreaPage } from './pages/MarketAreaPage'
-import { NepzoProgramPage } from './pages/NepzoProgramPage'
 import { AnnouncementBar } from './components/AnnouncementBar'
 import { Preloader } from './components/Preloader'
 import { ChessPuzzleWidget } from './components/ChessPuzzleWidget'
 import './App.css'
+
+function ExternalRedirect({ to }) {
+  useEffect(() => {
+    window.location.replace(to)
+  }, [to])
+  return null
+}
 
 function App() {
   return (
@@ -47,8 +54,8 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogDetailPage />} />
         <Route path="/market-area" element={<MarketAreaPage />} />
-        <Route path="/nepzo" element={<NepzoProgramPage />} />
-        <Route path="/nepzo-program" element={<NepzoProgramPage />} />
+        <Route path="/nepzo" element={<ExternalRedirect to="https://nepzo.in/" />} />
+        <Route path="/nepzo-program" element={<ExternalRedirect to="https://nepzo.in/" />} />
       </Route>
       </Routes>
       <Preloader />
