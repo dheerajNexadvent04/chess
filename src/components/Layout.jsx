@@ -30,7 +30,9 @@ export function Layout() {
   const location = useLocation()
   const isHomePage = location.pathname === '/'
   const isAboutPage = location.pathname === '/about-us'
-  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements', '/tournaments', '/blog', '/market-area'].includes(location.pathname) || location.pathname.startsWith('/blog/')
+  const knownPaths = ['/', '/about-us', '/partners', '/partnered-schools', '/coaches', '/career', '/courses-offered', '/curriculum', '/contact-us', '/book-class', '/achievements', '/tournaments', '/privacy-policy', '/blog', '/market-area', '/nepzo', '/nepzo-program']
+  const isUnknownPath = !knownPaths.includes(location.pathname) && !location.pathname.startsWith('/blog/')
+  const usesLightHeader = ['/about-us', '/contact-us', '/partners', '/partnered-schools', '/coaches', '/career', '/curriculum', '/book-class', '/achievements', '/tournaments', '/blog', '/market-area'].includes(location.pathname) || location.pathname.startsWith('/blog/') || isUnknownPath
   const supportLink = navLinks.find((link) => link.label === 'SUPPORT')
   const primaryNavLinks = navLinks.filter((link) => link.label !== 'SUPPORT')
 
