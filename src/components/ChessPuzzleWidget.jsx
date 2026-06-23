@@ -77,8 +77,8 @@ export function ChessPuzzleWidget() {
                       
                       // Programmatically trigger the download of the PDF
                       const link = document.createElement('a');
-                      link.href = '/chess-puzzles.pdf';
-                      link.download = 'chess-puzzles.pdf';
+                      link.href = '/Sckoolchess_Puzzles_Combined.pdf';
+                      link.download = 'Sckoolchess_Puzzles_Combined.pdf';
                       document.body.appendChild(link);
                       link.click();
                       document.body.removeChild(link);
@@ -107,9 +107,9 @@ export function ChessPuzzleWidget() {
                 <div className="success-icon">✅</div>
                 <h2>Success!</h2>
                 <p>Your chess puzzle PDF is ready for download. Challenge your mind!</p>
-                <a 
-                  href="/chess-puzzles.pdf" 
-                  download 
+                <a
+                  href="/Sckoolchess_Puzzles_Combined.pdf"
+                  download
                   className="puzzle-download-btn"
                 >
                   Download PDF Now
