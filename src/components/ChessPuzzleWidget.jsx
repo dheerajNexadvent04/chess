@@ -77,8 +77,8 @@ export function ChessPuzzleWidget() {
                       
                       // Programmatically trigger the download of the PDF
                       const link = document.createElement('a');
-                      link.href = '/Sckoolchess_Puzzles_Combined.pdf';
-                      link.download = 'Sckoolchess_Puzzles_Combined.pdf';
+                      link.href = '/chess-puzzles.pdf';
+                      link.download = 'chess-puzzles.pdf';
                       document.body.appendChild(link);
                       link.click();
                       document.body.removeChild(link);
